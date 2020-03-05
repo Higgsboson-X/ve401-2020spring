@@ -1,0 +1,410 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}  
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{cite}
+\usepackage{gauss}
+\usepackage{bbold}
+\usepackage[all]{xy}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\U}{\ensuremath{\mathrm}}
+\newcommand{\celsius}{\ensuremath{^{\circ}\mathrm{C}}}
+\newcommand{\dst}{\ensuremath{^{\U{st}}}}
+\newcommand{\dnd}{\ensuremath{^{\U{nd}}}}
+\newcommand{\drd}{\ensuremath{^{\U{rd}}}}
+\newcommand{\dth}{\ensuremath{^{\U{th}}}}
+\renewcommand{\mod}{\ \U{mod}\ }
+
+\newcommand{\C}{\mathbb{C}} \newcommand{\F}{\mathbb{F}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+
+\usetikzlibrary{automata,positioning}
+\geometry{left=2.0cm, right=2.0cm, top=2.5cm, bottom=2.5cm}
+
+\pagestyle{fancy}
+\lhead{\hmwkClass}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\newcommand{\hmwkClass}{VE401}
+
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+
+\begin{document}
+
+\renewcommand\arraystretch{1.5}
+\setlength\parskip{.1\baselineskip}
+
+
+\begin{titlepage}
+  \begin{center}
+  \includegraphics[width=0.7\textwidth]{./logo}\\
+  \HRule\\[3cm]
+
+  {\Huge\bfseries VE401 Probabilistic Methods in Eng.\\[0.5cm]Solution Manual for RC 1}\\[2cm]
+  
+  {\large Chen Xiwen}
+  \\[1cm]
+  {\large \today}
+  \vfill
+
+  \textbf{\small University of Michigan--Shanghai Jiao Tong University Joint Institute}
+  \end{center}
+\end{titlepage}
+
+
+\newpage
+
+\begin{spacing}{1.1}
+
+%==================================================================================
+
+
+\section*{Example 1.}
+
+
+Prove the uniqueness of solution of the three dimensional wave on $\Omega\subset\R^3$
+\begin{align*}
+c^2u_{tt} = \Delta u
+\end{align*}
+which satisfy the boundary conditions
+\begin{align*}
+u(x, y, z, t) = F(x, y, z, t), \qquad (x, y, z)\in \partial \Omega
+\end{align*}
+and initial conditions
+\begin{align*}
+u(x, y, z, 0) = G(x, y, z), \qquad u_t(x, y, z, 0) = H(x, y, z).
+\end{align*}
+\textbf{Solution.} Suppose we have two solutions to the equation $u$ and $v$, then by setting $w = v - u$, we have
+\begin{align*}
+c^2w_{tt} = \Delta w
+\end{align*}
+with boundary condition $w = 0$ on $\partial \Omega$ and initial conditions
+\begin{align*}
+w(x, y, z, 0) = 0, \qquad w_t(x, y, z, 0) = 0.
+\end{align*}
+Then consider the volume integral
+\begin{align*}
+E(t) = \frac{1}{2}\int_{\Omega} c^2 w_t^2 + (\nabla w)^2 d\tau.
+\end{align*}
+Then taking the derivative with respect to $t$, we obtain
+\begin{align*}
+E'(t) = \int_{\Omega} \left(c^2 w_{tt}w_t + \nabla w\cdot\nabla w_t\right) d\tau.
+\end{align*}
+Using Green's first identity
+\begin{align*}
+\int_{\Omega}\langle \nabla u, \nabla v\rangle d\tau = -\int_{\Omega} u\cdot\Delta v d\tau + \int_{\partial \Omega^*} u\frac{\partial v}{\partial n}dA
+\end{align*}
+we then obtain
+\begin{align*}
+E'(t) & = \int_{\Omega} c^2 w_{tt}w_t d\tau + \int_{\partial \Omega^*} w_t\nabla w \cdot d\vec{A} - \int_{\Omega}w_t \Delta w d\tau \\
+& = \int_{\Omega}w_t(c^2 w_{tt} - \Delta w) d\tau + \int_{\partial \Omega^*} w_t\nabla w \cdot d\vec{A} \\
+& = \int_{\partial \Omega^*} w_t\nabla w \cdot d\vec{A}.
+\end{align*}
+Since $w = 0$ on $\partial\Omega$ and thus $w_t = 0$. Therefore, $E(t)$ is a constant. Using the initial conditions, we further have $E(t) = 0$. Therefore, the solution to the boundary value problem is unique.
+
+
+\section*{Example 2.}
+
+Solve the inhomogeneous heat equation
+\begin{align*}
+u_{xx} - u_t = -2x, \qquad (x, t)\in (0, 1)\times \R_{+}
+\end{align*}
+with Dirichlet boundary conditions
+\begin{align*}
+u(0, t) = 0, \qquad u(1, t) = 0, \qquad t > 0
+\end{align*}
+and initial temperature distribution
+\begin{align*}
+u(x, 0) = x - x^2, \qquad x\in [0, 1].
+\end{align*}
+\textbf{Solution.} We first find the homogeneous solution for the PDE. First we transform the associated homogeneous PDE using separation of variables ansatz as
+\begin{align*}
+X''T - XT' = 0\quad\Rightarrow\quad \frac{X''}{X} = \frac{T'}{T} = -\lambda,
+\end{align*}
+with boundary conditions
+\begin{align*}
+X(0) = X(1) = 0.
+\end{align*}
+Then we obtain boundary value problem for $X$ with homogeneous boundary conditions
+\begin{align*}
+X'' + \lambda X = 0,\qquad X(0) = X(1) = 0.
+\end{align*}
+Then assuming $X(x) = e^{\rho(\lambda)x}$, we obtain $\rho^2 + \lambda = 0$ and discuss the following cases.
+\begin{itemize}
+	\item \underline{$\lambda = 0$}. Then we have $X(x) = ax + b$. Inserting the boundary conditions, we then have $a = b = 0.$
+	\item \underline{$\lambda < 0$}. Set $\alpha = \sqrt{|\lambda|}$. Then the solutions are given by
+	\begin{align*}
+	X(x) = c_1 e^{\alpha x} + c_2 e^{-\alpha x},
+	\end{align*}
+	and inserting the boundary conditions gives
+	\begin{align*}
+	\left\{
+	\begin{array}{l}
+	c_1 + c_2 = 0, \\
+	c_1e^{\alpha} + c_2 e^{-\alpha} = 0,
+	\end{array}
+	\right. \quad\Rightarrow\quad c_1 = c_2 = 0.
+	\end{align*}
+	Thus this case does not yield a solution for the boundary value problem.
+	\item \underline{$\lambda > 0$}. The general solution is given by
+	\begin{align*}
+	X(x) = c_3\cos(\sqrt{\lambda }x) + c_4\sin(\sqrt{\lambda}x),
+	\end{align*}
+	and inserting the boundary conditions gives
+	\begin{align*}
+	\left\{
+	\begin{array}{l}
+	c_3 = 0, \\
+	c_3\cos(\sqrt{\lambda }) + c_4 \sin(\sqrt{\lambda}) = 0,
+	\end{array}
+	\right. \quad\Rightarrow\quad c_3 = 0, \lambda = (n\pi)^2, n = 1, 2, \ldots
+	\end{align*}
+\end{itemize}
+Therefore the ODE for $X$ gives the eigenvalues $\lambda_n = (n\pi)^2$ and eigenfunctions $X_n(x) = \sin(n\pi x)$.
+
+The to incorporate the inhomogeneity of the PDE, we plug in the solution for $X$ into the original equation rather than replacing it into the equation for $T$. Specifically,
+\begin{align*}
+X(x) = \sum_{n=1}^{\infty} A_n\sin(n\pi x), \qquad u(x, t) = \sum_{n=1}^{\infty} \sin(n\pi x)T_n(t)
+\end{align*}
+and
+\begin{align*}
+-\sum_{n=1}^{\infty}(n\pi)^2 \sin(n\pi x)T_n - \sum_{n=1}^{\infty}\sin(n\pi x)T_n' = -2x.
+\end{align*}
+Using the basis
+\begin{align*}
+\left\{\sqrt{2}\sin(n\pi x) \right\}_{n=1}^{\infty}
+\end{align*}
+to expand the function $-2x$ as $\displaystyle F(x, t) = \sum_{n=1}^{\infty}F_n(t)\sin(n\pi x)$, we obtain
+\begin{align*}
+-2x & = \sum_{n=1}^{\infty} 2\int_{0}^{1} -2x\sin(n\pi x)dx \cdot \sin(n\pi x) \\
+& = \sum_{n=1}^{\infty} 4\frac{(-1)^n}{n\pi} \sin(n\pi x), \qquad F(t) = 4\frac{(-1)^n}{n\pi},
+\end{align*}
+and the equation becomes
+\begin{align*}
+-\sum_{n=1}^{\infty}(n\pi)^2\sin(n\pi x) T_n - \sum_{n=1}^{\infty}\sin(n\pi x)T_n' = \sum_{n=1}^{\infty} 4\frac{(-1)^n}{n\pi} \sin(n\pi x).
+\end{align*}
+Then the remaining problem is to solve an ODE for $T_n, n = 1, 2, \ldots$, we have
+\begin{align*}
+T_n' + (n\pi)^2T_n = -4\frac{(-1)^n}{n\pi},
+\end{align*}
+with initial condition
+\begin{align*}
+u(x, 0) & = x - x^2 \\
+& = \sum_{n=1}^{\infty} \frac{4}{(n\pi)^3}(1 - (-1)^n)\sin(n\pi x) \\
+& = \sum_{n=1}^{\infty}T_n(0)X_n(x)\quad\Rightarrow\quad T_n(0) = \frac{4}{(n\pi)^3}(1 - (-1)^n).
+\end{align*}
+Solving the initial value problems, we obtain
+\begin{align*}
+T_n(t) = \frac{4}{(n\pi)^3}\left(e^{-(n\pi)^2t} - (-1)^n\right).
+\end{align*}
+Therefore, the solution to the original PDE is given by
+\begin{align*}
+u(x, t) = \sum_{n=1}^{\infty} T_n(t)X_n(x) = \sum_{n=1}^{\infty}\frac{4}{(n\pi)^3}\left(e^{-(n\pi)^2t} - (-1)^n\right)\sin(n\pi x).
+\end{align*}
+
+
+\section*{Example 3.}
+
+Show how a solution to the heat equation
+\begin{align*}
+u_{xx} - u_t = 0, \qquad (x, t)\in (0, 1)\times \R_{+}
+\end{align*}
+with mixed boundary conditions
+\begin{align*}
+u(0, t) = 0,\qquad u_x(1, t) = 0, \qquad t>0
+\end{align*}
+and initial temperature distribution
+\begin{align*}
+u(x, 0) = f(x), \qquad x\in [0, 1]
+\end{align*}
+can be obtained.\\
+\textbf{Solution.} We make the separation of variable ansatz and obtain 
+\begin{align*}
+\frac{X''}{X} = \frac{T'}{T} = -\lambda,
+\end{align*}
+and thus
+\begin{align*}
+X'' + \lambda X = 0, \qquad X(0) = X'(1) = 0.
+\end{align*}
+Then we discuss the values of $\lambda$.
+\begin{itemize}
+	\item \underline{If $\lambda = 0$}. Then $X(x) = ax + b$ and inserting the boundary conditions for $X$ gives $a = b = 0$. Therefore, there is no nontrivial solution.
+	\item \underline{If $\lambda < 0$}. Setting $\alpha = \sqrt{|\lambda|}$, the general solution can be expressed as
+	\begin{align*}
+	X(x) = c_1 e^{\alpha x} + c_2 e^{-\alpha x}.
+	\end{align*}
+	Inserting the boundary conditions yields
+	\begin{align*}
+	\left\{
+	\begin{array}{l}
+	c_1 + c_2 = 0, \\
+	c_1e^{\alpha} - c_2e^{-\alpha} = 0,
+	\end{array}
+	\right. \quad\Rightarrow\quad c_1 = c_2 = 0.
+	\end{align*}
+	Therefore, no nontrivial solution exists that satisfy the boundary conditions.
+	\item \underline{If $\lambda > 0$}. Then the general solution is obtained as
+	\begin{align*}
+	X(x) = c_3\cos(\sqrt{\lambda}x) + c_4\sin(\sqrt{\lambda}x).
+	\end{align*}
+	Inserting the boundary conditions gives
+	\begin{align*}
+	\left\{
+	\begin{array}{l}
+	c_3 = 0, \\
+	-c_3\sin(\sqrt{\lambda}) + c_4\cos(\sqrt{\lambda}) = 0,
+	\end{array}
+	\right. \quad\Rightarrow\quad c_3 = 0, \lambda = \left(n + \frac{1}{2} \right)^2\pi^2, n = 0, 1, 2, \ldots
+	\end{align*}
+\end{itemize}
+Then we obtain the eigenvalues $\lambda_n = \left(n + \dfrac{1}{2} \right)^2\pi^2$ with eigenfunctions
+\begin{align*}
+X_n(x) = A_n \sin\left(\left(n + \frac{1}{2} \right)\pi x \right), \qquad n = 0, 1, 2, \ldots
+\end{align*}
+Using these eigenvalues to solve the ODE for $T$, we obtain
+\begin{align*}
+T_n(t) = B_n e^{-(n+1/2)^2\pi^2 t}, \qquad n = 0, 1, 2, \ldots
+\end{align*}
+and the general solution is given by
+\begin{align*}
+u(x, t) = \sum_{n=0}^{\infty} C_n \sin\left(\left(n + \frac{1}{2} \right)\pi x \right) e^{-(n+1/2)^2\pi^2 t}.
+\end{align*}
+It can be shown that 
+\begin{align*}
+\left\{\sqrt{2}\sin\left(\left(n + \frac{1}{2} \right)\pi x \right) \right\}_{n=0}^{\infty}
+\end{align*}
+forms an orthonormal system in $L^2[0, 1]$, and the initial condition can be expanded by
+\begin{align*}
+f(x) & = \sum_{n=0}^{\infty} 2\int_{0}^1 f(x)\sin\left(\left(n + \frac{1}{2} \right)\pi x \right) dx \cdot \sin\left(\left(n + \frac{1}{2} \right)\pi x \right) \\
+& = u(x, 0) = \sum_{n=0}^{\infty} C_n \sin\left(\left(n + \frac{1}{2} \right)\pi x \right),
+\end{align*}
+which enables us to find $C_n$ as
+\begin{align*}
+C_n = 2\int_{0}^1 f(x)\sin\left(\left(n + \frac{1}{2} \right)\pi x \right) dx,
+\end{align*}
+and thus determining the solution to the heat equation $u(x, t)$.
+
+\section*{Example 4.}
+
+Solve the wave equation problem
+\begin{align*}
+4u_{tt} = u_{xx}, \qquad u_x(-\pi, t) = u_x(\pi, t) = 0, \qquad u(x, 0) = x^2, \qquad u_t(x, 0) = 0.
+\end{align*}
+\textbf{Solution.} We make the separation of variables ansatz $u(x, t) = X(x)T(t)$, then
+\begin{align*}
+4XT'' = X''T \quad\Rightarrow\quad \frac{X''}{X} = 4\frac{T''}{T} = -\lambda.
+\end{align*}
+Together with the boundary conditions, we have
+\begin{align*}
+& X'' + \lambda X = 0, \qquad X'(-\pi) = X'(\pi) = 0, \\
+& T'' + 4\lambda T = 0, \qquad T'(0) = 0, \qquad X(x)T(0) = x^2.
+\end{align*}
+Then we can discuss the values of $\lambda$ in three cases.
+\begin{itemize}
+	\item \underline{$\lambda = 0$.} Then
+	\begin{align*}
+	X(x) = a_1 + a_2x.
+	\end{align*}
+	Plugging in the initial conditions, we have $a_2 = 0$ and similarly for $T$,
+	\begin{align*}
+	T(t) = a_3 + a_4x,
+	\end{align*}
+	therefore we conclude that $u(x, t) = a$, where $a\in \R$ is a constant.
+	\item \underline{$\lambda < 0$.} Then 
+	\begin{align*}
+	X(x) = b_1 e^{\sqrt{-\lambda}x} + b_2 e^{-\sqrt{-\lambda}x}.
+	\end{align*}
+	Plugging in the initial conditions,
+	\begin{align*}
+	\left\{
+	\begin{array}{l}
+	b_1 \sqrt{-\lambda}e^{\sqrt{-\lambda}\pi} - b_2 \sqrt{-\lambda}e^{-\sqrt{-\lambda}\pi} = 0, \\
+	b_1\sqrt{-\lambda}e^{-\sqrt{-\lambda}\pi} - b_2\sqrt{-\lambda}e^{\sqrt{-\lambda}\pi} = 0,
+	\end{array}
+	\right.
+	\end{align*}
+	giving $b_1 = b_2 = 0$.
+	\item \underline{$\lambda > 0$.} Then the eigenfunctions are given by
+	\begin{align*}
+	X(x) = c_1\cos(\sqrt{\lambda}x) + c_2\sin(\sqrt{\lambda}x).
+	\end{align*}
+	Plugging in the initial conditions, we have
+	\begin{align*}
+	\left\{
+	\begin{array}{l}
+	-c_1\sqrt{\lambda}\sin(\sqrt{\lambda}\pi) + c_2\sqrt{\lambda}\cos(\sqrt{\lambda}\pi) = 0, \\
+	c_1\sqrt{\lambda}\sin(\sqrt{\lambda}\pi) + c_2\sqrt{\lambda}\cos(\sqrt{\lambda}\pi) = 0,
+	\end{array}
+	\right.
+	\end{align*}
+	giving
+	\begin{align*}
+	c_1\sin(\sqrt{\lambda}\pi) = c_2\cos(\sqrt{\lambda}\pi) = 0.
+	\end{align*}
+	\begin{enumerate}
+		\item If $c_2 = 0$, then $\lambda = n^2, n = 1, 2, \ldots $ and 
+		\begin{align*}
+		X_n(x) = c_n\cos(nx).
+		\end{align*}
+		Using the same eigenvalues, we have 
+		\begin{align*}
+		T(t) = c_3\cos\left(\frac{n}{2}t\right) + c_4\sin\left(\frac{n}{2}t\right), \qquad T'(0) = 0 \quad\Rightarrow\quad T(t) = c_3\cos\left(\frac{n}{2}t\right).
+		\end{align*}
+		Therefore,
+		\begin{align*}
+		u(x, t) = \sum_{n=1}^{\infty} c_n\cos(nx)\cos\left(\frac{n}{2}t \right).
+		\end{align*} 
+		\item If $c_1 = 0$, then $\lambda = \left(n - \dfrac{1}{2} \right)^2$. Similarly, we have
+		\begin{align*}
+		u(x, t) = \sum_{n=1}^{\infty} d_n\sin\left(\left(n - \frac{1}{2} \right)x \right)\cos\left(\frac{1}{2}\left(n - \frac{1}{2}\right)t \right).
+		\end{align*}
+	\end{enumerate}
+\end{itemize}
+Then the general solution is given by
+\begin{align*}
+u(x, t) = a + \sum_{n=1}^{\infty}c_n\cos(nx)\cos\left(\frac{n}{2}t \right) + \sum_{n=1}^{\infty} d_n\sin\left(\left(n - \frac{1}{2} \right)x \right)\cos\left(\frac{1}{2}\left(n - \frac{1}{2} \right)t \right).
+\end{align*}
+Fitting into the initial condition, we have
+\begin{align*}
+u(x, 0) = a + \sum_{n=1}^{\infty}c_n\cos(nx) + \sum_{n=1}^{\infty} d_n\sin\left(\left(n - \frac{1}{2} \right)x \right) = x^2.
+\end{align*}
+We can prove that the functions
+\begin{align*}
+\left\{\frac{1}{\sqrt{2\pi}}, \frac{1}{\sqrt{\pi}}\cos(nx), \frac{1}{\sqrt{\pi}}\sin\left(\left(n - \frac{1}{2} \right)x \right) \right\}_{n=1}^{\infty}
+\end{align*}
+forms an orthonormal basis on $[-\pi, \pi]$. Therefore, we expand the function $f(x) = x^2$, to this basis with
+\begin{align*}
+a_0 & = \frac{1}{2\pi} \int_{-\pi}^{\pi} x^2dx = \frac{\pi^2}{3}, \\
+a_n & = \frac{1}{\pi}\int_{-\pi}^{\pi} x^2\cos(nx)dx = \frac{1}{n\pi}\left(\left(x^2\sin(nx) \right)\big|_{-\pi}^{\pi} - 2\int_{-\pi}^{\pi} x\sin(nx)dx\right) = \frac{4(-1)^n}{n^2},
+\end{align*}
+with the knowledge that it is an even function. Therefore, the solution to the wave equation is 
+\begin{align*}
+u(x, t) = \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{4(-1)^n}{n^2} \cos(nx) \cos\left(\frac{n}{2}t \right).
+\end{align*}
+
+
+
+
+
+  
+\end{spacing}
+\end{document}

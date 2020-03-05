@@ -1,0 +1,950 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300) (preloaded format=pdflatex 2020.3.4)  4 MAR 2020 15:56
+entering extended mode
+**./homework.tex
+(homework.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-02-25>
+(/home/chxw/.miktex/texmfs/install/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/home/chxw/.miktex/texmfs/install/tex/latex/base/size12.clo
+File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip49
+\f@nch@O@elh=\skip50
+\f@nch@O@erh=\skip51
+\f@nch@O@olh=\skip52
+\f@nch@O@orh=\skip53
+\f@nch@O@elf=\skip54
+\f@nch@O@erf=\skip55
+\f@nch@O@olf=\skip56
+\f@nch@O@orf=\skip57
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/fancyhdr/extramarks.sty
+Package: extramarks 2019/01/31 v3.10 Extra marks for LaTeX
+\@temptokenb=\toks15
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip58
+
+For additional information on amsmath, use the `?' option.
+(/home/chxw/.miktex/texmfs/install/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen135
+))
+(/home/chxw/.miktex/texmfs/install/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen136
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count175
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count176
+\leftroot@=\count177
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count178
+\DOTSCASE@=\count179
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen137
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count180
+\c@MaxMatrixCols=\count181
+\dotsspace@=\muskip16
+\c@parentequation=\count182
+\dspbrk@lvl=\count183
+\tag@help=\toks17
+\row@=\count184
+\column@=\count185
+\maxfields@=\count186
+\andhelp@=\toks18
+\eqnshift@=\dimen138
+\alignsep@=\dimen139
+\tagshift@=\dimen140
+\tagwidth@=\dimen141
+\totwidth@=\dimen142
+\lineht@=\dimen143
+\@envbody=\toks19
+\multlinegap=\skip59
+\multlinetaggap=\skip60
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/amscls/amsthm.sty
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip61
+\thm@postskip=\skip62
+\thm@headsep=\skip63
+\dth@everypar=\toks26
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/pgf/frontendlayer/tikz.sty
+(/home/chxw/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgf.sty
+(/home/chxw/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfrcs.sty
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks27
+\pgfutil@tempdima=\dimen144
+\pgfutil@tempdimb=\dimen145
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-common-lis
+ts.tex))
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box47
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
+))
+Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgfcore.sty
+(/home/chxw/.miktex/texmfs/install/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks28
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen146
+\Gin@req@width=\dimen147
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/pgf/systemlayer/pgfsys.sty
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks29
+\pgfkeys@temptoks=\toks30
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeysfiltered.co
+de.tex
+\pgfkeys@tmptoks=\toks31
+))
+\pgf@x=\dimen148
+\pgf@y=\dimen149
+\pgf@xa=\dimen150
+\pgf@ya=\dimen151
+\pgf@xb=\dimen152
+\pgf@yb=\dimen153
+\pgf@xc=\dimen154
+\pgf@yc=\dimen155
+\pgf@xd=\dimen156
+\pgf@yd=\dimen157
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count187
+\c@pgf@countb=\count188
+\c@pgf@countc=\count189
+\c@pgf@countd=\count190
+\t@pgf@toka=\toks32
+\t@pgf@tokb=\toks33
+\t@pgf@tokc=\toks34
+\pgf@sys@id@count=\count191
+ (/home/chxw/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-pdftex.de
+f
+File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-common-pd
+f.def
+File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsyssoftpath.c
+ode.tex
+File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfsyssoftpath@smallbuffer@items=\count192
+\pgfsyssoftpath@bigbuffer@items=\count193
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsysprotocol.c
+ode.tex
+File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)) (/home/chxw/.miktex/texmfs/install/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen158
+\pgfmath@count=\count194
+\pgfmath@box=\box48
+\pgfmath@toks=\toks35
+\pgfmath@stack@operand=\toks36
+\pgfmath@stack@operation=\toks37
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.code.t
+ex
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.basic.
+code.tex)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.trigon
+ometric.code.tex)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.random
+.code.tex)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.compar
+ison.code.tex)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.base.c
+ode.tex)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.round.
+code.tex)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.misc.c
+ode.tex)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.intege
+rarithmetics.code.tex)))
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count195
+)) (/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfint.code.tex)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepoints.cod
+e.tex
+File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@picminx=\dimen159
+\pgf@picmaxx=\dimen160
+\pgf@picminy=\dimen161
+\pgf@picmaxy=\dimen162
+\pgf@pathminx=\dimen163
+\pgf@pathmaxx=\dimen164
+\pgf@pathminy=\dimen165
+\pgf@pathmaxy=\dimen166
+\pgf@xx=\dimen167
+\pgf@xy=\dimen168
+\pgf@yx=\dimen169
+\pgf@yy=\dimen170
+\pgf@zx=\dimen171
+\pgf@zy=\dimen172
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathconstr
+uct.code.tex
+File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@path@lastx=\dimen173
+\pgf@path@lasty=\dimen174
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathusage.
+code.tex
+File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@shorten@end@additional=\dimen175
+\pgf@shorten@start@additional=\dimen176
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorescopes.cod
+e.tex
+File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfpic=\box49
+\pgf@hbox=\box50
+\pgf@layerbox@main=\box51
+\pgf@picture@serial@count=\count196
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoregraphicsta
+te.code.tex
+File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgflinewidth=\dimen177
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretransforma
+tions.code.tex
+File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@pt@x=\dimen178
+\pgf@pt@y=\dimen179
+\pgf@pt@temp=\dimen180
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorequick.code
+.tex
+File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreobjects.co
+de.tex
+File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathproces
+sing.code.tex
+File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorearrows.cod
+e.tex
+File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfarrowsep=\dimen181
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreshade.code
+.tex
+File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@max=\dimen182
+\pgf@sys@shading@range@num=\count197
+\pgf@shadingcount=\count198
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreimage.code
+.tex
+File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreexternal.c
+ode.tex
+File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfexternal@startupbox=\box52
+))
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorelayers.cod
+e.tex
+File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretransparen
+cy.code.tex
+File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepatterns.c
+ode.tex
+File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorerdf.code.t
+ex
+File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleshapes.code
+.tex
+File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfnodeparttextbox=\box53
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleplot.code.t
+ex
+File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-version-
+0-65.sty
+Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@nodesepstart=\dimen183
+\pgf@nodesepend=\dimen184
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-version-
+1-18.sty
+Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/home/chxw/.miktex/texmfs/install/tex/latex/pgf/utilities/pgffor.sty
+(/home/chxw/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfkeys.sty
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/home/chxw/.miktex/texmfs/install/tex/latex/pgf/math/pgfmath.sty
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex))
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen185
+\pgffor@skip=\dimen186
+\pgffor@stack=\toks38
+\pgffor@toks=\toks39
+))
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/tikz.code
+.tex
+Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibraryplothand
+lers.code.tex
+File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@plot@mark@count=\count199
+\pgfplotmarksize=\dimen187
+)
+\tikz@lastx=\dimen188
+\tikz@lasty=\dimen189
+\tikz@lastxsaved=\dimen190
+\tikz@lastysaved=\dimen191
+\tikz@lastmovetox=\dimen192
+\tikz@lastmovetoy=\dimen193
+\tikzleveldistance=\dimen194
+\tikzsiblingdistance=\dimen195
+\tikz@figbox=\box54
+\tikz@figbox@bg=\box55
+\tikz@tempbox=\box56
+\tikz@tempbox@bg=\box57
+\tikztreelevel=\count266
+\tikznumberofchildren=\count267
+\tikznumberofcurrentchild=\count268
+\tikz@fig@count=\count269
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmodulematrix.code
+.tex
+File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfmatrixcurrentrow=\count270
+\pgfmatrixcurrentcolumn=\count271
+\pgf@matrix@numberofcolumns=\count272
+)
+\tikz@expandcount=\count273
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries
+/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(/home/chxw/.miktex/texmfs/install/tex/latex/lipsum/lipsum.sty
+(/home/chxw/.miktex/texmfs/install/tex/latex/l3kernel/expl3.sty
+Package: expl3 2020-02-25 L3 programming layer (loader) 
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count274
+\l__pdf_internal_box=\box58
+))
+(/home/chxw/.miktex/texmfs/install/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2020-02-25 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count275
+\g__xparse_grabber_int=\count276
+\l__xparse_m_args_int=\count277
+\l__xparse_v_nesting_int=\count278
+)
+Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/lipsum/lipsum.ltd.tex
+File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
+))
+(/home/chxw/.miktex/texmfs/install/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count279
+\float@exts=\toks40
+\float@box=\box59
+\@float@everytoks=\toks41
+\@floatcapt=\box60
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks42
+\c@algorithm=\count280
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count281
+\c@ALG@rem=\count282
+\c@ALG@nested=\count283
+\ALG@tlm=\skip64
+\ALG@thistlm=\skip65
+\c@ALG@Lnr=\count284
+\c@ALG@blocknr=\count285
+\c@ALG@storecount=\count286
+\c@ALG@tmpcounter=\count287
+\ALG@tmplength=\skip66
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/home/chxw/.miktex/texmfs/install/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+))
+\Gm@cnth=\count288
+\Gm@cntv=\count289
+\c@Gm@tempcnt=\count290
+\Gm@bindingoffset=\dimen196
+\Gm@wd@mp=\dimen197
+\Gm@odd@mp=\dimen198
+\Gm@even@mp=\dimen199
+\Gm@layoutwidth=\dimen256
+\Gm@layoutheight=\dimen257
+\Gm@layouthoffset=\dimen258
+\Gm@layoutvoffset=\dimen259
+\Gm@dimlist=\toks43
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/geometry/geometry.cfg))
+(/home/chxw/.miktex/texmfs/install/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip67
+\subfigcapskip=\skip68
+\subfigcaptopadj=\dimen260
+\subfigbottomskip=\skip69
+\subfigcapmargin=\dimen261
+\subfiglabelskip=\skip70
+\c@subfigure=\count291
+\c@lofdepth=\count292
+\c@subtable=\count293
+\c@lotdepth=\count294
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/home/chxw/.miktex/texmfs/install/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip71
+\subfig@bottom=\skip72
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/jknappen/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/tools/bm.sty
+Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup7
+\symboldletters=\mathgroup8
+\symboldsymbols=\mathgroup9
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 209.
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen262
+\lightrulewidth=\dimen263
+\cmidrulewidth=\dimen264
+\belowrulesep=\dimen265
+\belowbottomsep=\dimen266
+\aboverulesep=\dimen267
+\abovetopsep=\dimen268
+\cmidrulesep=\dimen269
+\cmidrulekern=\dimen270
+\defaultaddspace=\dimen271
+\@cmidla=\count295
+\@cmidlb=\count296
+\@aboverulesep=\dimen272
+\@belowrulesep=\dimen273
+\@thisruleclass=\count297
+\@lastruleclass=\count298
+\@thisrulewidth=\dimen274
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/gauss/gauss.sty
+Package: gauss 2003/01/14
+\g@trash=\box61
+\g@matrixbox=\box62
+\g@eastbox=\box63
+\g@northbox=\box64
+\g@label=\box65
+\g@b@tmp=\box66
+\g@b@tmpa=\box67
+\g@b@tmpb=\box68
+\g@maxrow=\count299
+\g@maxcol=\count300
+\g@maxrow@old=\count301
+\g@maxcol@old=\count302
+\g@c@tmp=\count303
+\g@c@tmpa=\count304
+\g@axisHeight=\dimen275
+\g@linethickness=\dimen276
+\g@tab=\dimen277
+\g@arrowht=\dimen278
+\g@arrowwd=\dimen279
+\g@d@tmp=\dimen280
+\g@d@tmpa=\dimen281
+\g@d@tmpb=\dimen282
+\g@d@tmpc=\dimen283
+\g@d@tmpd=\dimen284
+\g@d@tmpe=\dimen285
+\g@loopCount=\count305
+\g@loopEnd=\count306
+\g@loopStep=\count307
+\colarrowsep=\dimen286
+\rowarrowsep=\dimen287
+\opskip=\dimen288
+\labelskip=\dimen289
+\colopminsize=\dimen290
+\rowopminsize=\dimen291
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/bbold/bbold.sty
+Package: bbold 1994/04/06 Bbold symbol package
+LaTeX Font Info:    Redeclaring math alphabet \mathbb on input line 42.
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xy.sty
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xy.tex Bootstrap'ing:
+catcodes, docmode,
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xyrecat.tex)
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xyidioms.tex)
+
+ Xy-pic version 3.8.9 <2013/10/06>
+ Copyright (c) 1991-2013 by Kristoffer H. Rose <krisrose@tug.org> and others
+ Xy-pic is free software: see the User's Guide for details.
+
+Loading kernel: messages; fonts; allocations: state,
+\X@c=\dimen292
+\Y@c=\dimen293
+\U@c=\dimen294
+\D@c=\dimen295
+\L@c=\dimen296
+\R@c=\dimen297
+\Edge@c=\toks44
+\X@p=\dimen298
+\Y@p=\dimen299
+\U@p=\dimen300
+\D@p=\dimen301
+\L@p=\dimen302
+\R@p=\dimen303
+\Edge@p=\toks45
+\X@origin=\dimen304
+\Y@origin=\dimen305
+\X@xbase=\dimen306
+\Y@xbase=\dimen307
+\X@ybase=\dimen308
+\Y@ybase=\dimen309
+\X@min=\dimen310
+\Y@min=\dimen311
+\X@max=\dimen312
+\Y@max=\dimen313
+\lastobjectbox@=\box69
+\zerodotbox@=\box70
+\almostz@=\dimen314
+ direction,
+\d@X=\dimen315
+\d@Y=\dimen316
+\K@=\count308
+\KK@=\count309
+\Direction=\count310
+\K@dXdY=\dimen317
+\K@dYdX=\dimen318
+\xyread@=\read3
+\xywrite@=\write4
+\csp@=\count311
+\quotPTK@=\dimen319
+
+utility macros; pictures: \xy, positions,
+\swaptoks@@=\toks46
+\connectobjectbox@@=\box71
+ objects,
+\styletoks@=\toks47
+ decorations;
+kernel objects: directionals, circles, text; options; algorithms: directions,
+edges, connections;  Xy-pic loaded)
+(/home/chxw/.miktex/texmfs/install/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+)
+Package: xy 2013/10/06 Xy-pic version 3.8.9
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xyall.tex
+ Xy-pic option: All features v.3.8
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xycurve.tex
+ Xy-pic option: Curve and Spline extension v.3.12 curve,
+\crv@cnt@=\count312
+\crvpts@=\toks48
+\splinebox@=\box72
+\splineval@=\dimen320
+\splinedepth@=\dimen321
+\splinetol@=\dimen322
+\splinelength@=\dimen323
+ circles,
+\L@=\dimen324
+ loaded)
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xyframe.tex
+ Xy-pic option: Frame and Bracket extension v.3.14 loaded)
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xycmtip.tex
+ Xy-pic option: Computer Modern tip extension v.3.7
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xytips.tex
+ Xy-pic option: More Tips extension v.3.11 loaded) loaded)
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xyline.tex
+ Xy-pic option: Line styles extension v.3.10
+\xylinethick@=\dimen325
+ loaded)
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xyrotate.tex
+ Xy-pic option: Rotate and Scale extension v.3.8 loaded)
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xycolor.tex
+ Xy-pic option: Colour extension v.3.11 loaded)
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xymatrix.tex
+ Xy-pic option: Matrix feature v.3.14
+\Row=\count313
+\Col=\count314
+\queue@=\toks49
+\queue@@=\toks50
+\qcount@=\count315
+\qcount@@=\count316
+\matrixsize@=\count317
+ loaded)
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xyarrow.tex
+ Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded)
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xygraph.tex
+ Xy-pic option: Graph feature v.3.11 loaded) loaded)
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xypdf.tex
+ Xy-pic option: PDF driver v.1.7 Xy-pic pdf driver: `color' extension support
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xypdf-co.tex loaded)
+Xy-pic pdf driver: `curve' extension support
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xypdf-cu.tex loaded)
+Xy-pic pdf driver: `frame' extension support
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xypdf-fr.tex loaded)
+Xy-pic pdf driver: `line' extension support
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xypdf-li.tex loaded)
+Xy-pic pdf driver: `rotate' extension support
+(/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xypdf-ro.tex loaded)
+loaded))
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries
+/tikzlibraryautomata.code.tex
+File: tikzlibraryautomata.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries
+/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibrarys
+hapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfnodepartlowerbox=\box73
+\pgfnodeparttwobox=\box74
+\pgfnodepartthreebox=\box75
+\pgfnodepartfourbox=\box76
+\pgfnodeparttwentybox=\box77
+\pgfnodepartnineteenbox=\box78
+\pgfnodeparteighteenbox=\box79
+\pgfnodepartseventeenbox=\box80
+\pgfnodepartsixteenbox=\box81
+\pgfnodepartfifteenbox=\box82
+\pgfnodepartfourteenbox=\box83
+\pgfnodepartthirteenbox=\box84
+\pgfnodeparttwelvebox=\box85
+\pgfnodepartelevenbox=\box86
+\pgfnodeparttenbox=\box87
+\pgfnodepartninebox=\box88
+\pgfnodeparteightbox=\box89
+\pgfnodepartsevenbox=\box90
+\pgfnodepartsixbox=\box91
+\pgfnodepartfivebox=\box92
+)))
+(/home/chxw/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries
+/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+) (homework.aux)
+\openout1 = `homework.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+
+ABD: EveryShipout initializing macros
+(/home/chxw/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count318
+\scratchdimen=\dimen326
+\scratchbox=\box93
+\nofMPsegments=\count319
+\nofMParguments=\count320
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count321
+\MPscratchDim=\dimen327
+\MPnumerator=\count322
+\makeMPintoPDFobject=\count323
+\everyMPtoPDFconversion=\toks52
+) (/home/chxw/.miktex/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/home/chxw/.miktex/texmfs/install/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+))
+(/home/chxw/.miktex/texmfs/install/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+
+(/home/chxw/.miktex/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+(/home/chxw/.miktex/texmfs/install/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+(/home/chxw/.miktex/texmfs/install/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=702.78308pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
+
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 51
+.
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/jknappen/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+Package xypdf Info: Line width: 0.47998pt on input line 51.
+<./logo.png, id=4, 359.4228pt x 98.2872pt>
+File: ./logo.png Graphic file (type png)
+<use ./logo.png>
+Package pdftex.def Info: ./logo.png  used on input line 59.
+(pdftex.def)             Requested size: 338.58632pt x 92.59242pt.
+ [1
+
+{/home/chxw/.miktex/texmfs/data/pdftex/config/pdftex.map} <./logo.png>]
+LaTeX Font Info:    Trying to load font information for U+bbold on input line 8
+4.
+
+(/home/chxw/.miktex/texmfs/install/tex/latex/jknappen/ubbold.fd
+File: ubbold.fd 1996/01/01 Blackboard Bold Font Definition File (jk)
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+Make it at least 14.49998pt.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however.
+
+[1] [2] [3] [4] [5] [6] [7] [8] (homework.aux) ) 
+Here is how much of TeX's memory you used:
+ 18408 strings out of 483239
+ 350414 string characters out of 2961312
+ 724573 words of memory out of 3000000
+ 33219 multiletter control sequences out of 15000+200000
+ 544753 words of font info for 74 fonts, out of 3000000 for 9000
+ 0 hyphenation exceptions out of 8191
+ 60i,15n,66p,3221b,341s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/chxw/.miktex/texmfs/dat
+a/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk> </home/chxw/.miktex/texmfs/da
+ta/fonts/pk/ljfour/public/bbold/dpi600/bbold12.pk></home/chxw/.miktex/texmfs/in
+stall/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/chxw/.miktex/texmfs/inst
+all/fonts/type1/public/amsfonts/cm/cmbx12.pfb></home/chxw/.miktex/texmfs/instal
+l/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/chxw/.miktex/texmfs/install/
+fonts/type1/public/amsfonts/cm/cmmi12.pfb></home/chxw/.miktex/texmfs/install/fo
+nts/type1/public/amsfonts/cm/cmmi8.pfb></home/chxw/.miktex/texmfs/install/fonts
+/type1/public/amsfonts/cm/cmr12.pfb></home/chxw/.miktex/texmfs/install/fonts/ty
+pe1/public/amsfonts/cm/cmr6.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/
+public/amsfonts/cm/cmr8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public
+/amsfonts/cm/cmsy6.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/am
+sfonts/cm/cmsy8.pfb>
+Output written on homework.pdf (9 pages, 186257 bytes).
+PDF statistics:
+ 92 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+
