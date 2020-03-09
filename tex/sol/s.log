@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300) (preloaded format=pdflatex 2020.3.4)  4 MAR 2020 15:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300) (preloaded format=pdflatex 2020.3.6)  7 MAR 2020 23:42
 entering extended mode
-**./homework.tex
-(homework.tex
+**./s.tex
+(s.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-02-25>
+L3 programming layer <2020-03-03>
 (/home/chxw/.miktex/texmfs/install/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 (/home/chxw/.miktex/texmfs/install/tex/latex/base/size12.clo
@@ -443,7 +443,7 @@ File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )))
 (/home/chxw/.miktex/texmfs/install/tex/latex/lipsum/lipsum.sty
 (/home/chxw/.miktex/texmfs/install/tex/latex/l3kernel/expl3.sty
-Package: expl3 2020-02-25 L3 programming layer (loader) 
+Package: expl3 2020-03-03 L3 programming layer (loader) 
 
 (/home/chxw/.miktex/texmfs/install/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
@@ -780,8 +780,8 @@ File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/home/chxw/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries
 /tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-) (homework.aux)
-\openout1 = `homework.aux'.
+) (s.aux)
+\openout1 = `s.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
 LaTeX Font Info:    ... okay on input line 51.
@@ -906,45 +906,62 @@ Package pdftex.def Info: ./logo.png  used on input line 59.
 (pdftex.def)             Requested size: 338.58632pt x 92.59242pt.
  [1
 
-{/home/chxw/.miktex/texmfs/data/pdftex/config/pdftex.map} <./logo.png>]
-LaTeX Font Info:    Trying to load font information for U+bbold on input line 8
-4.
+{/home/chxw/.miktex/texmfs/data/pdftex/config/pdftex.map} <./logo.png>] (s1.tex
 
-(/home/chxw/.miktex/texmfs/install/tex/latex/jknappen/ubbold.fd
-File: ubbold.fd 1996/01/01 Blackboard Bold Font Definition File (jk)
-)
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--23
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--23
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
 Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[1] [2] [3] [4] [5] [6] [7] [8] (homework.aux) ) 
+[1]
+Underfull \hbox (badness 10000) in paragraph at lines 48--52
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--52
+
+ []
+
+[2] [3]) [4] (s.aux) ) 
 Here is how much of TeX's memory you used:
- 18408 strings out of 483239
- 350414 string characters out of 2961312
- 724573 words of memory out of 3000000
- 33219 multiletter control sequences out of 15000+200000
- 544753 words of font info for 74 fonts, out of 3000000 for 9000
+ 18399 strings out of 483220
+ 350058 string characters out of 2960973
+ 724441 words of memory out of 3000000
+ 33232 multiletter control sequences out of 15000+200000
+ 544561 words of font info for 72 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 60i,15n,66p,3221b,341s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/chxw/.miktex/texmfs/dat
-a/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk> </home/chxw/.miktex/texmfs/da
-ta/fonts/pk/ljfour/public/bbold/dpi600/bbold12.pk></home/chxw/.miktex/texmfs/in
-stall/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/chxw/.miktex/texmfs/inst
-all/fonts/type1/public/amsfonts/cm/cmbx12.pfb></home/chxw/.miktex/texmfs/instal
-l/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/chxw/.miktex/texmfs/install/
-fonts/type1/public/amsfonts/cm/cmmi12.pfb></home/chxw/.miktex/texmfs/install/fo
-nts/type1/public/amsfonts/cm/cmmi8.pfb></home/chxw/.miktex/texmfs/install/fonts
-/type1/public/amsfonts/cm/cmr12.pfb></home/chxw/.miktex/texmfs/install/fonts/ty
-pe1/public/amsfonts/cm/cmr6.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/
-public/amsfonts/cm/cmr8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public
-/amsfonts/cm/cmsy6.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/am
-sfonts/cm/cmsy8.pfb>
-Output written on homework.pdf (9 pages, 186257 bytes).
+ 60i,12n,66p,3214b,339s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/chxw/.miktex/texmfs/data/fonts/pk/ljfour/jknappen
+/ec/dpi600/tcrm1200.pk></home/chxw/.miktex/texmfs/install/fonts/type1/public/am
+sfonts/cm/cmbx10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsf
+onts/cm/cmbx12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfon
+ts/cm/cmbxti10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfon
+ts/cm/cmex10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts
+/cm/cmmi12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/c
+m/cmmi8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8
+.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+
+Output written on s.pdf (5 pages, 161927 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
+ 69 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

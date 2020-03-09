@@ -1,1 +1,12 @@
-\beamer@sectionintoc {1}{Outline}{3}{0}{1}
+\beamer@sectionintoc {1}{Introduction to Probability}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Set Theory and Probability}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Counting Methods}{9}{0}{1}
+\beamer@sectionintoc {2}{Conditional Probability}{13}{0}{2}
+\beamer@subsectionintoc {2}{1}{Definition of Conditional Probability}{13}{0}{2}
+\beamer@subsectionintoc {2}{2}{Bayes's Theorem}{17}{0}{2}
+\beamer@sectionintoc {3}{Supplementary Discussions}{21}{0}{3}
+\beamer@subsectionintoc {3}{1}{Banach Matchbox Problem}{21}{0}{3}
+\beamer@subsectionintoc {3}{2}{Two Envelopes Problem}{27}{0}{3}
+\beamer@sectionintoc {4}{Exercises}{37}{0}{4}
+\beamer@subsectionintoc {4}{1}{Counting Methods}{37}{0}{4}
+\beamer@subsectionintoc {4}{2}{Conditional Probability}{39}{0}{4}

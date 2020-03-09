@@ -1,5 +1,5 @@
-\documentclass[hyperref={pdfpagelabels=true}]{beamer}
-%\usepackage{etex} % Math fonts misbehave
+\documentclass[11pt, hyperref={pdfpagelabels=true}]{beamer}
+%\usepackage{etex} % math fonts misbehave
 \usepackage{lmodern} 
 %\usefonttheme{structurebold}
 
@@ -15,24 +15,28 @@
 \usepackage{xcolor}
 \usepackage{ragged2e}
 \usepackage{mathrsfs}
-\usepackage{bbold}
+%\usepackage{bbold} % missing 11pt
 \usepackage[all]{xy}
 
 \setbeamertemplate{footline}[frame number]
 \setbeamercolor{normal text}{bg=white!10}
 \setbeamertemplate{theorems}[numbered]
 
-\newcommand{\C}{\mathbb{C}} \newcommand{\F}{\mathbb{F}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}} 
+\newcommand{\F}{\mathbb{F}} 
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\Q}{\mathbb{Q}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-\newcommand{\U}{\mathrm}
-\newcommand{\celsius}{\ensuremath{^{\circ}\mathrm{C}}}
+\newcommand{\U}{\mathsf}
+\newcommand{\celsius}{\ensuremath{^{\circ}\mathsf{C}}}
 \newcommand{\myseries}[2]{#1_1,\ldots,#1_{#2}}
 \newcommand{\highlightr}[1]{\textcolor[rgb]{1,0.3,0.2}{\emph{\textbf{#1}}}}
 \newcommand{\highlightg}[1]{\textcolor[rgb]{0.1,0.5,0.3}{\emph{\textbf{#1}}}}
 \newcommand{\structb}[1]{\textcolor[rgb]{0.2,0.2,0.7}{#1}}
+\newcommand{\red}[1]{\textcolor[rgb]{1,0,0}{#1}}
 \newcommand{\bemph}[1]{\emph{\textbf{#1}}}
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
 
@@ -66,12 +70,7 @@
 \tableofcontents
 \end{frame} 
 
-
-\section{Outline}
-
-
-
-
+\input{rc1}
 
 
 \begin{frame}{}

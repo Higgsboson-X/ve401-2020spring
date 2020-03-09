@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300) (preloaded format=pdflatex 2020.3.4)  4 MAR 2020 15:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300) (preloaded format=pdflatex 2020.3.6)  8 MAR 2020 15:06
 entering extended mode
 **./rc.tex
 (rc.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-02-25>
+L3 programming layer <2020-03-03>
 (/home/chxw/.miktex/texmfs/install/tex/latex/beamer/beamer.cls
 Document Class: beamer 2019/09/29 v3.57 A class for typesetting presentations
 (/home/chxw/.miktex/texmfs/install/tex/latex/beamer/beamerbasemodes.sty
@@ -732,7 +732,7 @@ Package: gauss 2003/01/14
 )
 (/home/chxw/.miktex/texmfs/install/tex/latex/lipsum/lipsum.sty
 (/home/chxw/.miktex/texmfs/install/tex/latex/l3kernel/expl3.sty
-Package: expl3 2020-02-25 L3 programming layer (loader) 
+Package: expl3 2020-03-03 L3 programming layer (loader) 
 
 (/home/chxw/.miktex/texmfs/install/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
@@ -805,10 +805,6 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 (/home/chxw/.miktex/texmfs/install/tex/latex/jknappen/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
-)
-(/home/chxw/.miktex/texmfs/install/tex/latex/bbold/bbold.sty
-Package: bbold 1994/04/06 Bbold symbol package
-LaTeX Font Info:    Redeclaring math alphabet \mathbb on input line 42.
 )
 (/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xy.sty
 (/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xy.tex Bootstrap'ing:
@@ -927,24 +923,24 @@ Xy-pic pdf driver: `rotate' extension support
 loaded)) (rc.aux)
 \openout1 = `rc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-55.
+59.
  (/home/chxw/.miktex/texmfs/install/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1010,7 +1006,7 @@ G,.JBIG2,.JB2,.eps]
 )
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box87
-Package hyperref Info: Link coloring OFF on input line 55.
+Package hyperref Info: Link coloring OFF on input line 59.
 
 (/home/chxw/.miktex/texmfs/install/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1024,59 +1020,59 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count345
 )
-LaTeX Info: Redefining \ref on input line 55.
-LaTeX Info: Redefining \pageref on input line 55.
-LaTeX Info: Redefining \nameref on input line 55.
+LaTeX Info: Redefining \ref on input line 59.
+LaTeX Info: Redefining \pageref on input line 59.
+LaTeX Info: Redefining \nameref on input line 59.
  (rc.out) (rc.out)
 \@outlinefile=\write6
 \openout6 = `rc.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 55.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 59.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 55.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 59.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 55.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 59.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 55.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 59.
 \symnumbers=\mathgroup7
 \sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> OT1/lmr/m/n on input line 55.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 55.
+(Font)                  OT1/lmss/m/n --> OT1/lmr/m/n on input line 59.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 59.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> OT1/lmss/b/n on input line 55.
+(Font)                  OT1/lmr/bx/n --> OT1/lmss/b/n on input line 59.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/lmss/b/n on input line 55.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 55.
+(Font)                  OT1/lmr/bx/n --> OT1/lmss/b/n on input line 59.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 59.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/m/n on input line 55.
+(Font)                  OT1/lmss/m/n --> OT1/lmss/m/n on input line 59.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> OT1/lmss/m/n on input line 55.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 55.
+(Font)                  OT1/lmss/bx/n --> OT1/lmss/m/n on input line 59.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 59.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> OT1/lmss/m/it on input line 55.
+(Font)                  OT1/lmr/m/it --> OT1/lmss/m/it on input line 59.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> OT1/lmss/m/it on input line 55.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 55.
+(Font)                  OT1/lmr/bx/it --> OT1/lmss/m/it on input line 59.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 59.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 55.
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 59.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 55.
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 59.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/b/n on input line 55.
+(Font)                  OT1/lmss/m/n --> OT1/lmss/b/n on input line 59.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/lmss/m/it --> OT1/lmss/b/it on input line 55.
+(Font)                  OT1/lmss/m/it --> OT1/lmss/b/it on input line 59.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> OT1/lmr/b/n on input line 55.
+(Font)                  OT1/lmss/b/n --> OT1/lmr/b/n on input line 59.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmss/b/n --> OT1/lmss/b/n on input line 55.
+(Font)                  OT1/lmss/b/n --> OT1/lmss/b/n on input line 59.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/b/n on input line 55.
+(Font)                  OT1/lmss/m/n --> OT1/lmss/b/n on input line 59.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmss/m/it --> OT1/lmss/b/it on input line 55.
+(Font)                  OT1/lmss/m/it --> OT1/lmss/b/it on input line 59.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/b/n on input line 55.
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/b/n on input line 59.
 
 (/home/chxw/.miktex/texmfs/install/tex/latex/translator/translator-basic-dictio
 nary-English.dict
@@ -1102,63 +1098,193 @@ Dictionary: translator-numbers-dictionary, Language: English
 ionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 55.
+LaTeX Info: Redefining \selectfont on input line 59.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
-5.
+9.
 
 (/home/chxw/.miktex/texmfs/install/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-55.
+59.
 
 (/home/chxw/.miktex/texmfs/install/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-55.
+59.
 
 (/home/chxw/.miktex/texmfs/install/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 55.
+(Font)              <10.95> on input line 59.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 55.
+(Font)              <8> on input line 59.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 55.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+(Font)              <6> on input line 59.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
 
 
 (/home/chxw/.miktex/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
 
 
 (/home/chxw/.miktex/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 55
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 59
 .
 
 (/home/chxw/.miktex/texmfs/install/tex/latex/jknappen/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 55.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 59.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 55.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 59.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 55.
-Package xypdf Info: Line width: 0.39998pt on input line 55.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 59.
+Package xypdf Info: Line width: 0.39998pt on input line 59.
  (rc.nav)
 [1
 
 {/home/chxw/.miktex/texmfs/data/pdftex/config/pdftex.map}] (rc.toc) [2
 
 ]
-[3
+(rc1.tex (rc.toc) [3
+
+]
+LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <10.95> not available
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 23.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+
+ []
+
+[4
+
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 41.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 41.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 41.
+LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <5> not available
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 41.
+ [5
+
+] [6
+
+] [7
+
+] [8
+
+] (rc.toc) [9
+
+] [10
+
+] [11
+
+] [12
+
+] (rc.toc) [13
+
+] [14
+
+] [15
+
+]
+[16
+
+] (rc.toc) [17
+
+] [18
+
+] [19
+
+] [20
+
+] (rc.toc) [21
+
+] [22
+
+]
+Overfull \hbox (3.05103pt too wide) in paragraph at lines 216--216
+\OT1/lmss/m/n/10.95 Since the empty pocket can be either right or left, the tot
+al probability
+ []
+
+[23
+
+] [24
+
+] [25
+
+] [26
+
+] (rc.toc) [27
+
+] [28
+
+]
+Overfull \hbox (6.90352pt too wide) in paragraph at lines 266--266
+\OT1/lmss/m/n/10.95 which is the case for both envelopes. Any problem with this
+ argument?[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--266
+
+ []
+
+[29
+
+]
+Overfull \hbox (6.90352pt too wide) in paragraph at lines 266--266
+\OT1/lmss/m/n/10.95 which is the case for both envelopes. Any problem with this
+ argument?[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--266
+
+ []
+
+[30
+
+] [31
+
+] [32
+
+] [33
+
+] [34
+
+] [35
+
+] [36
+
+] (rc.toc) [37
+
+] [38
+
+] (rc.toc) [39
+
+] [40
+
+]
+[41
+
+]) [42
 
 ]
 \tf@nav=\write7
@@ -1170,30 +1296,40 @@ Package xypdf Info: Line width: 0.39998pt on input line 55.
 \tf@snm=\write9
 \openout9 = `rc.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 83.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 83.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 84.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 84.
  (rc.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 83.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 83.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 84.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 84.
 Package rerunfilecheck Info: File `rc.out' has not changed.
-(rerunfilecheck)             Checksum: AA00284689460AEDC65BD14C4004DF51;42.
+(rerunfilecheck)             Checksum: EB2FCAFDAA34BE13603D397D3E11C62A;802.
  ) 
 Here is how much of TeX's memory you used:
- 21569 strings out of 483239
- 398305 string characters out of 2961312
- 775521 words of memory out of 3000000
- 36240 multiletter control sequences out of 15000+200000
- 560201 words of font info for 59 fonts, out of 3000000 for 9000
+ 21911 strings out of 483220
+ 404067 string characters out of 2960973
+ 780426 words of memory out of 3000000
+ 36490 multiletter control sequences out of 15000+200000
+ 583096 words of font info for 81 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 58i,14n,67p,3215b,557s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/home/chxw/.miktex/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}</home/chxw/.
-miktex/texmfs/install/fonts/type1/public/lm/lmss10.pfb></home/chxw/.miktex/texm
-fs/install/fonts/type1/public/lm/lmss12.pfb></home/chxw/.miktex/texmfs/install/
-fonts/type1/public/lm/lmss8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/
-public/lm/lmsso10.pfb>
-Output written on rc.pdf (3 pages, 92008 bytes).
+ 58i,16n,67p,3215b,563s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/home/chxw/.miktex/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/ch
+xw/.miktex/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{/home/chxw/.miktex/texm
+fs/install/fonts/enc/dvips/lm/lm-mathex.enc}{/home/chxw/.miktex/texmfs/install/
+fonts/enc/dvips/lm/lm-mathit.enc}</home/chxw/.miktex/texmfs/install/fonts/type1
+/public/lm/lmex10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/
+lmmi10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmss10.pfb>
+</home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmss12.pfb></home/chxw
+/.miktex/texmfs/install/fonts/type1/public/lm/lmss8.pfb></home/chxw/.miktex/tex
+mfs/install/fonts/type1/public/lm/lmssbo10.pfb></home/chxw/.miktex/texmfs/insta
+ll/fonts/type1/public/lm/lmsso10.pfb></home/chxw/.miktex/texmfs/install/fonts/t
+ype1/public/lm/lmsso8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public
+/lm/lmsy10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmsy8.p
+fb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/symbols/msam1
+0.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb>
+Output written on rc.pdf (42 pages, 440562 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 8 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1304 PDF objects out of 1440 (max. 8388607)
+ 97 named destinations out of 1000 (max. 500000)
+ 139 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,362 @@
+\section{Introduction to Probability}
+
+\subsection{Set Theory and Probability}
+
+\begin{frame}{Countable/Uncountable Sets}
+
+\justifying
+\structb{Definition.} An infinite set $A$ is \highlightg{countable} if there is a bijective function between the elements of $A$ and the set of natural numbers $\{1, 2, 3, \ldots\}$. A set is uncountable if it is neither finite nor countable.
+~\\
+~\\
+\justifying
+\structb{Example 1.} The set of integers is countable because the function
+\begin{align*}
+f: \N\rightarrow \Z, \qquad n\mapsto \left\{
+\begin{array}{ll}
+\dfrac{n-1}{2}, & n\U{\ is\ odd\ }, \\
+-\dfrac{n}{2}, & n\U{\ is\ even\ }
+\end{array}
+\right.
+\end{align*}
+is bijective.
+
+\end{frame}
+
+\begin{frame}{Sample Space and Events}
+
+\structb{Definitions.}
+\begin{itemize}
+	\justifying
+	\item \highlightg{Sample space}: a space containing all possible outcomes of an experiment.
+	\item \highlightg{Event}: a subset of sample space, containing possible outcomes of the experiment.
+	\item \highlightg{$\sigma$-field}: $\mathcal{F}$ on $S$ is a family of subsets of $S$ s.t.
+	\begin{enumerate}
+		\justifying
+		\item $\emptyset\in \mathcal{F}$;
+		\item if $A\in \mathcal{F}, \mathsf{then\ } S\setminus A \in \mathcal{F}$;
+		\item if $A_1, A_2, \ldots \in \mathcal{F}$ is a finite or countable sequence of subsets, then the union $\bigcup_k A_k\in \mathcal{F}$.
+	\end{enumerate}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Sample Space and Events}
+
+\structb{Example 2.} Suppose a coin is tossed three times. Then the sample space $S$ contains the following possible outcomes:
+\begin{align*}
+s_1 = HHH, \quad s_2 = THH, \quad s_3 = HTH, s_4 = HHT, \\
+s_5 = HTT, \quad s_6 = THT, \quad s_7 = TTH, s_8 = TTT,
+\end{align*}
+where $H$ denotes head and $T$ denotes tail. Then the event that at most two tails are obtained is given by
+\begin{align*}
+A = \{s_1, s_2, s_3, s_4, s_5, s_6, s_7\}.
+\end{align*}
+
+
+\end{frame}
+
+\begin{frame}{Probability Measures and Spaces}
+
+\justifying
+\structb{Definition.} Let $S$ be a sample space and $\mathcal{F}$ a $\sigma$-filed on $S$. Then function
+\begin{align*}
+P: \mathcal{F} \rightarrow [0, 1], \qquad A\mapsto P[A]
+\end{align*}
+is a \highlightg{probability measure} on $S$ if
+\begin{enumerate}
+	\justifying
+	\item[(i)] $P[S] = 1$,
+	\item[(ii)] For any set of events $\{A_k\} \in \mathcal{F}$ such that $A_j\cap A_k = \emptyset$ for $j\neq k$,
+	\begin{align*}
+	P\left[\underset{k}{\bigcup}A_k \right] = \sum_k P[A_k].
+	\end{align*}
+\end{enumerate}
+The triple $(S, \mathcal{F}, P)$ is called a \highlightg{probability space}.
+
+\end{frame}
+
+\begin{frame}{Probability Measures and Spaces}
+
+\justifying
+\structb{Properties.} 
+\begin{itemize}
+	\justifying
+	\item $P[S] = 1$,
+	\item $P[\emptyset] = 0$,
+	\item $P[S\setminus A] = 1 - P[A]$,
+	\item $P[A_1\cup A_2] = P[A_1] + P[A_2] - P[A_1\cap A_2]$,
+\end{itemize}
+where $A, A_1, A_2, \in S$ are any events.
+
+\end{frame}
+
+
+\subsection{Counting Methods}
+
+\begin{frame}{Basic Principles of Counting}
+
+Suppose a set $A$ of $n$ objects is given.
+\begin{itemize}
+	\justifying
+	\item \highlightg{Permutation of $k$ objects}: $\dfrac{n!}{(n-k)!}$ ways of choosing an \underline{ordered} tuple of $k$ objects from $A$.
+	\item \highlightg{Combination of $k$ objects}: $\dfrac{n!}{k!(n-k)!}$ ways of choosing an \underline{unordered} set of $k$ objects from $A$.
+	\item \highlightg{Permutation of $k$ indistinguishable objects}: $\dfrac{n!}{n_1!n_2!\ldots n_k!}$ ways of partitioning $A$ into $k$ disjoint subsets $A_1, \ldots, A_k$ whose union is $A$, where each $A_i$ has $n_i$ elements.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Basic Principles of Counting}
+
+\justifying
+\structb{Example 3.} If the letters \emph{s, s, s, t, t, t, i, i, a, c} are arranged in a random order, what is the probability that they will spell the word ``statistics''?
+\uncover<2>{
+~\\
+~\\
+\structb{Solution.} The problem is equivalent to arranging 5 disjoint subsets, giving the probability
+\begin{align*}
+p = 1\Bigg/\frac{10!}{3!\times 3!\times 2!\times 1\times 1} = \frac{1}{50400}.
+\end{align*}
+}
+
+
+\end{frame}
+
+\section{Conditional Probability}
+
+\subsection{Definition of Conditional Probability}
+
+\begin{frame}{Conditional Probability}
+
+\structb{Definitions and Results.}
+\begin{itemize}
+	\justifying
+	\item \highlightg{Conditional probability} of ``$A$ occurs given $A$ has occurred'': $P[B|A] := \dfrac{P[A_1\cap A_2]}{P[A_2]}$.
+	\item \highlightg{Independence} of events $A$ and $B$: $P[A\cap B] = P[A]P[B]$, which is equivalent to
+	\begin{align*}
+	P[A|B] = P[A] \qquad \U{if}\ P[B]\neq 0, \\
+	P[B|A] = P[B] \qquad \U{if}\ P[A]\neq 0.
+	\end{align*}
+	\item \highlightg{Total probability} for $P[B]$ on a sample space $S$, given events $A_1, \ldots, A_n \in S$ are mutually exclusive and $A_1\cup\cdots\cup A_n = S$:
+	\begin{align*}
+	P[B] = \sum_{k=1}^{n} P[B|A_k]\cdot P[A_k].
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Conditional Probability}
+
+\justifying
+\structb{Example 4.} Suppose Keven plays a game where his score must be 1, 2, \ldots, 50, and each of these 50 scores is equally likely. Suppose he get $X$ for his first try. He then continue to play the game until he obtains another score $Y$ such that $Y\geq X$. What is the probability of the event $A$ that $Y = 50$?
+~\\
+~\\
+\pause
+\justifying
+\structb{Solution.} For each $i = 1, \ldots, 50$, let $B_i$ be the event that $X = i$. Then conditional on $B_i$, the value of $Y$ is equally likely to be any one of the numbers $i, i + 1, \ldots, 50$. Therefore, the probability is given by
+\begin{align*}
+P[A] = \sum_{i=1}^{50} P[B_i]\cdot P[A|B_i] = \sum_{i=1}^{50} \frac{1}{50}\cdot \frac{1}{51-i} \approx 0.09.
+\end{align*}
+
+\end{frame}
+
+
+\subsection{Bayes's Theorem}
+
+\begin{frame}{Bayes's Theorem}
+
+\justifying
+\structb{Theorem.} Let $A_1, \ldots, A_n \subset S$ be a set of pairwise mutually exclusive events whose union is $S$ and who each have non-zero probability of occurring. Let $B\subset S$ be any event such that $P[B]\neq 0$. Then for any $A_k, k = 1, \ldots, n$,
+\begin{align*}
+P[A_k|\red{B}] = \frac{P[B\cap A_k]}{P[B]} = \frac{P[B|\red{A_k}]\cdot P[A_k]}{\sum_{j=1}^n P[B|\red{A_j}] \cdot P[A_j]}.
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{Bayes's Theorem}
+
+\justifying
+\structb{Example 5.} A box contains one fair coin and one coin with heads on both sides. Suppose one coin is selected at random and when it is tossed twice, two heads are obtained. What is the probability that the coin is the fair coin?
+~\\
+~\\
+\pause
+\justifying
+\structb{Solution.} Let $E_1$ be the event that the selected coin is fair, and $E_2$ be the event that the selected coin have two heads. Using Bayes's theorem, we have
+\begin{align*}
+P[E_1|HH] & = \frac{P[E_1]P[HH|E_1]}{P[HH|E_2]P[E_2] + P[HH|E_1]P[E_1]} \\
+& = \frac{\dfrac{1}{2}\cdot \dfrac{1}{4}}{1\cdot \dfrac{1}{2} + \dfrac{1}{4}\cdot\dfrac{1}{2}} = \frac{1}{5}.
+\end{align*}
+
+\end{frame}
+
+\section{Supplementary Discussions}
+
+\subsection{Banach Matchbox Problem}
+
+\begin{frame}{Banach Matchbox Problem}
+
+\justifying
+\structb{Problem setup.} Suppose Keven carries two matchboxes at all times: one in his left pocket and one in his right. Each time he needs a match, he is equally likely to take it from either left or right pocket. Then one time he reaches into his pocket and discovers for the first time that the box picked is empty. Assuming each matchbox originally contained $n$ matches, what is the probability that there are exactly $k$ matches in the other box?
+
+
+\end{frame}
+
+\begin{frame}{Banach Matchbox Problem}
+
+\justifying
+\structb{Probabilistic reasoning.} Keven has to have picked $2n-k$ times, plus 1 time for him to discover that one pocket is empty. Suppose for now the empty pocket is the right one, he has to pick right for $n$ times. The probability of this case is
+\begin{align*}
+P[L = k|R = 0] = \binom{2n-k}{n}\left(\frac{1}{2} \right)^{2n-k} \times \frac{1}{2}.
+\end{align*}
+Since the empty pocket can be either right or left, the total probability is then given by
+\begin{align*}
+P[R = k|L = 0] + P[L = k|R = 0] = \binom{2n-k}{n}\left(\frac{1}{2} \right)^{2n-k}.
+\end{align*}
+
+
+\end{frame}
+
+\begin{frame}{Banach Matchbox Problem}
+
+\justifying
+\structb{Counting reasoning.} Suppose for now that the empty pocket is the right one, then Keven has to take $2n-k+1$ matches to notice an empty pocket. The number of ways that he picks those matches is $\dbinom{2n-k}{n}$. Using the counting method, the denominator should sum up all possible $k$s. Considering that the empty pocket can be either right or left, the probability of interest is given by
+\begin{align*}
+\frac{2\binom{2n-k}{n}}{2\sum_{i=0}^n\binom{2n-i}{n}} = \frac{\binom{2n-k}{n}}{\sum_{i=0}^n \binom{2n-i}{n}}.
+\end{align*}
+What has gone wrong?
+\pause
+~\\
+\highlightr{Note.} It is important that the outcomes in the counting method are equally likely.
+
+\end{frame}
+
+\begin{frame}{Banach Matchbox Problem}
+
+\justifying
+\structb{Counting reasoning.} The sample space indicated by this reasoning is 
+\begin{align*}
+S = \{k: \mathsf{there\ are\ } k \mathsf{\ matches\ left\ in\ the\ other\ pocket} \},
+\end{align*}
+which is not a \highlightg{simple sample space}. Namely, the outcomes are not \underline{equally likely}. Intuitively speaking, there are more likely that the other pocket is also empty ($k=0$) than the other pocket is totally untouched ($k=n$), given that he equally likely takes a match from left/right pocket.
+
+\end{frame}
+
+\subsection{Two Envelopes Problem}
+
+\begin{frame}{Two Envelopes Problem}
+
+\justifying
+\structb{Problem setup.} Cindy and Keven are given two indistinguishable envelopes, each of which contains a positive amount of money. One envelope contains twice as much as the other. They each may select and open one envelope and keep whatever amount it contains, but upon selection, are offered the chance to take the other envelope instead. If you are Cindy, what should you do?
+
+\end{frame}
+
+\begin{frame}{Two Envelopes Problem}
+
+\justifying
+\structb{Ex ante argument.} Once the envelopes are ready to choose, the total amount of money has already been fixed to, say $Z$. The probability that you select the one with smaller/larger amount is 1/2. Therefore, the expectation should always be
+\begin{align*}
+E[X] = \frac{1}{2} \cdot \frac{1}{3}Z + \frac{1}{2} \cdot \frac{2}{3}Z = \frac{1}{2}Z,
+\end{align*}
+which is the case for both envelopes. Any problem with this argument?
+\uncover<2>{
+	~\\
+	\justifying
+	This is argument assumes that the action of opening the envelope is \emph{uninformative}. However, the problem arises after they have selected the envelopes.
+}
+
+\end{frame}
+
+\begin{frame}{Two Envelopes Problem}
+
+\justifying
+\structb{Switching argument.} Let $x$ be the amount in the selected envelope. Then the probability that $x$ is the smaller/larger amount is 0.5, with the other envelope containing $2x$/$\dfrac{1}{2}x$, respectively. Thus the expectation of the money in the other envelope is
+\begin{align*}
+\frac{1}{2}\cdot 2x + \frac{1}{2} \cdot \frac{x}{2} = \frac{5}{4}x > x.
+\end{align*}
+Since this argument is true for both Cindy and Keven, they should both swap the envelopes. How come?
+
+\end{frame}
+
+\begin{frame}{Two Envelopes Problem}
+
+\justifying
+\structb{Bayesian point of view.} As we mentioned earlier, the paradox arises when the probability that the other player has the higher/lower amount is 1/2 regardless whether we open the envelope. Suppose Cindy gets $x$ in her envelope, to remain the 1/2 probability, she has to assume that the combinations $\{x, 2x\}$ and $\{x/2, x\}$ are equally likely. This can be formalized as follows.
+
+\end{frame}
+
+\begin{frame}{Two Envelopes Problem}
+
+\justifying
+\structb{Bayesian point of view (continued).} Suppose the prior probability for the smaller amount $M$ is $f$, and the envelopes contain $\{M, 2M\}$. Then we need to find the conditional probability
+\begin{align*}
+& P[\U{smaller\ amount\ } M = x|\U{Cindy\ gets\ } C = x] \\
+= & \frac{P[C = x|M = x] \cdot f(x)}{P[C = x|M = x]\cdot f(x) + P[C = x|M = x/2]\cdot f(x/2)} \\
+= & \frac{f(x)}{f(x) + f(x/2)}.
+\end{align*}
+For this to be $1/2$, we require that $f(x) = f(x/2)$ for any $x\in (0, \infty)$, which is nonsense, since that requires $f(x) = 0, \forall x\in (0, \infty)$.
+
+\end{frame}
+
+\begin{frame}{Two Envelopes Problem}
+
+\justifying
+\structb{Bayesian point of view (continued).} Then if you are Cindy, what should be the strategy? The prior probability for the two events $\{x/2, x\}$ (event $A_1$) and $\{x, 2x\}$ (event $A_2$) are $f(x/2)$ and $f(x)$. Then the expectation of the amount in the other envelope should be
+\begin{align*}
+E & = \frac{x}{2}\cdot P[A_1|C = x] + 2x\cdot P[A_2|C = x] \\
+& = \frac{x}{2} \cdot \frac{f(x/2)}{f(x/2) + f(x)} + 2x \cdot \frac{f(x)}{f(x/2) + f(x)} \\
+& = \frac{x}{2}\cdot \frac{f(x/2) + 4f(x)}{f(x/2) + f(x)}.
+\end{align*}
+Let $E > x$, then Cindy should swap the envelope if $f(x) > \dfrac{1}{2}f(x/2)$.
+
+\end{frame}
+
+\begin{frame}{Two Envelopes Problem}
+
+\justifying
+\structb{Bayesian point of view (continued).} From yet another point of view (if you know about total expectation), to prove that the probability of the other envelope containing larger/smaller amount is no longer 0.5, we first assume that this is the case. Denoting the amounts as $X$ and $Y$.
+\begin{align*}
+E_{Y}[Y] = E_X\left[E_{Y|X}[Y|X]\right] = E_X\left[\frac{1}{2}\cdot \frac{1}{2}x + \frac{1}{2}\cdot 2x \right] = \frac{5}{4}E_X[X], \\
+E_{X}[X] = E_Y\left[E_{X|Y}[X|Y]\right] = E_Y\left[\frac{1}{2}\cdot \frac{1}{2}y + \frac{1}{2}\cdot 2y \right] = \frac{5}{4}E_Y[Y],
+\end{align*}
+which implies $E_X[X] = E_Y[Y] = 0$.
+\uncover<2>{
+	~\\
+	~\\
+	Barry Nalebuff, \emph{The Other Person's Envelope is Always Greener}.
+}
+
+\end{frame}
+
+\section{Exercises}
+
+\subsection{Counting Methods}
+
+\begin{frame}{Counting Methods}
+
+
+\justifying
+\structb{Exercise 1.} Suppose $n$ tennis players enter a tournament. In each round of the play, if the number of players is odd, then one player is randomly selected to enter the next round. If the number of players is even, all players are randomly paired. The loser in each pair is eliminated from the tournament. This process ends until the final winner is determined. Then what is the probability that two specific players $A$ and $B$ will ever play against each other?
+
+\end{frame}
+
+\subsection{Conditional Probability}
+
+\begin{frame}{Conditional Probability}
+
+\justifying
+\structb{Exercise 2.} Suppose Keven plays the game of craps as follows. He first rolls two dice, and the sum $x$ of the two numbers is observed.
+\begin{itemize}
+	\item If $x \in \{7, 11\}$, he wins immediately.
+	\item If $x\in \{2, 3, 12\}$, he loses immediately.
+	\item Otherwise, the dice are rolled again and again until either the sum $x$ or 7 appear. He wins if $x$ first appears, and loses if $7$ first appears.
+\end{itemize}
+What is the probability of winning?
+
+\end{frame}
+
+
+\begin{frame}{Bayes's Theorem}
+
+\justifying
+\structb{Exercise 3 (\emph{The Gambler's Ruin Problem}).} Suppose Keven and Cindy are playing a game against each other. Let $p\in (0, 1)$ denotes the probability that Keven wins each play of the game. If Keven wins one play, he wins one dollar from Cindy, and if he loses, he loses one dollar. Suppose Keven and Cindy start from $i$ and $k-i$ dollars, respectively. Keven has decided to quit the game as soon as his current fortune reaches either $k$ or 0. Then what is the probability that he finally reaches $k$ dollars?
+
+\end{frame}
