@@ -1,0 +1,353 @@
+\section{Discrete Random Variables}
+
+\subsection{Random Variables and Probability Density Function}
+
+\begin{frame}{Random Variables and Probability Density Function}
+
+\justifying
+\structb{Definition.} Let $S$ be a sample space and $\Omega$ a \underline{countable} subset of $\R$. A \highlightg{discrete random variable} is a map
+\begin{align*}
+X: S\rightarrow \Omega
+\end{align*}
+together with a function
+\begin{align*}
+f_X: \Omega \rightarrow \R
+\end{align*}
+having the properties that
+\begin{itemize}
+	\item[(i)] $f_X(x) \geq 0$ for all $x\in \Omega$ and
+	\item[(ii)] $\displaystyle \sum_{x\in \Omega} f_X(x) = 1$.
+\end{itemize}
+The function $f_X$ is called the \highlightg{probability density function} or \highlightg{probability distribution} of $X$. A random variable is given by the pair $(X, f_X)$.
+
+\end{frame}
+
+
+\subsection{Cumulative Distribution Function}
+
+\begin{frame}{Cumulative Distribution Function}
+
+\justifying
+\structb{Definition.} The \highlightg{cumulative distribution function} of a random variable is defined as
+\begin{align*}
+F_X: \R\rightarrow \R, \qquad F_X(x) := P[X\leq x].
+\end{align*}
+For a discrete random variable,
+\begin{align*}
+F_X(x) = \sum_{y\leq x} f_X(y).
+\end{align*}
+
+\end{frame}
+
+\subsection{Expectation and Variance}
+
+\begin{frame}{Expectation and Variance}
+
+\structb{Definition.} Let $(X, f_X)$ be a discrete random variable.
+\begin{itemize}
+	\justifying
+	\item The \highlightg{expected value} or \highlightg{expectation} of $X$ is 
+	\begin{align*}
+	\mu_X = \U{E}[X] := \sum_{x\in \Omega} x\cdot f_X(x),
+	\end{align*}
+	provided that the sum (possibly series, if $\Omega$ is infinite) on the right converges absolutely.
+	\item The \highlightg{variance} is defined by
+	\begin{align*}
+	\sigma_X^2 = \U{Var}[X] := \U{E}\left[(X - \U{E}[X])^2 \right]
+	\end{align*}
+	which is defined as long as the right-hand side exists.
+	\item The \highlightg{standard deviation} is $\sigma_X = \sqrt{\U{Var}[X]}$.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Properties}
+
+\begin{itemize}
+	\justifying
+	\item \underline{Expectation}.
+	\justifying
+	\begin{enumerate}[(a).]
+		\justifying
+		\item Suppose $\varphi: \Omega \rightarrow \R$ is some function, then
+		\begin{align*}
+		\U{E}[\varphi\circ X] = \displaystyle \sum_{x\in \Omega} \varphi(x) \cdot f_X(x).
+		\end{align*}
+		\item $\U{E}[aX + bY + c] = a\U{E}[X] + b\U{E}[Y] + c$, where $a, b, c\in \R$ and $X, Y$ are random variables.
+		\item $\displaystyle\U{E}\left[\sum_{i=1}^n X_i \right]  = \sum_{i=1}^n \U{E}[X_i]$.
+		\item If $X_1, \ldots, X_n$ are independent random variables, and $g_i, i = 1, \ldots, n$ are functions, then 
+		\begin{align*}
+		\U{E}\left[\prod_{i=1}^n X_i \right] = \prod_{i=1}^n \U{E}[X_i], \quad \U{E}\left[\prod_{i=1}^n g_i(X_i) \right] = \prod_{i=1}^n \U{E}[g_i(X_i)].
+		\end{align*}
+	\end{enumerate}
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{Properties}
+
+\begin{itemize}
+	\justifying
+	\item \underline{Variance}.
+	\begin{enumerate}[(a).]
+		\justifying
+		\item $\U{Var}[X] = \U{E}[X^2] - \U{E}[X]^2$.
+		\item $\U{Var}[aX + b] = a^2\U{Var}[X]$, where $a, b \in \R$.
+		\item If $X_1, \ldots, X_n$ are independent random variables, then 
+		\begin{align*}
+		\U{Var}\left[\sum_{i=1}^n a_iX_i \right]  = \sum_{i=1}^n a_i^2\U{Var}[X_i].
+		\end{align*}
+	\end{enumerate}
+	\highlightr{Note.} If $X$ and $Y$ are not independent, then according to definitions,
+	\begin{align*}
+	\U{Var}[X + Y] & = \U{E}\left[\left(X + Y - (\mu_X + \mu_Y) \right)^2 \right] \\
+	& = \U{E}\left[(X-\mu_X)^2 \right] + \U{E}\left[(Y - \mu_Y)^2 \right] + \\
+	& \qquad \qquad \qquad + 2\U{E}\left[(X-\mu_X)(Y-\mu_Y) \right] \\
+	& \neq \U{Var}[X] + \U{Var}[Y].
+	\end{align*}
+\end{itemize}
+
+
+\end{frame}
+
+
+\subsection{Moment-Generating Function}
+
+\begin{frame}{Ordinary and Central Moments}
+
+\justifying
+\structb{Definition.} The \highlightg{$n^{th}$ (ordinary) moments} of a random variable $X$ is given by
+\begin{align*}
+\U{E}[X^n], \qquad n\in \N.
+\end{align*}
+The \highlightg{$n^{th}$ central moments} of $X$ is given by
+\begin{align*}
+\U{E}\left[\left(\frac{X-\mu}{\sigma} \right)^n \right], \qquad \U{where\ } n = 3, 4, 5, \ldots
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{Moment-Generating Function}
+
+\justifying
+\structb{Definition.} Let $(X, f_X)$ be a random variable and such that the sequence of moments $\U{E}[X^n], n\in \N$, exists. If the power series 
+\begin{align*}
+m_X(t) := \sum_{k=0}^{\infty} \frac{\U{E}[X^k]}{k!} t^k
+\end{align*}
+has radius of convergence $\varepsilon > 0$, the thereby defined function
+\begin{align*}
+m_X(t): (-\varepsilon, \varepsilon) \rightarrow \R
+\end{align*}
+is called the \highlightg{moment-generating function} for $X$.
+
+\end{frame}
+
+
+\begin{frame}{Moment-Generating Function}
+
+\justifying
+\structb{Theorem.} Let $\varepsilon > 0$ be given such that $\U{E}[e^{tX}]$ exists and has a power series expansion in $t$ that converges for $|t| < \varepsilon$. Then the moment-generating function exists and 
+\begin{align*}
+m_X(t) = \U{E}[e^{tX}] \qquad \U{for\ } |t| < \varepsilon.
+\end{align*}
+Furthermore, 
+\begin{align*}
+E[X^k] = \frac{\U{d}^k m_X(t)}{\U{d}t^k}\bigg|_{t=0}.
+\end{align*}
+We can hence calculate the moments of $X$ by differentiating the moment-generating function.
+
+\end{frame}
+
+\section{Common Distributions of Discrete Random Variables}
+
+\subsection{Binomial Distribution}
+
+\begin{frame}{Bernoulli Random Variable}
+
+\justifying
+\structb{Definition.} Let $S$ be a sample space and 
+\begin{align*}
+X: S \rightarrow \{0, 1\} \subset \R.
+\end{align*}
+Let $0 < p < 1$ and define the density function
+\begin{align*}
+f_X: \{0, 1\} \rightarrow \R, \qquad f_X(x) = \left\{
+\begin{array}{ll}
+1 - p & \U{for\ } x = 0, \\
+p & \U{for\ } x = 1.
+\end{array}
+\right.
+\end{align*}
+Then $X$ is said to be a \highlightg{Bernoulli random variable} or follow a \highlightg{Bernoulli distribution} with parameter $p$, denoted by
+\begin{align*}
+X\sim \U{Bernoulli}(p).
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{Bernoulli Random Variable}
+
+\justifying
+\structb{Mean, variance, and M.G.F.}
+\begin{itemize}
+	\justifying
+	\item \underline{Mean}.
+	\begin{align*}
+	\U{E}[X] = 0\cdot (1-p) + 1\cdot p = p.
+	\end{align*}
+	\item \underline{Variance}.
+	\begin{align*}
+	\U{Var}[X] = \U{E}[X^2] - \U{E}[X]^2 = p - p^2 = p(1-p).
+	\end{align*}
+	\item \underline{M.G.F.}
+	\begin{align*}
+	m_X: \R\rightarrow \R, \qquad m_X(t) = (1-p) + e^tp.
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Binomial Random Variable}
+
+\justifying
+\structb{Definition.} Let $S$ be a sample space, $n\in \N \setminus \{0\}$, and
+\begin{align*}
+X: S\rightarrow \Omega = \{0, \ldots, n\} \subset \R.
+\end{align*}
+Let $0 < p < 1$ and define the density function
+\begin{align*}
+f_X: \Omega \rightarrow \R, \qquad f_X(x) = \binom{n}{x} p^x(1-p)^{n-x}.
+\end{align*}
+Then $X$ is said to be a \highlightg{binomial random variable} with parameters $n$ and $p$, denoted by
+\begin{align*}
+X\sim \U{B}(n, p),
+\end{align*}
+and particularly, $\U{B}(1, p) = \U{Bernoulli}(p)$.
+
+\end{frame}
+
+\begin{frame}{Binomial Distribution}
+
+\justifying
+\structb{Mean, variance and M.G.F.} 
+\begin{itemize}
+	\justifying
+	\item \underline{Mean}.
+	\begin{align*}
+	\U{E}[X] & = \sum_{x=0}^n \frac{n!}{x!(n-x)!}p^x(1-p)^{n-x} \cdot x \\
+	& = np\sum_{x=0}^n \frac{(n-1)!}{x!(n-1-x)!}p^x(1-p)^{n-1-x} = np.
+	\end{align*}
+	\item \underline{Variance}. 
+	\begin{align*}
+	\U{Var}[X] = np(1-p).
+	\end{align*}
+	\item \underline{M.G.F.}
+	\begin{align*}
+	m_X: \R\rightarrow\R, \qquad m_X(t) = (1 - p + pe^t)^n.
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+\subsection{Geometric Distribution}
+
+\begin{frame}{Geometric Random Variable}
+
+\justifying
+\structb{Definition.} Let $S$ be a sample space and
+\begin{align*}
+X: S\rightarrow \Omega = \N\setminus \{0\}.
+\end{align*}
+Let $0 < p < 1$ and define the density function $f_X: \N\setminus \{0\} \rightarrow \R$ given by
+\begin{align*}
+f_X(x) = (1-p)^{x-1} p.
+\end{align*}
+Then $X$ is a \highlightg{geometric random variable} with parameter $p$, denoted by
+\begin{align*}
+X\sim \U{Geom}(p).
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{Geometric Distribution}
+
+\justifying
+\structb{Mean, variance and M.G.F.} 
+\begin{itemize}
+	\justifying
+	\item \underline{Mean}.
+	\begin{align*}
+	\U{E}[X] = \frac{1}{p}.
+	\end{align*}
+	\item \underline{Variance}.
+	\begin{align*}
+	\U{Var}[X] = \frac{1-p}{p^2}.
+	\end{align*}
+	\item \underline{M.G.F.}
+	\begin{align*}
+	m_X: (-\infty, -\ln(1-p)) \rightarrow\R, \qquad m_X(t) = \frac{pe^t}{1-(1-p)e^t}.
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+\subsection{Negative Binomial (Pascal) Distribution}
+
+\begin{frame}{Pascal Random Variable}
+
+\justifying
+\structb{Definition.} Let $S$ be a sample space and
+\begin{align*}
+X: S\rightarrow \Omega = \N.
+\end{align*}
+Let $0 < p < 1, r\in \N\setminus \{0\}$ and define the density function $f_X: \N \rightarrow \R$ given by
+\begin{align*}
+f_X(x) = \frac{(x+r-1)!}{x!(r-1)!} p^x(1-p)^r.
+\end{align*}
+Then $X$ is a \highlightg{Pascal random variable} with parameter $r, p$, denoted by
+\begin{align*}
+X\sim \U{Pascal}(r, p).
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{Pascal Distribution}
+
+\justifying
+\structb{Mean, variance and M.G.F.} 
+\begin{itemize}
+	\justifying
+	\item \underline{Mean}.
+	\begin{align*}
+	\U{E}[X] = \frac{rp}{1-p}.
+	\end{align*}
+	\item \underline{Variance}.
+	\begin{align*}
+	\U{Var}[X] = \frac{rp}{(1-p)^2}.
+	\end{align*}
+	\item \underline{M.G.F.}
+	\begin{align*}
+	m_X: 
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+\subsection{Poisson Distribution}
+
+\begin{frame}{Poisson Random Variable}
+
+
+
+\end{frame}
+
+\begin{frame}{Poisson Distribution}
+
+
+
+\end{frame}
+
+\section{Exercises}
+
+

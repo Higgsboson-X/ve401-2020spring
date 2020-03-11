@@ -1,0 +1,111 @@
+\section*{Exercise 1.}
+
+Suppose $n$ tennis players enter a tournament. In each round of the play, if the number of players is odd, then one player is randomly selected to enter the next round. If the number of players is even, all players are randomly paired. The loser in each pair is eliminated from the tournament. This process ends until the final winner is determined. Then what is the probability that two specific players $A$ and $B$ will ever play against each other? 
+~\\
+~\\
+\textbf{Solution.} The number of players eliminated will be the same as the number of matches. Therefore, exactly $n-1$ matches must be played. The number of possible pairs of players is $\dbinom{n}{2}$. Each of the two players in every match is equally likely to win. Thus before the tournament begins, every possible pair of players is equally likely to appear in each particular one of the $n-1$ matches. Accordingly, the probability that players $A$ and $B$ will meet in some particular match that is specified in advance is $1\Bigg/\dbinom{n}{2}$. Since there are $n-1$ matches where they might meet, the probability is
+\begin{align*}
+p = (n-1)\Bigg/\binom{n}{2} = \frac{2}{n}.
+\end{align*}
+
+\section*{Exercise 2.}
+
+Suppose Keven plays the game of craps as follows. He first rolls two dice, and the sum $x$ of the two numbers is observed.
+\begin{itemize}
+	\item If $x \in \{7, 11\}$, he wins immediately.
+	\item If $x\in \{2, 3, 12\}$, he loses immediately.
+	\item Otherwise, the dice are rolled again and again until either the sum $x$ or 7 appear. He wins if $x$ first appears, and loses if $7$ first appears.
+\end{itemize}
+What is the probability of winning?\\
+~\\
+~\\
+\textbf{Solution.} Denote by $W$ the event that Keven wins the game. Then the sample space $S$ contains all possible sequences of sums from the rolls of dice. Let $B_i$ the event that the sum of the first roll is $i$, where $i = 2, \ldots, 12$. Then according to the total probability formula, 
+\begin{align*}
+P(W) = \sum_{i=2}^{12} P[B_i]P[W|B_i].
+\end{align*}
+Then we need to specify $P[B_i]$ and $P[W|B_i]$. From the game rule,
+\begin{align*}
+P[W|B_2] = P[W|B_3] = P[W|B_{12}] = 0, \qquad P[W|B_7] = P[W|B_{11}] = 1.
+\end{align*}
+For the cases where $i\in \{4, 5, 6, 8, 9, 10\}$, the probability of winning is given by
+\begin{align*}
+P[W|B_i] = \frac{P[B_i]}{P[B_i\cup B_7]},
+\end{align*}
+since the game ends either by rolling a sum of $i$ or 7. We can obtain
+\begin{align*}
+& P[W|B_4] = \frac{3/36}{3/36 + 6/36} = \frac{1}{3}, \qquad P[W|B_5] = \frac{4/36}{4/36 + 6/36} = \frac{2}{5}, \\
+& P[W|B_6] = \frac{5/36}{5/36 + 6/36} = \frac{5}{11}, \qquad P[W|B_8] = \frac{5}{36}{5/36 + 6/36} = \frac{5}{11}, \\
+& P[W|B_9] = \frac{4/36}{4/36 + 6/36} = \frac{2}{5}, \qquad P[W|B_{10}] = \frac{3}{36}{3/36 + 6/36} = \frac{1}{3}.
+\end{align*}
+
+Therefore, the total probability is given by
+\begin{align*}
+P[W] & = \sum_{i=2}^{12} P[B_i]P[W|B_i] = 0.493.
+\end{align*}
+
+\section*{Exercise 3 (\emph{The Gambler's Ruin Problem}).}
+
+Suppose Keven and Cindy are playing a game against each other. Let $p\in (0, 1)$ denotes the probability that Keven wins each play of the game. If Keven wins one play, he wins one dollar from Cindy, and if he loses, he loses one dollar. Suppose Keven and Cindy start from $i$ and $k-i$ dollars, respectively, where $i = 1, \ldots, k-1$. Keven has decided to quit the game as soon as his current fortune reaches either $k$ or 0. Then what is the probability that he finally reaches $k$ dollars?\\
+~\\
+~\\
+\textbf{Solution.} Starting with $i$ and $k-i$ dollars respectively, we denote the probability that Keven will reach $k$ dollars as $a_i$. Due to independence, the setup of the game is initialized with the change only being the starting fortune. Namely, suppose after the first play, Keven owns $j$ dollars, then we get the conditional probability
+\begin{align*}
+P[W|(i, j)] = a_j,
+\end{align*}
+where $W$ denotes the event that Keven ends up with $k$ dollars, and $(i, j)$ denotes his sequence of fortune. 
+
+Particularly, if the sequence reaches 0, then the probability is 0, giving $a_0 = 0$. Similarly, $a_k = 1$. Let $A_1$ denote the event that Keven wins the first play, and let $B_1$ denote the event that he loses the first play. Then we obtain
+\begin{align*}
+P[W] & = P[A_1]P[W|A_1] + p{B_1}P[W|B_1] \\
+& = pP[W|A_1] + (1 - p)P[W|B_1],
+\end{align*}
+namely,
+\begin{align*}
+a_i = pa_{i+1} + (1-p)a_{i-1}, \qquad i = 1, \ldots, k-1
+\end{align*}
+Therefore, we obtain
+\begin{align*}
+a_1 & = pa_2, \\
+a_2 & = pa_3 + (1-p)a_1, \\
+a_3 & = pa_4 + (1-p)a_2, \\
+& \vdots \\
+a_{k-2} & = pa_{k-1} + (1-p)a_{k-3}, \\
+a_{k-1} & = p + (1-p)a_{k-2}.
+\end{align*}
+Since $a_i = pa_i + (1-p)a_i$, we have
+\begin{align*}
+a_2 - a_1 & = \frac{1-p}{p}a_1, \\
+a_3 - a_2 & = \frac{1-p}{p}(a_2 - a_1) = \left(\frac{1-p}{p} \right)^2 a_1, \\
+a_4 - a_3 & = \frac{1-p}{p}(a_3 - a_2) = \left(\frac{1-p}{p} \right)^3 a_1, \\
+& \vdots \\
+a_{k-1} - a_{k-2} & = \frac{1-p}{p}(a_{k-2} - a_{k-3}) = \left(\frac{1-p}{p} \right)^{k-2} a_1, \\
+1 - a_{k-1} & = \frac{1-p}{p}(a_{k-1} - a_{k-2}) = \left(\frac{1-p}{p} \right)^{k-1} a_1.
+\end{align*}
+Summing up all terms, we have
+\begin{align*}
+1 - a_1 = a_1 \sum_{i=1}^{k-1} \left(\frac{1-p}{p} \right)^i.
+\end{align*}
+Then based on the value of $p$, we have to discuss two cases.
+\begin{itemize}
+	\item \underline{$p = \dfrac{1}{2}$, (fair game)}. This gives
+	\begin{align*}
+	1 - a_1 = (k-1)a_1\qquad\Rightarrow\qquad a_1 = \frac{1}{k},
+	\end{align*}
+	which then indicates
+	\begin{align*}
+	a_i = \frac{i}{k}, \qquad i = 1, \ldots, k-1
+	\end{align*}
+	by induction.
+	\item \underline{$p\neq \frac{1}{2}$, (unfair game)}. In this case, we have
+	\begin{align*}
+	1 - a_1 = a_1\cdot \frac{\left(\dfrac{1-p}{p} \right)^k - \left(\dfrac{1-p}{p} \right)}{\dfrac{1-p}{p} - 1} \qquad \Rightarrow \qquad a_1 = \frac{\dfrac{1-p}{p} - 1}{\left(\dfrac{1-p}{p} \right)^k - 1}.
+	\end{align*}
+	Then similarly, we have
+	\begin{align*}
+	a_i = \frac{\left(\dfrac{1-p}{p} \right)^i - 1}{\left(\dfrac{1-p}{p}^k \right)^k - 1}, \qquad i = 1, \ldots, k-1.
+	\end{align*}
+\end{itemize}
+
+
+
+
