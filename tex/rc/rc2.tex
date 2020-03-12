@@ -235,16 +235,15 @@ and particularly, $\U{B}(1, p) = \U{Bernoulli}(p)$.
 	\justifying
 	\item \underline{Mean}.
 	\begin{align*}
-	\U{E}[X] & = \sum_{x=0}^n \frac{n!}{x!(n-x)!}p^x(1-p)^{n-x} \cdot x \\
-	& = np\sum_{x=0}^n \frac{(n-1)!}{x!(n-1-x)!}p^x(1-p)^{n-1-x} = np.
+	\U{E}[X] & = \sum_{i=1}^n \U{E}[X_i] = np.
 	\end{align*}
 	\item \underline{Variance}. 
 	\begin{align*}
-	\U{Var}[X] = np(1-p).
+	\U{Var}[X] = \sum_{i=1}^n\U{Var}[X_i] = np(1-p).
 	\end{align*}
 	\item \underline{M.G.F.}
 	\begin{align*}
-	m_X: \R\rightarrow\R, \qquad m_X(t) = (1 - p + pe^t)^n.
+	m_X: \R\rightarrow\R, \qquad m_X(t) = \U{E}[e^{tX}] = \prod_{i=1}^n\U{E}[e^{tX_i}] = (1 - p + pe^t)^n.
 	\end{align*}
 \end{itemize}
 
@@ -292,23 +291,61 @@ X\sim \U{Geom}(p).
 
 \end{frame}
 
-\subsection{Negative Binomial (Pascal) Distribution}
 
-\begin{frame}{Pascal Random Variable}
+\subsection{Poisson Distribution}
+
+\begin{frame}{Poisson Distribution}
 
 \justifying
-\structb{Definition.} Let $S$ be a sample space and
+\structb{Definition.} Let $k\in \R$. A random variable $(X, f_X)$ with
 \begin{align*}
-X: S\rightarrow \Omega = \N.
+X: S\rightarrow \N
 \end{align*}
-Let $0 < p < 1, r\in \N\setminus \{0\}$ and define the density function $f_X: \N \rightarrow \R$ given by
+and density function 
 \begin{align*}
-f_X(x) = \frac{(x+r-1)!}{x!(r-1)!} p^x(1-p)^r.
+f_X: \N \rightarrow \R, \qquad f_X(x) = \frac{k^xe^{-k}}{x!}
 \end{align*}
-Then $X$ is a \highlightg{Pascal random variable} with parameter $r, p$, denoted by
+is said to follow a \highlightg{Poisson distribution} with parameter $k$, which describes the occurrence of events that occur at a \underline{constant rate} and \underline{continuous environment}.
+
+\end{frame}
+
+\begin{frame}{Poisson Distribution}
+
+\justifying
+\structb{Mean, variance and M.G.F.} 
+\begin{itemize}
+\justifying
+\item \underline{Mean}.
 \begin{align*}
-X\sim \U{Pascal}(r, p).
+\U{E}[X] = k.
 \end{align*}
+\item \underline{Variance}.
+\begin{align*}
+\U{Var}[X] = k.
+\end{align*}
+\item \underline{M.G.F.}
+\begin{align*}
+m_X: \R \rightarrow \R, \qquad m_X(t) = e^{k(e^t-1)}.
+\end{align*}
+\end{itemize}
+
+\end{frame}
+
+
+\subsection{Negative Binomial, Pascal Distribution}
+
+\begin{frame}{Pascal Distribution}
+
+\justifying
+\structb{Definition.} Let $r\in \N\setminus \{0\}$. A random variable $(X, f_X)$ with
+\begin{align*}
+X: S \rightarrow \Omega = \N\setminus \{0, 1, \ldots, r-1\} = \{r, r+1, \ldots\}
+\end{align*}
+and distribution function $f_X: \Omega\rightarrow \R$ given by
+\begin{align*}
+f_X(x) = \binom{x-1}{r-1} p^r(1-p)^{x-r}, \qquad 0 < p < 1,
+\end{align*}
+is said to follow a \highlightg{Pascal distribution} with parameters $p$ and $r$.
 
 \end{frame}
 
@@ -320,33 +357,80 @@ X\sim \U{Pascal}(r, p).
 	\justifying
 	\item \underline{Mean}.
 	\begin{align*}
-	\U{E}[X] = \frac{rp}{1-p}.
+	\U{E}[X] = \frac{r}{p}.
 	\end{align*}
-	\item \underline{Variance}.
+	\item \underline{Variance}. Let $q = 1 - p$,
 	\begin{align*}
-	\U{Var}[X] = \frac{rp}{(1-p)^2}.
+	\U{Var}[X] = \frac{rq}{p^2}.
 	\end{align*}
 	\item \underline{M.G.F.}
 	\begin{align*}
-	m_X: 
+	m_X: (-\infty, -\ln q) \rightarrow \R, \qquad m_X(t) = \frac{(pe^t)^r}{(1-qe^t)^r}.
 	\end{align*}
 \end{itemize}
 
 \end{frame}
 
-\subsection{Poisson Distribution}
 
-\begin{frame}{Poisson Random Variable}
+\begin{frame}{Negative Binomial Distribution}
 
-
+\justifying
+\structb{Definition.} Let $r\in \N\setminus \{0\}$. A random variable $(X, f_X)$ with
+\begin{align*}
+X: S \rightarrow \Omega = \N
+\end{align*}
+and distribution function $f_X: \Omega\rightarrow \R$ given by
+\begin{align*}
+f_X(x) = \binom{x+r-1}{r-1} p^r(1-p)^{x}, \qquad 0 < p < 1,
+\end{align*}
+is said to follow a \highlightg{negative binomial distribution} with parameters $p$ and $r$.
 
 \end{frame}
 
-\begin{frame}{Poisson Distribution}
+\begin{frame}{Negative Binomial Distribution}
 
-
+\justifying
+\structb{Mean, variance and M.G.F.} 
+\begin{itemize}
+\justifying
+\item \underline{Mean}. Let $q = 1 - p$,
+\begin{align*}
+\U{E}[X] = \frac{rp}{q}.
+\end{align*}
+\item \underline{Variance}.
+\begin{align*}
+\U{Var}[X] = \frac{rp}{q^2}.
+\end{align*}
+\item \underline{M.G.F.}
+\begin{align*}
+m_X: (-\infty, -\ln q) \rightarrow \R, \qquad m_X(t) = \frac{p^r}{(1-qe^t)^r}.
+\end{align*}
+\end{itemize}
 
 \end{frame}
+
+\begin{frame}{Gamma Distribution}
+
+\justifying
+\structb{Definition.} Let $r\in \N\setminus \{0\}$. A random variable $(X, f_X)$ with
+\begin{align*}
+X: S \rightarrow \Omega = \N
+\end{align*}
+and distribution function $f_X: \Omega\rightarrow \R$ given by
+\begin{align*}
+f_X(x) = \binom{x+r-1}{r-1} p^r(1-p)^{x}, \qquad 0 < p < 1,
+\end{align*}
+is said to follow a \highlightg{negative binomial distribution} with parameters $p$ and $r$.
+
+\end{frame}
+
+\begin{frame}{Poisson, Gamma, and Negative Binomial Distribution}
+
+\justifying
+Suppose a conditional random variable $X|\Lambda$ follows a Poisson distribution, and $\Lambda$ follows a 
+
+\end{frame}
+
 
 \section{Exercises}
 

@@ -6,6 +6,6 @@
 \beamer@sectionintoc {2}{Common Distributions of Discrete Random Variables}{15}{0}{2}
 \beamer@subsectionintoc {2}{1}{Binomial Distribution}{15}{0}{2}
 \beamer@subsectionintoc {2}{2}{Geometric Distribution}{20}{0}{2}
-\beamer@subsectionintoc {2}{3}{Negative Binomial (Pascal) Distribution}{23}{0}{2}
-\beamer@subsectionintoc {2}{4}{Poisson Distribution}{26}{0}{2}
-\beamer@sectionintoc {3}{Exercises}{29}{0}{3}
+\beamer@subsectionintoc {2}{3}{Poisson Distribution}{23}{0}{2}
+\beamer@subsectionintoc {2}{4}{Negative Binomial, Pascal Distribution}{26}{0}{2}
+\beamer@sectionintoc {3}{Exercises}{33}{0}{3}
