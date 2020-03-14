@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300) (preloaded format=pdflatex 2020.3.6)  9 MAR 2020 18:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300) (preloaded format=pdflatex 2020.3.6)  13 MAR 2020 21:46
 entering extended mode
 **./s.tex
 (s.tex
@@ -902,23 +902,18 @@ Package xypdf Info: Line width: 0.47998pt on input line 51.
 <./logo.png, id=4, 359.4228pt x 98.2872pt>
 File: ./logo.png Graphic file (type png)
 <use ./logo.png>
-Package pdftex.def Info: ./logo.png  used on input line 59.
+Package pdftex.def Info: ./logo.png  used on input line 58.
 (pdftex.def)             Requested size: 338.58632pt x 92.59242pt.
  [1
 
-{/home/chxw/.miktex/texmfs/data/pdftex/config/pdftex.map} <./logo.png>] (s1.tex
+{/home/chxw/.miktex/texmfs/data/pdftex/config/pdftex.map} <./logo.png>] (s2.tex
+LaTeX Font Info:    Trying to load font information for U+bbold on input line 3
+.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--7
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--23
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--23
+(/home/chxw/.miktex/texmfs/install/tex/latex/jknappen/ubbold.fd
+File: ubbold.fd 1996/01/01 Blackboard Bold Font Definition File (jk)
+)
+Underfull \hbox (badness 10000) in paragraph at lines 35--38
 
  []
 
@@ -929,39 +924,32 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 48--52
+Underfull \hbox (badness 10000) in paragraph at lines 68--71
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--52
-
- []
-
-[2] [3]) [4] (s.aux) ) 
+[2]) [3] (s.aux) ) 
 Here is how much of TeX's memory you used:
- 18399 strings out of 483220
- 350058 string characters out of 2960973
- 724441 words of memory out of 3000000
- 33232 multiletter control sequences out of 15000+200000
- 544561 words of font info for 72 fonts, out of 3000000 for 9000
+ 18408 strings out of 483220
+ 350362 string characters out of 2960973
+ 722441 words of memory out of 3000000
+ 33237 multiletter control sequences out of 15000+200000
+ 544416 words of font info for 73 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 60i,12n,66p,3214b,339s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/chxw/.miktex/texmfs/data/fonts/pk/ljfour/jknappen
-/ec/dpi600/tcrm1200.pk></home/chxw/.miktex/texmfs/install/fonts/type1/public/am
-sfonts/cm/cmbx10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsf
-onts/cm/cmbx12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfon
-ts/cm/cmbxti10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfon
-ts/cm/cmex10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts
-/cm/cmmi12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/c
-m/cmmi8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/c
-mr12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8
-.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-
-Output written on s.pdf (5 pages, 161927 bytes).
+ 60i,12n,66p,3214b,309s stack positions out of 5000i,500n,10000p,200000b,50000s
+</home/chxw/.miktex/texmfs/install/fonts/type1/public/bbold-t
+ype1/bbold10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/c
+m/cmbx12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/
+cmex10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cm
+mi12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.p
+fb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+/home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></h
+ome/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on s.pdf (4 pages, 150106 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
+ 61 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -74,8 +74,8 @@ F_X(x) = \sum_{y\leq x} f_X(y).
 		\U{E}[\varphi\circ X] = \displaystyle \sum_{x\in \Omega} \varphi(x) \cdot f_X(x).
 		\end{align*}
 		\item $\U{E}[aX + bY + c] = a\U{E}[X] + b\U{E}[Y] + c$, where $a, b, c\in \R$ and $X, Y$ are random variables.
-		\item $\displaystyle\U{E}\left[\sum_{i=1}^n X_i \right]  = \sum_{i=1}^n \U{E}[X_i]$.
-		\item If $X_1, \ldots, X_n$ are independent random variables, and $g_i, i = 1, \ldots, n$ are functions, then 
+		\item $\displaystyle\U{E}\left[\sum_{i=1}^n X_i \right]  = \sum_{i=1}^n \U{E}[X_i]$, if each expectation exists.
+		\item If $X_1, \ldots, X_n$ are independent random variables with finite expectations, and $g_i, i = 1, \ldots, n$ are functions, then 
 		\begin{align*}
 		\U{E}\left[\prod_{i=1}^n X_i \right] = \prod_{i=1}^n \U{E}[X_i], \quad \U{E}\left[\prod_{i=1}^n g_i(X_i) \right] = \prod_{i=1}^n \U{E}[g_i(X_i)].
 		\end{align*}
@@ -159,34 +159,68 @@ We can hence calculate the moments of $X$ by differentiating the moment-generati
 
 \end{frame}
 
+\begin{frame}{Moment-Generating Function}
+
+\structb{Properties.} 
+\begin{itemize}
+	\justifying
+	\item $X$ is a random variable and $Y = aX + b, a, b\in \R$, then for every $t$ such that $m_X(at)$ is finite,
+	\begin{align*}
+	m_Y(t) = e^{bt} m_X(at).
+	\end{align*}
+	\item Suppose $X_1, \ldots, X_n$ are $n$ independent random variables, then for every value that $m_{X_i}(t)$ is finite for all $i = 1, \ldots, n$,
+	\begin{align*}
+	m_X(t) = \prod_{i=1}^n m_{X_i}(t), \qquad X = X_1 + \cdots + X_n.
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Moment-Generating Function}
+
+\justifying
+\structb{Example 1.} Suppose that $X$ is a random variable with the moment-generating function 
+\begin{align*}
+m_X: \R\rightarrow \R, \qquad m_X(t) = e^{t^2 + 3t}.
+\end{align*}
+Find the mean and variance of $X$.\\
+~\\
+\uncover<2>{
+	\structb{Solution.} We calculate
+	\begin{align*}
+	m_X'(t) = (2t+3) e^{t^2 + 3t}, \quad m_X''(t) = (2t+3)^2e^{t^2+3t} + 2e^{t^2+3t}.
+	\end{align*}
+	Therefore,
+	\begin{align*}
+	\mu = m_X'(0) = 3, \quad \sigma^2 = \U{E}[X^2] - \U{E}[X]^2 = m_X''(0) - \mu^2 = 2.
+	\end{align*}
+}
+
+\end{frame}
+
+
 \section{Common Distributions of Discrete Random Variables}
 
 \subsection{Binomial Distribution}
 
-\begin{frame}{Bernoulli Random Variable}
+\begin{frame}{Bernoulli Distribution}
 
 \justifying
-\structb{Definition.} Let $S$ be a sample space and 
-\begin{align*}
-X: S \rightarrow \{0, 1\} \subset \R.
-\end{align*}
-Let $0 < p < 1$ and define the density function
+\structb{Definition.} A random variable $(X, f_X)$ has a \highlightg{Bernoulli distribution} with parameter $p, 0 < p < 1$ if the probability density function is defined by
 \begin{align*}
 f_X: \{0, 1\} \rightarrow \R, \qquad f_X(x) = \left\{
 \begin{array}{ll}
-1 - p & \U{for\ } x = 0, \\
-p & \U{for\ } x = 1.
+1-p, & \U{if\ } x = 0, \\
+p, & \U{if\ } x = 1.
 \end{array}
 \right.
 \end{align*}
-Then $X$ is said to be a \highlightg{Bernoulli random variable} or follow a \highlightg{Bernoulli distribution} with parameter $p$, denoted by
-\begin{align*}
-X\sim \U{Bernoulli}(p).
-\end{align*}
+\structb{Interpretation.} Describe the probability of success $f_X(1)$ or failure $f_X(0)$ of a trial, given the probability of success is $p$.
 
 \end{frame}
 
-\begin{frame}{Bernoulli Random Variable}
+\begin{frame}{Bernoulli Distribution}
 
 \justifying
 \structb{Mean, variance, and M.G.F.}
@@ -208,24 +242,19 @@ X\sim \U{Bernoulli}(p).
 
 \end{frame}
 
-\begin{frame}{Binomial Random Variable}
+\begin{frame}{Binomial Distribution}
 
 \justifying
-\structb{Definition.} Let $S$ be a sample space, $n\in \N \setminus \{0\}$, and
+\structb{Definition.} A random variable $(X, f_X)$ has a \highlightg{binomial distribution} with parameter $n\in \N\setminus\{0\}$ and $p, 0 < p < 1$ if it has probability density function
 \begin{align*}
-X: S\rightarrow \Omega = \{0, \ldots, n\} \subset \R.
+f_X: \{0, \ldots, n\} \rightarrow \R, \qquad f_X(x) = \binom{n}{x} p^x(1-p)^{n-x}.
 \end{align*}
-Let $0 < p < 1$ and define the density function
-\begin{align*}
-f_X: \Omega \rightarrow \R, \qquad f_X(x) = \binom{n}{x} p^x(1-p)^{n-x}.
-\end{align*}
-Then $X$ is said to be a \highlightg{binomial random variable} with parameters $n$ and $p$, denoted by
-\begin{align*}
-X\sim \U{B}(n, p),
-\end{align*}
-and particularly, $\U{B}(1, p) = \U{Bernoulli}(p)$.
+~\\
+\structb{Interpretation.} $f_X(x)$ is the probability of obtaining $x$ successes in $n$ independent and identical Bernoulli trials with parameter $p$.
+
 
 \end{frame}
+
 
 \begin{frame}{Binomial Distribution}
 
@@ -251,21 +280,15 @@ and particularly, $\U{B}(1, p) = \U{Bernoulli}(p)$.
 
 \subsection{Geometric Distribution}
 
-\begin{frame}{Geometric Random Variable}
+\begin{frame}{Geometric Distribution}
 
 \justifying
-\structb{Definition.} Let $S$ be a sample space and
+\structb{Definition.} A random variable $(X, f_X)$ has \highlightg{geometric distribution} with parameter $p, 0 < p < 1$ if the probability density function is given by
 \begin{align*}
-X: S\rightarrow \Omega = \N\setminus \{0\}.
+f_X: \N\setminus \{0\} \rightarrow \R, \qquad f_X(x) = (1-p)^{x-1} p.
 \end{align*}
-Let $0 < p < 1$ and define the density function $f_X: \N\setminus \{0\} \rightarrow \R$ given by
-\begin{align*}
-f_X(x) = (1-p)^{x-1} p.
-\end{align*}
-Then $X$ is a \highlightg{geometric random variable} with parameter $p$, denoted by
-\begin{align*}
-X\sim \U{Geom}(p).
-\end{align*}
+~\\
+\structb{Interpretation.} $f_X(x)$ is the probability of $x$ failures before the first success in the Bernoulli trials, given the probability of success for each trial is $p$.
 
 \end{frame}
 
@@ -291,25 +314,21 @@ X\sim \U{Geom}(p).
 
 \end{frame}
 
+\subsection{Pascal, Negative Binomial Distribution}
 
-\subsection{Poisson Distribution}
-
-\begin{frame}{Poisson Distribution}
+\begin{frame}{Pascal Distribution}
 
 \justifying
-\structb{Definition.} Let $k\in \R$. A random variable $(X, f_X)$ with
+\structb{Definition.} A random variable $(X, f_X)$ has the \highlightg{Pascal distribution} with parameters $p, 0 < p < 1$ and $r\in \N\setminus\{0\}$ if the probability density function is given by
 \begin{align*}
-X: S\rightarrow \N
+f_X:\{r, r + 1, \ldots\} \rightarrow \R, \qquad  f_X(x) = \binom{x-1}{r-1} p^r(1-p)^{x-r}.
 \end{align*}
-and density function 
-\begin{align*}
-f_X: \N \rightarrow \R, \qquad f_X(x) = \frac{k^xe^{-k}}{x!}
-\end{align*}
-is said to follow a \highlightg{Poisson distribution} with parameter $k$, which describes the occurrence of events that occur at a \underline{constant rate} and \underline{continuous environment}.
+~\\
+\structb{Interpretation.} $f_X(x)$ is the probability of obtaining the $r$-th success in the $x$-th Bernoulli trail, given the probability of success for each trail is $p$.
 
 \end{frame}
 
-\begin{frame}{Poisson Distribution}
+\begin{frame}{Pascal Distribution}
 
 \justifying
 \structb{Mean, variance and M.G.F.} 
@@ -317,56 +336,16 @@ is said to follow a \highlightg{Poisson distribution} with parameter $k$, which 
 \justifying
 \item \underline{Mean}.
 \begin{align*}
-\U{E}[X] = k.
+\U{E}[X] = \frac{r}{p}.
 \end{align*}
-\item \underline{Variance}.
+\item \underline{Variance}. Let $q = 1 - p$,
 \begin{align*}
-\U{Var}[X] = k.
+\U{Var}[X] = \frac{rq}{p^2}.
 \end{align*}
 \item \underline{M.G.F.}
 \begin{align*}
-m_X: \R \rightarrow \R, \qquad m_X(t) = e^{k(e^t-1)}.
+m_X: (-\infty, -\ln q) \rightarrow \R, \qquad m_X(t) = \frac{(pe^t)^r}{(1-qe^t)^r}.
 \end{align*}
-\end{itemize}
-
-\end{frame}
-
-
-\subsection{Negative Binomial, Pascal Distribution}
-
-\begin{frame}{Pascal Distribution}
-
-\justifying
-\structb{Definition.} Let $r\in \N\setminus \{0\}$. A random variable $(X, f_X)$ with
-\begin{align*}
-X: S \rightarrow \Omega = \N\setminus \{0, 1, \ldots, r-1\} = \{r, r+1, \ldots\}
-\end{align*}
-and distribution function $f_X: \Omega\rightarrow \R$ given by
-\begin{align*}
-f_X(x) = \binom{x-1}{r-1} p^r(1-p)^{x-r}, \qquad 0 < p < 1,
-\end{align*}
-is said to follow a \highlightg{Pascal distribution} with parameters $p$ and $r$.
-
-\end{frame}
-
-\begin{frame}{Pascal Distribution}
-
-\justifying
-\structb{Mean, variance and M.G.F.} 
-\begin{itemize}
-	\justifying
-	\item \underline{Mean}.
-	\begin{align*}
-	\U{E}[X] = \frac{r}{p}.
-	\end{align*}
-	\item \underline{Variance}. Let $q = 1 - p$,
-	\begin{align*}
-	\U{Var}[X] = \frac{rq}{p^2}.
-	\end{align*}
-	\item \underline{M.G.F.}
-	\begin{align*}
-	m_X: (-\infty, -\ln q) \rightarrow \R, \qquad m_X(t) = \frac{(pe^t)^r}{(1-qe^t)^r}.
-	\end{align*}
 \end{itemize}
 
 \end{frame}
@@ -375,15 +354,12 @@ is said to follow a \highlightg{Pascal distribution} with parameters $p$ and $r$
 \begin{frame}{Negative Binomial Distribution}
 
 \justifying
-\structb{Definition.} Let $r\in \N\setminus \{0\}$. A random variable $(X, f_X)$ with
+\structb{Definition.} A random variable $(X, f_X)$ has the \highlightg{negative binomial distribution} with parameters $r$ and $p$ if the probability density function is given by
 \begin{align*}
-X: S \rightarrow \Omega = \N
+f_X: \N \rightarrow \R, \qquad f_X(x) = \binom{x+r-1}{r-1} p^r(1-p)^{x}.
 \end{align*}
-and distribution function $f_X: \Omega\rightarrow \R$ given by
-\begin{align*}
-f_X(x) = \binom{x+r-1}{r-1} p^r(1-p)^{x}, \qquad 0 < p < 1,
-\end{align*}
-is said to follow a \highlightg{negative binomial distribution} with parameters $p$ and $r$.
+~\\
+\structb{Interpretation.} $f_X(x)$ is the probability of $x$ failures before first obtaining $r$ successes in Bernoulli trials, given the probability for each success is $p$.
 
 \end{frame}
 
@@ -409,29 +385,162 @@ m_X: (-\infty, -\ln q) \rightarrow \R, \qquad m_X(t) = \frac{p^r}{(1-qe^t)^r}.
 
 \end{frame}
 
-\begin{frame}{Gamma Distribution}
+\subsection{Poisson Distribution}
+
+\begin{frame}{Poisson Distribution}
 
 \justifying
-\structb{Definition.} Let $r\in \N\setminus \{0\}$. A random variable $(X, f_X)$ with
+\structb{Definition.} A random variable $X$ has the \highlightg{Poisson distribution} with parameter $k > 0$ if probability density function is given by
 \begin{align*}
-X: S \rightarrow \Omega = \N
+f_X: \N \rightarrow \R, \qquad f_X(x) = \frac{k^xe^{-k}}{x!}
 \end{align*}
-and distribution function $f_X: \Omega\rightarrow \R$ given by
-\begin{align*}
-f_X(x) = \binom{x+r-1}{r-1} p^r(1-p)^{x}, \qquad 0 < p < 1,
-\end{align*}
-is said to follow a \highlightg{negative binomial distribution} with parameters $p$ and $r$.
+~\\
+\structb{Interpretation.} $f_X(x)$ is the probability of $x$ arrivals in the time interval $[0, t]$ with arrival rate $\lambda > 0$, and $k = \lambda t$. \\
+~\\
+~~~~\emph{``...which describes the occurrence of events that occur at a \underline{constant rate} and \underline{continuous environment}.''} \\
 
 \end{frame}
 
-\begin{frame}{Poisson, Gamma, and Negative Binomial Distribution}
+\begin{frame}{Poisson Distribution}
+
+\structb{Interpretation.} \emph{Constant rate} and \emph{continuous environment}?
+\begin{itemize}
+	\justifying
+	\item \underline{Continuous environment}. Not limited to time intervals, but also subregions of two- or three-dimensional regions or sublengths of a linear distance, and any regions that can be divided into arbitrarily small pieces.
+	\item \underline{Constant rate}. The probability of an occurrence during each very short interval (region) must be approximately proportional to the length (area, volume) of that interval (region).
+\end{itemize}
+\uncover<2>{
+\structb{Examples.} Poisson process can be used to model
+\begin{enumerate}[(a).]
+	\justifying
+	\item the number of particles that strike a certain target at a constant rate in a particular period;
+	\item the number of oocysts that occur in a water supply system given constant rate of occurrence per liter;
+\end{enumerate}
+and many more.
+}
+
+\end{frame}
+
+\begin{frame}{Poisson Distribution}
 
 \justifying
-Suppose a conditional random variable $X|\Lambda$ follows a Poisson distribution, and $\Lambda$ follows a 
+\structb{Mean, variance and M.G.F.} 
+\begin{itemize}
+\justifying
+\item \underline{Mean}.
+\begin{align*}
+\U{E}[X] = k.
+\end{align*}
+\item \underline{Variance}.
+\begin{align*}
+\U{Var}[X] = k.
+\end{align*}
+\item \underline{M.G.F.}
+\begin{align*}
+m_X: \R \rightarrow \R, \qquad m_X(t) = e^{k(e^t-1)}.
+\end{align*}
+\end{itemize}
+
+\end{frame}
+
+\subsection{Connection of Distributions}
+
+\begin{frame}{Distributions Based on Bernoulli Trials}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{./images/rc2fig1.pdf}
+	\caption{Connections of distributions based on Bernoulli trials.}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Connections of Distributions}
+
+\begin{itemize}
+	\justifying
+	\item \underline{Bernoulli $\rightarrow$ Binomial}. $X_1, \ldots, X_n$ are independent random variables,
+	\begin{align*}
+	X_i\sim \U{Bernoulli}(p) \quad \Rightarrow \quad X = X_1 + \cdots + X_n \sim \U{B}(n, p).
+	\end{align*}
+	\item \underline{Binomial $\rightarrow$ Binomial}. $X_1, \ldots, X_k$ are independent random variables,
+	\begin{align*}
+	X_i\sim \U{B}(n_i, p) \quad \Rightarrow\quad X = X_1 + \cdots + X_k \sim \U{B}(n, p),
+	\end{align*}
+	where $n = n_1 + \cdots + n_k$.
+	\item \underline{Geometric $\rightarrow$ Negative binomial}. $X_1, \ldots, X_r$ are independent random variables,
+	\begin{align*}
+	X_i\sim \U{Geom}(p) \quad \Rightarrow \quad X = X_1 + \cdots + X_r \sim \U{NB}(r, p).
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Connections of Distributions}
+
+\begin{itemize}
+	\justifying
+	\item \underline{Negative binomial $\rightarrow$ Negative binomial}. $X_1, \ldots, X_n$ are independent random variables,
+	\begin{align*}
+	X_i\sim \U{NB}(r_i, p) \quad \Rightarrow \quad X = X_1 + \cdots + X_n \sim \U{NB}(r, p),
+	\end{align*}
+	where $r = r_1 + \cdots + r_n$.
+	\item \underline{Poisson $\rightarrow$ Poisson}. $X_1, \ldots, X_n$ are independent random variables,
+	\begin{align*}
+	X_i\sim \U{Poisson}(k_i) \quad \Rightarrow \quad X = X_1 + \cdots + X_n \sim \U{Poisson}(k),
+	\end{align*}
+	where $k = k_1 + \cdots + k_n$.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Closeness of Binomial Distribution and Poisson Distribution}
+
+\justifying
+\structb{Theorem.} For $n\in \N\setminus\{0\}, 0 < p < 1$, suppose $f(x; n, p)$ denotes the probability density function of binomial distribution with parameters $n$ and $p$, while $f(x; k)$ denotes the probability density function of Poisson distribution with parameter $k$. Let $\{p_n\}_{n=1}^{\infty}$ be a sequence of numbers between 0 and 1 such that
+\begin{align*}
+\lim_{n\rightarrow\infty} np_n = k,
+\end{align*}
+then
+\begin{align*}
+\lim_{n\rightarrow \infty} f(x; n, p_n) = f(x; k), \qquad \U{for\ all\ } x = 0, 1, \ldots
+\end{align*}
+This means we can approximate the binomial distribution with Poisson distribution when $n$ is large. A proof can be found in \texttt{s1.pdf}.
 
 \end{frame}
 
 
 \section{Exercises}
 
+\subsection{Discrete Random Variables}
 
+\begin{frame}{Exercises}
+
+\justifying
+\structb{Exercise 1.} Suppose Keven plays a game where he has probability $p$ to win in each play. When he wins, his fortune is doubled, and when he loses, his fortune is cut in half. If he begins playing with a given fortune $c > 0$, what is the expected value of his fortune after $n$ independent plays?
+
+\end{frame}
+
+\subsection{Common Discrete Distributions}
+
+
+\begin{frame}{Exercises}
+
+\justifying
+\structb{Exercise 2.} For $0 < p < 1$ and $n = 2, 3, \ldots$, determine the value of
+\begin{align*}
+\sum_{x=2}^n x(x-1)\binom{n}{x} p^x(1-p)^{n-x}.
+\end{align*}
+
+\end{frame}
+
+
+\begin{frame}{Exercises}
+
+\justifying
+\structb{Exercise 3.} Suppose that a book with $n$ pages contains on the average $\lambda$ misprints per page. What is the probability that there will be at least $m$ pages which contain more than $k$ misprints?
+
+\end{frame}
