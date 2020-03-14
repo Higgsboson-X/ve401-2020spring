@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300) (preloaded format=pdflatex 2020.3.6)  13 MAR 2020 21:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300) (preloaded format=pdflatex 2020.3.6)  14 MAR 2020 20:55
 entering extended mode
 **./s.tex
 (s.tex
@@ -928,7 +928,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--71
 
  []
 
-[2]) [3] (s.aux) ) 
+[2]
+Overfull \hbox (4.85362pt too wide) in paragraph at lines 91--92
+\OT1/cmr/m/n/12 components fails. Suppose that the length of life of the $\OML/
+cmm/m/it/12 C[]; C[]; C[]$ \OT1/cmr/m/n/12 has the exponential distribution
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--114
+
+ []
+
+[3]) [4] (s.aux) ) 
 Here is how much of TeX's memory you used:
  18408 strings out of 483220
  350362 string characters out of 2960973
@@ -944,12 +960,13 @@ m/cmbx12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/
 cmex10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cm
 mi12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi
 8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.p
-fb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb><
-/home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></h
-ome/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on s.pdf (4 pages, 150106 bytes).
+fb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb><
+/home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></hom
+e/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/
+chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on s.pdf (5 pages, 165476 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
+ 68 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

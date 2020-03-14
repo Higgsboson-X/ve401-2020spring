@@ -1,14 +1,10 @@
-\BOOKMARK [2][]{Outline0.1}{Discrete Random Variables}{}% 1
-\BOOKMARK [3][]{Outline0.1.1.3}{Random Variables and Probability Density Function}{Outline0.1}% 2
-\BOOKMARK [3][]{Outline0.1.2.5}{Cumulative Distribution Function}{Outline0.1}% 3
-\BOOKMARK [3][]{Outline0.1.3.7}{Expectation and Variance}{Outline0.1}% 4
-\BOOKMARK [3][]{Outline0.1.4.11}{Moment-Generating Function}{Outline0.1}% 5
-\BOOKMARK [2][]{Outline0.2}{Common Distributions of Discrete Random Variables}{}% 6
-\BOOKMARK [3][]{Outline0.2.1.18}{Binomial Distribution}{Outline0.2}% 7
-\BOOKMARK [3][]{Outline0.2.2.23}{Geometric Distribution}{Outline0.2}% 8
-\BOOKMARK [3][]{Outline0.2.3.26}{Pascal, Negative Binomial Distribution}{Outline0.2}% 9
-\BOOKMARK [3][]{Outline0.2.4.31}{Poisson Distribution}{Outline0.2}% 10
-\BOOKMARK [3][]{Outline0.2.5.36}{Connection of Distributions}{Outline0.2}% 11
-\BOOKMARK [2][]{Outline0.3}{Exercises}{}% 12
-\BOOKMARK [3][]{Outline0.3.1.41}{Discrete Random Variables}{Outline0.3}% 13
-\BOOKMARK [3][]{Outline0.3.2.43}{Common Discrete Distributions}{Outline0.3}% 14
+\BOOKMARK [2][]{Outline0.1}{Continuous Random Variables}{}% 1
+\BOOKMARK [3][]{Outline0.1.1.3}{Features of Continuous Random Variables}{Outline0.1}% 2
+\BOOKMARK [3][]{Outline0.1.2.8}{Transformation of Random Variables}{Outline0.1}% 3
+\BOOKMARK [2][]{Outline0.2}{Common Distributions}{}% 4
+\BOOKMARK [3][]{Outline0.2.1.13}{Exponential Distribution}{Outline0.2}% 5
+\BOOKMARK [3][]{Outline0.2.2.19}{Gamma Distribution}{Outline0.2}% 6
+\BOOKMARK [3][]{Outline0.2.3.25}{Normal Distribution}{Outline0.2}% 7
+\BOOKMARK [3][]{Outline0.2.4.30}{Connections of Distributions}{Outline0.2}% 8
+\BOOKMARK [2][]{Outline0.3}{Exercises}{}% 9
+\BOOKMARK [3][]{Outline0.3.1.36}{Common Distributions}{Outline0.3}% 10

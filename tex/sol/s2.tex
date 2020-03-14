@@ -30,7 +30,7 @@ Therefore,
 \lim_{n\rightarrow \infty} f(x; n, p_n) = \frac{k^xe^{-k}}{x!} = f(x; k).
 \end{align*}
 
-\section*{Exercise 1.}
+\section*{Part 1 Exercise 1.}
 
 Suppose Keven plays a game where he has probability $p$ to win in each play. When he wins, his fortune is doubled, and when he loses, his fortune is cut in half. If he begins playing with a given fortune $c > 0$, what is the expected value of his fortune after $n$ independent plays? \\
 ~\\
@@ -44,7 +44,7 @@ c\U{E}[X_1\cdots X_n] = c\times \U{E}[X_1]\cdots \U{E}[X_n] = \frac{c}{2^n}(1+3p
 \end{align*}
 
 
-\section*{Exercise 2.}
+\section*{Part 1 Exercise 2.}
 
 For $0 < p < 1$ and $n = 2, 3, \ldots$, determine the value of
 \begin{align*}
@@ -63,7 +63,7 @@ If $X$ has the binomial distribution with parameters $n$ and $p$, then the two t
 \end{align*}
 \underline{\textbf{Note}}. Not limited to this example, it is useful in general to calculate some integrals (especially in statistics) if we know the probability density functions, expectations and variances of some common distributions.
 
-\section*{Exercise 3.}
+\section*{Part 1 Exercise 3.}
 
 Suppose that a book with $n$ pages contains on the average $\lambda$ misprints per page. What is the probability that there will be at least $m$ pages which contain more than $k$ misprints? \\
 ~\\
@@ -84,3 +84,43 @@ which gives
 P[X\geq m] = \sum_{x=m}^n \binom{n}{x} p^x(1-p)^{n-x},
 \end{align*}
 where $p$ is given by the formula above.
+
+
+\section*{Part 2 Exercise 1.}
+
+Suppose that a certain system contains three components $C_1, C_2, C_3$ that function independently of each other and are connected as series, so that the system fails as soon as one of the components fails. Suppose that the length of life of the $C_1, C_2, C_3$ has the exponential distribution with parameters
+\begin{align*}
+\beta_1 = 0.001, \qquad \beta_2 = 0.003, \qquad \beta_3 = 0.006,
+\end{align*}
+respectively, all measured in hours. Determine the probability that the system will not fail before 100 hours.\\
+~\\
+\textbf{Solution.} Let $Y$ denote the length of life of the system, and $X_1, X_2, X_3$ are the lifetime of each component. Then for any $y > 0$,
+\begin{align*}
+P[Y > y] & = P[X_1 > y, X_2 > y, X_3 > y] \\
+& = P[X_1 > y]P[X_2 > y]P[X_3 > y] \\
+& = e^{-(\beta_1 + \beta_2 + \beta_3)y}.
+\end{align*}
+Therefore,
+\begin{align*}
+P[Y > 100] = e^{-100\times 0.01} = \frac{1}{e}.
+\end{align*}
+
+
+\section*{Part 2 Exercise 2.}
+
+Let $X_1, X_2, X_3$ be independent lifetimes of memory chips. Suppose each $X_i$ follows the normal distribution with mean 300 hours and standard deviation 10 hours. Compute the probability that at least one of the three chips lasts at least 290 hours. \\
+~\\
+\textbf{Solution.} Let $A_i$ be the event that chip $i$ lasts at most 290 hours. Then the probability of interest is given by
+\begin{align*}
+P & = \bigcup_{i=1}^3 A_i^c \\
+& = 1 - P\left[\bigcap_{i=1}^3 A_i \right] \\
+& = 1 - \prod_{i=1}^3 P[A_i].
+\end{align*}
+Since the lifetime of each chip has the normal distribution with mean 300 and standard deviation 10, each $A_i$ has probability
+\begin{align*}
+F\left(\frac{290 - 300}{10} \right) = F(-1) = 1 - 0.8413 = 0.1587.
+\end{align*}
+Therefore,
+\begin{align*}
+P = 1 - 0.1587^3 = 0.996.
+\end{align*}
