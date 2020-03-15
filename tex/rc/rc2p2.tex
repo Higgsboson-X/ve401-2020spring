@@ -94,18 +94,24 @@ f_Y(t) = 0, \qquad \U{for\ } y\notin \U{ran\ } \varphi.
 f_X(x) = \left\{
 \begin{array}{ll}
 3(1-x)^2 & \U{for\ } 0 < x < 1, \\
-0, \U{otherwise}.
+0, & \U{otherwise}.
 \end{array}
 \right.
 \end{align*}
 What is the distribution of $Y$? \\
 \only<2>{
+	\structb{Solution.} \begin{enumerate}[(i).]
+		\item Identify and calculate $\varphi^{-1}$ and $\dfrac{\U{d}\varphi^{-1}(y)}{\U{d}y}$.
+		\item Substitute  $x$ with $\varphi^{-1}(y)$ in the density function of $X$.
+	\end{enumerate}
+}
+\only<3>{
 	\structb{Solution.} We have $\varphi(x) = ve^{xt}$, and thus
 	\begin{align*}
 	\varphi^{-1}(y) = \frac{1}{t}\log\left(\frac{y}{v} \right), \qquad \frac{\U{d}\varphi^{-1}(y)}{\U{d}y} = \frac{1}{ty}.
 	\end{align*}
 }
-\uncover<3>{
+\uncover<4>{
 	\structb{Solution (continued).} Therefore,
 	\begin{align*}
 	f_Y(y) = \left\{
@@ -195,7 +201,7 @@ P[X > x + s|X > x] = P[X > s].
 	& = P[X_1 > t]\times \cdots \times P[X_n > t] \\
 	& = e^{-n\beta t},
 	\end{align*}
-	indicating a binomial distribution with parameter $n\beta$. What about (ii)?
+	indicating an exponential distribution with parameter $n\beta$. What about (ii)?
 }
 
 \end{frame}
@@ -365,6 +371,7 @@ where $\Phi$ is the cumulative distribution function for the standard normal dis
 	\justifying
 	\item To ensure stability of an aircraft, the broken components should be removed, replaced, and repaired immediately
 	\item When the components are repaired, the replacing component is removed from the aircraft and restored to storage.
+	\item Suppose the components are returned in the same order as they are removed from the aircraft.
 	\item \emph{Q}: How many components should be stored in case of such usage?
 \end{itemize}
 
@@ -386,7 +393,7 @@ where $\Phi$ is the cumulative distribution function for the standard normal dis
 
 \begin{frame}{Poisson, Gamma and Negative Binomial Distribution}
 
-\structb{Application (continued).} 
+\structb{Application (continued).} We have the following models.
 \begin{itemize}
 	\justifying
 	\item The demand is a random variable $R$ that follows a Poisson distribution
@@ -409,14 +416,31 @@ where $\Phi$ is the cumulative distribution function for the standard normal dis
 \justifying
 \structb{Application (continued).} Then the probability of $r$ demands during the lead time with parameter $k$ is
 \begin{align*}
-p_{rk} & = \int_0^{\infty} f_R(r|t) f_T(t) \U{d}t \\
+p_{rk} & = \int_0^{\infty} f_R(r|t) f_T(t) \U{d}t \qquad \red{(\U{recall\ } P[A] = \sum P[A|B]P[B])} \\
 & = \int_0^{\infty} \frac{e^{-\lambda t}(\lambda t)^r}{\Gamma(r+1)} \times \frac{\mu e^{-\mu t}(\mu t)^{k-1}}{\Gamma(k)} \U{d}t \\
-& = \frac{\lambda^t \mu^k}{\Gamma(r+1)\Gamma(k)}\int_0^{\infty} t^{r+k-1}e^{-(\lambda+\mu)t}\U{d}t \qquad (\U{let\ }z = (\lambda + \mu)t) \\
+& = \frac{\lambda^t \mu^k}{\Gamma(r+1)\Gamma(k)}\int_0^{\infty} t^{r+k-1}e^{-(\lambda+\mu)t}\U{d}t \qquad \red{(\U{let\ }z = (\lambda + \mu)t)} \\
 & = \frac{\lambda^r\mu^k}{(\lambda+\mu)^{r+k}\Gamma(r+1)\Gamma(k)}\int_0^{\infty} z^{r+k-1}e^{-z}\U{dz} \\
 & = \frac{\lambda^r\mu^k}{(\lambda+\mu)^{r+k}}\times \frac{\Gamma(r+k)}{\Gamma(r+1)\Gamma(k)} = \binom{r+k-1}{k-1}\frac{(\lambda/\mu)^r}{(1+\lambda/\mu)^{r+k}},
 \end{align*}
 implying $r$ follows a negative binomial distribution with mean $\lambda k/\mu$ and variance $\lambda k/\mu(1+\lambda/\mu)$.
 
+
+\end{frame}
+
+
+\begin{frame}{Poisson, Gamma and Negative Binomial Distribution}
+
+\justifying
+\structb{Application (continued).} Next steps are basically the following.
+\begin{enumerate}
+	\justifying
+	\item Calculate \emph{risk level} $P_{nk}$, defined by
+	\begin{align*}
+	P_{nk} = \sum_{r=n+1}^{\infty} p_{rk}.
+	\end{align*}
+	\item Predetermine the risk level, calculate the corresponding float size $n$.
+\end{enumerate}
+For more information, please see the file uploaded on canvas.
 
 \end{frame}
 
