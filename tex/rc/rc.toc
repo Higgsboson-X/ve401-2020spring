@@ -1,10 +1,2 @@
-\beamer@sectionintoc {1}{Continuous Random Variables}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Features of Continuous Random Variables}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Transformation of Random Variables}{8}{0}{1}
-\beamer@sectionintoc {2}{Common Distributions}{14}{0}{2}
-\beamer@subsectionintoc {2}{1}{Exponential Distribution}{14}{0}{2}
-\beamer@subsectionintoc {2}{2}{Gamma Distribution}{20}{0}{2}
-\beamer@subsectionintoc {2}{3}{Normal Distribution}{26}{0}{2}
-\beamer@subsectionintoc {2}{4}{Connections of Distributions}{31}{0}{2}
-\beamer@sectionintoc {3}{Exercises}{38}{0}{3}
-\beamer@subsectionintoc {3}{1}{Common Distributions}{38}{0}{3}
+\beamer@sectionintoc {1}{More About Normal Distribution}{3}{0}{1}
+\beamer@sectionintoc {2}{Multivariate Random Variables}{3}{0}{2}
