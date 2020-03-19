@@ -1,2 +1,9 @@
 \beamer@sectionintoc {1}{More About Normal Distribution}{3}{0}{1}
-\beamer@sectionintoc {2}{Multivariate Random Variables}{3}{0}{2}
+\beamer@subsectionintoc {1}{1}{Normal Distribution}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Applications of Normal Distribution}{12}{0}{1}
+\beamer@sectionintoc {2}{Multivariate Random Variables}{16}{0}{2}
+\beamer@subsectionintoc {2}{1}{Discrete Multivariate Random Variables}{16}{0}{2}
+\beamer@subsectionintoc {2}{2}{Continuous Multivariate Random Variables}{19}{0}{2}
+\beamer@subsectionintoc {2}{3}{Expectation and Variance}{22}{0}{2}
+\beamer@subsectionintoc {2}{4}{The Hypergeometric Distribution}{29}{0}{2}
+\beamer@sectionintoc {3}{Exercises}{32}{0}{3}
