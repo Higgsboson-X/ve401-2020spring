@@ -140,6 +140,53 @@ f_Y(y) = 0, \qquad \U{for\ } y\notin \U{ran\ } \varphi.
 \end{frame}
 
 
+\begin{frame}{From RC2 Part 1: Connections of Discrete Distributions}
+
+\begin{itemize}
+	\justifying
+	\item \underline{Bernoulli $\rightarrow$ Binomial}. $X_1, \ldots, X_n$ are independent random variables,
+	\begin{align*}
+	X_i\sim \U{Bernoulli}(p) \quad \Rightarrow \quad X = X_1 + \cdots + X_n \sim \U{B}(n, p).
+	\end{align*}
+	\item \underline{Binomial $\rightarrow$ Binomial}. $X_1, \ldots, X_k$ are independent random variables,
+	\begin{align*}
+	X_i\sim \U{B}(n_i, p) \quad \Rightarrow\quad X = X_1 + \cdots + X_k \sim \U{B}(n, p),
+	\end{align*}
+	where $n = n_1 + \cdots + n_k$.
+	\item \underline{Geometric $\rightarrow$ Negative binomial}. $X_1, \ldots, X_r$ are independent random variables,
+	\begin{align*}
+	X_i\sim \U{Geom}(p) \quad \Rightarrow \quad X = X_1 + \cdots + X_r \sim \U{NB}(r, p).
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{From RC2 Part 1: Connections of Discrete Distributions}
+
+\begin{itemize}
+\justifying
+\item \underline{Negative binomial $\rightarrow$ Negative binomial}. $X_1, \ldots, X_n$ are independent random variables,
+\begin{align*}
+X_i\sim \U{NB}(r_i, p) \quad \Rightarrow \quad X = X_1 + \cdots + X_n \sim \U{NB}(r, p),
+\end{align*}
+where $r = r_1 + \cdots + r_n$.
+\item \underline{Poisson $\rightarrow$ Poisson}. $X_1, \ldots, X_n$ are independent random variables,
+\begin{align*}
+X_i\sim \U{Poisson}(k_i) \quad \Rightarrow \quad X = X_1 + \cdots + X_n \sim \U{Poisson}(k),
+\end{align*}
+where $k = k_1 + \cdots + k_n$.
+\end{itemize}
+~\\
+\uncover<2>{
+	\justifying
+	\structb{Digression.} A Second Look into Connections of Distributions --- \texttt{s3.pdf}.
+}
+
+
+\end{frame}
+
+
 
 \begin{frame}{Sum of Normal Distributions}
 
@@ -287,7 +334,7 @@ P\left[\left|\frac{X_1 + \ldots + X_n}{n} - \mu \right| \geq \varepsilon \right]
 }
 \uncover<4>{
 	\justifying
-	Applying the Chebyshev's inequality with $k = 2$ to 
+	\structb{Proof (continued).} Applying the Chebyshev's inequality with $k = 2$ to 
 	\begin{align*}
 	X = \dfrac{X_1 + \cdots + X_n}{n} - \mu,
 	\end{align*}
@@ -393,7 +440,7 @@ where $f_{\mathbf{X}}$ is the \highlightg{joint density function} of the random 
 \begin{itemize}
 \item \highlightg{Marginal density} $f_{X_k}$ for $X_k, k = 1, \ldots, n$:
 \begin{align*}
-f_{X_k}(x_k) = \int_{\R^{n-1}} f_{\mathbf{X}}(x_1, \ldots, x_n) \U{d}x_1\ldots \U{d}x_{k-1}\U{x_{k+1}}\ldots \U{d}x_n.
+f_{X_k}(x_k) = \int_{\R^{n-1}} f_{\mathbf{X}}(x_1, \ldots, x_n) \U{d}x_1\ldots \U{d}x_{k-1}\U{d}x_{k+1}\ldots \U{d}x_n.
 \end{align*}
 \item \highlightg{Independent} multivariate random variables:
 \begin{align*}
@@ -522,7 +569,7 @@ What are the joint density function and cumulative distribution of $X$? \\
 \end{align*}
 where the \highlightg{covariance} of $(X_i, X_j)$ is given by
 \begin{align*}
-\U{Cov}[X_i, X_j] = \U{E}[(X_i-\mu_{X_i})(X_j-\mu_{X_j})],
+\U{Cov}[X_i, X_j] = \U{E}[(X_i-\mu_{X_i})(X_j-\mu_{X_j})] = \U{E}[X_iX_j] - \U{E}[X_i]\U{E}[X_j],
 \end{align*}
 and
 \begin{align*}
@@ -638,6 +685,43 @@ The binomial distribution may be used to approximate the hyper-geometric distrib
 \end{frame}
 
 
+\begin{frame}{The Hypergeometirc Distribution}
+
+\justifying
+\structb{Calculation of mean and variance.} Transform to Bernoulli trials $(X_1, \ldots, X_n)$.
+\only<1>{
+	\begin{itemize}
+		\justifying
+		\item The Bernoulli trials are identical with $p_k = \dfrac{r}{N}$, i.e.,
+		\begin{align*}
+		P[X_1 = 1] & = \frac{r}{N}, \\ 
+		P[X_2 = 1] & = P[X_2 = 1|X_1 = 1]P[X_1 = 1] + \\
+		& \qquad\qquad\qquad + P[X_2 = 1|X_1 = 0]P[X_1 = 0] \\
+		& = \frac{r-1}{N-1}\cdot \frac{r}{N} + \frac{r}{N-1}\frac{N-r}{N} \\
+		& = \frac{r}{N},
+		\end{align*}
+		and so on.
+	\end{itemize}
+}
+\only<2>{
+	\begin{itemize}
+		\justifying
+		\item $\U{E}[X_k] = p_k = \dfrac{r}{N}, \U{Var}[X_k] = p_k(1-p_k)$.
+		\item For variance,
+		\begin{align*}
+		\U{Var}[X] = \sum_{k=1}^n \U{Var}[X_k] + 2\sum_{i<j}\U{Cov}[X_i, X_j],
+		\end{align*}
+		where
+		\begin{align*}
+		\U{Cov}[X_i, X_j] & = \red{\U{E}[X_iX_j]} - \U{E}[X_i]\U{E}[X_j], \\
+		\red{\U{E}[X_i, X_j]} & = p_{ij} = \frac{r}{N}\cdot \frac{r-1}{N-1}, \qquad i\neq j.
+		\end{align*}
+	\end{itemize}
+}
+
+\end{frame}
+
+
 \begin{frame}{Closeness of Binomial and Hypergeometirc Distributions}
 
 \justifying
@@ -667,10 +751,35 @@ A proof of this theorem can be found in \texttt{s3.pdf}.
 	\begin{align*}
 	\U{Var}[X] = \sum_{i=1}^n \U{Var}[X_i] + 2\sum_{i<j} \U{Cov}[X_i, X_j].
 	\end{align*}
+	How to calculate $\U{Cov}[X_i, X_j]$?
 }
-\uncover<3>{
+\only<3>{
 	\justifying
-	\structb{Solution (continued).} Because of symmetry among $X_1, \ldots, X_n$, we have
+	\structb{Solution (approach 1).} Knowing that
+	\begin{align*}
+	\U{E}[X_iX_j] = \frac{2}{T(T-1)}\sum_{i<j} a_ia_j,
+	\end{align*}
+	and
+	\begin{align*}
+	\U{Var}[X_i] & = \frac{1}{T}\sum_{i=1}^T (a_i-\mu)^2  = \frac{1}{T}\sum_{i=1}^T (a_i^2 - 2\mu a_i + \mu^2) \\
+	& = \frac{1}{T}\left[\left(\sum_{i=1}^T a_i^2\right) - 2T\mu^2 + T\mu^2\right] \\
+	& = \frac{1}{T}\sum_{i=1}^T a_i^2 - \mu^2.
+	\end{align*}
+}
+\only<4>{
+	\justifying
+	\structb{Solution (approach 1).} Then
+	\footnotesize
+	\begin{align*}
+	\U{Cov}[X_i, X_j] & = \frac{2}{T(T-1)}\sum_{i<j} a_ia_j - \frac{1}{T^2}\left(\sum_{i=1}^T a_i \right)^2 \\
+	& = \frac{1}{T^2(T-1)}\left[2T\sum_{i<j} a_ia_j - (T-1)\left(\sum_{i=1}^T a_i^2 + 2\sum_{i<j}a_ia_j \right) \right] \\
+	& = \frac{1}{T^2(T-1)}\left[\left(\sum_{i=1}^T a_i \right)^2 - \sum_{i=1}^Ta_i^2 - (T-1)\sum_{i=1}^T a_i^2 \right] \\
+	& = \frac{1}{T^2(T-1)} \left[T^2\mu^2 - T^2\sigma^2-T^2\mu^2 \right] = -\frac{\sigma^2}{T-1}.
+	\end{align*}
+}
+\uncover<5>{
+	\justifying
+	\structb{Solution (approach 2).} Because $\U{Cov}[X_i, X_j]$ does not depend on $i, j$ as long as $i\neq j$, we have
 	\begin{align*}
 	\U{Var}[X] = n\sigma^2 + n(n-1)\U{Cov}[X_1, X_2].
 	\end{align*}
