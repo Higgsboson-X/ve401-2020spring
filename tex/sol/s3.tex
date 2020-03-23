@@ -214,7 +214,7 @@ Suppose $X_1, \ldots, X_n$ are independent Poisson distributions with parameters
 
 \begin{theorem}
 	\label{thrm:4}
-	Let $X$ and $Y$ be two continuous random variables with probability density functions $f_X(x)$ and $f_Y(y)$, respectively. Both density function are defined on $\R$. Then the probability density function of the sum $Z = X + Y$ is given by
+	Let $X$ and $Y$ be two continuous random variables with probability density functions $f_X(x)$ and $f_Y(y)$, respectively. Both density functions are defined on $\R$. Then the probability density function of the sum $Z = X + Y$ is given by
 	\begin{align*}
 	f_Z(z) = (f_X * f_Y)(z) = \int_{-\infty}^{\infty} f_X(x) f_Y(z-x) \U{d}x.
 	\end{align*}
@@ -258,7 +258,7 @@ Suppose $X_1, \ldots, X_n$ are independent Poisson distributions with parameters
 \subsubsection*{Example --- Sum of Independent Gamma Distributions}
 
 Suppose random variables $X_1, \ldots, X_n$ are independent, and each $X_i$ follows the gamma distribution with parameters $\alpha_i$ and $\beta$. Then the sum $X = X_1 + \cdots + X_n$ follows the gamma distribution with parameters $\alpha_1 + \cdots + \alpha_n$ and $\beta$. \\
-\textbf{\underline{Note}.} This indicates also that the sum of independent exponential distributions is the gamma distribution, since $\U{Exp}(\beta)$ is equivalent to $\U{Gamma}(1, \beta)$.
+\textbf{\underline{Note}.} This indicates also that the sum of i.i.d. exponential distributions is the gamma distribution, since $\U{Exp}(\beta)$ is equivalent to $\U{Gamma}(1, \beta)$.
 \begin{proof}
 	Similar as before, we can use either Theorem \ref{thrm:4} or m.g.f.
 	\begin{itemize}
