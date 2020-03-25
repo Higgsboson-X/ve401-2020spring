@@ -1,0 +1,341 @@
+\section*{Closeness of Binomial and Hypergeometric Distributions}
+
+\begin{theorem}
+	Suppose $Y$ has a binomial distribution with parameters $n\in \N\setminus\{0\}$ and $p, 0 < p < 1$. Let $\{X_k\}$ be a sequence of hypergeometric random variables with parameters $N_k, n, r_k$ such that
+	\begin{align*}
+	\lim_{k\rightarrow \infty} r_k = \infty, \quad \lim_{k\rightarrow \infty} N_k-r_k = \infty, \quad \lim_{k\rightarrow \infty} \frac{r_k}{N_k} = p.
+	\end{align*}
+	Then for each fixed $n$ and each $x = 0, \ldots, n$,
+	\begin{align*}
+	\lim_{k\rightarrow \infty} \frac{P[Y=x]}{P[X_k=x]} = 1.
+	\end{align*}
+\end{theorem}
+\begin{proof}
+	For large enough $k$, we have
+	\begin{align*}
+	P[X_k = x] & = \frac{\dfrac{r_k!}{\red{x!}(r_k-x)!}\cdot \dfrac{(N_k-r_k)!}{\red{(n-x)!}(N_k-r_k-n+x)!}}{\dfrac{N_k!}{\red{n!}(N_k-n)!}} \\
+	& = \binom{n}{x} \frac{r_k!(N_k-r_k)!(N_k-n)!}{(r_k-x)!N_k!(N_k-r_k-n+x)!}.
+	\end{align*}
+	Recall Stirling's formula from assignment 2, 
+	\begin{align*}
+	n!\sim \sqrt{2\pi n}\left(\frac{n}{e} \right)^n,
+	\end{align*}
+	then we have
+	\begin{align*}
+	P[X_k=x] \sim \binom{n}{x} \frac{r_k^{r_k+1/2}}{(r_k-x)^{r_k-x+1/2}}\cdot \frac{(N_k-r_k)^{N_k-r_k+1/2}}{(N_k-r_k-n+x)^{N_k-r_k-n+x+1/2}} \cdot \frac{(N_k-n)^{N_k-n+1/2}}{N_k^{N_k+1/2}}.
+	\end{align*}
+	Then from calculus we have
+	\begin{align*}
+	\lim_{k\rightarrow \infty} \left(\frac{r_k}{r_k-x} \right)^{r_k-x+1/2} & = e^x,\\
+	\lim_{k\rightarrow \infty} \left(\frac{N_k-r_k}{N_k-r_k-n+x} \right)^{N_k-r_k-n+x+1/2} & = e^{n-x} \\
+	\lim_{k\rightarrow \infty} \left(\frac{N_k-n}{N_k} \right)^{N_k-n+1/2} & = e^{-n}.
+	\end{align*}
+	Therefore,
+	\begin{align*}
+	P[X_k = x] \sim \binom{n}{x} \frac{r_k^x(N_k-r_k)^{n-x}}{N_k^n} \sim \binom{n}{x} p^x(1-p)^{n-x} = P[Y = x].
+	\end{align*}
+\end{proof}
+
+
+\section*{Exercise 1.}
+
+Suppose $Y$ is the rate (calls per hour) at which calls arrive at a switchboard. Let $X$ be the number of calls during a two-hour period. Suppose the joint probability density function is given by
+\begin{align*}
+f_{XY}(x, y) = \left\{
+\begin{array}{ll}
+\dfrac{(2y)^x}{x!} e^{-3y} & \U{for\ } y > 0 \U{\ and\ } x = 0, 1, \ldots, \\
+0 & \U{otherwise}.
+\end{array}
+\right.
+\end{align*}
+\begin{enumerate}
+	\item Verify that $f$ is a proper joint probability density function.
+	\item Find $P[X = 0]$.
+\end{enumerate}
+~\\
+\textbf{Solution.} 
+\begin{enumerate}
+	\item To verify that $f$ is a proper joint probability density function, we have
+	\begin{align*}
+	\int_0^{\infty}\left(\sum_{x=0}^{\infty} f_{XY}(x, y)\right) \U{d}y & = \int_0^{\infty} \left(\sum_{x=0}^{\infty} \frac{(2y)^x}{x!} \right) e^{-3y} \U{d}y \\
+	& = \int_0^{\infty} e^{-y} \U{dy} \\
+	& = -e^{-y} \bigg|_0^{\infty} = 1.
+	\end{align*}
+	\item Plugging in $x = 0$ and integrating with respect to $y$,
+	\begin{align*}
+	P[X = 0] & = \int_0^{\infty} f_{XY}(0, y)\U{d}y = \int_0^{\infty} e^{-3y} \U{d}y = \frac{1}{3}.
+	\end{align*}
+\end{enumerate}
+
+
+\section*{Exercise 2.}
+
+
+Suppose that $X_1$ and $X_2$ are independent random variables, so that
+\begin{align*}
+X_1\sim \U{B}(n_1, p), \qquad X_2\sim \U{B}(n_2, p).
+\end{align*}
+For each fixed value of $k (k = 1, 2,\ldots, n_1 + n_2)$, prove that the conditional distribution of $X_1$ given that $X_1 + X_2 = k$ is hyper-geometric with parameters $n_1 + n_2, k, n_1$. \\
+~\\
+\textbf{Solution.} For $x = 1, \ldots, k$, 
+\begin{align*}
+P[X_1 = x|X_1 + X_2 = k] = \frac{P[X_1 = x \U{\ and\ } X_1 + X_2 = k]}{P[X_1 + X_2 = k]} = \frac{P[X_1 = x \U{\ and\ } X_2 = k - x]}{P[X_1 + X_2 = k]}.
+\end{align*}
+Since $X_1$ and $X_2$ are independent,
+\begin{align*}
+P[X_1 = x \U{\ and\ } X_2 = k - x] = P[X_1 = x]P[X_2 = k - x].
+\end{align*}
+Furthermore, since $X_1$ and $X_2$ follow binomial distributions, the sum of them also follows the binomial distribution with parameters $n_1 + n_2$ and $p$. Therefore,
+\begin{align*}
+P[X_1 = x] & = \binom{n_1}{x} p^x(1-p)^{n_1-x}, \\
+P[X_2 = k - x] & = \binom{n_2}{k-x} p^{k-x} (1-p)^{n_2-k+x}, \\
+P[X_1 + X_2 = k] & = \binom{n_1 + n_2}{k} p^k(1-p)^{n_1+n_2-k}.
+\end{align*}
+Thus,
+\begin{align*}
+P[X_1 = x|X_1 + X_2 = k] = \frac{\dbinom{n_1}{x}\dbinom{n_2}{k-x}}{\dbinom{n_1+n_2}{k}},
+\end{align*}
+indicating a hypergeometric distribution with parameters $n_1+n_2, k, n_1$.
+
+
+\section*{A Second Look into Connections of Distributions}
+
+The following two theorems focus on discrete random variables, but hold also in continuous case, by switching sums to integrals in the proofs.
+\begin{theorem}\label{thrm:1}
+	Suppose $X_1, \ldots, X_n$ are independent discrete random variables, then
+	\begin{align*}
+	\U{E}\left[\prod_{i=1}^n X_i \right] = \prod_{i=1}^n \U{E}\left[X_i \right].
+	\end{align*}
+	\textbf{\underline{\emph{Note}}.} This also holds for $\U{E}[\varphi\circ X]$.
+\end{theorem}
+\begin{proof}
+	By definition, the we calculate the expectation using joint probability density function
+	\begin{align*}
+	\U{E}\left[\prod_{i=1}^n X_i \right] & = \sum_{x_1, \ldots, x_n} \left(\prod_{i=1}^n x_i \right) f_{\mathbf{X}}(x_1, \ldots, x_n) \\
+	& = \sum_{x_1, \ldots, x_n} \left(\prod_{i=1}^n x_i \right) f_{X_1}(x_1)\cdots f_{X_n}(x_n) \\
+	& = \prod_{i=1}^n \sum_{x_i} x_i f_{X_i}(x_i) = \prod_{i=1}^n \U{E}\left[X_i \right].
+	\end{align*}
+\end{proof}
+\begin{theorem}
+	\label{thrm:3}
+	Suppose $X_1, \ldots, X_n$ are $n$ independent random variables, and for $i = 1, \ldots, n$, let $m_{X_i}$ denote the m.g.f. of $X_i$. Then the random variable
+	\begin{align*}
+	X = X_1 + \cdots + X_n
+	\end{align*}
+	has the moment generating function
+	\begin{align*}
+	m_X(t) = \prod_{i=1}^n m_{X_i}(t),
+	\end{align*}
+	for every $t$ such that $m_{X_i}(t)$ is finite for $i = 1, \ldots, n$.
+\end{theorem}
+\begin{proof}
+	By definition,
+	\begin{align*}
+	m_X(t) = \U{E}\left[e^{tX} \right] = \U{E}\left[e^{t(X_1 + \cdots + X_n)} \right] = \U{E}\left[\prod_{i=1}^ne^{tX_i} \right].
+	\end{align*}
+	Since $X_1, \ldots, X_n$ are independent, if follows from Theorem \ref{thrm:1} that 
+	\begin{align*}
+	\U{E}\left[\prod_{i=1}^ne^{tX_i} \right] = \prod_{i=1}^n \U{E}\left[e^{tX_i} \right],
+	\end{align*}
+	and thus
+	\begin{align*}
+	m_X(t) = \prod_{i=1}^n m_{X_i}(t).
+	\end{align*}
+\end{proof}
+
+
+\subsection*{Sum of Independent Discrete Random Variables}
+
+\begin{theorem}\label{thrm:2}
+	Let $X$ and $Y$ be two independent integer-valued random variables, with probability density functions $f_X(x)$ and $f_Y(y)$ respectively. Then the density function of the sum of the random variables $Z = X + Y$ is given by
+	\begin{align*}
+	f_Z(z) = (f_X * f_Y)(z) = \sum_k f_X(k)\cdot f_Y(z-k),
+	\end{align*}
+	where $*$ is the discrete convolution operation. For the sum of independent random variables $S_n = X_1 + \cdots + X_n$, we write as
+	\begin{align*}
+	S_n = S_{n-1} + X_n,
+	\end{align*}
+	and calculate by induction.
+\end{theorem}
+\begin{proof}
+	Using the law of total probability,
+	\begin{align*}
+	P[Z = z] & = \sum_{x} P[Z = z|X = x]P[X = x] \\
+	& = \sum_{x} P[Y = z-x|X = x]P[X = x] \\
+	& = \sum_{x} P[Y = z-x]P[X = x] \qquad (\U{independence})\\
+	& = \sum_k f_X(k)\cdot f_Y(z-k).
+	\end{align*}
+\end{proof}
+
+\subsubsection*{Example --- Sum of Independent Poisson Distributions}
+
+Suppose $X_1, \ldots, X_n$ are independent Poisson distributions with parameters $k_1, \ldots, k_n$. Then the sum of these random variables $X = X_1 + \cdots + X_n$ follows the Poisson distribution with parameter $k = k_1 + \cdots + k_n$. \\
+\begin{proof} Following Theorem \ref{thrm:2} or using m.g.f., we have the following two methods.
+	\begin{itemize}
+		\item \underline{Induction method}. Denote
+		\begin{align*}
+		S_n = \sum_{i=1}^n X_i,
+		\end{align*}
+		and then
+		\begin{align*}
+		S_2 = X_1 + X_2.
+		\end{align*}
+		Knowing the probability density function for $X_i$, we have
+		\begin{align*}
+		f_{X_i}(x) = \frac{k_i^xe^{-k_i}}{x!}, \qquad x\in \N.
+		\end{align*}
+		Therefore,
+		\begin{align*}
+		f_{S_2}(s) & = \sum_{x=0}^{s} \frac{k_1^xe^{-k_1}}{x!} \cdot \frac{k_2^{s-x}e^{-k_2}}{(s-x)!} \\
+		& = \sum_{x=0}^{s} \binom{s}{x} \cdot \frac{k_1^xk_2^{s-x} e^{-(k_1+k_2)}}{s!} \\
+		& = \frac{e^{-(k_1+k_2)}}{s!} \sum_{x=0}^s \binom{s}{x} k_1^xk_2^{s-x} \\
+		& = \frac{(k_1+k_2)^se^{-(k_1+k_2)}}{s!},
+		\end{align*}
+		indicating a Poisson distribution with parameter $k_1, k_2$. Using induction with
+		\begin{align*}
+		X = S_n = S_{n-1} + X_n,
+		\end{align*}
+		we can conclude that $X$ follows the Poisson distribution with parameter $k = k_1 + \cdots + k_n$.\\
+		\textbf{\underline{Note}.} Induction steps are necessary if you are doing homework or exam, but are omitted here...
+		\item \underline{M.G.F.} The m.g.f. of each $X_i$ is given by
+		\begin{align*}
+		m_{X_i}: \R\rightarrow \R, \qquad m_{X_i}(t) = e^{k_i(e^t-1)}.
+		\end{align*}
+		Therefore, by Theorem \ref{thrm:3}, we have the m.g.f. for $X$
+		\begin{align*}
+		m_X: \R \rightarrow\R, \qquad m_X(t) = \prod_{i=1}^n e^{k_i(e^t-1)} = \exp\left((e^t-1)\sum_{i=1}^n k_i \right).
+		\end{align*}
+		Since m.g.f. is unique, we know that $X$ follows the Poisson distribution with parameter $k = k_1 + \cdots + k_n$.
+	\end{itemize}
+\end{proof}
+
+\subsection*{Sum of Independent Continuous Random Variables}
+
+
+\begin{theorem}
+	\label{thrm:4}
+	Let $X$ and $Y$ be two continuous random variables with probability density functions $f_X(x)$ and $f_Y(y)$, respectively. Both density functions are defined on $\R$. Then the probability density function of the sum $Z = X + Y$ is given by
+	\begin{align*}
+	f_Z(z) = (f_X * f_Y)(z) = \int_{-\infty}^{\infty} f_X(x) f_Y(z-x) \U{d}x.
+	\end{align*}
+	where $*$ is the convolution of continuous functions. For the sum of independent random variables $S_n = X_1 + \cdots + X_n$, we write as
+	\begin{align*}
+	S_n = S_{n-1} + X_n,
+	\end{align*}
+	and calculate by induction.
+\end{theorem}
+\begin{proof}
+	Using transformation of random variables, suppose that $U = Z = X + Y, V = X$, then the transformation 
+	\begin{align*}
+	H: (X, Y)\mapsto (U, V), \qquad H(x, y) = \binom{x+y}{x},
+	\end{align*}
+	and thus
+	\begin{align*}
+	H^{-1}(u, v) = \binom{v}{u-v}.
+	\end{align*}
+	The Jacobian is given by
+	\begin{align*}
+	DH^{-1}(u, v) = \begin{pmatrix}
+	\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
+	\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+	\end{pmatrix} = \begin{pmatrix}
+	0 & 1 \\
+	1 & -1
+	\end{pmatrix} \quad \Rightarrow\quad \det(DH^{-1}) = -1.
+	\end{align*}
+	Therefore,
+	\begin{align*}
+	f_{UV}(u, v) = f_{XY}(v, u-v) |\det(DH^{-1})| \quad\Rightarrow\quad f_{U}(u) & = \int_{-\infty}^{\infty} f_{UV}(u, v)\U{d}v \\
+	& = \int_{-\infty}^{\infty} f_{XY}(v, u-v) \U{d}v \\
+	& = \int_{-\infty}^{\infty} f_X(v) f_Y(u-v) \U{d}v,
+	\end{align*}
+	by independence. Replacing $U$ with $Z$, we have
+	\begin{align*}
+	f_Z(z) = \int_{-\infty}^{\infty} f_X(x)f_Y(z-x)\U{d}x.
+	\end{align*}
+\end{proof}
+
+\subsubsection*{Example --- Sum of Independent Gamma Distributions}
+
+Suppose random variables $X_1, \ldots, X_n$ are independent, and each $X_i$ follows the gamma distribution with parameters $\alpha_i$ and $\beta$. Then the sum $X = X_1 + \cdots + X_n$ follows the gamma distribution with parameters $\alpha_1 + \cdots + \alpha_n$ and $\beta$. \\
+\textbf{\underline{Note}.} This indicates also that the sum of i.i.d. exponential distributions is the gamma distribution, since $\U{Exp}(\beta)$ is equivalent to $\U{Gamma}(1, \beta)$.
+\begin{proof}
+	Similar as before, we can use either Theorem \ref{thrm:4} or m.g.f.
+	\begin{itemize}
+		\item \underline{Induction method}. Denote
+		\begin{align*}
+		S_n = \sum_{i=1}^n X_i
+		\end{align*}
+		and then
+		\begin{align*}
+		S_2 = X_1 + X_2.
+		\end{align*}
+		The probability density function for gamma distribution is given by
+		\begin{align*}
+		f_{X_i}(x) = \left\{
+		\begin{array}{ll}
+		\dfrac{\beta^{\alpha_i}}{\Gamma(\alpha_i)} x^{\alpha_i-1}e^{-\beta x} & \U{for\ } x > 0, \\
+		0 & \U{for\ } x\leq 0.
+		\end{array}
+		\right.
+		\end{align*}
+		Therefore,
+		\begin{align*}
+		f_{S_2}(s) & = \int_{-\infty}^{\infty} f_{X_1}(x)f_{X_2}(s-x)\U{d}x \\
+		& = \int_0^{s} \dfrac{\beta^{\alpha_1}}{\Gamma(\alpha_1)} x^{\alpha_1-1}e^{-\beta x} \cdot \dfrac{\beta^{\alpha_2}}{\Gamma(\alpha_2)} (s-x)^{\alpha_2-1}e^{-\beta (s-x)} \U{d}x \\
+		& = \beta^{\alpha_1 + \alpha_2}e^{-\beta s} \int_0^s \frac{x^{\alpha_1 - 1}(s-x)^{\alpha_2-1}}{\Gamma(\alpha_1)\Gamma(\alpha_2)}\U{d}x.
+		\end{align*}
+		\fbox{
+			\begin{minipage}{\linewidth}
+				Here we use a property of Gamma function as follows.
+				\begin{align*}
+				\Gamma(x)\Gamma(y) & = \int_0^{\infty} u^{x-1}e^{-u} \U{d}u \cdot \int_0^{\infty} v^{y-1}e^{-v}\U{d}v \\
+				& = \int_0^{\infty} \int_0^{\infty} u^{x-1}v^{y-1} e^{-(u+v)}\U{d}u\U{d}v.
+				\end{align*}
+				Substituting
+				\begin{align*}
+				u = r\cos^2\theta, \qquad v = r\sin^2\theta,
+				\end{align*}
+				we have
+				\begin{align*}
+				J = \begin{pmatrix}
+				\cos^2\theta & -2r\sin\theta\cos\theta \\
+				\sin^2\theta & 2r\sin\theta\cos\theta
+				\end{pmatrix} \quad \Rightarrow \quad \det(J) = 2r\sin\theta\cos\theta.
+				\end{align*}
+				Therefore,
+				\begin{align*}
+				\Gamma(x)\Gamma(y) & = 2\int_0^{\infty} \int_0^{\pi/2} r^{x+y-1} e^{-r} \cos^{2x-1}(\theta)\sin^{2y-1}(\theta) \U{d}\theta\U{d}r \\
+				& = 2\int_0^{\infty} r^{x+y-1}e^{-r}\U{d}r\cdot \int_0^{\pi/2} \cos^{2x-1}(\theta)\sin^{2y-1}(\theta) \U{d}\theta \\
+				& = \Gamma(x+y) \cdot 2\int_0^{\pi/2} \cos^{2x-1}(\theta)\sin^{2y-1}(\theta) \U{d}\theta \qquad (\U{substitute\ } t = \cos^2(\theta))\\
+				& = \Gamma(x+y) \int_0^1 t^{x-1}(1-t)^{y-1} \U{d}t.
+				\end{align*}
+			\end{minipage}
+		}
+		~\\
+		Continuing our proof, we have
+		\begin{align*}
+		f_{S_2}(s) & = \beta^{\alpha_1 + \alpha_2}e^{-\beta s} \int_0^s \frac{x^{\alpha_1 - 1}(s-x)^{\alpha_2-1}}{\Gamma(\alpha_1)\Gamma(\alpha_2)}\U{d}x \\
+		& = \frac{\beta^{\alpha_1 + \alpha_2} e^{-\beta s}}{\Gamma(\alpha_1)\Gamma(\alpha_2)} \int_0^s \left(\frac{x}{s} \right)^{\alpha_1-1}\left(1 - \frac{x}{s}\right)^{\alpha_2-1} \U{d} x \cdot s^{\alpha_1 + \alpha_2 - 2}\qquad (\U{substitute\ } t = \frac{x}{s}) \\
+		& = \frac{\beta^{\alpha_1 + \alpha_2} e^{-\beta s}}{\Gamma(\alpha_1)\Gamma(\alpha_2)} \int_0^1 t^{\alpha_1-1} (1-t)^{\alpha_2-1} \U{d}t \cdot s^{\alpha_1 + \alpha_2 - 1} \\
+		& = \frac{\beta^{\alpha_1 + \alpha_2}}{\Gamma(\alpha_1 + \alpha_2)} s^{\alpha_1 + \alpha_2 - 1}  e^{-\beta s},
+		\end{align*}
+		indicating a gamma distribution with parameters $\alpha_1+\alpha_2$ and $\beta$. Using induction with
+		\begin{align*}
+		X = S_n = S_{n-1} + X_n,
+		\end{align*}
+		we can conclude that $X$ follows the gamma distribution with parameters $\alpha = \alpha_1 + \cdots + \alpha_n$ and $\beta$. \\
+		\textbf{\underline{Note}.} AGAIN, induction steps are necessary if you are doing homework or exam, but are omitted here...
+		\item \underline{M.G.F.} The m.g.f. of each $X_i$ is given by
+		\begin{align*}
+		m_{X_i}: (-\infty, \beta) \rightarrow\R, \qquad m_{X_i}(t) = \frac{1}{(1-t/\beta)^{\alpha_i}}.
+		\end{align*}
+		Therefore, by Theorem \ref{thrm:3}, we have the m.g.f. for $X$
+		\begin{align*}
+		m_X: (-\infty, \beta) \rightarrow \R, \qquad m_{X}(t) = \prod_{i=1}^n \frac{1}{(1-t/\beta)^{\alpha_i}} = \frac{1}{(1-t/\beta)^{\sum_{i=1}^n\alpha_i}},
+		\end{align*}
+		indicating a gamma distribution with parameters $\alpha = \alpha_1 + \cdots + \alpha_n$ and $\beta$.
+	\end{itemize}
+\end{proof}
+
+

@@ -1,11 +1,7 @@
-\beamer@sectionintoc {1}{More About Normal Distribution}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Normal Distribution}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Applications of Normal Distribution}{21}{0}{1}
-\beamer@sectionintoc {2}{Multivariate Random Variables}{29}{0}{2}
-\beamer@subsectionintoc {2}{1}{Discrete Multivariate Random Variables}{29}{0}{2}
-\beamer@subsectionintoc {2}{2}{Continuous Multivariate Random Variables}{32}{0}{2}
-\beamer@subsectionintoc {2}{3}{Expectation and Variance}{41}{0}{2}
-\beamer@subsectionintoc {2}{4}{The Hypergeometric Distribution}{48}{0}{2}
-\beamer@sectionintoc {3}{Exercises}{59}{0}{3}
-\beamer@subsectionintoc {3}{1}{Multivariate Random Variables}{59}{0}{3}
-\beamer@subsectionintoc {3}{2}{The Hypergeometric Distribution}{61}{0}{3}
+\beamer@sectionintoc {1}{Reliability}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Failure Density, Reliability and Hazard Rate}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Weibull Distribution}{6}{0}{1}
+\beamer@sectionintoc {2}{Basic Statistics}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{Samples and Data}{8}{0}{2}
+\beamer@subsectionintoc {2}{2}{Estimating Parameters}{11}{0}{2}
+\beamer@subsectionintoc {2}{3}{Estimating Intervals}{12}{0}{2}

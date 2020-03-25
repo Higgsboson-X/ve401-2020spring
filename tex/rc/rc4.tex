@@ -1,0 +1,112 @@
+\section{Reliability}
+
+\subsection{Failure Density, Reliability and Hazard Rate}
+
+
+\begin{frame}{Definitions}
+
+Suppose $A$ is a black box unit.
+\begin{itemize}
+	\justifying
+	\item \highlightg{Failure density $f_A$}: distribution of the time $T$ that $A$ fails.
+	\item \highlightg{Reliability function $R_A$}: the probability that $A$ is working at time $t$, $R_A(t) = 1 - F_A(t)$.
+	\item \highlightg{Hazard rate $\rho_A$}: 
+	\begin{align*}
+	\rho_A(t) & := \lim_{\Delta t \rightarrow 0} \frac{P[t\leq T\leq t + \Delta t|t\leq T]}{\Delta t} \\
+	& = \lim_{\Delta t \rightarrow 0} \frac{P[t\leq T\leq t + \Delta t]}{P[T\geq t]\cdot \Delta t} =  \frac{f_A(t)}{R_A(t)}, \\
+	R_A(t) & = e^{-\int_0^t \rho_A(x)\U{d}x}.
+	\end{align*}
+\end{itemize}
+One often has information on $\rho_A$, but not $F_A$ or $R_A$.
+
+\end{frame}
+
+
+\begin{frame}{Series and Parallel Systems}
+
+\begin{itemize}
+	\item \structb{Series system with $k$ components.}
+	\begin{align*}
+	R_s(t) = \prod_{i=1}^k R_i(t),
+	\end{align*}
+	where $R_i$ is the reliability of the $i$-th component.
+	\item \structb{Parallel system with $k$ components.}
+	\begin{align*}
+	R_p(t) = 1 - \prod_{i=1}^k(1-R_i(t)).
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+
+\subsection{Weibull Distribution}
+
+\begin{frame}{Weibull Distribution}
+
+\begin{itemize}
+	\item \structb{Density function.} $\alpha, \beta > 0$ are parameters,
+	\begin{align*}
+	f(x) = \left\{
+	\begin{array}{ll}
+	\alpha\beta x^{\beta-1} e^{-\alpha x^{\beta}}, & x > 0, \\
+	0, & \U{otherwise.}
+	\end{array}
+	\right.
+	\end{align*}
+	\item \structb{Mean.}
+	\begin{align*}
+	\mu = \alpha^{-1/\beta} \Gamma(1 + 1/\beta).
+	\end{align*}
+	\item \structb{Variance.}
+	\begin{align*}
+	\sigma^2 = \alpha^{-2/\beta} \Gamma(1 + 2/\beta) - \mu^2.
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+
+\section{Basic Statistics}
+
+\subsection{Samples and Data}
+
+
+\begin{frame}{Definitions}
+
+\justifying
+\begin{itemize}
+	\justifying
+	\item \highlightg{Statistics} aims to gain information about the parameters of a distribution by conducting experiments.
+	\item \highlightg{Population}: a large collection of instances which we want to describe probability.
+	\item \highlightg{Random sample of size $n$ from distribution of $X$}: a collection of $n$ independent random variables $X_1, \ldots, X_n$, each with the same distribution as $X$. ($\Leftrightarrow$ $n$ i.i.d. random variables.)
+	\item \highlightg{$x$-th percentiles}: $d_x$ such that $x\%$ of values in sampled data are less than or equal to $d_x$. (\highlightg{first, second, third quartile} $\Rightarrow$ $x = 25, 50, 75$.)
+	\item \highlightg{Interquartile range}: $\U{IQR} = q_3 - q_1$, measures the dispersion of the data.
+	\item \highlightg{Precision}: smallest decimal place of data $\{x_1, \ldots, x_n\}$.
+	\item \highlightg{Sample range}: $\max\{x_i\} - \min\{x_i\}$.
+\end{itemize}
+
+
+\end{frame}
+
+
+\begin{frame}{Visualization --- Histograms}
+
+\structb{Choose bin width / number of bins.}
+\begin{enumerate}
+	\item Sturges's rule.
+	\begin{align*}
+	k = \lceil \log_2(n)\rceil + 1, \qquad h = \frac{\max\{x_i\} - \min\{x_i\}}{k},
+	\end{align*}
+	rounding \highlightr{up} to the precision of the data.
+	\item Freedman-Diaconis rule.
+	\begin{align*}
+	h = \frac{2\cdot \U{IQR}}{\sqrt[3]{n}}.
+	\end{align*}
+\end{enumerate}
+
+\end{frame}
+
+\subsection{Estimating Parameters}
+
+
+\subsection{Estimating Intervals}
