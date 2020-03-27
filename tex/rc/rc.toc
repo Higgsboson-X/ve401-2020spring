@@ -5,3 +5,4 @@
 \beamer@subsectionintoc {2}{1}{Samples and Data}{8}{0}{2}
 \beamer@subsectionintoc {2}{2}{Estimating Parameters}{15}{0}{2}
 \beamer@subsectionintoc {2}{3}{Estimating Intervals}{24}{0}{2}
+\beamer@subsectionintoc {2}{4}{Case Study}{35}{0}{2}

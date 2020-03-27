@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300) (preloaded format=pdflatex 2020.3.6)  23 MAR 2020 13:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300) (preloaded format=pdflatex 2020.3.6)  27 MAR 2020 21:15
 entering extended mode
 **./s.tex
 (s.tex
@@ -905,7 +905,12 @@ Package pdftex.def Info: ./logo.png  used on input line 62.
 (pdftex.def)             Requested size: 338.58632pt x 92.59242pt.
  [1
 
-{/home/chxw/.miktex/texmfs/data/pdftex/config/pdftex.map} <./logo.png>] (s3.tex
+{/home/chxw/.miktex/texmfs/data/pdftex/config/pdftex.map} <./logo.png>] (s4.tex
+
+Overfull \hbox (8.90588pt too wide) in paragraph at lines 36--38
+\OT1/cmr/m/n/12 which is quite close to 90%. This posterior validation shows th
+e approximation is reasonable. 
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -913,62 +918,49 @@ Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[1]
-Underfull \hbox (badness 10000) in paragraph at lines 77--81
-
- []
-
-[2] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 172--173
-
- []
-
-[5] [6]
-Overfull \hbox (14.74506pt too wide) in paragraph at lines 260--263
-\OT1/cmr/m/n/12 Suppose random variables $\OML/cmm/m/it/12 X[]; [] ; X[]$ \OT1/
-cmr/m/n/12 are independent, and each $\OML/cmm/m/it/12 X[]$ \OT1/cmr/m/n/12 fol
-lows the gamma distribution
- []
-
-[7]
-Overfull \hbox (14.63324pt too wide) in paragraph at lines 287--317
+[1] [2]
+Overfull \hbox (9.51271pt too wide) detected at line 95
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 287--317
-
+Overfull \hbox (4.86617pt too wide) detected at line 117
+[]
  []
 
-[8]) [9] (s.aux) ) 
+[3]
+Overfull \hbox (28.53233pt too wide) detected at line 172
+[]
+ []
+
+[4] [5] [6]) [7] (s.aux) ) 
 Here is how much of TeX's memory you used:
- 18408 strings out of 483220
- 349979 string characters out of 2960973
- 724477 words of memory out of 3000000
- 33244 multiletter control sequences out of 15000+200000
- 545215 words of font info for 74 fonts, out of 3000000 for 9000
+ 18405 strings out of 483220
+ 349936 string characters out of 2960973
+ 729461 words of memory out of 3000000
+ 33241 multiletter control sequences out of 15000+200000
+ 544717 words of font info for 74 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 60i,17n,66p,3214b,451s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/chxw/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/
-dpi600/tcrm1200.pk></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts
-/cm/cmbx12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/c
-m/cmbx8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/c
-mbxti10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/c
-mex10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cmextr
-a/cmex8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/c
-mmi12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmm
-i6.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.
-pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb
-></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></h
-ome/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/
-chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/ch
-xw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/chxw/
-.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb></home/chxw/.m
-iktex/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on s.pdf (10 pages, 240922 bytes).
+ 60i,15n,66p,3214b,372s stack positions out of 5000i,500n,10000p,200000b,50000s
+</home/chxw/.miktex/texmfs/install/fonts/type1/public
+/amsfonts/cm/cmbx10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/ams
+fonts/cm/cmex10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfo
+nts/cmextra/cmex8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/ams
+fonts/cm/cmmi12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfo
+nts/cm/cmmi6.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts
+/cm/cmmi8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm
+/cmr12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cm
+r6.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.p
+fb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></
+home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></hom
+e/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb></home/
+chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt12.pfb></home/ch
+xw/.miktex/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on s.pdf (8 pages, 227041 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
+ 99 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

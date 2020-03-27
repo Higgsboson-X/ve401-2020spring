@@ -61,6 +61,10 @@ One often has information on $\rho_A$, but not $F_A$ or $R_A$.
 	\begin{align*}
 	\sigma^2 = \alpha^{-2/\beta} \Gamma(1 + 2/\beta) - \mu^2.
 	\end{align*}
+	\item \structb{Reliability features.}
+	\begin{align*}
+	\rho(t) = \alpha\beta t^{\beta-1}, \ R(t) = e^{-\alpha t^{\beta}}, \ f(t) = \rho(t)R(t) = \alpha\beta t^{\beta-1}e^{-\alpha t^{\beta}}.
+	\end{align*}
 \end{itemize}
 
 \end{frame}
@@ -142,7 +146,7 @@ One often has information on $\rho_A$, but not $F_A$ or $R_A$.
 	\item Calculate $q_1, q_2, q_3$ and $\U{TQR}$.
 	\item Find \highlightg{inner fences} and \highlightg{outer fences} by
 	\begin{align*}
-	& f_1 = q_1 - \frac{3}{2}\U{TQR}, \qquad f_3 = q_3 + \frac{3}{2}\U{IQR}, \\
+	& f_1 = q_1 - \frac{3}{2}\U{IQR}, \qquad f_3 = q_3 + \frac{3}{2}\U{IQR}, \\
 	& F_1 = q1 - 3\U{IQR}, \qquad F_3 = q_3 + 3\U{IQR},
 	\end{align*}
 	and find \highlightg{adjacent values}
@@ -290,7 +294,7 @@ In most of the cases, we equivalently maximize the \highlightg{log-likelihood}
 \structb{Maximum likelihood estimate.} Suppose $X$ follows a Poisson distribution with parameter $k$, and we wish to estimate variance $k$ (since both mean and variance of Poisson distribution are $k$).
 \begin{itemize}
 	\justifying
-	\item \underline{Estimating mean $\mu$}. We know from lecture slides that
+	\item \underline{Estimating variance $k$}. We know from lecture slides that
 	\footnotesize
 	\begin{align*}
 	L(k) & = e^{-nk} \frac{k^{\sum X_i}}{\prod X_i!}, \\
@@ -346,20 +350,109 @@ P[\theta \leq L_u] = 1 - \alpha, \qquad P[L_l \leq \theta] = 1 - \alpha.
 \end{frame}
 
 
+\begin{frame}{Basic Distributions}
+
+\structb{Standard normal distribution.}
+\begin{itemize}
+	\justifying
+	\item \underline{Density function}.
+	\begin{align*}
+	f_Z(z) = \frac{1}{\sqrt{2\pi}}e^{z^2/2}, \qquad z\in \R.
+	\end{align*}
+	\item \underline{Statistical values}. Command for $x$ such that $P[X\geq x] = p$: \\
+	\texttt{InverseCDF[NormalDistribution[0, 1], 1-p]}.
+	\begin{align*}
+	\alpha = 0.05 \quad \Rightarrow \quad z_{\alpha} = 1.64485, \quad z_{\alpha/2} = 1.95996.
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Basic Distributions}
+
+\structb{Standard normal distribution.}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=10cm]{./images/rc4fig3.png}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Basic Distributions}
+
+\structb{Chi-squared distribution.}
+\begin{itemize}
+	\item \underline{Origin.} $Z_1, \ldots, Z_n$ are i.i.d. random variables.
+	\begin{align*}
+	Z_i\sim \U{Normal}(0, 1) \quad \Rightarrow\quad \chi_n^2 = \sum_{i=1}^n Z_i^2 \sim \U{ChiSquared}(n).
+	\end{align*}
+	\item \underline{Density function}. $f_{\chi_n^2}(x) = 0$ for $x < 0$ and
+	\begin{align*}
+	f_{\chi_n^2}(x) = \frac{1}{2^{\gamma/2}\Gamma(\gamma/2)} x^{\gamma/2-1} e^{-x/2}, \qquad x \geq 0,
+	\end{align*}
+	where $\gamma$ is the degree of freedom.
+	\item \underline{Statistical values}. Command for $x$ such that $P[X\geq x] = p$:\\
+	\texttt{InverseCDF[ChiSquareDistribution[n], 1-p]}.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Basic Distributions}
+
+\structb{Chi-squared distribution.}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=10cm]{./images/rc4fig4.png}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Basic Distributions}
+
+\structb{Student T-distribution.}
+\begin{itemize}
+	\item \underline{Origin}. $Z, \chi_{\gamma}^2$ are i.i.d. random variables such that
+	\begin{align*}
+	& Z \sim \U{Normal}(0, 1), \qquad \chi_{\gamma}^2\sim \U{ChiSquared}(\gamma), \\
+	& \Rightarrow \quad T_{\gamma} = \frac{Z}{\sqrt{\chi_{\gamma}^2/\gamma}} \sim \U{StudentT}(\gamma).
+	\end{align*}
+	\item \underline{Density function}.
+	\begin{align*}
+	f_{T_{\gamma}}(t) = \frac{\Gamma((\gamma+1)/2)}{\Gamma(\gamma/2)\sqrt{\pi\gamma}}\left(1 + \frac{t^2}{\gamma} \right)^{-\frac{\gamma+1}{2}}, \qquad t\in \R.
+	\end{align*}
+	\item \underline{Statistical values}. Command for $x$ such that $P[X\geq x] = p$:\\
+	\texttt{InverseCDF[StudentTDistribution[n], 1-p]}.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Basic Distributions}
+
+\structb{Student T-distribution.}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=10cm]{./images/rc4fig5.png}
+\end{figure}
+
+\end{frame}
+
 \begin{frame}{Interval Estimation for Mean and Variance}
 
 \justifying
-Suppose we have a random sample of size $n$ from a normal population with \highlightr{unknown} mean $\mu$ and \highlightr{known} variance $\sigma^2$.
+\structb{Mean.} Suppose we have a random sample of size $n$ from a normal population with \highlightr{unknown} mean $\mu$ and \highlightr{known} variance $\sigma^2$.
 \begin{itemize}
 	\item \underline{Statistic and distribution}.
 	\begin{align*}
 	Z = \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \U{Normal}\left(0, 1 \right).
 	\end{align*}
-	\item \underline{$100(1-\alpha)\%$ confidence interval for $\mu$}.
+	\item \underline{$100(1-\alpha)\%$ two-sided confidence interval for $\mu$}.
 	\begin{align*}
 	\overline{X} \pm \frac{z_{\alpha/2}\cdot\sigma}{\sqrt{n}}.
 	\end{align*}
-	\item \underline{$100(1-\alpha)\%$ on-sided interval for $\mu$}.
+	\item \underline{$100(1-\alpha)\%$ one-sided interval for $\mu$}.
 	\begin{align*}
 	L_u = \overline{X} + \frac{z_{\alpha}\cdot\sigma}{\sqrt{n}}, \qquad L_l = \overline{X} - \frac{z_{\alpha}\cdot \sigma}{\sqrt{n}}.
 	\end{align*}
@@ -371,20 +464,187 @@ Suppose we have a random sample of size $n$ from a normal population with \highl
 \begin{frame}{Interval Estimation for Mean and Variance}
 
 \justifying
-Suppose we have a random sample of size $n$ from a normal population with \highlightr{unknown} mean $\mu$ and \highlightr{unknown} variance $\sigma^2$.
+\structb{Variance.} Suppose we have a random sample of size $n$ from a normal population with \highlightr{unknown} mean $\mu$ and \highlightr{unknown} variance $\sigma^2$.
 \begin{itemize}
 	\item \underline{Statistic and distribution}.
 	\begin{align*}
-	Z = \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \U{Normal}\left(0, 1 \right).
+	\chi_{n-1}^2 = \frac{(n-1)S^2}{\sigma^2} \sim \U{ChiSquared}\left(n-1 \right).
 	\end{align*}
-	\item \underline{$100(1-\alpha)\%$ confidence interval for $\mu$}.
+	\item \underline{$100(1-\alpha)\%$ two-sided confidence interval for $\sigma^2$}.
 	\begin{align*}
-	\overline{X} \pm \frac{z_{\alpha/2}\cdot\sigma}{\sqrt{n}}.
+	\left[\frac{(n-1)S^2}{\chi_{\alpha/2, n-1}^2}, \frac{(n-1)S^2}{\chi_{1-\alpha/2, n-1}^2} \right].
 	\end{align*}
-	\item \underline{$100(1-\alpha)\%$ on-sided interval for $\mu$}.
+	\item \underline{$100(1-\alpha)\%$ one-sided interval for $\sigma^2$}.
 	\begin{align*}
-	L_u = \overline{X} + \frac{z_{\alpha}\cdot\sigma}{\sqrt{n}}, \qquad L_l = \overline{X} - \frac{z_{\alpha}\cdot \sigma}{\sqrt{n}}.
+	L_u = \frac{(n-1)S^2}{\chi_{1-\alpha, n-1}^2}, \qquad L_l = \frac{(n-1)S^2}{\chi_{\alpha, n-1}^2}.
 	\end{align*}
 \end{itemize}
 
 \end{frame}
+
+
+\begin{frame}{Interval Estimation for Mean and Variance}
+
+\justifying
+\structb{Mean.} Suppose we have a random sample of size $n$ from a normal population with \highlightr{unknown} mean $\mu$ and \highlightr{unknown} variance $\sigma^2$.
+\begin{itemize}
+	\item \underline{Statistic and distribution}.
+	\begin{align*}
+	T_{n-1} = \frac{\overline{X} - \mu}{S/\sqrt{n}} \sim \U{StudentT}\left(n-1 \right).
+	\end{align*}
+	\item \underline{$100(1-\alpha)\%$ two-sided confidence interval for $\mu$}.
+	\begin{align*}
+	\overline{X} \pm \frac{t_{\alpha/2, n-1} S}{\sqrt{n}}.
+	\end{align*}
+	\item \underline{$100(1-\alpha)\%$ one-sided interval for $\sigma^2$}.
+	\begin{align*}
+	L_u = \overline{X} + \frac{t_{\alpha, n-1}S}{\sqrt{n}}, \qquad L_l = \overline{X} - \frac{t_{\alpha, n-1}S}{\sqrt{n}}.
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+
+\subsection{Case Study}
+
+\begin{frame}{Case Study}
+
+\justifying
+Suppose we obtain $n = 70$ sample points from simulation.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{./images/rc4fig6.pdf}
+\end{figure}
+We would like to:
+\begin{enumerate}
+	\justifying
+	\item visualize these data points,
+	\item obtain point estimates for mean and variance (suppose they are unknown), and
+	\item obtain interval estimates for
+	\begin{enumerate}
+		\justifying
+		\item mean when variance is known,
+		\item mean and variance when variance is unknown.
+	\end{enumerate}
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Case Study}
+
+\structb{Histogram.} Using Freedman-Diaconis Rule,
+\begin{align*}
+q_1 = 2.76, \quad q_3 = 5.84 \quad \Rightarrow\quad \U{IQR} = q_3 - q_1 = 3.08,
+\end{align*}
+and
+\begin{align*}
+h = \frac{2\U{IQR}}{\sqrt{n}} = 0.736261 \approx 0.74 \quad (\U{rounding\ up}).
+\end{align*}
+Then the lower bound of the first bin is
+\begin{align*}
+\min\{x_i\} - \U{pre.} / 2 = 0.62 - 0.005 = 0.615.
+\end{align*}
+
+\end{frame}
+
+
+\begin{frame}{Case Study}
+
+\structb{Histogram.} \\
+\begin{minipage}{0.3\linewidth}
+	\centering
+	\includegraphics[width=3.5cm]{./images/rc4fig7.pdf}
+\end{minipage}
+\begin{minipage}{0.6\linewidth}
+	\centering
+	\includegraphics[width=6cm]{./images/rc4fig8.pdf}
+\end{minipage}
+
+\end{frame}
+
+
+\begin{frame}{Case Study}
+
+\structb{Stem-and-leaf diagram.} We use stem units as 1.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=8cm]{./images/rc4fig9.pdf}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Case Study}
+
+\justifying
+\structb{Boxplots.} The inner fences and outer fences are determined as
+\begin{align*}
+f_1 & = q_1 - \frac{3}{2}\U{IQR} = -1.86, \qquad f_3 = q_3 + \frac{3}{2}\U{IQR} = 10.46, \\
+F_1 & = q_1 - 3\U{IQR} = -6.48, \qquad F_3 = q_3 + 3\U{IQR} = 15.08,
+\end{align*}
+and adjacent values
+\begin{align*}
+a_1 & = \min\{x_k: x_k \geq f_1 \}, \qquad a_3 = \max\{x_k: x_k\leq f_3 \}.
+\end{align*}
+Mathematica commands $\quad\Rightarrow$
+\begin{minipage}{0.5\linewidth}
+	\centering
+	\includegraphics[width=4cm]{./images/rc4fig10.pdf}
+\end{minipage}\\
+
+\end{frame}
+
+
+\begin{frame}{Case Study}
+
+\justifying
+\structb{Boxplots.} \\
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{./images/rc4fig11.pdf}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Case Study}
+
+\justifying
+\structb{Point estimate for mean and variance.} We use unbiased estimators for mean and variance.
+\begin{itemize}
+	\item \underline{Mean}.
+	\begin{align*}
+	\widehat{\mu} = \frac{1}{n}\sum_{i=1}^n X_i = 4.38.
+	\end{align*}
+	\item \underline{Variance}.
+	\begin{align*}
+	\widehat{\sigma^2} = S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X})^2 = 4.90.
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Case Study}
+
+\justifying
+\structb{Interval estimate for mean and variance.}
+\begin{itemize}
+	\justifying
+	\item \underline{Mean}. (Variance $\sigma^2 = 4$.) A 95\% two-sided confidence interval for mean $\mu$ is given by
+	\begin{align*}
+	\U{CI} = \left[\overline{X} - \frac{z_{\alpha/2}\sigma}{\sqrt{n}}, \overline{X} + \frac{z_{\alpha/2}\sigma}{\sqrt{n}} \right] = [3.91, 4.85].
+	\end{align*}
+	\item \underline{Variance}. (Variance unknown.) A 95\% two-sided confidence interval for variance $\sigma^2$ is given by
+	\begin{align*}
+	\U{CI} = \left[\frac{(n-1)S^2}{\chi_{\alpha/2, n-1}^2}, \frac{(n-1)S^2}{\chi_{1-\alpha/2, n-1}^2} \right] = [3.60, 7.05].
+	\end{align*}
+	\item \underline{Mean}. (Variance unknown.) A 95\% two-sided confidence interval for mean $\mu$ is given by
+	\begin{align*}
+	\U{CI} = \left[\overline{X} - \frac{t_{\alpha/2, n-1} S}{\sqrt{n}}, \overline{X} + \frac{t_{\alpha/2, n-1} S}{\sqrt{n}} \right] = [3.21, 5.55].
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+

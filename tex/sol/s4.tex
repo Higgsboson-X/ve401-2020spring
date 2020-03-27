@@ -1,341 +1,281 @@
-\section*{Closeness of Binomial and Hypergeometric Distributions}
+\section*{Assignment 3.4}
 
-\begin{theorem}
-	Suppose $Y$ has a binomial distribution with parameters $n\in \N\setminus\{0\}$ and $p, 0 < p < 1$. Let $\{X_k\}$ be a sequence of hypergeometric random variables with parameters $N_k, n, r_k$ such that
-	\begin{align*}
-	\lim_{k\rightarrow \infty} r_k = \infty, \quad \lim_{k\rightarrow \infty} N_k-r_k = \infty, \quad \lim_{k\rightarrow \infty} \frac{r_k}{N_k} = p.
-	\end{align*}
-	Then for each fixed $n$ and each $x = 0, \ldots, n$,
-	\begin{align*}
-	\lim_{k\rightarrow \infty} \frac{P[Y=x]}{P[X_k=x]} = 1.
-	\end{align*}
-\end{theorem}
-\begin{proof}
-	For large enough $k$, we have
-	\begin{align*}
-	P[X_k = x] & = \frac{\dfrac{r_k!}{\red{x!}(r_k-x)!}\cdot \dfrac{(N_k-r_k)!}{\red{(n-x)!}(N_k-r_k-n+x)!}}{\dfrac{N_k!}{\red{n!}(N_k-n)!}} \\
-	& = \binom{n}{x} \frac{r_k!(N_k-r_k)!(N_k-n)!}{(r_k-x)!N_k!(N_k-r_k-n+x)!}.
-	\end{align*}
-	Recall Stirling's formula from assignment 2, 
-	\begin{align*}
-	n!\sim \sqrt{2\pi n}\left(\frac{n}{e} \right)^n,
-	\end{align*}
-	then we have
-	\begin{align*}
-	P[X_k=x] \sim \binom{n}{x} \frac{r_k^{r_k+1/2}}{(r_k-x)^{r_k-x+1/2}}\cdot \frac{(N_k-r_k)^{N_k-r_k+1/2}}{(N_k-r_k-n+x)^{N_k-r_k-n+x+1/2}} \cdot \frac{(N_k-n)^{N_k-n+1/2}}{N_k^{N_k+1/2}}.
-	\end{align*}
-	Then from calculus we have
-	\begin{align*}
-	\lim_{k\rightarrow \infty} \left(\frac{r_k}{r_k-x} \right)^{r_k-x+1/2} & = e^x,\\
-	\lim_{k\rightarrow \infty} \left(\frac{N_k-r_k}{N_k-r_k-n+x} \right)^{N_k-r_k-n+x+1/2} & = e^{n-x} \\
-	\lim_{k\rightarrow \infty} \left(\frac{N_k-n}{N_k} \right)^{N_k-n+1/2} & = e^{-n}.
-	\end{align*}
-	Therefore,
-	\begin{align*}
-	P[X_k = x] \sim \binom{n}{x} \frac{r_k^x(N_k-r_k)^{n-x}}{N_k^n} \sim \binom{n}{x} p^x(1-p)^{n-x} = P[Y = x].
-	\end{align*}
-\end{proof}
-
-
-\section*{Exercise 1.}
-
-Suppose $Y$ is the rate (calls per hour) at which calls arrive at a switchboard. Let $X$ be the number of calls during a two-hour period. Suppose the joint probability density function is given by
-\begin{align*}
-f_{XY}(x, y) = \left\{
-\begin{array}{ll}
-\dfrac{(2y)^x}{x!} e^{-3y} & \U{for\ } y > 0 \U{\ and\ } x = 0, 1, \ldots, \\
-0 & \U{otherwise}.
-\end{array}
-\right.
-\end{align*}
+A mathematics textbook has 200 pages on which typographical errors in the equations could occur. Suppose there are in fact five errors randomly dispersed among these 200 pages.
 \begin{enumerate}
-	\item Verify that $f$ is a proper joint probability density function.
-	\item Find $P[X = 0]$.
+	\item What is the probability that a random sample of 50 pages will contain at least one error?
+	\item How large must the random sample be to assure that at least three errors will be found with 90\% probability? (You may use a normal approximation to the binomial distribution.)
 \end{enumerate}
-~\\
-\textbf{Solution.} 
+\textbf{\underline{Solution}.}
 \begin{enumerate}
-	\item To verify that $f$ is a proper joint probability density function, we have
+	\item The problem is to randomly place the five errors in 200 pages, and each error has the same probability of being placed among the sampled pages.
 	\begin{align*}
-	\int_0^{\infty}\left(\sum_{x=0}^{\infty} f_{XY}(x, y)\right) \U{d}y & = \int_0^{\infty} \left(\sum_{x=0}^{\infty} \frac{(2y)^x}{x!} \right) e^{-3y} \U{d}y \\
-	& = \int_0^{\infty} e^{-y} \U{dy} \\
-	& = -e^{-y} \bigg|_0^{\infty} = 1.
+	P[\U{at\ least\ 1\ error\ in\ 50\ pages}] & = 1 - P[\U{0\ error\ in\ 50\ pages}] \\
+	& = 1 - \left(\frac{200-50}{200} \right)^5 \\
+	& = 76.27\%.
 	\end{align*}
-	\item Plugging in $x = 0$ and integrating with respect to $y$,
+	\item Let the sample size be $k$. The number of selected errors follows a binomial distribution with
 	\begin{align*}
-	P[X = 0] & = \int_0^{\infty} f_{XY}(0, y)\U{d}y = \int_0^{\infty} e^{-3y} \U{d}y = \frac{1}{3}.
+	p = \frac{k}{200}, \qquad n = 5,
 	\end{align*}
+	and thus the mean and standard deviation are given by
+	\begin{align*}
+	\mu = 5p = \frac{k}{40}, \qquad \sigma = \sqrt{5p(1-p)} = \sqrt{\frac{k}{40}\left(1 - \frac{k}{200} \right)}.
+	\end{align*}
+	Let $X$ be the number of errors in the sample. Then
+	\begin{align*}
+	P[X\geq 3] \geq 90\% \quad\Rightarrow\quad P[Y + 0.5 \geq 3] = P[Y\geq 2.5] \geq 90\%,
+	\end{align*}
+	where $Y$ follows normal distribution. Transforming to standard normal variable $Z$, we have
+	\begin{align*}
+	P\left[Z\geq \frac{2.5-\mu}{\sigma} \right]\geq 0.9 \quad\Rightarrow\quad F\left[\frac{2.5-\mu}{\sigma} \right] \leq 0.1 \quad\Rightarrow \quad \frac{2.5-\mu}{\sigma} \leq -1.28,
+	\end{align*}
+	which gives $k\geq 150$.\\
+	\textbf{\underline{Note}.} Some of you may have noticed that the requirements for ``good approximation'' specified in lecture slides are not satisfied. However, if we calculate using $p = 0.75$ and $n = 5$ for binomial distribution,
+	\begin{align*}
+	P[X\geq 3] = \mathtt{1 - CDF[BinomialDistribution[5, 0.75], 2]} = 0.896484,
+	\end{align*}
+	which is quite close to 90\%. This posterior validation shows the approximation is reasonable.
 \end{enumerate}
 
 
-\section*{Exercise 2.}
+\section*{Assignment 3.10}
 
-
-Suppose that $X_1$ and $X_2$ are independent random variables, so that
+Let $X = (X_1, X_2)$ be a random vector. Then we define the expectation vector and the variance-covariance matrix as follows.
 \begin{align*}
-X_1\sim \U{B}(n_1, p), \qquad X_2\sim \U{B}(n_2, p).
+\U{E}[X] := \begin{pmatrix}
+\U{E}[X_1] \\ \U{E}[X_2]
+\end{pmatrix}, \qquad \U{Var}\ X := \begin{pmatrix}
+\U{Var}[X_1] & \U{Cov}(X_1, X_2) \\
+\U{Cov}(X_2, X_1) & \U{Var}\ X_2
+\end{pmatrix}.
 \end{align*}
-For each fixed value of $k (k = 1, 2,\ldots, n_1 + n_2)$, prove that the conditional distribution of $X_1$ given that $X_1 + X_2 = k$ is hyper-geometric with parameters $n_1 + n_2, k, n_1$. \\
-~\\
-\textbf{Solution.} For $x = 1, \ldots, k$, 
-\begin{align*}
-P[X_1 = x|X_1 + X_2 = k] = \frac{P[X_1 = x \U{\ and\ } X_1 + X_2 = k]}{P[X_1 + X_2 = k]} = \frac{P[X_1 = x \U{\ and\ } X_2 = k - x]}{P[X_1 + X_2 = k]}.
-\end{align*}
-Since $X_1$ and $X_2$ are independent,
-\begin{align*}
-P[X_1 = x \U{\ and\ } X_2 = k - x] = P[X_1 = x]P[X_2 = k - x].
-\end{align*}
-Furthermore, since $X_1$ and $X_2$ follow binomial distributions, the sum of them also follows the binomial distribution with parameters $n_1 + n_2$ and $p$. Therefore,
-\begin{align*}
-P[X_1 = x] & = \binom{n_1}{x} p^x(1-p)^{n_1-x}, \\
-P[X_2 = k - x] & = \binom{n_2}{k-x} p^{k-x} (1-p)^{n_2-k+x}, \\
-P[X_1 + X_2 = k] & = \binom{n_1 + n_2}{k} p^k(1-p)^{n_1+n_2-k}.
-\end{align*}
-Thus,
-\begin{align*}
-P[X_1 = x|X_1 + X_2 = k] = \frac{\dbinom{n_1}{x}\dbinom{n_2}{k-x}}{\dbinom{n_1+n_2}{k}},
-\end{align*}
-indicating a hypergeometric distribution with parameters $n_1+n_2, k, n_1$.
-
-
-\section*{A Second Look into Connections of Distributions}
-
-The following two theorems focus on discrete random variables, but hold also in continuous case, by switching sums to integrals in the proofs.
-\begin{theorem}\label{thrm:1}
-	Suppose $X_1, \ldots, X_n$ are independent discrete random variables, then
+Let $A$ be a constant $2\times 2$ matrix and $Y = (Y_1, Y_2) = AX$.
+\begin{enumerate}
+	\item Show that $\U{E}[AX] = A\U{E}[X]$.
+	\item Show that $\U{Var}(AX) = A(\U{Var}\ X)A^T$.
+	\item Suppose $X_1$ and $X_2$ follow independent normal distributions with mean $\mu_1$ and $\mu_2$ and variances $\sigma_1^2$ and $\sigma_2^2$, respectively. Show that the joint density is given by
 	\begin{align*}
-	\U{E}\left[\prod_{i=1}^n X_i \right] = \prod_{i=1}^n \U{E}\left[X_i \right].
+	f_X(x) = f_X(x_1, x_2) = \frac{1}{2\pi \sqrt{\det\Sigma_X}} e^{-\frac{1}{2}\langle x - \mu_X, \Sigma_X^{-1}(x - \mu_X) \rangle}
 	\end{align*}
-	\textbf{\underline{\emph{Note}}.} This also holds for $\U{E}[\varphi\circ X]$.
-\end{theorem}
-\begin{proof}
-	By definition, the we calculate the expectation using joint probability density function
+	where $\mu_X = (\mu_1, \mu_2)$ and $\Sigma_X = \U{diag}(\sigma_1^2, \sigma_2^2)$ is the $2\times 2$ matrix with the variances on the diagonal and all other entries vanishing.
+	\item  Suppose that $X_1$ and $X_2$ follow independent normal distributions with means $\mu_1, \mu_2\in \R$ and variances $\sigma_1^2, \sigma_2^2 > 0$, respectively. Let $Y = AX$ where $A$ is an invertible $n\times n$ matrix. Show that
+	\begin{align}\label{eq:1}
+	f_Y(y) = \frac{1}{2\pi\sqrt{|\det \Sigma_Y}|} e^{-\frac{1}{2}\langle y - \mu_Y, \Sigma_Y^{-1}(y-\mu_Y)\rangle}
+	\end{align}
+	where $\mu_Y = \U{E}[Y]$, $\Sigma_Y = \U{Var}\ Y$ and $\langle \cdot, \cdot\rangle$ denotes the euclidean scalar product in $\R^2$.
+	\item Show that Eq. (\ref{eq:1}) can be written as
 	\begin{align*}
-	\U{E}\left[\prod_{i=1}^n X_i \right] & = \sum_{x_1, \ldots, x_n} \left(\prod_{i=1}^n x_i \right) f_{\mathbf{X}}(x_1, \ldots, x_n) \\
-	& = \sum_{x_1, \ldots, x_n} \left(\prod_{i=1}^n x_i \right) f_{X_1}(x_1)\cdots f_{X_n}(x_n) \\
-	& = \prod_{i=1}^n \sum_{x_i} x_i f_{X_i}(x_i) = \prod_{i=1}^n \U{E}\left[X_i \right].
+	f_Y(y_1, y_2) = \frac{1}{2\pi \sigma_{Y_1}\sigma_{Y_2}\sqrt{1-\rho^2}} e^{-\frac{1}{2(1-\rho^2)}\left[\left(\frac{y_1 - \mu_{Y_1}}{\sigma_{Y_1}} \right)^2 - 2\rho\left(\frac{y_1-\mu_{Y_1}}{\sigma_{Y_1}} \right)\left(\frac{y_2 - \mu_{Y_2}}{\sigma_{Y_2}} \right) + \left(\frac{y_2 - \mu_{Y_2}}{\sigma_{Y_2}} \right)^2 \right]}
 	\end{align*}
-\end{proof}
-\begin{theorem}
-	\label{thrm:3}
-	Suppose $X_1, \ldots, X_n$ are $n$ independent random variables, and for $i = 1, \ldots, n$, let $m_{X_i}$ denote the m.g.f. of $X_i$. Then the random variable
+	where $\mu_{Y_i}$ is the mean and $\sigma_{Y_i}^2$ the variance of $Y_i, i = 1, 2$, and $\rho$ is the correlation of $Y_1$ and $Y_2$.
+\end{enumerate}
+\textbf{\underline{Solution}.}
+\begin{enumerate}
+	\item Following properties for expectation, we have
 	\begin{align*}
-	X = X_1 + \cdots + X_n
+	\U{E}[AX] = \U{E}\left[
+	\begin{pmatrix}
+	a_{11}X_1 + a_{12}X_2 \\ a_{21}X_1 + a_{22}X_2
+	\end{pmatrix}
+	\right] = \begin{pmatrix}
+	a_{11}\U{E}[X_1] + a_{12}\U{E}[X_2] \\
+	a_{21}\U{E}[X_1] + a_{22}\U{E}[X_2]
+	\end{pmatrix} = A\U{E}[X].
 	\end{align*}
-	has the moment generating function
+	\item By definition, we have
 	\begin{align*}
-	m_X(t) = \prod_{i=1}^n m_{X_i}(t),
+	\U{Var}(AX) & = \U{Var}\begin{pmatrix}
+	a_{11}X_1 + a_{12}X_2 \\
+	a_{21}X_1 + a_{22}X_2
+	\end{pmatrix} \\
+	& = \begin{pmatrix}
+	\U{Var}(a_{11}X_1 + a_{12}) & \U{Cov}(a_{11}X_1 + a_{12}X_2, a_{21}X_1 + a_{22}X_2) \\
+	\U{Cov}(a_{21}X_1 + a_{22}X_2, a_{11}X_1 + a_{12}X_2) & \U{Var}(a_{21}X_1 + a_{22}X_2)
+	\end{pmatrix}.
 	\end{align*}
-	for every $t$ such that $m_{X_i}(t)$ is finite for $i = 1, \ldots, n$.
-\end{theorem}
-\begin{proof}
-	By definition,
+	From the properties of variance and covariance, we have
 	\begin{align*}
-	m_X(t) = \U{E}\left[e^{tX} \right] = \U{E}\left[e^{t(X_1 + \cdots + X_n)} \right] = \U{E}\left[\prod_{i=1}^ne^{tX_i} \right].
+	\U{Var}(a_{11}X_1 + a_{12}X_2) & = a_{11}^2\U{Var}X_1 + a_{12}^2\U{Var}X_2 + 2a_{11}a_{12}\U{Cov}(X_1, X_2), \\
+	\U{Var}(a_{21}X_1 + a_{22}X_2) & = a_{21}^2\U{Var}X_1 + a_{22}^2\U{Var}X_2 + 2a_{21}a_{22}\U{Cov}(X_1, X_2),
 	\end{align*}
-	Since $X_1, \ldots, X_n$ are independent, if follows from Theorem \ref{thrm:1} that 
+	and
 	\begin{align*}
-	\U{E}\left[\prod_{i=1}^ne^{tX_i} \right] = \prod_{i=1}^n \U{E}\left[e^{tX_i} \right],
-	\end{align*}
-	and thus
-	\begin{align*}
-	m_X(t) = \prod_{i=1}^n m_{X_i}(t).
-	\end{align*}
-\end{proof}
-
-
-\subsection*{Sum of Independent Discrete Random Variables}
-
-\begin{theorem}\label{thrm:2}
-	Let $X$ and $Y$ be two independent integer-valued random variables, with probability density functions $f_X(x)$ and $f_Y(y)$ respectively. Then the density function of the sum of the random variables $Z = X + Y$ is given by
-	\begin{align*}
-	f_Z(z) = (f_X * f_Y)(z) = \sum_k f_X(k)\cdot f_Y(z-k),
-	\end{align*}
-	where $*$ is the discrete convolution operation. For the sum of independent random variables $S_n = X_1 + \cdots + X_n$, we write as
-	\begin{align*}
-	S_n = S_{n-1} + X_n,
-	\end{align*}
-	and calculate by induction.
-\end{theorem}
-\begin{proof}
-	Using the law of total probability,
-	\begin{align*}
-	P[Z = z] & = \sum_{x} P[Z = z|X = x]P[X = x] \\
-	& = \sum_{x} P[Y = z-x|X = x]P[X = x] \\
-	& = \sum_{x} P[Y = z-x]P[X = x] \qquad (\U{independence})\\
-	& = \sum_k f_X(k)\cdot f_Y(z-k).
-	\end{align*}
-\end{proof}
-
-\subsubsection*{Example --- Sum of Independent Poisson Distributions}
-
-Suppose $X_1, \ldots, X_n$ are independent Poisson distributions with parameters $k_1, \ldots, k_n$. Then the sum of these random variables $X = X_1 + \cdots + X_n$ follows the Poisson distribution with parameter $k = k_1 + \cdots + k_n$. \\
-\begin{proof} Following Theorem \ref{thrm:2} or using m.g.f., we have the following two methods.
-	\begin{itemize}
-		\item \underline{Induction method}. Denote
-		\begin{align*}
-		S_n = \sum_{i=1}^n X_i,
-		\end{align*}
-		and then
-		\begin{align*}
-		S_2 = X_1 + X_2.
-		\end{align*}
-		Knowing the probability density function for $X_i$, we have
-		\begin{align*}
-		f_{X_i}(x) = \frac{k_i^xe^{-k_i}}{x!}, \qquad x\in \N.
-		\end{align*}
-		Therefore,
-		\begin{align*}
-		f_{S_2}(s) & = \sum_{x=0}^{s} \frac{k_1^xe^{-k_1}}{x!} \cdot \frac{k_2^{s-x}e^{-k_2}}{(s-x)!} \\
-		& = \sum_{x=0}^{s} \binom{s}{x} \cdot \frac{k_1^xk_2^{s-x} e^{-(k_1+k_2)}}{s!} \\
-		& = \frac{e^{-(k_1+k_2)}}{s!} \sum_{x=0}^s \binom{s}{x} k_1^xk_2^{s-x} \\
-		& = \frac{(k_1+k_2)^se^{-(k_1+k_2)}}{s!},
-		\end{align*}
-		indicating a Poisson distribution with parameter $k_1, k_2$. Using induction with
-		\begin{align*}
-		X = S_n = S_{n-1} + X_n,
-		\end{align*}
-		we can conclude that $X$ follows the Poisson distribution with parameter $k = k_1 + \cdots + k_n$.\\
-		\textbf{\underline{Note}.} Induction steps are necessary if you are doing homework or exam, but are omitted here...
-		\item \underline{M.G.F.} The m.g.f. of each $X_i$ is given by
-		\begin{align*}
-		m_{X_i}: \R\rightarrow \R, \qquad m_{X_i}(t) = e^{k_i(e^t-1)}.
-		\end{align*}
-		Therefore, by Theorem \ref{thrm:3}, we have the m.g.f. for $X$
-		\begin{align*}
-		m_X: \R \rightarrow\R, \qquad m_X(t) = \prod_{i=1}^n e^{k_i(e^t-1)} = \exp\left((e^t-1)\sum_{i=1}^n k_i \right).
-		\end{align*}
-		Since m.g.f. is unique, we know that $X$ follows the Poisson distribution with parameter $k = k_1 + \cdots + k_n$.
-	\end{itemize}
-\end{proof}
-
-\subsection*{Sum of Independent Continuous Random Variables}
-
-
-\begin{theorem}
-	\label{thrm:4}
-	Let $X$ and $Y$ be two continuous random variables with probability density functions $f_X(x)$ and $f_Y(y)$, respectively. Both density functions are defined on $\R$. Then the probability density function of the sum $Z = X + Y$ is given by
-	\begin{align*}
-	f_Z(z) = (f_X * f_Y)(z) = \int_{-\infty}^{\infty} f_X(x) f_Y(z-x) \U{d}x.
-	\end{align*}
-	where $*$ is the convolution of continuous functions. For the sum of independent random variables $S_n = X_1 + \cdots + X_n$, we write as
-	\begin{align*}
-	S_n = S_{n-1} + X_n,
-	\end{align*}
-	and calculate by induction.
-\end{theorem}
-\begin{proof}
-	Using transformation of random variables, suppose that $U = Z = X + Y, V = X$, then the transformation 
-	\begin{align*}
-	H: (X, Y)\mapsto (U, V), \qquad H(x, y) = \binom{x+y}{x},
-	\end{align*}
-	and thus
-	\begin{align*}
-	H^{-1}(u, v) = \binom{v}{u-v}.
-	\end{align*}
-	The Jacobian is given by
-	\begin{align*}
-	DH^{-1}(u, v) = \begin{pmatrix}
-	\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
-	\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
-	\end{pmatrix} = \begin{pmatrix}
-	0 & 1 \\
-	1 & -1
-	\end{pmatrix} \quad \Rightarrow\quad \det(DH^{-1}) = -1.
+	\U{Cov}(a_{11}X_1 + a_{12}X_2, a_{21}X_1 + a_{22}X_2) & = \U{Cov}(a_{21}X_1 + a_{22}X_2, a_{11}X_1 + a_{12}X_2) \\
+	& = a_{11}a_{21}\U{Var}(X_1) + a_{12}a_{22}\U{Var}(X_2) + \\
+	& \qquad\qquad\qquad + (a_{11}a_{22} + a_{12}a_{21})\U{Cov}(X_1, X_2).
 	\end{align*}
 	Therefore,
 	\begin{align*}
-	f_{UV}(u, v) = f_{XY}(v, u-v) |\det(DH^{-1})| \quad\Rightarrow\quad f_{U}(u) & = \int_{-\infty}^{\infty} f_{UV}(u, v)\U{d}v \\
-	& = \int_{-\infty}^{\infty} f_{XY}(v, u-v) \U{d}v \\
-	& = \int_{-\infty}^{\infty} f_X(v) f_Y(u-v) \U{d}v,
+	A(\U{Var}\ X)A^T & = \begin{pmatrix}
+	a_{11} & a_{12} \\
+	a_{21} & a_{22}
+	\end{pmatrix}\begin{pmatrix}
+	a_{11}\U{Var}X_1 + a_{12}\U{Cov}(X_1, X_2) & a_{21}\U{Var}X_1 + a_{22}\U{Cov}(X_1, X_2) \\
+	a_{11}\U{Cov}(X_2, X_1) + a_{12}\U{Var}X_2 & a_{21}\U{Cov}(X_1, X_2) + a_{22}\U{Var}X_2
+	\end{pmatrix} \\
+	& = \U{Var}(AX).
 	\end{align*}
-	by independence. Replacing $U$ with $Z$, we have
+	\item We have
 	\begin{align*}
-	f_Z(z) = \int_{-\infty}^{\infty} f_X(x)f_Y(z-x)\U{d}x.
+	\sqrt{\det \Sigma_X} = \sigma_1\sigma_2, \qquad \Sigma_X^{-1} = \begin{pmatrix}
+	1/\sigma_1^2 & 0 \\
+	0 & 1/\sigma_2^2
+	\end{pmatrix}.
 	\end{align*}
-\end{proof}
-
-\subsubsection*{Example --- Sum of Independent Gamma Distributions}
-
-Suppose random variables $X_1, \ldots, X_n$ are independent, and each $X_i$ follows the gamma distribution with parameters $\alpha_i$ and $\beta$. Then the sum $X = X_1 + \cdots + X_n$ follows the gamma distribution with parameters $\alpha_1 + \cdots + \alpha_n$ and $\beta$. \\
-\textbf{\underline{Note}.} This indicates also that the sum of i.i.d. exponential distributions is the gamma distribution, since $\U{Exp}(\beta)$ is equivalent to $\U{Gamma}(1, \beta)$.
-\begin{proof}
-	Similar as before, we can use either Theorem \ref{thrm:4} or m.g.f.
-	\begin{itemize}
-		\item \underline{Induction method}. Denote
-		\begin{align*}
-		S_n = \sum_{i=1}^n X_i
-		\end{align*}
-		and then
-		\begin{align*}
-		S_2 = X_1 + X_2.
-		\end{align*}
-		The probability density function for gamma distribution is given by
-		\begin{align*}
-		f_{X_i}(x) = \left\{
-		\begin{array}{ll}
-		\dfrac{\beta^{\alpha_i}}{\Gamma(\alpha_i)} x^{\alpha_i-1}e^{-\beta x} & \U{for\ } x > 0, \\
-		0 & \U{for\ } x\leq 0.
-		\end{array}
-		\right.
-		\end{align*}
-		Therefore,
-		\begin{align*}
-		f_{S_2}(s) & = \int_{-\infty}^{\infty} f_{X_1}(x)f_{X_2}(s-x)\U{d}x \\
-		& = \int_0^{s} \dfrac{\beta^{\alpha_1}}{\Gamma(\alpha_1)} x^{\alpha_1-1}e^{-\beta x} \cdot \dfrac{\beta^{\alpha_2}}{\Gamma(\alpha_2)} (s-x)^{\alpha_2-1}e^{-\beta (s-x)} \U{d}x \\
-		& = \beta^{\alpha_1 + \alpha_2}e^{-\beta s} \int_0^s \frac{x^{\alpha_1 - 1}(s-x)^{\alpha_2-1}}{\Gamma(\alpha_1)\Gamma(\alpha_2)}\U{d}x.
-		\end{align*}
-		\fbox{
-			\begin{minipage}{\linewidth}
-				Here we use a property of Gamma function as follows.
-				\begin{align*}
-				\Gamma(x)\Gamma(y) & = \int_0^{\infty} u^{x-1}e^{-u} \U{d}u \cdot \int_0^{\infty} v^{y-1}e^{-v}\U{d}v \\
-				& = \int_0^{\infty} \int_0^{\infty} u^{x-1}v^{y-1} e^{-(u+v)}\U{d}u\U{d}v.
-				\end{align*}
-				Substituting
-				\begin{align*}
-				u = r\cos^2\theta, \qquad v = r\sin^2\theta,
-				\end{align*}
-				we have
-				\begin{align*}
-				J = \begin{pmatrix}
-				\cos^2\theta & -2r\sin\theta\cos\theta \\
-				\sin^2\theta & 2r\sin\theta\cos\theta
-				\end{pmatrix} \quad \Rightarrow \quad \det(J) = 2r\sin\theta\cos\theta.
-				\end{align*}
-				Therefore,
-				\begin{align*}
-				\Gamma(x)\Gamma(y) & = 2\int_0^{\infty} \int_0^{\pi/2} r^{x+y-1} e^{-r} \cos^{2x-1}(\theta)\sin^{2y-1}(\theta) \U{d}\theta\U{d}r \\
-				& = 2\int_0^{\infty} r^{x+y-1}e^{-r}\U{d}r\cdot \int_0^{\pi/2} \cos^{2x-1}(\theta)\sin^{2y-1}(\theta) \U{d}\theta \\
-				& = \Gamma(x+y) \cdot 2\int_0^{\pi/2} \cos^{2x-1}(\theta)\sin^{2y-1}(\theta) \U{d}\theta \qquad (\U{substitute\ } t = \cos^2(\theta))\\
-				& = \Gamma(x+y) \int_0^1 t^{x-1}(1-t)^{y-1} \U{d}t.
-				\end{align*}
-			\end{minipage}
-		}
-		~\\
-		Continuing our proof, we have
-		\begin{align*}
-		f_{S_2}(s) & = \beta^{\alpha_1 + \alpha_2}e^{-\beta s} \int_0^s \frac{x^{\alpha_1 - 1}(s-x)^{\alpha_2-1}}{\Gamma(\alpha_1)\Gamma(\alpha_2)}\U{d}x \\
-		& = \frac{\beta^{\alpha_1 + \alpha_2} e^{-\beta s}}{\Gamma(\alpha_1)\Gamma(\alpha_2)} \int_0^s \left(\frac{x}{s} \right)^{\alpha_1-1}\left(1 - \frac{x}{s}\right)^{\alpha_2-1} \U{d} x \cdot s^{\alpha_1 + \alpha_2 - 2}\qquad (\U{substitute\ } t = \frac{x}{s}) \\
-		& = \frac{\beta^{\alpha_1 + \alpha_2} e^{-\beta s}}{\Gamma(\alpha_1)\Gamma(\alpha_2)} \int_0^1 t^{\alpha_1-1} (1-t)^{\alpha_2-1} \U{d}t \cdot s^{\alpha_1 + \alpha_2 - 1} \\
-		& = \frac{\beta^{\alpha_1 + \alpha_2}}{\Gamma(\alpha_1 + \alpha_2)} s^{\alpha_1 + \alpha_2 - 1}  e^{-\beta s},
-		\end{align*}
-		indicating a gamma distribution with parameters $\alpha_1+\alpha_2$ and $\beta$. Using induction with
-		\begin{align*}
-		X = S_n = S_{n-1} + X_n,
-		\end{align*}
-		we can conclude that $X$ follows the gamma distribution with parameters $\alpha = \alpha_1 + \cdots + \alpha_n$ and $\beta$. \\
-		\textbf{\underline{Note}.} AGAIN, induction steps are necessary if you are doing homework or exam, but are omitted here...
-		\item \underline{M.G.F.} The m.g.f. of each $X_i$ is given by
-		\begin{align*}
-		m_{X_i}: (-\infty, \beta) \rightarrow\R, \qquad m_{X_i}(t) = \frac{1}{(1-t/\beta)^{\alpha_i}}.
-		\end{align*}
-		Therefore, by Theorem \ref{thrm:3}, we have the m.g.f. for $X$
-		\begin{align*}
-		m_X: (-\infty, \beta) \rightarrow \R, \qquad m_{X}(t) = \prod_{i=1}^n \frac{1}{(1-t/\beta)^{\alpha_i}} = \frac{1}{(1-t/\beta)^{\sum_{i=1}^n\alpha_i}},
-		\end{align*}
-		indicating a gamma distribution with parameters $\alpha = \alpha_1 + \cdots + \alpha_n$ and $\beta$.
-	\end{itemize}
-\end{proof}
+	and
+	\begin{align*}
+	\langle x - \mu_X, \Sigma_X^{-1}(x - \mu_X)\rangle = \frac{(x_1 - \mu_1)^2}{\sigma_1^2} + \frac{(x_2 - \mu_2)^2}{\sigma_2^2}.
+	\end{align*}
+	Since $X_1$ and $X_2$ are independent, 
+	\begin{align*}
+	f_X(x) & = f_X(x_1, x_2) = f_{X_1}(x_1)\cdot f_{X_2}(x_2) \\
+	& = \frac{1}{2\pi \sigma_1\sigma_2} e^{-\frac{1}{2}\left(\frac{(x_1 - \mu_1)^2}{\sigma_1^2} + \frac{(x_2-\mu_2)^2}{\sigma_2^2} \right)} \\
+	& = \frac{1}{2\pi \sqrt{\det \Sigma_X}} e^{-\frac{1}{2}\langle x-\mu_X, \Sigma_X^{-1}(x-\mu_X)\rangle}.
+	\end{align*}
+	\item Since $Y = AX$, from (1) and (2) we know that
+	\begin{align*}
+	\mu_Y = \U{E}[AX] = A\mu_X, \qquad \Sigma_Y = A\Sigma_X A^T \quad & \Rightarrow\quad \Sigma_Y^{-1} = (A^T)^{-1}\Sigma_X^{-1}A^{-1}, \\
+	& \Rightarrow\quad \det\Sigma_Y = (\det A)^2\det\Sigma_X.
+	\end{align*}
+	Using transformation of variables,
+	\begin{align*}
+	f_Y(y) & = f_Y\circ (A^{-1}y) \cdot |\det A^{-1}| \\
+	& = \frac{1}{2\pi \sqrt{\det\Sigma_X}} e^{-\frac{1}{2}\langle A^{-1}y - A^{-1}\mu_Y, \Sigma_X^{-1}(A^{-1}y - A^{-1}\mu_Y)\rangle} \cdot \frac{1}{|\det A|} \\
+	& = \frac{1}{2\pi \sqrt{\det \Sigma_X \cdot (\det A)^2}} e^{-\frac{1}{2}\langle y - \mu_Y, \Sigma_Y^{-1}(y - \mu_Y)\rangle} \\
+	& = \frac{1}{2\pi \sqrt{|\det \Sigma_Y|}} e^{-\frac{1}{2}\langle y - \mu_Y, \Sigma_Y^{-1}(y - \mu_Y)\rangle}.
+	\end{align*}
+	\item Rewriting $\sqrt{|\det \Sigma_Y|}$ as
+	\begin{align*}
+	\sqrt{|\det \Sigma_Y|} & = \sqrt{\sigma_{Y_1}^2\sigma_{Y_2}^2 - \U{Cov}^2(Y_1, Y_2)} \\
+	& = \sigma_{Y_1}\sigma_{Y_2}\sqrt{1 - \left(\frac{\U{Cov}(Y_1, Y_2)}{\sigma_{Y_1}\sigma_{Y_2}} \right)^2} \\
+	& = \sigma_{Y_1}\sigma_{Y_2}\sqrt{1-\rho^2},
+	\end{align*}
+	and
+	\begin{align*}
+	\Sigma_Y = \begin{pmatrix}
+	\sigma_{Y_1}^2 & \rho\sigma_{Y_1}\sigma_{Y_2} \\
+	\rho\sigma_{Y_1}\sigma_{Y_2} & \sigma_{Y_2}^2
+	\end{pmatrix} \quad\Rightarrow\quad \Sigma_Y^{-1} = \frac{1}{1-\rho^2}\begin{pmatrix}
+	\frac{1}{\sigma_{Y_1}^2} & -\frac{\rho}{\sigma_{Y_1}\sigma_{Y_2}} \\
+	-\frac{\rho}{\sigma_{Y_1}\sigma_{Y_2}} & \frac{1}{\sigma_{Y_2}^2}
+	\end{pmatrix},
+	\end{align*}
+	we have
+	\begin{align*}
+	\langle y-\mu_Y, \Sigma_Y(y-\mu_Y)\rangle & = \frac{1}{1-\rho^2}\langle \begin{pmatrix}
+	y_1-\mu_{Y_1} \\ y_2-\mu_{Y_2}
+	\end{pmatrix}, \begin{pmatrix}
+	\frac{1}{\sigma_{Y_1}^2} & -\frac{\rho}{\sigma_{Y_1}\sigma_{Y_2}} \\
+	-\frac{\rho}{\sigma_{Y_1}\sigma_{Y_2}} & \frac{1}{\sigma_{Y_2}^2}
+	\end{pmatrix}\rangle \\
+	& = \frac{1}{1-\rho^2} \left[\left(\frac{y_1-\mu_{Y_1}}{\sigma_{Y_1}} \right)^2 - 2\rho\left(\frac{y_1-\mu_{Y_1}}{\sigma_{Y_1}} \right)\left(\frac{y_2-\mu_{Y_2}}{\sigma_{Y_2}} \right) + \left(\frac{y_2-\mu_{Y_2}}{\sigma_{Y_2}} \right)^2  \right].
+	\end{align*}
+	Therefore, Eq. (\ref{eq:1}) can be written as
+	\begin{align*}
+	f_Y(y_1, y_2) = \frac{1}{2\pi \sigma_{Y_1}\sigma_{Y_2}\sqrt{1-\rho^2}} e^{-\frac{1}{2(1-\rho^2)}\left[\left(\frac{y_1 - \mu_{Y_1}}{\sigma_{Y_1}} \right)^2 - 2\rho\left(\frac{y_1-\mu_{Y_1}}{\sigma_{Y_1}} \right)\left(\frac{y_2 - \mu_{Y_2}}{\sigma_{Y_2}} \right) + \left(\frac{y_2 - \mu_{Y_2}}{\sigma_{Y_2}} \right)^2 \right]}.
+	\end{align*}
+\end{enumerate}
 
 
+\section*{Assignment 3.11}
+
+A system consists of two independent components connected in series. The life span (in hours) of the component follows a Weibull distribution with $\alpha = 0.006$ and $\beta = 0.5$; the second has a lifespan in hours follows the exponential distribution with $\beta = 1/25000$.
+\begin{enumerate}
+	\item Find the reliability of the system at 2500 hours.
+	\item Find the probability that the system will fail before 2000 hours.
+	\item If the two components are connected in parallel, what is the system reliability at 2500 hours?
+\end{enumerate}
+\textbf{\underline{Solution}.}
+\begin{enumerate}
+	\item The reliability function for the two components are given by
+	\begin{align*}
+	R_1(t) = e^{-\alpha_1 t^{\beta_1}}, \qquad R_2(t) & = 1 - \int_0^t f_{T_2}(x)\U{d}x \\
+	& = 1 + e^{-\beta_2 x}\bigg|_0^t = e^{-\beta_2 t}.
+	\end{align*}
+	Therefore, the reliability of the system at $t = 2500$ is given by
+	\begin{align*}
+	R(t) = R_1(t)\cdot R_2(t) \quad \Rightarrow\quad R(2500) = 0.7408\times 0.9048 = 0.6703.
+	\end{align*}
+	\item The probability that the system fail before 2000h is given by
+	\begin{align*}
+	P[T < 2000] = 1 - R(2000) = 1 - 0.7059 = 0.2941.
+	\end{align*}
+	\item The reliability at $t = 2500$ for the parallel system is
+	\begin{align*}
+	R(t) = 1 - (1-R_1(t))(1-R_2(t)) \quad\Rightarrow\quad R(2500) = 0.9753.
+	\end{align*}
+\end{enumerate}
+
+
+
+\section*{Assignment 4.2}
+
+Let $X_1, \ldots, X_n$ be a random sample of size $n$ from a random variable with variance $\sigma^2$. We have seen that the sample variance
+\begin{align*}
+S_{n-1}^2 := \frac{1}{n-1} \sum_{k=1}^n (X_k - \overline{X})^2
+\end{align*}
+is an unbiased estimator for $\sigma^2$. It can be shown that
+\begin{align}\label{eq:2}
+\U{Var}(S_{n-1}^2) = \U{MSE}(S_{n-1}^2) = \frac{1}{n}\left(\U{E}[(X - \overline{X})^4] - \frac{n-3}{n-1}\sigma^4 \right) = \frac{1}{n}\left(\gamma_2 + \frac{2n}{n-1} \right)\sigma^4
+\end{align}
+where $\gamma_2 := \U{E}[(X - \mu)^4]/\sigma^4 - 3$ is called the \emph{excess kurtosis} of a distribution.
+\begin{enumerate}
+	\item Show that if $X$ follows a normal distribution with mean $\mu$ and variance $\sigma^2$,
+	\begin{align*}
+	\U{MSE}(S_{n-1}^2) = \frac{2}{n-1}\sigma^4.
+	\end{align*}
+	\item For $a > 0$ set
+	\begin{align*}
+	S_a^2 := \frac{n-1}{a} S_{n-1}^2.
+	\end{align*}
+	Find $\U{MSE}(S_a^2)$ and show that the mean square error is minimized for
+	\begin{align*}
+	a = n + 1 + \frac{n-1}{n}\gamma_2.
+	\end{align*}
+	In the case of a normal distribution with mean $\mu$ and variance $\sigma^2$, show that this reduces to $a = n + 1$.
+\end{enumerate}
+\textbf{\underline{Solution}.}
+\begin{enumerate}
+	\item We know that,
+	\begin{align*}
+	\U{MSE}[S_{n-1}^2] & = \U{Var}[S_{n-1}^2] + \U{bias}^2 = \U{Var}[S_{n-1}^2].
+	\end{align*}
+	Since $X$ follows a normal distribution,
+	\begin{align*}
+	\chi_{n-1}^2 = \frac{(n-1)S_{n-1}}{\sigma^2}
+	\end{align*}
+	follows Chi-squared distribution with $n-1$ degrees of freedom. The variance is
+	\begin{align*}
+	\U{Var}[\chi_{n-1}^2] = 2(n-1) \quad\Rightarrow\quad \U{Var}[S_{n-1}^2] & = \frac{\sigma^4}{(n-1)^2}\cdot 2(n-1) = \frac{2\sigma^4}{n-1}.
+	\end{align*}
+	\item By definition, the MSE for $S_a^2$ is given by
+	\begin{align*}
+	\U{MSE}[S_a^2] & = \U{E}[S_a^4 - 2\sigma^2 S_a^2 + \sigma^4] \\
+	& = \U{E}[S_a^4] - 2\sigma^2 \cdot \frac{n-1}{a}\sigma^2 + \sigma^4 \\
+	& = \U{E}[S_a^4] + \left(1 - \frac{2(n-1)}{a} \right)\sigma^4.
+	\end{align*}
+	Using Eq. (\ref{eq:2}) and property for variance, we have
+	\begin{align*}
+	\U{E}[S_a^4] & = \U{Var}[S_a^2] + \U{E}[S_a^2]^2 \\
+	& = \frac{(n-1)^2}{a^2}\U{Var}[S_{n-1}^2] + \frac{(n-1)^2}{a^2}\sigma^4, \\
+	\U{MSE}[S_a^4] & = \frac{(n-1)^2}{a^2}\cdot\frac{1}{n}\left(\gamma_2 + \frac{2n}{n-1} \right)\sigma^4 + \frac{(n-1)^2}{a^2}\sigma^4 + \left(1 - \frac{2(n-1)}{a} \right)\sigma^4 \\
+	& = \left[x^2\cdot\frac{1}{n}\left(\gamma_2+\frac{2n}{n-1} \right) + x^2 - 2x + 1 \right]\sigma^4 \qquad \left(\U{let\ } x = \frac{n-1}{a}\right) \\
+	& = \left[\left(\frac{\gamma_2}{n} + \frac{2}{n-1} + 1\right)x^2 - 2x + 1 \right],
+	\end{align*}
+	which is maximized when
+	\begin{align*}
+	x = \frac{1}{\dfrac{\gamma_2}{n} + \dfrac{2}{n-1} + 1} = \frac{n-1}{a}\quad \Rightarrow\quad a = n + 1 + \frac{n-1}{n}\gamma_2.
+	\end{align*}
+	In case of normal distribution with mean $\mu$ and variance $\sigma^2$, since
+	\begin{align*}
+	\gamma_2 = \U{E}\left[\frac{(X-\mu)^4}{\sigma^4} \right] - 3 = \U{E}[Z^4] - 3,
+	\end{align*}
+	where $Z$ follows a standard normal distribution and $\U{E}[Z^4]$ is the 4th moment of it, given by
+	\begin{align*}
+	\U{E}[Z^4] = \frac{\U{d}^4m_Z(t)}{\U{d}t^4}\bigg|_{t=0} = (t^4 + 6t^2 + 3) e^{\frac{1}{2}t^2}\bigg|_{t=0} = 3,
+	\end{align*}
+	and thus
+	\begin{align*}
+	a = n + 1.
+	\end{align*}
+\end{enumerate}
