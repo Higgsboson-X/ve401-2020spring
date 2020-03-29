@@ -23,7 +23,7 @@ A mathematics textbook has 200 pages on which typographical errors in the equati
 	\end{align*}
 	Let $X$ be the number of errors in the sample. Then
 	\begin{align*}
-	P[X\geq 3] \geq 90\% \quad\Rightarrow\quad P[Y + 0.5 \geq 3] = P[Y\geq 2.5] \geq 90\%,
+	P[X\geq 3] \geq 90\% \quad\Rightarrow\quad P[Y\geq 2.5] \geq 90\%,
 	\end{align*}
 	where $Y$ follows normal distribution. Transforming to standard normal variable $Z$, we have
 	\begin{align*}
@@ -36,6 +36,67 @@ A mathematics textbook has 200 pages on which typographical errors in the equati
 	\end{align*}
 	which is quite close to 90\%. This posterior validation shows the approximation is reasonable.
 \end{enumerate}
+\textbf{\underline{About half-unit correction}.} If $X$ follows a binomial distribution with parameters $n$ and $p$, and $Y$ follows a normal distribution with mean $\mu = np$ and variance $\sigma^2 = np(1-p)$. Recall normal approximation to binomial distribution,
+\begin{align*}
+P[X\leq \red{y}] = \sum_{x=0}^y \binom{n}{x} p^x(1-p)^{n-x} \approx \Phi\left(\frac{\red{y+1/2}-np}{\sqrt{np(1-p)}} \right),
+\end{align*}
+where $\Phi$ is the cumulative distribution function for the standard normal distribution. Define
+\begin{align*}
+F(\red{x}) := \Phi\left(\frac{\red{x}-np}{\sqrt{np(1-p)}} \right).
+\end{align*}
+Then the approximation is simply $P[X\leq y] \approx F(y+1/2)$. We would like to approximate the cumulative distribution of $X$ using the cumulative distribution of $Y$ (denoted as $\Phi$). Consider the following cases. What should be the corresponding approximation? \\
+~\\
+\begin{minipage}{0.3\linewidth}
+	\begin{enumerate}
+		\item $P[X \geq x_1]$:
+		\begin{enumerate}
+			\item $1 - F(x_1 + 0.5)$
+			\item $1 - F(x_1 - 0.5)$
+		\end{enumerate}
+		\item $P[X > x_1]$:
+		\begin{enumerate}
+			\item $1 - F(x_1 + 0.5)$
+			\item $1 - F(x_1 - 0.5)$
+		\end{enumerate}
+		\item $P[X \leq x_2]$:
+		\begin{enumerate}
+			\item $F(x_2 + 0.5)$
+			\item $F(x_2 - 0.5)$
+		\end{enumerate}
+		\item $P[X < x_2]$:
+		\begin{enumerate}
+			\item $F(x_2 + 0.5)$
+			\item $F(x_2 - 0.5)$
+		\end{enumerate}
+	\end{enumerate}
+\end{minipage}
+\begin{minipage}{0.7\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{./images/s4fig1.pdf}
+\end{minipage}\\
+~\\
+~\\
+\fbox{
+	\emph{Answer}: 1. (b),~~~~ 2. (a),~~~~ 3. (a),~~~~ 4. (b).
+} \\
+~\\
+There are two ways that we can memorize it.
+\begin{itemize}
+	\item We are approximating the integral of binomial density function. According to the figure, if we want $P[X \leq x]$, then we are calculating the area summing up to the right of $x$. Similarly, if we want $P[X < x]$, we are summing up to the left of $x$.
+	\item The original binomial approximation gives
+	\begin{align*}
+	P[X\leq x] \approx F(x + 1/2),
+	\end{align*}
+	which means that
+	\begin{align*}
+	P[X < x] = P[X\leq x - 1] \approx F(x - 1 + 1/2) = F(x - 1/2).
+	\end{align*}
+\end{itemize}
+With this in mind, whenever we want to calculate $P[X\geq x]$ or $P[X > x]$, we rewrite as
+\begin{align*}
+P[X \geq x] = 1 - P[X < x], \qquad P[X > x] = 1 - P[X\leq x],
+\end{align*}
+which falls in to the cases discussed above.
 
 
 \section*{Assignment 3.10}
@@ -279,3 +340,98 @@ where $\gamma_2 := \U{E}[(X - \mu)^4]/\sigma^4 - 3$ is called the \emph{excess k
 	a = n + 1.
 	\end{align*}
 \end{enumerate}
+
+\section*{Mean and Variance for Estimators}
+
+We know that the mean square error is given by
+\begin{align*}
+\U{MSE}[\widehat{\theta}] & = \U{E}[(\widehat{\theta} - \theta)^2] \\
+& = \U{E}[(\widehat{\theta} - \U{E}[\widehat{\theta}] + \U{E}[\widehat{\theta}] - \theta)^2] \\
+& = \U{E}[(\widehat{\theta} - \U{E}[\widehat{\theta}])^2] + \U{E}[2(\widehat{\theta} - \U{E}[\widehat{\theta}])(\U{E}[\widehat{\theta}] - \theta)] + \U{E}[(\U{E}[\widehat{\theta}] - \theta)^2] \\
+& = \U{Var}\ \widehat{\theta} + \U{bias}^2.
+\end{align*}
+MSE is an overall measurement of the quality of the estimator. This means that under the same MSE, estimators with lower bias have a larger variance, and vice versa. This is called the bias-variance trade-off. Therefore, depending on the context, we might prefer a smaller bias or smaller variance.
+
+Here we analyze the mean and variance for unbiased estimators that we have seen in lectures and assignments. For now on, suppose we have sample $X_1, \ldots, X_n$ from a population $X$ with mean $\mu$ and variance $\sigma^2$.
+
+\subsection*{Mean}
+
+The unbiased estimator for mean is given by
+\begin{align*}
+\widehat{\mu} = \frac{1}{n}\sum_{i=1}^n X_i.
+\end{align*}
+Then the mean and variance for this estimator are given by
+\begin{align*}
+\U{E}[\widehat{\mu}] & = \U{E}\left[\frac{1}{n}\sum_{i=1}^n X_i \right] = \frac{1}{n}\sum_{i=1}^n \U{E}[X_i] = \mu, \\
+\U{Var}\ \widehat{\mu} & = \U{Var}\left(\frac{1}{n}\sum_{i=1}^n X_i \right) = \sum_{i=1}^n \frac{1}{n^2} \U{Var}\ X_i = \frac{\sigma^2}{n}.
+\end{align*}
+
+\subsection*{Variance}
+
+The unbiased estimator for variance is given by
+\begin{align*}
+\widehat{\sigma^2} = \frac{1}{n-1}\sum_{i=1}^n (X_i - \overline{X})^2.
+\end{align*}
+Then
+\begin{align*}
+\U{E}[\widehat{\sigma^2}] & = \frac{1}{n-1} \U{E}\left[\sum_{i=1}^n X_i^2 - 2X_i\overline{X} + \overline{X}^2 \right] \\
+& = \frac{1}{n-1} \U{E}\left[\sum_{i=1}^n X_i^2 - n\overline{X}^2 \right] \\
+& = \frac{1}{n-1}\left(\sum_{i=1}^n \U{E}[X_i^2] - n\U{E}[\overline{X}^2] \right) \\
+& = \frac{1}{n-1}\left(n(\sigma^2 + \mu^2) - n\left(\frac{\sigma^2}{n} + \mu^2 \right) \right) \\
+& = \sigma^2.
+\end{align*}
+For variance of this estimator, we have
+\begin{align*}
+\U{Var}\ \widehat{\sigma^2} & = \U{Var}\left(\frac{1}{n-1}\sum_{i=1}^n (X_i - \overline{X})^2 \right) \\
+& = \U{E}\left[\left(\frac{1}{n-1}\sum_{i=1}^n (X_i - \overline{X})^2 - \sigma^2\right)^2 \right].
+\end{align*}
+Rewriting sample variance as
+\begin{align*}
+S^2 & = \frac{1}{n-1} \left(\sum_{i=1}^n X_i^2 - \frac{1}{n}\left(\sum_{i=1}^n X_i \right)^2 \right) \\
+& = \frac{1}{n(n-1)} \left((n-1)\sum_{i=1}^n X_i^2 - 2\sum_{i<j}X_iX_j \right) \\
+& = \frac{1}{n(n-1)} \sum_{i<j} (X_i - X_j)^2,
+\end{align*}
+we have
+\begin{align*}
+\U{E}[(\widehat{\sigma^2} - \sigma^2)^2] & = \U{E}[S^4 - 2\sigma^2S^2 + \sigma^4] \\
+& = \U{E}\left[\left(\frac{1}{n(n-1)} \sum_{i<j} (X_i - X_j)^2 \right)^2 \right] - \sigma^4 \\
+& = \U{E}\left[\left(\frac{1}{n(n-1)} \sum_{i<j} (X_i - X_j)^2 \right)\left(\frac{1}{n(n-1)} \sum_{p<q} (X_p - X_q)^2 \right) \right] - \sigma^4.
+\end{align*}
+Expanding the product above, we can have the following cases regarding the values of $i, j$ and $p, q$. Denote the $k$th moment of $X$ as $\U{E}[X^k] = m_k$.
+\begin{itemize}
+	\item \underline{$i = j, p = q$}.  Since $X_i$ and $X_j$ are independent,
+	\begin{align*}
+	\U{E}[(X_i-X_j)^4] & = \U{E}[X_i^4 - 4X_i^3X_j + 6X_i^2X_j^2 - 4X_iX_j^3 + X_j^4] \\
+	& = 2m_4 - 8m_1m_3 + 6m_2^2.
+	\end{align*}
+	There are $\dfrac{n(n-1)}{2}$ ways of choosing $i, j$, and thus there are the same number of such terms.
+	\item \underline{$|\{i, j\}\cap\{p, q\}| = 1$}. $|\cdot|$ is the cardinality of set. Suppose for now that $j = q$.
+	\begin{align*}
+	\U{E}[(X_i-X_j)^2(X_p-X_q)^2] & = \U{E}[(X_iX_p-X_iX_q-X_pX_q+X_q^2)^2] \\
+	& = \U{E}[X_i^2X_p^2 + X_i^2X_q^2 + X_p^2X_q^2 + X_q^4 -  \\
+	& \qquad \qquad \qquad - 2X_i^2X_pX_q - 2X_iX_p^2X_q + 2X_iX_pX_q^2 + \\
+	& \qquad \qquad \qquad + 2X_iX_pX_q^2 - 2X_iX_q^3 - 2X_pX_q^3 ] \\
+	& = m_4 + 3m_2^2 - 4m_1m_3.
+	\end{align*}
+	There are $n(n-1)(n-2)$ ways of such terms.
+	\item \underline{$i\neq j\neq p\neq q$}. Since the four variables are independent, 
+	\begin{align*}
+	\U{E}[(X_i-X_j)^2(X_p-X_q)^2] & = \left(\U{E}[(X_i-X_j)^2] \right)^2 \\
+	& = \left(\U{E}[X_i^2 - 2X_iX_j + X_j^2] \right)^2 \\
+	& = \left(2m_2 - 2m_1^2 \right)^2 \\
+	& = 4m_2^2 - 8m_1^2m_2 + 4m_1^4.
+	\end{align*}
+	There are $\dfrac{n(n-1)(n-2)(n-3)}{4}$ ways of choosing $i, j, p, q$, and thus there are the same number of such terms.
+\end{itemize}
+Summing up, we have
+\begin{align*}
+\U{E}[\widehat{\sigma^2}] & = \frac{1}{n^2(n-1)^2}\U{E}\left[\left(\sum_{i<j}(X_i-X_j)^2\right)^2 \right] \\
+& = \frac{1}{n}\left(m_4 - 4m_1m_3 - \frac{n-3}{n-1}m_2^2 + \frac{4(2n-3)}{n-1}m_1^2m_2 - \frac{2(2n-3)}{n-1}m_1^4 \right),
+\end{align*}
+which coincides with what is given in Assignment 4.2, where 
+\begin{align*}
+\frac{1}{n}\left(\gamma_2 + \frac{2n}{n-1}\right)\sigma^4 & = \frac{1}{n}\left(\U{E}[(X-\mu)^4] - \frac{n-3}{n-1}(m_2-m_1^2)^2 \right) \\
+& = \frac{1}{n}\left(\U{E}[X^4 - 4X^3\mu + 6X^2\mu^2 - 4X\mu^3 + \mu^4] - \frac{n-3}{n-1}(m_2-m_1^2)^2 \right) \\
+& = \frac{1}{n}\left(m_4 - 4m_1m_3 + 6m_1^2m_2 - 3m_1^4 - \frac{n-3}{n-1}(m_1^4 - 2m_1^2m_2 + m_2^2) \right) \\
+& = \frac{1}{n}\left(m_4 - 4m_1m_3 + \frac{8n-12}{n-1}m_1^2m_2 - \frac{n-3}{n-1}m_2^2 - \frac{4n-6}{n-1}m_1^4 \right).
+\end{align*}

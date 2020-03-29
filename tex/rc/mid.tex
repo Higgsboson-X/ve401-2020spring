@@ -1,0 +1,244 @@
+\section{Statistics}
+
+\subsection{Estimating Parameters}
+
+\begin{frame}{Two Methods of Estimating Parameters}
+
+Suppose $X_1, \ldots, X_n$ are samples for a random variable $X$.
+\begin{itemize}
+	\item \structb{Method of moments.} For any integer $k\geq 1$,
+	\begin{align*}
+	\widehat{\U{E}[X^k]} = \frac{1}{n}\sum_{i=1}^n X_i^k
+	\end{align*}
+	is an unbiased estimator for the $k$th moment of $X$.
+	\item \structb{Maximum likelihood estimate.} 
+	\begin{align*}
+	\widehat{\theta} & = \underset{\theta}{\arg\max}\ L(\theta) = \underset{\theta}{\arg\max}\ \prod_{i=1}^n f_{X}(x_i) \\
+	& = \underset{\theta}{\arg\max}\ \ell(\theta),
+	\end{align*}
+	where $\ell(\theta) = \ln L(\theta)$.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Estimators}
+
+\begin{itemize}
+	\justifying
+	\item \structb{Unbiased estimator for mean.} 
+	\begin{align*}
+	\widehat{\mu} = \frac{1}{n}\sum_{i=1}^n X_i,
+	\end{align*}
+	with
+	\begin{align*}
+	\U{E}[\widehat{\mu}] = \mu, \qquad \U{Var}\ \widehat{\mu} = \frac{\sigma^2}{n}.
+	\end{align*}
+	\item \structb{Unbiased estimator for variance.}
+	\begin{align*}
+	\widehat{\sigma^2} = S^2 = \frac{1}{n-1}\sum_{i=1}^n (X_i - \overline{X})^2.
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+\subsection{Estimating Intervals}
+
+\begin{frame}{Basic Distributions}
+
+Finding $x$ such that $P[X\geq x] = p$.
+\begin{itemize}
+	\item \underline{Standard normal distribution}. \\
+	\texttt{InverseCDF[NormalDistribution[0, 1], 1-p]}
+	\item \underline{Chi-squared distribution} with $n$ degrees of freedom. \\
+	\texttt{InverseCDF[ChiSquareDistribution[n], 1-p]}
+	\item \underline{Student T-distribution} with $n$ degrees of freedom. \\
+	\texttt{InverseCDF[StudentTDistribution[n], 1-p]}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Interval Estimation for Mean and Variance}
+
+\justifying
+\structb{Mean.} Suppose we have a random sample of size $n$ from a normal population with \highlightr{unknown} mean $\mu$ and \highlightr{known} variance $\sigma^2$.
+\begin{itemize}
+	\item \underline{Statistic and distribution}.
+	\begin{align*}
+	Z = \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \U{Normal}\left(0, 1 \right).
+	\end{align*}
+	\item \underline{$100(1-\alpha)\%$ two-sided confidence interval for $\mu$}.
+	\begin{align*}
+	\overline{X} \pm \frac{z_{\alpha/2}\cdot\sigma}{\sqrt{n}}.
+	\end{align*}
+	\item \underline{$100(1-\alpha)\%$ one-sided interval for $\mu$}.
+	\begin{align*}
+	L_u = \overline{X} + \frac{z_{\alpha}\cdot\sigma}{\sqrt{n}}, \qquad L_l = \overline{X} - \frac{z_{\alpha}\cdot \sigma}{\sqrt{n}}.
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Interval Estimation for Mean and Variance}
+
+\justifying
+\structb{Variance.} Suppose we have a random sample of size $n$ from a normal population with \highlightr{unknown} mean $\mu$ and \highlightr{unknown} variance $\sigma^2$.
+\begin{itemize}
+\item \underline{Statistic and distribution}.
+\begin{align*}
+\chi_{n-1}^2 = \frac{(n-1)S^2}{\sigma^2} \sim \U{ChiSquared}\left(n-1 \right).
+\end{align*}
+\item \underline{$100(1-\alpha)\%$ two-sided confidence interval for $\sigma^2$}.
+\begin{align*}
+\left[\frac{(n-1)S^2}{\chi_{\alpha/2, n-1}^2}, \frac{(n-1)S^2}{\chi_{1-\alpha/2, n-1}^2} \right].
+\end{align*}
+\item \underline{$100(1-\alpha)\%$ one-sided interval for $\sigma^2$}.
+\begin{align*}
+L_u = \frac{(n-1)S^2}{\chi_{1-\alpha, n-1}^2}, \qquad L_l = \frac{(n-1)S^2}{\chi_{\alpha, n-1}^2}.
+\end{align*}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Interval Estimation for Mean and Variance}
+
+\justifying
+\structb{Mean.} Suppose we have a random sample of size $n$ from a normal population with \highlightr{unknown} mean $\mu$ and \highlightr{unknown} variance $\sigma^2$.
+\begin{itemize}
+\item \underline{Statistic and distribution}.
+\begin{align*}
+T_{n-1} = \frac{\overline{X} - \mu}{S/\sqrt{n}} \sim \U{StudentT}\left(n-1 \right).
+\end{align*}
+\item \underline{$100(1-\alpha)\%$ two-sided confidence interval for $\mu$}.
+\begin{align*}
+\overline{X} \pm \frac{t_{\alpha/2, n-1} S}{\sqrt{n}}.
+\end{align*}
+\item \underline{$100(1-\alpha)\%$ one-sided interval for $\sigma^2$}.
+\begin{align*}
+L_u = \overline{X} + \frac{t_{\alpha, n-1}S}{\sqrt{n}}, \qquad L_l = \overline{X} - \frac{t_{\alpha, n-1}S}{\sqrt{n}}.
+\end{align*}
+\end{itemize}
+
+\end{frame}
+
+
+\section{Basic Probability}
+
+\subsection{Counting Methods}
+
+\begin{frame}{Basic Principles of Counting}
+
+\justifying
+Suppose a set $A$ of $n$ objects is given.
+\begin{itemize}
+	\justifying
+	\item \highlightg{Permutation of $k$ objects}: $\dfrac{n!}{(n-k)!}$ ways of choosing an \underline{ordered} tuple of $k$ objects from $A$.
+	\item \highlightg{Combination of $k$ objects}: $\dfrac{n!}{k!(n-k)!}$ ways of choosing an \underline{unordered} set of $k$ objects from $A$.
+	\item \highlightg{Permutation of $k$ indistinguishable objects}: $\dfrac{n!}{n_1!n_2!\ldots n_k!}$ ways of partitioning $A$ into $k$ disjoint subsets $A_1, \ldots, A_k$ whose union is $A$, where each $A_i$ has $n_i$ elements.
+\end{itemize}
+\highlightr{Note.} It is important each outcome in the counting method is equally likely.
+
+\end{frame}
+
+\begin{frame}{Counting Method}
+
+\justifying
+\structb{Example 1.} Suppose that a deck of 52 cards containing four aces is shuffled thoroughly and the cards are then distributed among four players so that each player receives 13 cards. What is the probability that each player will receive one ace. \\
+~\\
+\uncover<2>{
+	\structb{Solution.} Suppose we are allocating the 4 aces to 52 positions such that the $(13i - 12)$th through $(13i)$th positions are allocated to the $i$th player. Then there are $\dbinom{52}{4}$ possible locations for the four cards, and among them $13^4$ will lead to the desired result. Therefore,
+	\begin{align*}
+	p = \frac{13^4}{\dbinom{52}{4}} = 0.1055.
+	\end{align*}
+}
+
+\end{frame}
+
+\subsection{Conditional Probability and Bayes's Theorem}
+
+\begin{frame}{Conditional Probability}
+
+\structb{Definitions and Results.}
+\begin{itemize}
+	\justifying
+	\item \highlightg{Conditional probability} of ``$B$ occurs given $A$ has occurred'': $P[B|A] := \dfrac{P[B\cap A]}{P[A]}$.
+	\item \highlightg{Independence} of events $A$ and $B$: $P[A\cap B] = P[A]P[B]$, which is equivalent to
+	\begin{align*}
+	P[A|B] = P[A] \qquad \U{if}\ P[B]\neq 0, \\
+	P[B|A] = P[B] \qquad \U{if}\ P[A]\neq 0.
+	\end{align*}
+	\item \highlightg{Total probability} for $P[B]$ on a sample space $S$, given events $A_1, \ldots, A_n \in S$ are mutually exclusive and $A_1\cup\cdots\cup A_n = S$:
+	\begin{align*}
+	P[B] = \sum_{k=1}^{n} P[B|A_k]\cdot P[A_k].
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Bayes's Theorem}
+
+\justifying
+\structb{Theorem.} Let $A_1, \ldots, A_n \subset S$ be a set of pairwise mutually exclusive events whose union is $S$ and who each have non-zero probability of occurring. Let $B\subset S$ be any event such that $P[B]\neq 0$. Then for any $A_k, k = 1, \ldots, n$,
+\begin{align*}
+P[A_k|\red{B}] = \frac{P[B\cap A_k]}{P[B]} = \frac{P[B|\red{A_k}]\cdot P[A_k]}{\sum_{j=1}^n P[B|\red{A_j}] \cdot P[A_j]}.
+\end{align*}
+\uncover<2>{
+	\begin{enumerate}
+		\item Identifying sample space $S$.
+		\item What is the conditional probability of interest $P[A_k|B]$.
+		\item What are the conditional probabilities that we have $P[B|A_j]$.
+	\end{enumerate}
+}
+
+\end{frame}
+
+
+\begin{frame}{Bayes's Theorem}
+
+\justifying
+\structb{Example 2 (assignment 1.5).} It is reported that 50\% of all computer chips produced are defective. Inspection assures that only 5\% of the chips legally marketed are defective. Unfortunately, some chips are stolen before inspection. If 1\% of all chips on the market are stolen, find the probability that a given chip is stolen given that it is defective.
+\only<2>{
+	\begin{enumerate}
+		\justifying
+		\item Sample space $\Rightarrow$ all chips that are marketed.
+		\item Suppose $U$ denotes the sample space of all produced chips, and $M$ denotes the sample space of all marketed chips. 
+		\begin{align*}
+		P[D] = 50\% (\U{using} U) \quad\Rightarrow\quad P[D|S] = 50\% (\U{using}M),
+		\end{align*}
+		since the stolen chips do not go through inspection.
+	\end{enumerate}
+}
+\uncover<3>{
+	\begin{itemize}
+		\justifying
+		\item[3.] All other conditional probabilities are given in terms of $M$.
+		\begin{align*}
+		P[S] = 1\%, \qquad P[D|\neg S] = 5\%.
+		\end{align*}
+		Then
+		\begin{align*}
+		P[S|D] = \frac{P[D|S] \cdot P[S]}{P[D|S]\cdot P[S] + P[D|\neg S]\cdot P[\neg S]}.
+		\end{align*}
+	\end{itemize}
+}
+
+\end{frame}
+
+
+\subsection{General Remarks}
+
+\begin{frame}{General Remarks}
+
+\begin{enumerate}
+	\justifying
+	\item Be sure to have a working camera before the exam.
+	\item You need to use pencil and paper to sketch plots for histograms, stem-and-leaf diagrams and boxplots.
+	\item You need to upload your files by the end of the exam. You will not have extra time to do this...
+	\item Go over lecture slides, rc slides, assignments, etc.
+	\item Integrating by parts, substitution rule, etc.
+	\item Being familiar with distributions and their interpretations is sometimes helpful. (Poisson --- exponential --- gamma --- failure density.)
+\end{enumerate}
+
+
+\end{frame}

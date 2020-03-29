@@ -39,7 +39,35 @@ One often has information on $\rho_A$, but not $F_A$ or $R_A$.
 \end{frame}
 
 
-\subsection{Weibull Distribution}
+\subsection{Common Distributions for Reliability Studies}
+
+\begin{frame}{Exponential Distribution}
+
+\begin{itemize}
+	\item \structb{Density function.} $\beta > 0$ is a parameter,
+	\begin{align*}
+	f(x) = \left\{
+	\begin{array}{ll}
+	\beta e^{-\beta x}, & x > 0, \\
+	0, & \U{otherwise.}
+	\end{array}
+	\right.
+	\end{align*}
+	\item \structb{Mean.}
+	\begin{align*}
+	\mu = \frac{1}{\beta}.
+	\end{align*}
+	\item \structb{Variance.}
+	\begin{align*}
+	\sigma^2 = \frac{1}{\beta}.
+	\end{align*}
+	\item \structb{Reliability features.}
+	\begin{align*}
+	\rho(t) = \beta, \ R(t) = e^{-\beta t}, \ f(t) = \rho(t)R(t) = \beta e^{-\beta t}.
+	\end{align*}
+\end{itemize}
+
+\end{frame}
 
 \begin{frame}{Weibull Distribution}
 
@@ -119,6 +147,7 @@ One often has information on $\rho_A$, but not $F_A$ or $R_A$.
 
 \begin{frame}{Visualization --- Stem-and-Leaf Diagrams}
 
+\structb{Steps.}
 \begin{enumerate}
 	\justifying
 	\item Choose a convenient number of leading decimal digits to serve as stems.
@@ -143,7 +172,7 @@ One often has information on $\rho_A$, but not $F_A$ or $R_A$.
 
 \begin{enumerate}
 	\justifying
-	\item Calculate $q_1, q_2, q_3$ and $\U{TQR}$.
+	\item Calculate $q_1, q_2, q_3$ and $\U{IQR}$.
 	\item Find \highlightg{inner fences} and \highlightg{outer fences} by
 	\begin{align*}
 	& f_1 = q_1 - \frac{3}{2}\U{IQR}, \qquad f_3 = q_3 + \frac{3}{2}\U{IQR}, \\
@@ -224,7 +253,7 @@ The maximum likelihood estimator (MLE) of $\theta$ is given by
 \end{align*}
 In most of the cases, we equivalently maximize the \highlightg{log-likelihood}
 \begin{align*}
-\ell(\theta) = \ln\ L(\theta), \qquad \widehat{\theta} = \underset{\theta}{\arg\max}\ \ell(\theta).
+\ell(\theta) = \ln L(\theta), \qquad \widehat{\theta} = \underset{\theta}{\arg\max}\ \ell(\theta).
 \end{align*}
 
 
@@ -251,12 +280,12 @@ In most of the cases, we equivalently maximize the \highlightg{log-likelihood}
 \begin{frame}{Estimating Mean}
 
 \justifying
-\structb{Maximum likelihood estimate}. Suppose $X$ follows a normal distribut-ion with \underline{unknown} mean $\mu$ and \underline{known} variance $\sigma^2$, and we wish to estimate variance $\sigma^2$.
+\structb{Maximum likelihood estimate}. Suppose $X$ follows a normal distribut-ion with \underline{unknown} mean $\mu$ and \underline{known} variance $\sigma^2$, and we wish to estimate mean $\mu$.
 \begin{itemize}
-	\item \underline{Estimating variance $\sigma^2$}. 
+	\item \underline{Estimating mean $\mu$}. 
 	\footnotesize
 	\begin{align*}
-	L(\mu, \sigma^2) & =  \frac{1}{(2\pi)^{n/2}\sigma^n}\exp\left[\frac{1}{\sigma^2}\left(\sum_{i=1}^n X_i^2 - 2\mu\sum_{i=1}^n X_i + n\mu^2 \right) \right]. \\
+	L(\mu) & =  \frac{1}{(2\pi)^{n/2}\sigma^n}\exp\left[\frac{1}{\sigma^2}\left(\sum_{i=1}^n X_i^2 - 2\mu\sum_{i=1}^n X_i + n\mu^2 \right) \right]. \\
 	\widehat{\mu} & = \underset{\mu}{\arg\max}\left\{-\frac{n}{2}\ln(2\pi\sigma^2) + \frac{1}{\sigma^2}\left(\sum_{i=1}^n X_i^2 - 2\mu\sum_{i=1}^n X_i + n\mu^2 \right) \right\} \\
 	& = \frac{1}{n}\sum_{i=1}^n X_i.
 	\end{align*}
@@ -321,7 +350,7 @@ In most of the cases, we equivalently maximize the \highlightg{log-likelihood}
 	\end{align*}
 	\item \structb{MLE estimator for parameters.}
 	\begin{align*}
-	\widehat{\theta} = \underset{\theta}{\arg\max}\ \ell(\theta) = \underset{\theta}{\arg\max}\ \sum_{i=1}^n \ln f_{X}(x_i).
+	\widehat{\theta} = \underset{\theta}{\arg\max}\ L(\theta) = \underset{\theta}{\arg\max}\ \ell(\theta) = \underset{\theta}{\arg\max}\ \sum_{i=1}^n \ln f_{X}(x_i).
 	\end{align*}
 \end{itemize}
 
@@ -390,14 +419,15 @@ P[\theta \leq L_u] = 1 - \alpha, \qquad P[L_l \leq \theta] = 1 - \alpha.
 	\end{align*}
 	\item \underline{Density function}. $f_{\chi_n^2}(x) = 0$ for $x < 0$ and
 	\begin{align*}
-	f_{\chi_n^2}(x) = \frac{1}{2^{\gamma/2}\Gamma(\gamma/2)} x^{\gamma/2-1} e^{-x/2}, \qquad x \geq 0,
+	f_{\chi_n^2}(x) = \frac{1}{2^{n/2}\Gamma(n/2)} x^{n/2-1} e^{-x/2}, \qquad x \geq 0,
 	\end{align*}
-	where $\gamma$ is the degree of freedom.
+	where $n$ is the degree of freedom.
 	\item \underline{Statistical values}. Command for $x$ such that $P[X\geq x] = p$:\\
 	\texttt{InverseCDF[ChiSquareDistribution[n], 1-p]}.
 \end{itemize}
 
 \end{frame}
+
 
 \begin{frame}{Basic Distributions}
 
@@ -405,6 +435,36 @@ P[\theta \leq L_u] = 1 - \alpha, \qquad P[L_l \leq \theta] = 1 - \alpha.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{./images/rc4fig4.png}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Basic Distributions}
+
+\structb{Chi distribution.}
+\begin{itemize}
+	\item \underline{Origin.} $Z_1, \ldots, Z_n$ are i.i.d. random variables.
+	\begin{align*}
+	Z_i\sim \U{Normal}(0, 1) \quad \Rightarrow\quad \chi_n = \sqrt{\sum_{i=1}^n Z_i^2} \sim \U{Chi}(n).
+	\end{align*}
+	\item \underline{Density function}. $f_{\chi_n}(x) = 0$ for $x < 0$ and
+	\begin{align*}
+	f_{\chi_n}(x) = \frac{2}{2^{n/2}\Gamma(n/2)} x^{n-1} e^{-x^2/2}, \qquad x \geq 0,
+	\end{align*}
+	where $n$ is the degree of freedom.
+	\item \underline{Statistical values}. Command for $x$ such that $P[X\geq x] = p$:\\
+	\texttt{InverseCDF[ChiDistribution[n], 1-p]}.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Basic Distributions}
+
+\structb{Chi distribution.}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=10cm]{./images/rc4fig13.pdf}
 \end{figure}
 
 \end{frame}
@@ -439,7 +499,34 @@ P[\theta \leq L_u] = 1 - \alpha, \qquad P[L_l \leq \theta] = 1 - \alpha.
 
 \end{frame}
 
-\begin{frame}{Interval Estimation for Mean and Variance}
+
+\begin{frame}{Summary}
+
+\justifying
+Suppose $X_1, \ldots, X_n$ are samples from a population $X$, where $X$ follows normal distribution with mean $\mu$ and variance $\sigma^2$.
+\begin{itemize}
+	\item \structb{Normal distribution.}
+	\begin{align*}
+	Z = \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \U{Normal}\left(0, 1 \right).
+	\end{align*}
+	\item \structb{Chi-squared distribution.}
+	\begin{align*}
+	\chi_{n-1}^2 = \frac{(n-1)S^2}{\sigma^2} \sim \U{ChiSquared}\left(n-1 \right).
+	\end{align*}
+	\item \structb{Chi distribution.}
+	\begin{align*}
+	\chi_{n-1} = \sqrt{\frac{(n-1)S^2}{\sigma^2}} \sim \U{Chi}\left(n-1 \right).
+	\end{align*}
+	\item \structb{Student T-distribution.}
+	\begin{align*}
+	T_{n-1} = \frac{\overline{X} - \mu}{S/\sqrt{n}} \sim \U{StudentT}\left(n-1 \right).
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Interval Estimation for Mean (Variance Known)}
 
 \justifying
 \structb{Mean.} Suppose we have a random sample of size $n$ from a normal population with \highlightr{unknown} mean $\mu$ and \highlightr{known} variance $\sigma^2$.
@@ -461,7 +548,29 @@ P[\theta \leq L_u] = 1 - \alpha, \qquad P[L_l \leq \theta] = 1 - \alpha.
 \end{frame}
 
 
-\begin{frame}{Interval Estimation for Mean and Variance}
+\begin{frame}{Interval Estimation for Mean (Variance Unknown)}
+
+\justifying
+\structb{Mean.} Suppose we have a random sample of size $n$ from a normal population with \highlightr{unknown} mean $\mu$ and \highlightr{unknown} variance $\sigma^2$.
+\begin{itemize}
+	\item \underline{Statistic and distribution}.
+	\begin{align*}
+	T_{n-1} = \frac{\overline{X} - \mu}{S/\sqrt{n}} \sim \U{StudentT}\left(n-1 \right).
+	\end{align*}
+	\item \underline{$100(1-\alpha)\%$ two-sided confidence interval for $\mu$}.
+	\begin{align*}
+	\overline{X} \pm \frac{t_{\alpha/2, n-1} S}{\sqrt{n}}.
+	\end{align*}
+	\item \underline{$100(1-\alpha)\%$ one-sided interval for $\sigma^2$}.
+	\begin{align*}
+	L_u = \overline{X} + \frac{t_{\alpha, n-1}S}{\sqrt{n}}, \qquad L_l = \overline{X} - \frac{t_{\alpha, n-1}S}{\sqrt{n}}.
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Interval Estimation for Variance}
 
 \justifying
 \structb{Variance.} Suppose we have a random sample of size $n$ from a normal population with \highlightr{unknown} mean $\mu$ and \highlightr{unknown} variance $\sigma^2$.
@@ -483,22 +592,22 @@ P[\theta \leq L_u] = 1 - \alpha, \qquad P[L_l \leq \theta] = 1 - \alpha.
 \end{frame}
 
 
-\begin{frame}{Interval Estimation for Mean and Variance}
+\begin{frame}{Interval Estimation for Standard Deviation}
 
 \justifying
-\structb{Mean.} Suppose we have a random sample of size $n$ from a normal population with \highlightr{unknown} mean $\mu$ and \highlightr{unknown} variance $\sigma^2$.
+\structb{Std. Deviation.} Suppose we have a random sample of size $n$ from a normal population with \highlightr{unknown} mean $\mu$ and \highlightr{unknown} variance $\sigma^2$.
 \begin{itemize}
 	\item \underline{Statistic and distribution}.
 	\begin{align*}
-	T_{n-1} = \frac{\overline{X} - \mu}{S/\sqrt{n}} \sim \U{StudentT}\left(n-1 \right).
+	\chi_{n-1} = \sqrt{\frac{(n-1)S^2}{\sigma^2}} \sim \U{Chi}\left(n-1 \right).
 	\end{align*}
-	\item \underline{$100(1-\alpha)\%$ two-sided confidence interval for $\mu$}.
+	\item \underline{$100(1-\alpha)\%$ two-sided confidence interval for $\sigma^2$}.
 	\begin{align*}
-	\overline{X} \pm \frac{t_{\alpha/2, n-1} S}{\sqrt{n}}.
+	\left[\frac{\sqrt{(n-1)S^2}}{\chi_{\alpha/2, n-1}}, \frac{\sqrt{(n-1)S^2}}{\chi_{1-\alpha/2, n-1}} \right].
 	\end{align*}
 	\item \underline{$100(1-\alpha)\%$ one-sided interval for $\sigma^2$}.
 	\begin{align*}
-	L_u = \overline{X} + \frac{t_{\alpha, n-1}S}{\sqrt{n}}, \qquad L_l = \overline{X} - \frac{t_{\alpha, n-1}S}{\sqrt{n}}.
+	L_u = \frac{\sqrt{(n-1)S^2}}{\chi_{1-\alpha, n-1}}, \qquad L_l = \frac{\sqrt{(n-1)S^2}}{\chi_{\alpha, n-1}}.
 	\end{align*}
 \end{itemize}
 
@@ -635,13 +744,13 @@ Mathematica commands $\quad\Rightarrow$
 	\begin{align*}
 	\U{CI} = \left[\overline{X} - \frac{z_{\alpha/2}\sigma}{\sqrt{n}}, \overline{X} + \frac{z_{\alpha/2}\sigma}{\sqrt{n}} \right] = [3.91, 4.85].
 	\end{align*}
-	\item \underline{Variance}. (Variance unknown.) A 95\% two-sided confidence interval for variance $\sigma^2$ is given by
-	\begin{align*}
-	\U{CI} = \left[\frac{(n-1)S^2}{\chi_{\alpha/2, n-1}^2}, \frac{(n-1)S^2}{\chi_{1-\alpha/2, n-1}^2} \right] = [3.60, 7.05].
-	\end{align*}
 	\item \underline{Mean}. (Variance unknown.) A 95\% two-sided confidence interval for mean $\mu$ is given by
 	\begin{align*}
 	\U{CI} = \left[\overline{X} - \frac{t_{\alpha/2, n-1} S}{\sqrt{n}}, \overline{X} + \frac{t_{\alpha/2, n-1} S}{\sqrt{n}} \right] = [3.21, 5.55].
+	\end{align*}
+	\item \underline{Variance}. A 95\% two-sided confidence interval for variance $\sigma^2$ is given by
+	\begin{align*}
+	\U{CI} = \left[\frac{(n-1)S^2}{\chi_{\alpha/2, n-1}^2}, \frac{(n-1)S^2}{\chi_{1-\alpha/2, n-1}^2} \right] = [3.60, 7.05].
 	\end{align*}
 \end{itemize}
 

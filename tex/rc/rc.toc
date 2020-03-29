@@ -1,8 +1,8 @@
 \beamer@sectionintoc {1}{Reliability}{3}{0}{1}
 \beamer@subsectionintoc {1}{1}{Failure Density, Reliability and Hazard Rate}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Weibull Distribution}{6}{0}{1}
-\beamer@sectionintoc {2}{Basic Statistics}{8}{0}{2}
-\beamer@subsectionintoc {2}{1}{Samples and Data}{8}{0}{2}
-\beamer@subsectionintoc {2}{2}{Estimating Parameters}{15}{0}{2}
-\beamer@subsectionintoc {2}{3}{Estimating Intervals}{24}{0}{2}
-\beamer@subsectionintoc {2}{4}{Case Study}{35}{0}{2}
+\beamer@subsectionintoc {1}{2}{Common Distributions for Reliability Studies}{6}{0}{1}
+\beamer@sectionintoc {2}{Basic Statistics}{9}{0}{2}
+\beamer@subsectionintoc {2}{1}{Samples and Data}{9}{0}{2}
+\beamer@subsectionintoc {2}{2}{Estimating Parameters}{16}{0}{2}
+\beamer@subsectionintoc {2}{3}{Estimating Intervals}{25}{0}{2}
+\beamer@subsectionintoc {2}{4}{Case Study}{40}{0}{2}
