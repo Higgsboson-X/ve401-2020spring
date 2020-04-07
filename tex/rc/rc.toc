@@ -1,8 +1,7 @@
-\beamer@sectionintoc {1}{Reliability}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Failure Density, Reliability and Hazard Rate}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Common Distributions for Reliability Studies}{6}{0}{1}
-\beamer@sectionintoc {2}{Basic Statistics}{9}{0}{2}
-\beamer@subsectionintoc {2}{1}{Samples and Data}{9}{0}{2}
-\beamer@subsectionintoc {2}{2}{Estimating Parameters}{16}{0}{2}
-\beamer@subsectionintoc {2}{3}{Estimating Intervals}{25}{0}{2}
-\beamer@subsectionintoc {2}{4}{Case Study}{40}{0}{2}
+\beamer@sectionintoc {1}{Hypothesis Tests}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Fisher's Null Hypothesis Test}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Neyman-Pearson Decision Theory}{8}{0}{1}
+\beamer@sectionintoc {2}{Test for Statistics}{18}{0}{2}
+\beamer@subsectionintoc {2}{1}{Tests for Mean, Median and Variance}{18}{0}{2}
+\beamer@subsectionintoc {2}{2}{Inferences on Proportions}{19}{0}{2}
+\beamer@subsectionintoc {2}{3}{Comparing Two Means and Two Variances}{20}{0}{2}

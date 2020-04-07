@@ -1,8 +1,7 @@
-\BOOKMARK [2][]{Outline0.1}{Reliability}{}% 1
-\BOOKMARK [3][]{Outline0.1.1.3}{Failure Density, Reliability and Hazard Rate}{Outline0.1}% 2
-\BOOKMARK [3][]{Outline0.1.2.6}{Common Distributions for Reliability Studies}{Outline0.1}% 3
-\BOOKMARK [2][]{Outline0.2}{Basic Statistics}{}% 4
-\BOOKMARK [3][]{Outline0.2.1.9}{Samples and Data}{Outline0.2}% 5
-\BOOKMARK [3][]{Outline0.2.2.16}{Estimating Parameters}{Outline0.2}% 6
-\BOOKMARK [3][]{Outline0.2.3.25}{Estimating Intervals}{Outline0.2}% 7
-\BOOKMARK [3][]{Outline0.2.4.40}{Case Study}{Outline0.2}% 8
+\BOOKMARK [2][]{Outline0.1}{Hypothesis Tests}{}% 1
+\BOOKMARK [3][]{Outline0.1.1.3}{Fisher's Null Hypothesis Test}{Outline0.1}% 2
+\BOOKMARK [3][]{Outline0.1.2.8}{Neyman-Pearson Decision Theory}{Outline0.1}% 3
+\BOOKMARK [2][]{Outline0.2}{Test for Statistics}{}% 4
+\BOOKMARK [3][]{Outline0.2.1.18}{Tests for Mean, Median and Variance}{Outline0.2}% 5
+\BOOKMARK [3][]{Outline0.2.2.19}{Inferences on Proportions}{Outline0.2}% 6
+\BOOKMARK [3][]{Outline0.2.3.20}{Comparing Two Means and Two Variances}{Outline0.2}% 7
