@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300) (preloaded format=pdflatex 2020.3.6)  7 APR 2020 17:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300) (preloaded format=pdflatex 2020.3.6)  11 APR 2020 17:22
 entering extended mode
 **./rc.tex
 (rc.tex
@@ -1161,43 +1161,41 @@ Package xypdf Info: Line width: 0.39998pt on input line 59.
 
 ]
 LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 27.
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 32.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 27.
+(Font)              <10> on input line 32.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 27.
+(Font)              <7> on input line 32.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 27.
+(Font)              <5> on input line 32.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 27.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 32.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 27.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 32.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <5> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 27.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 32.
  [4
 
 ]
-<./images/rc5fig1.png, id=171, 954.56625pt x 515.9275pt>
+<./images/rc5fig1.png, id=185, 954.56625pt x 515.9275pt>
 File: ./images/rc5fig1.png Graphic file (type png)
 <use ./images/rc5fig1.png>
-Package pdftex.def Info: ./images/rc5fig1.png  used on input line 42.
+Package pdftex.def Info: ./images/rc5fig1.png  used on input line 47.
 (pdftex.def)             Requested size: 227.62204pt x 123.02214pt.
  [5
 
  <./images/rc5fig1.png>]
-<./images/rc5fig2.png, id=199, 798.985pt x 396.48125pt>
+<./images/rc5fig2.png, id=212, 798.985pt x 396.48125pt>
 File: ./images/rc5fig2.png Graphic file (type png)
 <use ./images/rc5fig2.png>
-Package pdftex.def Info: ./images/rc5fig2.png  used on input line 57.
+Package pdftex.def Info: ./images/rc5fig2.png  used on input line 62.
 (pdftex.def)             Requested size: 227.62204pt x 112.94992pt.
  [6
 
- <./images/rc5fig2.png>] [7
+ <./images/rc5fig2.png>] (rc.toc) [7
 
-] (rc.toc) [8
-
-] [9
+] [8
 
 ]
 Overfull \hbox (15.91719pt too wide) in paragraph at lines 114--114
@@ -1214,7 +1212,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 114--114
 Overfull \vbox (83.14278pt too high) detected at line 114
  []
 
-[10
+[9
 
 ]
 Overfull \hbox (15.91719pt too wide) in paragraph at lines 114--114
@@ -1227,50 +1225,175 @@ Underfull \hbox (badness 10000) in paragraph at lines 114--114
 
  []
 
-[11
+[10
 
 ]
-<./images/rc5fig5.png, id=362, 1021.8175pt x 676.5275pt>
+<./images/rc5fig5.png, id=354, 1021.8175pt x 676.5275pt>
 File: ./images/rc5fig5.png Graphic file (type png)
 <use ./images/rc5fig5.png>
 Package pdftex.def Info: ./images/rc5fig5.png  used on input line 125.
 (pdftex.def)             Requested size: 227.62204pt x 150.69464pt.
- [12
+ [11
 
- <./images/rc5fig5.png>] [13
+ <./images/rc5fig5.png>] [12
 
 ]
-<./images/rc5fig3.png, id=415, 957.5775pt x 558.085pt>
+<./images/rc5fig3.png, id=406, 957.5775pt x 558.085pt>
 File: ./images/rc5fig3.png Graphic file (type png)
 <use ./images/rc5fig3.png>
-Package pdftex.def Info: ./images/rc5fig3.png  used on input line 150.
+Package pdftex.def Info: ./images/rc5fig3.png  used on input line 152.
 (pdftex.def)             Requested size: 307.28987pt x 179.09328pt.
- [14
+ [13
 
  <./images/rc5fig3.png>]
-<./images/rc5fig4.png, id=442, 944.52875pt x 673.51625pt>
+<./images/rc5fig4.png, id=434, 944.52875pt x 673.51625pt>
 File: ./images/rc5fig4.png Graphic file (type png)
 <use ./images/rc5fig4.png>
-Package pdftex.def Info: ./images/rc5fig4.png  used on input line 161.
+Package pdftex.def Info: ./images/rc5fig4.png  used on input line 163.
 (pdftex.def)             Requested size: 307.28987pt x 219.11627pt.
 
-Overfull \vbox (5.57228pt too high) detected at line 161
+Overfull \vbox (5.57228pt too high) detected at line 163
  []
 
-[15
+[14
 
- <./images/rc5fig4.png>] [16
+ <./images/rc5fig4.png>] [15
 
-] [17
+] [16
 
-] (rc.toc) [18
+]
+Overfull \vbox (20.87952pt too high) detected at line 232
+ []
 
-] (rc.toc) [19
+[17
 
-] (rc.toc)
-[20
+]
+Overfull \vbox (59.85435pt too high) detected at line 232
+ []
 
-]) [21
+[18
+
+]
+Overfull \vbox (36.38162pt too high) detected at line 232
+ []
+
+[19
+
+] [20
+
+]
+Overfull \hbox (1.0502pt too wide) in paragraph at lines 246--246
+[]\OT1/lmss/m/n/10.95 Suppose we would like to estimate the mean $\OML/lmm/m/it
+/10.95 $ \OT1/lmss/m/n/10.95 of a sample $\OT1/lmss/m/sl/10.95 X[]\OML/lmm/m/i
+t/10.95 ; [] ; \OT1/lmss/m/sl/10.95 X[]$
+ []
+
+
+Overfull \hbox (5.39694pt too wide) in paragraph at lines 246--246
+\OT1/lmss/m/n/10.95 critical region $\OMS/lmsy/m/n/10.95 ,$ \OT1/lmss/m/n/10.95
+ null value $\OML/lmm/m/it/10.95 []$ \OT1/lmss/m/n/10.95 lies outside the conf
+idence interval. 
+ []
+
+[21
+
+] (rc.toc) [22
+
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 267.
+LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <9> not available
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 267.
+
+ [23
+
+] [24
+
+]
+<./images/rc5fig6.pdf, id=726, 505.89pt x 249.93375pt>
+File: ./images/rc5fig6.pdf Graphic file (type pdf)
+<use ./images/rc5fig6.pdf>
+Package pdftex.def Info: ./images/rc5fig6.pdf  used on input line 294.
+(pdftex.def)             Requested size: 307.28987pt x 151.81866pt.
+ [25
+
+ <./images/rc5fig6.pdf>]
+Overfull \hbox (7.51434pt too wide) detected at line 312
+[]
+ []
+
+[26
+
+] [27
+
+] [28
+
+] (rc.toc) [29
+
+] [30
+
+] [31
+
+] [32
+
+] (rc.toc) [33
+
+] [34
+
+] [35
+
+]
+Overfull \hbox (2.24956pt too wide) in paragraph at lines 468--468
+[][]\OT1/lmss/m/n/10.95 Critical values for two-tailed test.[] For one-tailed t
+est with significance
+ []
+
+<./images/signed-rank-test.png, id=1059, 881.2925pt x 675.52374pt>
+File: ./images/signed-rank-test.png Graphic file (type png)
+<use ./images/signed-rank-test.png>
+Package pdftex.def Info: ./images/signed-rank-test.png  used on input line 468.
+
+(pdftex.def)             Requested size: 256.0748pt x 196.27824pt.
+[36
+
+ <./images/signed-rank-test.png>] (rc.toc) [37
+
+] [38
+
+] [39
+
+]
+Overfull \hbox (1.28606pt too wide) in paragraph at lines 521--521
+[][]\OT1/lmss/m/n/10.95 Large-sample test for proportion.[] Let $\OT1/lmss/m/sl
+/10.95 X[]\OML/lmm/m/it/10.95 ; [] ; \OT1/lmss/m/sl/10.95 X[]$ \OT1/lmss/m/n/10
+.95 be a random sample
+ []
+
+[40
+
+] [41
+
+] [42
+
+] [43
+
+] (rc.toc) [44
+
+] [45
+
+]
+Overfull \hbox (8.23056pt too wide) in paragraph at lines 612--612
+[]$\OT1/lmss/m/sl/10.95 H[] \OT1/lmss/m/n/10.95 : \OML/lmm/m/it/10.95 [] \OT1/
+lmss/m/n/10.95 = \OML/lmm/m/it/10.95 []$ \OT1/lmss/m/n/10.95 if $\OT1/lmss/m/s
+l/10.95 S[]\OML/lmm/m/it/10.95 =\OT1/lmss/m/sl/10.95 S[] \OML/lmm/m/it/10.95 > 
+\OT1/lmss/m/sl/10.95 f[]$ \OT1/lmss/m/n/10.95 or $\OT1/lmss/m/sl/10.95 S[]\OML/
+lmm/m/it/10.95 =\OT1/lmss/m/sl/10.95 S[] \OML/lmm/m/it/10.95 > \OT1/lmss/m/sl/1
+0.95 f[]$\OT1/lmss/m/n/10.95 . 
+ []
+
+[46
+
+]) [47
 
 ]
 \tf@nav=\write7
@@ -1288,14 +1411,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 83.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 83.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 83.
 Package rerunfilecheck Info: File `rc.out' has not changed.
-(rerunfilecheck)             Checksum: 788FA920750AE5299D6F28D591A5647D;509.
+(rerunfilecheck)             Checksum: F9CF230C5F6C68CD7EF15A102E095150;696.
  ) 
 Here is how much of TeX's memory you used:
- 21843 strings out of 483220
- 403696 string characters out of 2960973
- 783507 words of memory out of 3000000
- 36464 multiletter control sequences out of 15000+200000
- 583096 words of font info for 81 fonts, out of 3000000 for 9000
+ 21983 strings out of 483220
+ 405468 string characters out of 2960973
+ 785929 words of memory out of 3000000
+ 36540 multiletter control sequences out of 15000+200000
+ 589818 words of font info for 88 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  58i,14n,67p,3215b,563s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/home/chxw/.miktex/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{/home/ch
@@ -1303,19 +1426,25 @@ xw/.miktex/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/chxw/.miktex/
 texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{/home/chxw/.miktex/texmfs/install/
 fonts/enc/dvips/lm/lm-mathex.enc}</home/chxw/.miktex/texmfs/install/fonts/type1
 /public/lm/lmex10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/
-lmmi10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmmi6.pfb><
-/home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmmi8.pfb></home/chxw/.
-miktex/texmfs/install/fonts/type1/public/lm/lmss10.pfb></home/chxw/.miktex/texm
-fs/install/fonts/type1/public/lm/lmss12.pfb></home/chxw/.miktex/texmfs/install/
-fonts/type1/public/lm/lmss8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/
-public/lm/lmssbo10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm
-/lmsso10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmsso8.pf
-b></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmsy10.pfb></home/ch
-xw/.miktex/texmfs/install/fonts/type1/public/lm/lmsy8.pfb></home/chxw/.miktex/t
-exmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on rc.pdf (21 pages, 712543 bytes).
+lmmi10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmmi5.pfb><
+/home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmmi6.pfb></home/chxw/.
+miktex/texmfs/install/fonts/type1/public/lm/lmmi8.pfb></home/chxw/.miktex/texmf
+s/install/fonts/type1/public/lm/lmmi9.pfb></home/chxw/.miktex/texmfs/install/fo
+nts/type1/public/lm/lmss10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/p
+ublic/lm/lmss12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lm
+ss8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmss9.pfb></ho
+me/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmssbo10.pfb></home/chxw/.
+miktex/texmfs/install/fonts/type1/public/lm/lmsso10.pfb></home/chxw/.miktex/tex
+mfs/install/fonts/type1/public/lm/lmsso8.pfb></home/chxw/.miktex/texmfs/install
+/fonts/type1/public/lm/lmsso9.pfb></home/chxw/.miktex/texmfs/install/fonts/type
+1/public/lm/lmsy10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm
+/lmsy6.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmsy8.pfb><
+/home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmsy9.pfb></home/chxw/.
+miktex/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb></home/chx
+w/.miktex/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on rc.pdf (47 pages, 1506753 bytes).
 PDF statistics:
- 694 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
- 124 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1469 PDF objects out of 1728 (max. 8388607)
+ 104 named destinations out of 1000 (max. 500000)
+ 150 words of extra memory for PDF output out of 10000 (max. 10000000)
 
