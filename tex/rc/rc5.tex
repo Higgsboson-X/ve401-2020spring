@@ -16,7 +16,7 @@
 	\item Try to reject the null hypothesis by finding \highlightg{P-value} for the test.\\
 	\begin{itemize}
 		\justifying
-		\item \underline{One-tailed}: upper bound of of probability of obtaining the data or more extreme data (based on the null hypothesis), given that the null hypothesis is true.
+		\item \underline{One-tailed}: upper bound of probability of obtaining the data or more extreme data (based on the null hypothesis), given that the null hypothesis is true.
 		\begin{align*}
 		P[D|H_0]\leq P\U{-value}.
 		\end{align*}
@@ -72,7 +72,7 @@ H_0: \theta = \theta_0.
 	\item Set up a \highlightg{null hypothesis} $H_0$ and an \highlightg{alternative hypothesis} $H_1$.
 	\item Determine a desirable $\alpha$ and $\beta$, where
 	\begin{itemize}
-		\item $\alpha := P[\U{accept\ } H_1|H_0 \U{\ true}]$,
+		\item $\alpha := P[\U{reject\ } H_0|H_0 \U{\ true}]$,
 		\item $\beta := P[\U{accept\ } H_0|H_1 \U{\ true}]$, and
 		\item $\U{power} := 1 - \beta = P[\U{reject\ } H_0|H_1 \U{\ true}]$.
 	\end{itemize}
@@ -213,7 +213,7 @@ A random sample of 50 battery packs is selected and subjected to a life test. As
 		\item[(iii)] What sample size would be required to obtain a power of at least 0.97?
 		\begin{align*}
 		& \alpha = 0.05, \qquad \beta = 1 - 0.97 = 0.03, \qquad \delta = 0.5 \\
-		\Rightarrow & n \approx \frac{(z_{\alpha} + z_{\beta})^2}{\delta^2}.
+		\Rightarrow & n \approx \frac{(z_{\alpha} + z_{\beta})^2\sigma^2}{\delta^2}.
 		\end{align*}
 	\end{itemize}
 }
@@ -395,7 +395,7 @@ where in practice, the unknown $\sigma$ can be substituted by $S$.
 \begin{frame}{Test for Variance}
 
 \justifying
-\structb{Chi-squared test.} Let $X_1, \ldots, X_n$ be a random sample of size $n$ from a normal distribution with \highlightr{unknown} variance $\sigma^2$. Let $\sigma^2_0$ be a null value of the variance. Then the test statistic is given by
+\structb{Chi-squared test.} Let $X_1, \ldots, X_n$ be a random sample of size $n$ from a normal distribution with unknown variance $\sigma^2$. Let $\sigma^2_0$ be a null value of the variance. Then the test statistic is given by
 \begin{align*}
 \chi_{n-1}^2 = \frac{(n-1)S^2}{\sigma_0^2}.
 \end{align*}
@@ -452,6 +452,21 @@ We reject at significance level $\alpha$
 	\item $H_0: M = M_0$ if $W = \min(W_+, |W_-|)$ is smaller than the critical value for $\alpha/2$.
 \end{itemize}
 As is in the sign test, we use $n'$ after discarding data with $X_i = M_0$.
+
+\end{frame}
+
+\begin{frame}{Wilcoxon Signed Rank Test for Median}
+
+\justifying
+\structb{Normal approximation for distribution of $|W_-|$.} Let $I_i$ be the Bernoulli random variable with parameter 1/2 and $I_i = 1$ if $X_i < M$. Then we have
+\begin{align*}
+|W_-| = \sum_{i=1}^n |R_i|I_i \quad\Rightarrow\quad \U{E}[|W_-|] & = \U{E}\left[\sum_{i=1}^n |R_i|I_i \right] \\
+& = \sum_{i=1}^n \frac{|R_i|}{2} = \frac{n(n+1)}{4}, \\
+\U{Var}|W_-| & = \sum_{i=1}^n |R_i|^2\U{Var}\ I_i \\
+& = \sum_{i=1}^n \frac{|R_i|^2}{4} = \frac{n(n+1)(2n+1)}{24}.
+\end{align*}
+With large sample size, the distribution of $|W_-|$ can be approximated as normal with mean and variance given above.
+
 
 \end{frame}
 

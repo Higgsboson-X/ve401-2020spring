@@ -76,32 +76,34 @@
 \headcommand {\beamer@framepages {35}{35}}
 \headcommand {\slideentry {2}{2}{4}{36/36}{Non-Parametric Single Sample Tests for Median}{0}}
 \headcommand {\beamer@framepages {36}{36}}
-\headcommand {\beamer@subsectionpages {33}{36}}
-\headcommand {\beamer@subsectionentry {0}{2}{3}{37}{Inferences on Proportions}}
-\headcommand {\slideentry {2}{3}{1}{37/37}{Inferences on Proportions}{0}}
+\headcommand {\slideentry {2}{2}{5}{37/37}{Non-Parametric Single Sample Tests for Median}{0}}
 \headcommand {\beamer@framepages {37}{37}}
-\headcommand {\slideentry {2}{3}{2}{38/39}{Inferences on Proportions}{0}}
-\headcommand {\beamer@framepages {38}{39}}
-\headcommand {\slideentry {2}{3}{3}{40/40}{Inferences on Proportions}{0}}
-\headcommand {\beamer@framepages {40}{40}}
-\headcommand {\slideentry {2}{3}{4}{41/41}{Inferences on Proportions}{0}}
+\headcommand {\beamer@subsectionpages {33}{37}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{38}{Inferences on Proportions}}
+\headcommand {\slideentry {2}{3}{1}{38/38}{Inferences on Proportions}{0}}
+\headcommand {\beamer@framepages {38}{38}}
+\headcommand {\slideentry {2}{3}{2}{39/40}{Inferences on Proportions}{0}}
+\headcommand {\beamer@framepages {39}{40}}
+\headcommand {\slideentry {2}{3}{3}{41/41}{Inferences on Proportions}{0}}
 \headcommand {\beamer@framepages {41}{41}}
-\headcommand {\slideentry {2}{3}{5}{42/42}{Inferences on Proportions}{0}}
+\headcommand {\slideentry {2}{3}{4}{42/42}{Inferences on Proportions}{0}}
 \headcommand {\beamer@framepages {42}{42}}
-\headcommand {\slideentry {2}{3}{6}{43/43}{Inferences on Proportions}{0}}
+\headcommand {\slideentry {2}{3}{5}{43/43}{Inferences on Proportions}{0}}
 \headcommand {\beamer@framepages {43}{43}}
-\headcommand {\beamer@subsectionpages {37}{43}}
-\headcommand {\beamer@subsectionentry {0}{2}{4}{44}{Comparing Two Variances}}
-\headcommand {\slideentry {2}{4}{1}{44/44}{Comparing Two Variances}{0}}
+\headcommand {\slideentry {2}{3}{6}{44/44}{Inferences on Proportions}{0}}
 \headcommand {\beamer@framepages {44}{44}}
-\headcommand {\slideentry {2}{4}{2}{45/45}{Comparing Two Variances}{0}}
+\headcommand {\beamer@subsectionpages {38}{44}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{45}{Comparing Two Variances}}
+\headcommand {\slideentry {2}{4}{1}{45/45}{Comparing Two Variances}{0}}
 \headcommand {\beamer@framepages {45}{45}}
-\headcommand {\slideentry {2}{4}{3}{46/46}{Comparing Two Variances}{0}}
+\headcommand {\slideentry {2}{4}{2}{46/46}{Comparing Two Variances}{0}}
 \headcommand {\beamer@framepages {46}{46}}
-\headcommand {\slideentry {2}{4}{4}{47/47}{Comparing Two Variances}{0}}
+\headcommand {\slideentry {2}{4}{3}{47/47}{Comparing Two Variances}{0}}
 \headcommand {\beamer@framepages {47}{47}}
-\headcommand {\beamer@partpages {1}{47}}
-\headcommand {\beamer@subsectionpages {44}{47}}
-\headcommand {\beamer@sectionpages {29}{47}}
-\headcommand {\beamer@documentpages {47}}
-\headcommand {\gdef \inserttotalframenumber {41}}
+\headcommand {\slideentry {2}{4}{4}{48/48}{Comparing Two Variances}{0}}
+\headcommand {\beamer@framepages {48}{48}}
+\headcommand {\beamer@partpages {1}{48}}
+\headcommand {\beamer@subsectionpages {45}{48}}
+\headcommand {\beamer@sectionpages {29}{48}}
+\headcommand {\beamer@documentpages {48}}
+\headcommand {\gdef \inserttotalframenumber {42}}
