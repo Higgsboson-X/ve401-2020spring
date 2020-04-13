@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300) (preloaded format=pdflatex 2020.3.6)  12 APR 2020 17:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300) (preloaded format=pdflatex 2020.3.6)  13 APR 2020 15:37
 entering extended mode
 **./rc.tex
 (rc.tex
@@ -1343,7 +1343,7 @@ Overfull \hbox (7.51434pt too wide) detected at line 312
 ] [35
 
 ]
-Overfull \hbox (3.18652pt too wide) in paragraph at lines 471--471
+Overfull \hbox (3.18652pt too wide) in paragraph at lines 470--470
 [][]\OT1/lmss/m/n/10.95 Normal approximation for distribution of $\OMS/lmsy/m/n
 /10.95 j\OT1/lmss/m/sl/10.95 W[]\OMS/lmsy/m/n/10.95 j$\OT1/lmss/m/n/10.95 .[] L
 et $\OT1/lmss/m/sl/10.95 I[]$ \OT1/lmss/m/n/10.95 be the Bernoulli
@@ -1351,47 +1351,63 @@ et $\OT1/lmss/m/sl/10.95 I[]$ \OT1/lmss/m/n/10.95 be the Bernoulli
 
 [36
 
+] [37
+
 ]
-Overfull \hbox (2.24956pt too wide) in paragraph at lines 483--483
+Overfull \hbox (12.7976pt too wide) in paragraph at lines 507--507
+[][]\OT1/lmss/m/n/10.95 Normal approximation for distribution of $\OMS/lmsy/m/n
+/10.95 j\OT1/lmss/m/sl/10.95 W[]\OMS/lmsy/m/n/10.95 j$ \OT1/lmss/m/n/10.95 (tie
+s).[] Then substituting
+ []
+
+
+Overfull \hbox (0.72827pt too wide) detected at line 507
+[]
+ []
+
+[38
+
+]
+Overfull \hbox (2.24956pt too wide) in paragraph at lines 519--519
 [][]\OT1/lmss/m/n/10.95 Critical values for two-tailed test.[] For one-tailed t
 est with significance
  []
 
-<./images/signed-rank-test.png, id=1084, 881.2925pt x 675.52374pt>
+<./images/signed-rank-test.png, id=1135, 881.2925pt x 675.52374pt>
 File: ./images/signed-rank-test.png Graphic file (type png)
 <use ./images/signed-rank-test.png>
-Package pdftex.def Info: ./images/signed-rank-test.png  used on input line 483.
+Package pdftex.def Info: ./images/signed-rank-test.png  used on input line 519.
 
 (pdftex.def)             Requested size: 256.0748pt x 196.27824pt.
-[37
+[39
 
- <./images/signed-rank-test.png>] (rc.toc) [38
+ <./images/signed-rank-test.png>] (rc.toc) [40
 
-] [39
+] [41
 
-] [40
+] [42
 
 ]
-Overfull \hbox (1.28606pt too wide) in paragraph at lines 536--536
+Overfull \hbox (1.28606pt too wide) in paragraph at lines 572--572
 [][]\OT1/lmss/m/n/10.95 Large-sample test for proportion.[] Let $\OT1/lmss/m/sl
 /10.95 X[]\OML/lmm/m/it/10.95 ; [] ; \OT1/lmss/m/sl/10.95 X[]$ \OT1/lmss/m/n/10
 .95 be a random sample
  []
 
-[41
-
-] [42
-
-] [43
+[43
 
 ] [44
 
-] (rc.toc) [45
+] [45
 
 ] [46
 
+] (rc.toc) [47
+
+] [48
+
 ]
-Overfull \hbox (8.23056pt too wide) in paragraph at lines 627--627
+Overfull \hbox (8.23056pt too wide) in paragraph at lines 663--663
 []$\OT1/lmss/m/sl/10.95 H[] \OT1/lmss/m/n/10.95 : \OML/lmm/m/it/10.95 [] \OT1/
 lmss/m/n/10.95 = \OML/lmm/m/it/10.95 []$ \OT1/lmss/m/n/10.95 if $\OT1/lmss/m/s
 l/10.95 S[]\OML/lmm/m/it/10.95 =\OT1/lmss/m/sl/10.95 S[] \OML/lmm/m/it/10.95 > 
@@ -1400,9 +1416,9 @@ lmm/m/it/10.95 =\OT1/lmss/m/sl/10.95 S[] \OML/lmm/m/it/10.95 > \OT1/lmss/m/sl/1
 0.95 f[]$\OT1/lmss/m/n/10.95 . 
  []
 
-[47
+[49
 
-]) [48
+]) [50
 
 ]
 \tf@nav=\write7
@@ -1420,13 +1436,13 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 83.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 83.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 83.
 Package rerunfilecheck Info: File `rc.out' has not changed.
-(rerunfilecheck)             Checksum: 03193FC36C815B8F36C2F40DD50F9F34;696.
+(rerunfilecheck)             Checksum: D10BC332239B371CDDAC3033A9BC7CDF;696.
  ) 
 Here is how much of TeX's memory you used:
- 21987 strings out of 483220
- 405505 string characters out of 2960973
- 786030 words of memory out of 3000000
- 36542 multiletter control sequences out of 15000+200000
+ 21995 strings out of 483220
+ 405579 string characters out of 2960973
+ 786190 words of memory out of 3000000
+ 36546 multiletter control sequences out of 15000+200000
  589818 words of font info for 88 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  58i,14n,67p,3215b,563s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1451,9 +1467,9 @@ mfs/install/fonts/type1/public/lm/lmsso8.pfb></home/chxw/.miktex/texmfs/install
 /home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmsy9.pfb></home/chxw/.
 miktex/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb></home/chx
 w/.miktex/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on rc.pdf (48 pages, 1513061 bytes).
+Output written on rc.pdf (50 pages, 1527748 bytes).
 PDF statistics:
- 1494 PDF objects out of 1728 (max. 8388607)
- 106 named destinations out of 1000 (max. 500000)
+ 1547 PDF objects out of 1728 (max. 8388607)
+ 110 named destinations out of 1000 (max. 500000)
  150 words of extra memory for PDF output out of 10000 (max. 10000000)
 

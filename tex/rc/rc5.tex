@@ -458,15 +458,51 @@ As is in the sign test, we use $n'$ after discarding data with $X_i = M_0$.
 \begin{frame}{Wilcoxon Signed Rank Test for Median}
 
 \justifying
-\structb{Normal approximation for distribution of $|W_-|$.} Let $I_i$ be the Bernoulli random variable with parameter 1/2 and $I_i = 1$ if $X_i < M$. Then we have
+\structb{Normal approximation for distribution of $|W_-|$.} Let $I_i$ be the Bernoulli random variable with parameter 1/2 and $I_i = 1$ if $X_i < M_0$. Then we have
 \begin{align*}
 |W_-| = \sum_{i=1}^n |R_i|I_i \quad\Rightarrow\quad \U{E}[|W_-|] & = \U{E}\left[\sum_{i=1}^n |R_i|I_i \right] \\
 & = \sum_{i=1}^n \frac{|R_i|}{2} = \frac{n(n+1)}{4}, \\
 \U{Var}|W_-| & = \sum_{i=1}^n |R_i|^2\U{Var}\ I_i \\
 & = \sum_{i=1}^n \frac{|R_i|^2}{4} = \frac{n(n+1)(2n+1)}{24}.
 \end{align*}
-With large sample size, the distribution of $|W_-|$ can be approximated as normal with mean and variance given above.
 
+
+\end{frame}
+
+
+\begin{frame}{Wilcoxon Signed Rank Test for Median}
+
+\justifying
+\structb{Normal approximation for distribution of $|W_-|$ (ties).} Suppose we have a group of $t$ ties, with ranks $R$ and $I$ given by
+\begin{align*}
+\{R_{j+1}, \ldots, R_{j+t} \}, \qquad \{I_{j+1}, \ldots, I_{j+t} \}.
+\end{align*}
+Suppose for now $R_j > 0$ and denote
+\begin{align*}
+\overline{R} = \frac{\sum_{k=1}^t R_{j+k} }{t} = \frac{2R_{j+1} + t - 1}{2} \ \Rightarrow\ R_{j+1} = \overline{R} - \frac{t-1}{2}.
+\end{align*}
+Since the ranks of ties are calculated as the average of the original ranks, the mean does no change. In terms of variance,
+\begin{align*}
+& \sum_{k=1}^t |R_{j+k}|^2 \U{Var}\ I_{j+k}-\sum_{k=1}^t |\overline{R}|^2\U{Var}\ I_{j+k} \\
+= & \frac{1}{4}\left(\sum_{k=1}^{R_{j+1}+t-1} k^2 - \sum_{k=1}^{R_{j+1}-1}k^2 - t\overline{R}^2\right) =: \frac{1}{4}A.
+\end{align*}
+
+\end{frame}
+
+
+\begin{frame}{Wilcoxon Signed Rank Test for Median}
+
+\justifying
+\structb{Normal approximation for distribution of $|W_-|$ (ties).} Then substituting $R_{j+1}$ with $\overline{R}$, we have
+\begin{align*}
+A & = \frac{\left(a + \dfrac{t}{2}\right)\left(b+\dfrac{t}{2} \right)\left(c + t \right) - \left(a-\dfrac{t}{2} \right)\left(b-\dfrac{t}{2} \right)\left(c-t \right)}{6} - t\overline{R}^2 \\
+& = \frac{t^3 - t}{12}.
+\end{align*}
+where 
+\begin{align*}
+a = \overline{R} - \frac{1}{2}, \qquad b = \overline{R} + \frac{1}{2}, \qquad c = 2\overline{R}.
+\end{align*}
+Therefore, for each group of $t$ ties, we need to subtract $(t^3-t)/48$ from the variance. With large sample size, the distribution of $|W_-|$ can be approximated as normal with mean and variance given above. 
 
 \end{frame}
 
