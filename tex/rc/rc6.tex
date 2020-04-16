@@ -284,7 +284,70 @@ We reject at significance level $\alpha$
 
 \section{Categorical Data}
 
+\begin{frame}{The Multinomial Distribution}
+
+\justifying
+\structb{Definition.} A random vector $((X_1, \ldots, X_k), f_{X_1X_2\cdots X_k})$ with 
+\begin{align*}
+(X_1, \ldots, X_k): S\rightarrow \Omega = \{0, 1, 2, \ldots, n\}^k
+\end{align*}
+and joint distribution function 
+\begin{align*}
+f_{X_1X_2\cdots X_k}: \Omega\rightarrow\R, \qquad f_{X_1X_2\cdots X_k}(x_1, \ldots, x_k) = \frac{n!}{x_1!\cdots x_k!} p_1^{x_1}\cdot p_k^{x_k},
+\end{align*}
+$p_1,\ldots, p_k\in (0, 1), n\in \N\setminus\{0\}$ is said to have a \highlightg{multinomial distribution} with parameters $n$ and $p_1,\ldots, p_k$. For $i = 1,\ldots, k$ and $1\leq i < j\leq k$,
+\begin{align*}
+\U{E}[X_i] = np_i, \quad \U{Var}[X_i] = np_i(1-p_i), \quad \U{Cov}[X_i, X_j] = -np_ip_j.
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{The Pearson Statistic}
+
+\justifying
+\structb{Theorem.} Let $((X_1, \ldots, X_k), f_{X_1X_2\cdots X_k})$ be a multinomial random variable with parameters $n$ and $p_1, \ldots, p_k$. For large $n$ the \highlightg{Pearson statistic}
+\begin{align*}
+\sum_{i=1}^k \frac{(O_i-E_i)^2}{E_i} = \sum_{i=1}^k \frac{(X_i-np_i)^2}{np_i}
+\end{align*}
+follows an approximate chi-squared distribution with $k-1$ degrees of freedom, where $O_i$ are observed values and $E_i$ are expected values. \\
+\structb{Cochran's rule.} For good approximation, we require
+\begin{align*}
+\U{E}[X_i] & = np_i \geq 1, \qquad \U{for\ all\ } i = 1, \ldots, k,\\
+\U{E}[X_i] & = np_i \geq 5, \qquad \U{for\ 80\%\ of\ all\ } i = 1,\ldots, k.
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{Test for Multinomial Distribution}
+
+\justifying
+\structb{Pearson's chi-squared goodness-of-fit test.} Let $(X_1, \ldots, X_k)$ be a sample of size $n$ from a categorical random variable with parameters $p_1, \ldots, p_k$ satisfying Cochran's Rule. Let $(p_{1_0}, \ldots, p_{k_0})$ be a vector of null values. We want to test
+\begin{align*}
+H_0: p_i = p_{i_0}, \qquad i = 1,\ldots, k.
+\end{align*}
+based on the test statistic
+\begin{align*}
+X_{k-1}^2 = \sum_{i=1}^k \frac{(X_i - np_{i_0})^2}{np_{i_0}}.
+\end{align*}
+We reject $H_0$ at significance level $\alpha$ if $X_{k-1}^2 > \chi_{\alpha,k-1}^2$.
+
+\end{frame}
+
+
+\begin{frame}{Goodness-of-Fit Test for a Discrete Distribution}
+
+\justifying
+\structb{Goodness-of-fit test.} Dividing data into $k$ categories to estimate $m$ parameters of distributions, we have the statistic
+\begin{align*}
+\sum_{i=1}^k \frac{(O_i - E_i)^2}{E_i}
+\end{align*}
+which follows a chi-squared distribution with $k-1-m$ degrees of freedom.
+
+\end{frame}
+
+\begin{frame}{Independence of Categorizations}
 
 
 
+\end{frame}
 
