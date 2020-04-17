@@ -4,3 +4,5 @@
 \beamer@subsectionintoc {1}{3}{Paired Tests}{14}{0}{1}
 \beamer@subsectionintoc {1}{4}{Correlation Coefficient}{18}{0}{1}
 \beamer@sectionintoc {2}{Categorical Data}{23}{0}{2}
+\beamer@subsectionintoc {2}{1}{Categorical Data and Multinomial Distribuiton}{23}{0}{2}
+\beamer@subsectionintoc {2}{2}{The Pearson Statistic}{25}{0}{2}

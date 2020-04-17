@@ -2,10 +2,10 @@
 
 \subsection{Comparison of Two Means}
 
-\begin{frame}{Basic Statistic}
+\begin{frame}{Comparing Two Means}
 
 \justifying
-Suppose sample means $\overline{X}^{(1)}$ and $\overline{X}^{(2)}$ are calculated from samples of sizes $n_1$ and $n_2$ respectively from normal populations with means $\mu_1, \mu_2$ and variances $\sigma_1, \sigma_2$. Then since
+\structb{Basic distribution.} Suppose sample means $\overline{X}^{(1)}$ and $\overline{X}^{(2)}$ are cal-culated from samples of sizes $n_1$ and $n_2$ respectively from normal populations with means $\mu_1, \mu_2$ and variances $\sigma_1, \sigma_2$. Then since
 \begin{align*}
 \overline{X}^{(1)}\sim \U{N}(\mu_1, \sigma_1^2/n_1), \qquad \overline{X}^{(2)} \sim \U{N}(\mu_2, \sigma_2^2/n_2),
 \end{align*}
@@ -97,7 +97,7 @@ Then
 \begin{align*}
 \gamma \cdot \frac{\lambda_1 s_1^2 + \cdots + \lambda_k s_k^2}{\lambda_1 \sigma_1^2 + \cdots + \lambda_k \sigma_k^2}
 \end{align*}
-follows approximately a chi-squared distribution with $\gamma$ degrees of freedom, where we round $\gamma$ down to the nearest integer.
+follows approximately a chi-squared distribution with $\gamma$ degrees of freedom, where we round $\gamma$ \highlightr{down} to the nearest integer.
 
 
 \end{frame}
@@ -134,7 +134,7 @@ Let $X_1, \ldots, X_m$ and $Y_1, \ldots, Y_n$, where $m\leq n$, be random sample
 \begin{align*}
 W_m = \U{sum\ of\ the\ ranks\ of\ } X_1, \ldots, X_m
 \end{align*}
-We reject $H_0: P[X > Y]$ at significance level $\alpha$ if $W_m$ falls into the corresponding critical region. 
+We reject $H_0: P[X > Y] = 1/2$ at significance level $\alpha$ if $W_m$ falls into the corresponding critical region. 
 
 
 \end{frame}
@@ -161,7 +161,7 @@ where the sum is taken over all groups of $t$ ties.
 \subsection{Paired Tests}
 
 
-\begin{frame}{Paired $T$-Test}
+\begin{frame}{Variances Equal but Unknown --- Paired $T$-Test}
 
 \justifying
 \structb{Paired T-test.} Let $X_1^{(i)}, \ldots, X_{n_i}^{(i)}$ with $i = 1, 2$ be samples of size $n = n_1 = n_2$ from normal distributions with unknown means $\mu_1, \mu_2$ and \highlightr{equal} but \highlightr{unknown} variances $\sigma^2 = \sigma_1^2 = \sigma_2^2$. Then $D_i = X_i - Y_i$ follows normal distributions. Then the test statistic is given by
@@ -266,7 +266,7 @@ or
 \begin{frame}{Hypothesis Tests for the Correlation Coefficient}
 
 \justifying
-Suppose $X_1, \ldots, X_n$ and $Y_1, \ldots, Y_n$ are samples of size $n$ from $X$ and $Y$, where $(X, Y)$ follows a bivariate normal distribution with relation coefficient $\rho\in (-1, 1)$. The test statistic is given by
+\structb{Test for correlation coefficient.} Suppose $X_1, \ldots, X_n$ and $Y_1, \ldots, Y_n$ are samples of size $n$ from $X$ and $Y$, where $(X, Y)$ follows a bivariate normal distribution with relation coefficient $\rho\in (-1, 1)$. The test statistic is given by
 \begin{align*}
 Z & = \frac{\sqrt{n-3}}{2}\left(\ln\left(\frac{1+R}{1-R} \right) - \ln\left(\frac{1+\rho_0}{1-\rho_0} \right) \right) \\
 & = \sqrt{n-3}(\U{Artanh}(R) - \U{Artanh}(\rho_0)).
@@ -284,6 +284,9 @@ We reject at significance level $\alpha$
 
 \section{Categorical Data}
 
+
+\subsection{Categorical Data and Multinomial Distribuiton}
+
 \begin{frame}{The Multinomial Distribution}
 
 \justifying
@@ -291,9 +294,9 @@ We reject at significance level $\alpha$
 \begin{align*}
 (X_1, \ldots, X_k): S\rightarrow \Omega = \{0, 1, 2, \ldots, n\}^k
 \end{align*}
-and joint distribution function 
+and joint distribution function $f_{X_1X_2\cdots X_k}: \Omega\rightarrow\R$
 \begin{align*}
-f_{X_1X_2\cdots X_k}: \Omega\rightarrow\R, \qquad f_{X_1X_2\cdots X_k}(x_1, \ldots, x_k) = \frac{n!}{x_1!\cdots x_k!} p_1^{x_1}\cdot p_k^{x_k},
+f_{X_1X_2\cdots X_k}(x_1, \ldots, x_k) = \frac{n!}{x_1!\cdots x_k!} p_1^{x_1}\cdots p_k^{x_k},
 \end{align*}
 $p_1,\ldots, p_k\in (0, 1), n\in \N\setminus\{0\}$ is said to have a \highlightg{multinomial distribution} with parameters $n$ and $p_1,\ldots, p_k$. For $i = 1,\ldots, k$ and $1\leq i < j\leq k$,
 \begin{align*}
@@ -301,6 +304,8 @@ $p_1,\ldots, p_k\in (0, 1), n\in \N\setminus\{0\}$ is said to have a \highlightg
 \end{align*}
 
 \end{frame}
+
+\subsection{The Pearson Statistic}
 
 \begin{frame}{The Pearson Statistic}
 
@@ -341,12 +346,68 @@ We reject $H_0$ at significance level $\alpha$ if $X_{k-1}^2 > \chi_{\alpha,k-1}
 \begin{align*}
 \sum_{i=1}^k \frac{(O_i - E_i)^2}{E_i}
 \end{align*}
-which follows a chi-squared distribution with $k-1-m$ degrees of freedom.
+which follows a chi-squared distribution with $k-1-m$ degrees of freedom. This transforms the question of ``whether a certain variable follows some specific distribution with parameters $\theta$'' to ``whether the categorical variable follows the multinomial distribution with parameters $p_1,\ldots, p_k$ determined by the specific distribution with parameters $\theta$''.
 
 \end{frame}
 
-\begin{frame}{Independence of Categorizations}
+\begin{frame}{Test for Independence of Categorizations}
 
+\structb{Overview.}
+\begin{enumerate}
+	\justifying
+	\item Draw \highlightg{contingency table} from data, and calculate the marginal row and column sums.
+	\begin{table}
+		\footnotesize
+		\centering
+		\begin{tabular}{c|ccc|c}
+			 & cat.2.1 & $\cdots$ & cat.2.c & \\
+			\hline
+			cat.1.1 & $n_{11}$ & $\cdots$ & $n_{1c}$ & $n_{1\cdot}$ \\
+			$\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ & $\vdots$ \\
+			cat.1.r & $n_{r1}$ & $\cdots$ & $n_{rc}$ & $n_{r\cdot}$ \\
+			\hline
+			& $n_{\cdot 1}$ & $\cdots$ & $n_{\cdot c}$ & $n$
+		\end{tabular}
+	\end{table}
+	\item Calculate Pearson statistic
+	\footnotesize
+	\begin{align*}
+	X^2_{(r-1)(c-1)} = \sum_{i=1}^r \sum_{j=1}^c \frac{(O_{ij}-E_{ij})^2}{E_{ij}}, \quad \U{where\ } E_{ij} = \frac{n_{i\cdot}n_{\cdot j}}{n}.
+	\end{align*}
+	\normalsize
+	\item Reject $H_0: p_{ij} = p_{i\cdot}p_{\cdot j}$ at significance level $\alpha$ if $X^2_{(r-1)(c-1)} > \chi_{\alpha,(r-1)(c-1)}^2$.
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}{Test for Homogeneity}
+
+\structb{Overview.}
+\begin{enumerate}
+	\justifying
+	\item Draw contingency table. (Suppose the marginal row sums are fixed.)
+	\begin{table}
+		\footnotesize
+		\centering
+		\begin{tabular}{c|ccc|c}
+			& cat.2.1 & $\cdots$ & cat.2.c & \\
+			\hline
+			cat.1.1 & $n_{11}$ & $\cdots$ & $n_{1c}$ & $n_{1\cdot}$ (fixed) \\
+			$\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ & $\vdots$ \\
+			cat.1.r & $n_{r1}$ & $\cdots$ & $n_{rc}$ & $n_{r\cdot}$ (fixed) \\
+			\hline
+			& $n_{\cdot 1}$ & $\cdots$ & $n_{\cdot c}$ & $n$ (fixed)
+		\end{tabular}
+	\end{table}
+	\item Calculate Pearson statistic
+	\footnotesize
+	\begin{align*}
+	X^2_{(r-1)(c-1)} = \sum_{i=1}^r \sum_{j=1}^c \frac{(O_{ij}-E_{ij})^2}{E_{ij}}, \quad \U{where\ } E_{ij} = \frac{n_{i\cdot}n_{\cdot j}}{n}.
+	\end{align*}
+	\normalsize
+	\item Reject $H_0: p_{1j} = \cdots = p_{rj}$ at significance level $\alpha$ if $X^2_{(r-1)(c-1)} > \chi_{\alpha,(r-1)(c-1)}^2$.
+\end{enumerate}
 
 
 \end{frame}
