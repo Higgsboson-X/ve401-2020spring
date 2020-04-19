@@ -38,9 +38,9 @@ We reject at significance level $\alpha$
 \begin{frame}{Variances Known}
 
 \justifying
-\structb{OC curve.} We can use the OC curves for normal distributions with
+\structb{OC curve.} When testing equality of means $H_0: \mu_1 = \mu_2$, we have $(\mu_1-\mu_2)_0 = 0$. We can use the OC curves for normal distributions with
 \begin{align*}
-d = \frac{|(\mu_1-\mu_2)-(\mu_1-\mu_2)_0|}{\sqrt{\sigma_1^2+\sigma_2^2}}
+d = \frac{|\mu_1-\mu_2|}{\sqrt{\sigma_1^2+\sigma_2^2}}
 \end{align*}
 with $n = n_1 = n_2$. When $n_1\neq n_2$, we use the equivalent sample size
 \begin{align*}
@@ -77,9 +77,9 @@ We reject at significance level $\alpha$
 \begin{frame}{Variances Equal but Unknown --- Student's $T$-Test}
 
 \justifying
-\structb{OC curve.} We use the OC curves for the T-test in case of equal sample sizes $n = n_1 = n_2$
+\structb{OC curve.} When testing equality of means $H_0: \mu_1 = \mu_2$, we have $(\mu_1-\mu_2)_0 = 0$. We can use the OC curves for the T-test in case of equal sample sizes $n = n_1 = n_2$
 \begin{align*}
-d = \frac{|(\mu_1-\mu_2)-(\mu_1-\mu_2)_0|}{2\sigma}.
+d = \frac{|\mu_1-\mu_2|}{2\sigma}.
 \end{align*}
 When reading the charts, we must use the modified sample size $n^* = 2n-1$.
 
@@ -95,7 +95,7 @@ When reading the charts, we must use the modified sample size $n^* = 2n-1$.
 \end{align*}
 Then
 \begin{align*}
-\gamma \cdot \frac{\lambda_1 s_1^2 + \cdots + \lambda_k s_k^2}{\lambda_1 \sigma_1^2 + \cdots + \lambda_k \sigma_k^2}
+\chi_{\gamma}^2 := \gamma \cdot \frac{\lambda_1 s_1^2 + \cdots + \lambda_k s_k^2}{\lambda_1 \sigma_1^2 + \cdots + \lambda_k \sigma_k^2}
 \end{align*}
 follows approximately a chi-squared distribution with $\gamma$ degrees of freedom, where we round $\gamma$ \highlightr{down} to the nearest integer.
 
@@ -136,6 +136,19 @@ W_m = \U{sum\ of\ the\ ranks\ of\ } X_1, \ldots, X_m
 \end{align*}
 We reject $H_0: P[X > Y] = 1/2$ at significance level $\alpha$ if $W_m$ falls into the corresponding critical region. 
 
+
+\end{frame}
+
+
+\begin{frame}{Wilcoxon Rank-Sum Test}
+
+\justifying
+\structb{Critical values for Wilcoxon rank-sum test.} $m$ is the sample size of the smaller sample, while $n$ is the size of the larger sample. $W$ includes the critical values for two-tailed or one-tailed tests. $P$ is the corresponding p-value.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{./images/rc6fig1.png}
+\end{figure}
+A larger table can be found in rc files.
 
 \end{frame}
 
@@ -184,8 +197,8 @@ We reject at significance level $\alpha$
 With two populations $X$ and $Y$ with equal variances $\sigma^2$, we want to test $H_0: \mu_X = \mu_Y$ using samples of equal size $n$. Then the statistics are
 \footnotesize
 \begin{align*}
-T_{\U{pooled}} & = \frac{\overline{X} - \overline{Y}}{\sqrt{2S_p^2/n}}, \qquad \U{critical\ value} = t_{\alpha/2,2n-2}, \\
-T_{\U{paired}} & = \frac{\overline{X}-\overline{Y}}{\sqrt{S_D^2/n}}, \qquad \U{critical\ value} = t_{\alpha/2,n-1}.
+T_{\U{pooled}} & = \frac{\overline{X} - \overline{Y}}{\sqrt{2S_p^2/n}}, \qquad  \U{critical\ value} = t_{\alpha/2,2n-2}, \\
+T_{\U{paired}} & = \frac{\overline{X}-\overline{Y}}{\sqrt{S_D^2/n}}, \qquad\ \U{critical\ value} = t_{\alpha/2,n-1}.
 \end{align*}
 \normalsize
 Preferring a more powerful test, we consider the following.
@@ -207,9 +220,9 @@ Preferring a more powerful test, we consider the following.
 \begin{frame}{Non-parametric Paired Test}
 
 \justifying
-\structb{Comparison of medians.} Let $X$ and $Y$ be two independent random variables that follow the same distribution but differ only in their location, i.e., $X':=X-\delta$ and $Y$ are independent and identically distributed. Then $D = X - Y$ and $2\delta-D$ follow the same distribution. Therefore, $D$ is symmetric about $\delta$.
+\structb{Comparison of medians.} Let $X$ and $Y$ be two independent random variables that follow the same distribution but differ only in their location, i.e., $X':=X-\delta$ and $Y$ are independent and identically distributed. Then $D = X - Y$ and $2\delta-D$ follow the same distribution. Therefore, $D$ is symmetric about $\delta$, .i.e.,
 \begin{align*}
-f_D(d-\delta) = f_D(\delta-d).
+f_D(\delta+d) = f_D(\delta-d).
 \end{align*}
 Then we can perform the Wilcoxon signed-rank test on $D$.
 
@@ -266,7 +279,7 @@ or
 \begin{frame}{Hypothesis Tests for the Correlation Coefficient}
 
 \justifying
-\structb{Test for correlation coefficient.} Suppose $X_1, \ldots, X_n$ and $Y_1, \ldots, Y_n$ are samples of size $n$ from $X$ and $Y$, where $(X, Y)$ follows a bivariate normal distribution with relation coefficient $\rho\in (-1, 1)$. The test statistic is given by
+\structb{Test for correlation coefficient.} Suppose $(X_1, Y_1), \ldots, (X_n, Y_n)$ is a sample of size $n$ from a bivariate normal population $(X, Y)$ with correlation coefficient $\rho\in (-1, 1)$. The test statistic is given by
 \begin{align*}
 Z & = \frac{\sqrt{n-3}}{2}\left(\ln\left(\frac{1+R}{1-R} \right) - \ln\left(\frac{1+\rho_0}{1-\rho_0} \right) \right) \\
 & = \sqrt{n-3}(\U{Artanh}(R) - \U{Artanh}(\rho_0)).
@@ -298,7 +311,7 @@ and joint distribution function $f_{X_1X_2\cdots X_k}: \Omega\rightarrow\R$
 \begin{align*}
 f_{X_1X_2\cdots X_k}(x_1, \ldots, x_k) = \frac{n!}{x_1!\cdots x_k!} p_1^{x_1}\cdots p_k^{x_k},
 \end{align*}
-$p_1,\ldots, p_k\in (0, 1), n\in \N\setminus\{0\}$ is said to have a \highlightg{multinomial distribution} with parameters $n$ and $p_1,\ldots, p_k$. For $i = 1,\ldots, k$ and $1\leq i < j\leq k$,
+$p_1,\ldots, p_k\in (0, 1), n\in \N\setminus\{0\}, p_1 + \cdots + p_k = 1$ is said to have a \highlightg{multinomial distribution} with parameters $n$ and $p_1,\ldots, p_k$. For $i = 1,\ldots, k$ and $1\leq i < j\leq k$,
 \begin{align*}
 \U{E}[X_i] = np_i, \quad \U{Var}[X_i] = np_i(1-p_i), \quad \U{Cov}[X_i, X_j] = -np_ip_j.
 \end{align*}
@@ -342,11 +355,15 @@ We reject $H_0$ at significance level $\alpha$ if $X_{k-1}^2 > \chi_{\alpha,k-1}
 \begin{frame}{Goodness-of-Fit Test for a Discrete Distribution}
 
 \justifying
-\structb{Goodness-of-fit test.} Dividing data into $k$ categories to estimate $m$ parameters of distributions, we have the statistic
+\structb{Goodness-of-fit test.} Dividing large data into $k$ categories to estimate $m$ parameters of distributions, we have the statistic
 \begin{align*}
 \sum_{i=1}^k \frac{(O_i - E_i)^2}{E_i}
 \end{align*}
-which follows a chi-squared distribution with $k-1-m$ degrees of freedom. This transforms the question of ``whether a certain variable follows some specific distribution with parameters $\theta$'' to ``whether the categorical variable follows the multinomial distribution with parameters $p_1,\ldots, p_k$ determined by the specific distribution with parameters $\theta$''.
+which follows a chi-squared distribution with $k-1-m$ degrees of freedom. This transforms the question of ``whether a certain variable follows some specific distribution with parameters $\theta$'' to ``whether the categorical variable follows the multinomial distribution with parameters $p_1,\ldots, p_k$ determined by the specific distribution with parameters $\theta$''.\\
+\structb{Degrees of freedom.} The degrees of freedom is given by
+\begin{align*}
+\U{df} = \#\{\U{independent\ cells}\} - \#\{\U{estimated\ parameters}\}.
+\end{align*}
 
 \end{frame}
 
