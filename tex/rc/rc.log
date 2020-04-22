@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350) (preloaded format=pdflatex 2020.4.18)  19 APR 2020 17:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350) (preloaded format=pdflatex 2020.4.18)  20 APR 2020 20:37
 entering extended mode
 **./rc.tex
 (rc.tex
@@ -1210,7 +1210,7 @@ Package xypdf Info: Line width: 0.39998pt on input line 60.
 {/home/chxw/.miktex/texmfs/data/pdftex/config/pdftex.map}] (rc.toc) [2
 
 ]
-(rc6.tex (rc.toc) [3
+(rc7.tex (rc.toc) [3
 
 ] [4
 
@@ -1371,7 +1371,7 @@ lm/lmsy6.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmsy8.pfb
 ></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmsy9.pfb></home/chxw
 /.miktex/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb></home/c
 hxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on rc.pdf (32 pages, 487873 bytes).
+Output written on rc.pdf (32 pages, 487572 bytes).
 PDF statistics:
  1014 PDF objects out of 1200 (max. 8388607)
  73 named destinations out of 1000 (max. 500000)

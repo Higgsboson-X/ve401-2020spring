@@ -1,0 +1,43 @@
+\section*{Assignment 6.3}
+
+Two chemical companies can supply a raw material. The concentration of a particular element in this material is important. The mean concentration for both suppliers is the same, but we suspect that the variability in concentration may differ between the two companies. The standard deviation of concentration in a random sample of $n_1 = 10$ batches produced by company 1 is $s_1 = 4.7$ grams per liter, while for company 2, a random sample of $n_2 = 16$ batches yields $s_2 = 5.8$ grams per liter. \\
+~\\
+Is there sufficient evidence to conclude that the two population standard deviations differ by at least 10\%? Use $\alpha = 5\%$. What is the power of the test? \\
+~\\
+\textbf{\underline{Solution}.} We set up the null hypotheses
+\begin{align*}
+H_0: \sigma_1^2 = \sigma_2^2, \qquad H_1: \max\left(\frac{\sigma_1^2}{\sigma_2^2}, \frac{\sigma_2^2}{\sigma_1^2} \right) \geq 1.1^2.
+\end{align*}
+The test statistic is given by
+\begin{align*}
+f_{9, 15} = \frac{s_1^2}{s_2^2} = 0.657.
+\end{align*}
+Since the critical values
+\begin{align*}
+f_{0.025, 9, 15} = 3.123, \qquad f_{0.975, 9, 15} = 0.265
+\end{align*}
+gives $f_{9, 15}\in (0.265, 3.123)$, we fail to reject $H_0$. Therefore, there is not enough evidence that the standard deviations differ by 10\%. Since we know that
+\begin{align*}
+\frac{(n_1-1)S_1^2}{\sigma_1^2} \sim \U{Chi-squared}(n_1-1), \qquad \frac{(n_2-1)S_2^2}{\sigma_2^2} \sim \U{Chi-squared}(n_2-1),
+\end{align*}
+the statistic
+\begin{align*}
+F_{9, 15} = \frac{\sigma_2^2S_1^2}{\sigma_1^2S_2^2}
+\end{align*}
+follows an F-distribution with 9 and 15 degrees of freedom. Then
+\begin{align*}
+P[\U{accept\ } H_0] & = P\left[f_{0.975,9,15} \leq \frac{S_1^2}{S_2^2} \leq f_{0.025,9,15} \big| H_1 \right] \\
+& = P\left[\frac{\sigma_2^2}{\sigma_1^2} f_{0.975,9,15} \leq F_{9,15} \leq \frac{\sigma_2^2}{\sigma_1^2} f_{0.025,9,15} \big| H_1 \right] \quad\Rightarrow \quad \beta = \max\left(p_1, p_2 \right),
+\end{align*}
+where
+\begin{align*}
+p_1 & = P\left[\frac{\sigma_2^2}{\sigma_1^2} f_{0.975,9,15} \leq F_{9,15} \leq \frac{\sigma_2^2}{\sigma_1^2} f_{0.025,9,15} \big| \frac{\sigma_2^2}{\sigma_1^2} = 1.1^2 \right] = 0.944 \\
+p_2 & = P\left[\frac{\sigma_2^2}{\sigma_1^2} f_{0.975,9,15} \leq F_{9,15} \leq \frac{\sigma_2^2}{\sigma_1^2} f_{0.025,9,15} \big| \frac{\sigma_2^2}{\sigma_1^2} = \frac{1}{1.1^2} \right] = 0.936.
+\end{align*}
+Therefore, the power of this test is given by
+\begin{align*}
+\U{power} = 1 - \beta \approx 0.056.
+\end{align*}
+
+
+
