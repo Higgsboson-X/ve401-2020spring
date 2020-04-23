@@ -27,7 +27,9 @@ F_{9, 15} = \frac{\sigma_2^2S_1^2}{\sigma_1^2S_2^2}
 follows an F-distribution with 9 and 15 degrees of freedom. Then
 \begin{align*}
 P[\U{accept\ } H_0] & = P\left[f_{0.975,9,15} \leq \frac{S_1^2}{S_2^2} \leq f_{0.025,9,15} \big| H_1 \right] \\
-& = P\left[\frac{\sigma_2^2}{\sigma_1^2} f_{0.975,9,15} \leq F_{9,15} \leq \frac{\sigma_2^2}{\sigma_1^2} f_{0.025,9,15} \big| H_1 \right] \quad\Rightarrow \quad \beta = \max\left(p_1, p_2 \right),
+& = P\left[\frac{\sigma_2^2}{\sigma_1^2} f_{0.975,9,15} \leq F_{9,15} \leq \frac{\sigma_2^2}{\sigma_1^2} f_{0.025,9,15} \big| H_1 \right] \\
+& \leq p_1\cdot P\left[\frac{\sigma_2^2}{\sigma_1^2} \geq 1.1^2 \right] + p_1\cdot P\left[\frac{\sigma_2^2}{\sigma_1^2} \leq \frac{1}{1.1^2} \right] \\
+& \leq \max\left(p_1, p_2 \right) = \beta,
 \end{align*}
 where
 \begin{align*}
