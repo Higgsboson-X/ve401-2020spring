@@ -5,11 +5,7 @@
 \begin{frame}{Simple Linear Regression Model}
 
 \justifying
-\structb{Model.} With $x$ to be the parameter, the mean of the \highlightg{response} $Y|x$ is given by 
-\begin{align*}
-\mu_{Y|x} = \beta_0 + \beta_1 x \qquad \U{for\ some\ } \beta_0, \beta_1 \in \R,
-\end{align*}
-which is equivalent to
+\structb{Model.} We assume that
 \begin{align*}
 Y|x = \beta_0 + \beta_1 x + E,
 \end{align*}
@@ -18,21 +14,6 @@ where $\U{E}[E] = 0$. We want to find estimators
 B_0 & := \widehat{\beta_0} = \U{estimator\ for\ } \beta_0, \qquad b_0 = \U{estimate\ for\ } \beta_0, \\
 B_1 & := \widehat{\beta_1} = \U{estimator\ for\ } \beta_1, \qquad b_1 = \U{estimate\ for\ } \beta_1.
 \end{align*}
-
-\end{frame}
-
-
-\begin{frame}{Simple Linear Regression Model}
-
-\justifying
-\structb{Model.} Considering $X$ as a parameter, we have a random sample of size $n$ of $(x, Y|x)$.
-\begin{align*}
-Y_i := Y|x_i, \qquad i = 1,\ldots, n.
-\end{align*}
-For each measurement $y_i$, we have a \highlightg{residual} given by
-\begin{align*}
-y_i = b_0 + b_1x_i + e_i.
-\end{align*}
 \structb{Assumptions.}
 \begin{itemize}
 	\justifying
@@ -40,14 +21,13 @@ y_i = b_0 + b_1x_i + e_i.
 	\item The random variables $Y|x_1$ and $Y|x_2$ are independent if $x_1\neq x_2$.
 \end{itemize}
 
-
 \end{frame}
 
 
 \begin{frame}{Least Squares Estimation}
 
 \justifying
-\structb{LSE.} We have the \highlightg{error sum of squares}
+\structb{Least squares estimation.} We have the \highlightg{error sum of squares}
 \begin{align*}
 \U{SS_E} := \sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i-(b_0+b_1x_i))^2.
 \end{align*}
@@ -56,30 +36,44 @@ To minimize it, we take
 \frac{\partial \U{SS_E}}{\partial b_0} & = -2\sum_{i=1}^n (y_i-b_0-b_1x_i) = 0, \\
 \frac{\partial \U{SS_E}}{\partial b_1} & = -2\sum_{i=1}^n (y_i-b_0-b_1x_i)x_i = 0.
 \end{align*}
-
-\end{frame}
-
-
-\begin{frame}{Least Squares Estimation}
-
-\justifying
-\structb{LSE.} We have 
+which gives
 \begin{align*}
 b_1 = \frac{S_{xy}}{S_{xx}}, \qquad b_0 = \overline{y} - b_1\overline{x},
 \end{align*}
-where
-\footnotesize
-\begin{align*}
-S_{xx} & = \sum_{i=1}^n (x_i - \overline{x})^2 = \sum_{i=1}^n x_i^2 - \frac{1}{n}\left(\sum_{i=1}^n x_i\right)^2 = \sum_{i=1}^n (x_i - \overline{x})x_i, \\
-S_{yy} & = \sum_{i=1}^n (y_i - \overline{y})^2 = \sum_{i=1}^n y_i^2 - \frac{1}{n}\left(\sum_{i=1}^n y_i\right)^2 = \sum_{i=1}^n (y_i - \overline{y})y_i, \\
-S_{xy} & = \sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y}) = \sum_{i=1}^n (x_i - \overline{x})y_i = \sum_{i=1}^n (y_i - \overline{y})x_i \\
-& = \sum_{i=1}^n x_iy_i - \frac{1}{n}\left(\sum_{i=1}^n x_i \right)\left(\sum_{i=1}^n y_i \right).
-\end{align*}
 
 \end{frame}
 
 
-\subsection{Distributions of Estimators, CIs, and Hypothesis Tests}
+\begin{frame}{Useful Properties}
+
+\justifying
+\structb{Properties.}
+\footnotesize
+\begin{align*}
+S_{xx} & = \sum_{i=1}^n (x_i - \overline{x})^2 = \sum_{i=1}^n (x_i - \overline{x})x_i = \sum_{i=1}^n x_i^2 - \frac{1}{n}\left(\sum_{i=1}^n x_i\right)^2  = \sum_{i=1}^n x_i^2 - n\overline{x}^2, \\
+S_{yy} & = \sum_{i=1}^n (y_i - \overline{y})^2 = \sum_{i=1}^n (y_i - \overline{y})y_i = \sum_{i=1}^n y_i^2 - \frac{1}{n}\left(\sum_{i=1}^n y_i\right)^2 = \sum_{i=1}^n y_i^2 - n\overline{y}^2, \\
+S_{xy} & = \sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y}) = \sum_{i=1}^n (x_i - \overline{x})y_i = \sum_{i=1}^n (y_i - \overline{y})x_i = \sum_{i=1}^n x_iy_i - n\overline{x}\cdot\overline{y} \\
+& = \sum_{i=1}^n x_iy_i - \frac{1}{n}\left(\sum_{i=1}^n x_i \right)\left(\sum_{i=1}^n y_i \right). \\\\
+b_1 & = \frac{S_{xy}}{S_{xx}}, \qquad b_0 = \overline{y} - b_1\overline{x},\qquad \U{SS_E} = S_{yy} - b_1 S_{xy}.
+\end{align*}
+
+\end{frame}
+
+\subsection{Estimators and Predictors}
+
+\begin{frame}{Distribution of Estimator for Variance}
+
+\structb{LSE for variance.} An unbiased estimator for variance $\sigma^2$ is given by
+\begin{align*}
+S^2 = \frac{\U{SS_E}}{n-2} = \frac{1}{n-2}\sum_{i=1}^n (y_i-\widehat{\mu}_{Y|x_i})^2.
+\end{align*}
+\structb{Distribution of estimator for variance.} The statistic
+\begin{align*}
+\chi_{n-2}^2 = \frac{(n-2)S^2}{\sigma^2} = \frac{\U{SS_E}}{\sigma^2}
+\end{align*}
+follows a chi-squared distribution with $n-2$ degrees of freedom.
+
+\end{frame}
 
 \begin{frame}{Distribution of $B_1$}
 
@@ -116,6 +110,36 @@ S_{xy} & = \sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y}) = \sum_{i=1}^n 
 
 \end{frame}
 
+\begin{frame}{Distribution of $B_1$ with Estimated Variance}
+
+\justifying
+\structb{Distribution.} The statistics
+\begin{align*}
+T_{n-2} = \frac{B_1-\beta_1}{S/\sqrt{S_{xx}}}
+\end{align*}
+follows $T$-distributions with $n-2$ degrees of freedom. \\
+~\\
+\structb{Confidence interval.} The $100(1-\alpha)\%$ confidence intervals of $\beta_1$ is given by
+\begin{align*}
+B_1 \pm t_{\alpha/2,n-2}\frac{S}{\sqrt{S_{xx}}}.
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{Test for Significance}
+
+\justifying
+\structb{Test for significance of regression.} Let $(x_i, Y|x_i), i = 1, \ldots, n$ be a random sample from $Y|x$. We reject
+\begin{align*}
+H_0: \beta_1 = 0
+\end{align*}
+at significance level $\alpha$ if the test statistic
+\begin{align*}
+T_{n-2} = \frac{B_1}{S/\sqrt{S_{xx}}}
+\end{align*}
+satisfies $|T_{n-2}| > t_{\alpha/2,n-2}$.
+
+\end{frame}
 
 \begin{frame}{Distribution of $B_0$}
 
@@ -153,18 +177,353 @@ S_{xy} & = \sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y}) = \sum_{i=1}^n 
 
 \end{frame}
 
-\begin{frame}{Least}
-content...
+\begin{frame}{Distribution of $B_0$ with Estimated Variance}
+
+\justifying
+\structb{Distribution.} The statistics
+\begin{align*}
+\qquad T_{n-2} = \frac{B_0-\beta_0}{S\sqrt{\sum x_i^2}/\sqrt{nS_{xx}}}
+\end{align*}
+follows $T$-distributions with $n-2$ degrees of freedom. \\
+~\\
+\structb{Confidence interval.} The $100(1-\alpha)\%$ confidence intervals of $\beta_0$ is given by
+\begin{align*}
+B_0 \pm t_{\alpha/2,n-2}\frac{S\sqrt{\sum x_i^2}}{\sqrt{nS_{xx}}}.
+\end{align*}
+
+\end{frame}
+
+
+\begin{frame}{Distribution of Estimated Mean}
+
+\justifying
+\structb{Distribution.} The estimated mean $\widehat{\mu}_{Y|x}$ follows a normal distribution with mean and variance
+\begin{align*}
+\U{E}[\widehat{\mu}_{Y|x}] = \mu_{Y|x}, \qquad \U{Var}[\widehat{\mu}_{Y|x}] = \left(\frac{1}{n} + \frac{(x-\overline{x})^2}{S_{xx}}\right)\sigma^2.
+\end{align*}
+Therefore, the statistic
+\begin{align*}
+T_{n-2} = \frac{\widehat{\mu}_{Y|x} - \mu_{Y|x}}{S\sqrt{\frac{1}{n}+\frac{(x-\overline{x})^2}{S_{xx}}}}
+\end{align*}
+follows a $T$-distribution with $n-2$ degrees of freedom. A $100(1-\alpha)\%$ confidence interval for $\mu_{Y|x}$ is given by
+\begin{align*}
+\widehat{\mu}_{Y_x} \pm t_{\alpha/2,n-2}S\sqrt{\frac{1}{n}+\frac{(x-\overline{x})^2}{S_{xx}}}.
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{Distribution and CI for Predictor}
+
+\justifying
+\structb{Predictor.} The statistic $Y|x - \widehat{Y|x}$ follows a normal distribution with mean and variance
+\begin{align*}
+\U{E}[Y|x - \widehat{Y|x}] = 0, \qquad\U{Var}[Y|x - \widehat{Y|x}] = \left(1 +  \frac{1}{n} + \frac{(x-\overline{x})^2}{S_{xx}} \right)\sigma^2.
+\end{align*}
+Therefore, the statistic
+\begin{align*}
+T_{n-2} = \frac{Y|x - \widehat{Y|x}}{S\sqrt{1+\frac{1}{n}+\frac{(x-\overline{x})^2}{S_{xx}}}}
+\end{align*}
+follows a $T$-distribution with $n-2$ degrees of freedom. A $100(1-\alpha)\%$ confidence interval for $Y|x$ is given by
+\begin{align*}
+\widehat{Y|x} \pm t_{\alpha/2,n-2} S\sqrt{1+\frac{1}{n}+\frac{(x-\overline{x})^2}{S_{xx}} }.
+\end{align*}
+
+\end{frame}
+
+
+\subsection{Model Analysis}
+
+\begin{frame}{Model Analysis}
+
+\structb{Crucial quantities.}
+\begin{itemize}
+	\justifying
+	\item \highlightg{Total sum of squares}:
+	\begin{align*}
+	\U{SS_T} = S_{yy} = \sum_{i=1}^n (Y_i-\overline{Y})^2.
+	\end{align*}
+	\item \highlightg{Error sum of squared}:
+	\begin{align*}
+	\U{SS_E} = \sum_{i=1}^n \left(Y_i-(b_0+b_1x)\right)^2 = S_{yy} - B_1 S_{xy} = S_{yy} - \frac{S_{xy}}{S_{xx}}.
+	\end{align*}
+	\item \highlightg{Coefficient of determination}: the proportion of the total variation in $Y$ that is explained by the linear model.
+	\begin{align*}
+	R^2 = \frac{\U{SS_T} - \U{SS_E}}{\U{SS_T}} = \frac{S_{xy}^2}{S_{xx}S_{yy}}.
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Test for Significance with $R^2$}
+
+\justifying
+\structb{Test for significance of regression.} Let $(x_i, Y|x_i), i = 1, \ldots, n$ be a random sample from $Y|x$. We reject
+\begin{align*}
+H_0: \beta_1 = 0
+\end{align*}
+at significance level $\alpha$ if the test statistic
+\begin{align*}
+T_{n-2} = \frac{B_1}{S/\sqrt{S_{xx}}} = \frac{R\sqrt{n-2}}{\sqrt{1-R^2}}
+\end{align*}
+satisfies $|T_{n-2}| > t_{\alpha/2,n-2}$.
+
+\end{frame}
+
+
+\begin{frame}{Test for Correlation with $R^2$}
+
+\structb{Test for correlation.} Let $(X, Y)$ follow a bivariate normal distribution with correlation coefficient $\rho\in (-1, 1)$. Let $R$ be the estimator for $\rho$. Then we reject
+\begin{align*}
+H_0: \rho = 0
+\end{align*}
+at significance level $\alpha$ if the test statistic
+\begin{align*}
+T_{n-2} = \frac{R\sqrt{n-2}}{\sqrt{1-R^2}}
+\end{align*}
+satisfies $|T_{n-2}| > t_{\alpha/2,n-2}$.
+
+\end{frame}
+
+
+\begin{frame}{Lack-of-Fit and Pure Error}
+
+\justifying
+\structb{Source of $\U{SS_E}$.} $\U{SS_E}$ is the variance of $Y$ explained by the model.
+\begin{itemize}
+	\justifying
+	\item \highlightg{Error sum of squares due to pure error}:
+	\footnotesize
+	\begin{align*}
+	\U{SS_{E,pe}} := \sum_{i=1}^k \sum_{j=1}^{n_i} (Y_{ij}-\overline{Y}_i)^2 = \sum_{i=1}^k\sum_{j=1}^{n_i} Y_{ij}^2 - \sum_{i=1}^k \frac{1}{n_i}\left(\sum_{j=1}^{n_i} Y_{ij} \right)^2.
+	\end{align*}
+	\normalsize
+	The statistic $\U{SS_{E,pe}}/\sigma^2$ follows a chi-squared distribution with $n-k$ degrees of freedom.
+	\item \highlightg{Error sum of squares due to lack of fit}:
+	\footnotesize
+	\begin{align*}
+	\U{SS_{E,lf}} := \U{SS_E} - \U{SS_{E,pe}}.
+	\end{align*}
+	\normalsize
+	The statistic $\U{SS_{E,lf}}/\sigma^2$ follows a chi-squared distribution with $k-2$ degrees of freedom.
+\end{itemize}
+
+
+\end{frame}
+
+
+\begin{frame}{Testing for Lack of Fit}
+
+\justifying
+\structb{Test for lack of fit.} Let $x_1, \ldots, x_k$ be regressors and $Y_{i1}, \ldots, Y_{in_i}$, $i = 1, \ldots, k$ the measured responses at each of the regressors. Let $\U{SS_{E,pe}}$ and $\U{SS_{E,lf}}$ be the pure error and lack-of-fit sums of squares for a linear regression model. Then we reject at significance level $\alpha$
+\begin{align*}
+H_0: \U{the\ linear\ regression\ model\ is\ appropriate}
+\end{align*}
+if the test statistic
+\begin{align*}
+F_{k-2,n-k} = \frac{\U{SS_{E,lf}}/(k-2)}{\U{SS_{E,pe}}/(n-k)}
+\end{align*}
+satisfies $F_{k-2,n-k} > f_{\alpha,k-2,n-k}$.
+
 \end{frame}
 
 
 
-\subsection{Predictions and Model Analysis}
-
-
-\subsection{Simple Linear Regression using Software}
+\subsection{Simple Linear Regression in Practice}
 
 
 
 \section{Multiple Linear Regression}
+
+
+\subsection{Linear Algebra Basics}
+
+
+\begin{frame}{Orthogonal Projection}
+
+
+
+\end{frame}
+
+
+\subsection{Multiple Linear Regression Model}
+
+\begin{frame}{Polynomial Regression Model}
+
+\structb{Model.} For a polynomial model, we assume that
+\begin{align*}
+Y|x = \beta_0 + \beta_1 x + \beta_2 x^2 + \cdots + \beta_p x^p + E \quad\Leftrightarrow \quad Y = X\beta + E,
+\end{align*}
+where
+\footnotesize
+\begin{align*}
+Y = \begin{gmatrix}[p]
+Y_1 \\ \vdots \\ Y_n
+\end{gmatrix}\!\!\!\!, \quad X = \begin{gmatrix}[p]
+1 & x_1 & \cdots & x_1^p \\
+\vdots & \vdots & \ddots & \vdots \\
+1 & x_n & \cdots & x_n^p
+\end{gmatrix}\!\!\!\!, \quad \beta = \begin{gmatrix}[p]
+\beta_0 \\ \vdots \\ \beta_p
+\end{gmatrix}\!\!\!\!, \quad E = \begin{gmatrix}[p]
+E_1 \\ \vdots \\ E_n
+\end{gmatrix}\!\!\!\!.
+\end{align*}
+\normalsize
+\structb{Assumptions.}
+\begin{itemize}
+	\justifying
+	\item For each value of $x$, the random variable follows a normal distribution with variance $\sigma^2$ and mean $\mu_{Y|x} = \beta_0 + \beta_1x + \cdots + \beta_p x^p$.
+	\item The random variables $Y|x_1$ and $Y|x_2$ are independent if $x_1\neq x_2$.
+\end{itemize}
+
+
+\end{frame}
+
+
+\begin{frame}{The Multilinear Model}
+
+\structb{Model.} For a multilinear model, we assume that $Y$ depends on several factors,
+\begin{align*}
+Y|x = \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p + E \quad\Leftrightarrow \quad Y = X\beta + E,
+\end{align*}
+where
+\footnotesize
+\begin{align*}
+Y = \begin{gmatrix}[p]
+Y_1 \\ \vdots \\ Y_n
+\end{gmatrix}\!\!\!\!, \quad X = \begin{gmatrix}[p]
+1 & x_{11} & \cdots & x_{p1} \\
+\vdots & \vdots & \ddots & \vdots \\
+1 & x_{1n} & \cdots & x_{pn}
+\end{gmatrix}\!\!\!\!, \quad \beta = \begin{gmatrix}[p]
+\beta_0 \\ \vdots \\ \beta_p
+\end{gmatrix}\!\!\!\!, \quad E = \begin{gmatrix}[p]
+E_1 \\ \vdots \\ E_n
+\end{gmatrix}\!\!\!\!.
+\end{align*}
+\normalsize
+\structb{Assumptions.}
+\begin{itemize}
+	\justifying
+	\item For each value of $x$, the random variable follows a normal distribution with variance $\sigma^2$ and mean $\mu_{Y|x} = \beta_0 + \beta_1x_1 + \cdots + \beta_p x_p$.
+	\item The random variables $Y|x_1$ and $Y|x_2$ are independent if $x_1\neq x_2$.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Least Squares Estimation}
+
+\structb{Least squares estimation.} We have the error sum of squares
+\begin{align*}
+\U{SS_E} = \langle Y-Xb, Y-Xb\rangle = (Y-Xb)^T(Y-Xb).
+\end{align*}
+To minimize it, we take
+\begin{align*}
+\nabla_b \U{SS_E} & = \nabla_b(Y-Xb)^T(Y-Xb) \\
+& = \nabla_b \left(Y^TY - Y^TXb - b^TX^TY + b^TX^TXb \right) \\
+& = -2X^TY + 2X^TXb = 0 \quad\Rightarrow\quad b = (X^TX)^{-1}X^TY,
+\end{align*}
+where we have used since both $Y^TXb$ and $b^TX^TY$ are constants,
+\begin{align*}
+b^TX^TY = (b^TX^TY)^T = Y^TXb.
+\end{align*}
+and if $a, x\in \R^n$, then $\nabla_x (a^Tx) = a$.
+
+\end{frame}
+
+
+
+\subsection{Model Analysis}
+
+\begin{frame}{Error Analysis}
+
+\structb{Crucial quantities.}
+\begin{itemize}
+	\justifying
+	\item \highlightg{Total variation}: given orthogonal projection $P$,
+	\footnotesize
+	\begin{align*}
+	P & := \frac{1}{n}\begin{gmatrix}[p]
+	1 & 1 & \cdots & 1 \\
+	\vdots & \vdots & \ddots & \vdots \\
+	1 & 1 & \cdots & 1
+	\end{gmatrix} \quad\Rightarrow\quad (\bbone_n - P)^2 = \bbone_n - P,
+	\end{align*}
+	\normalsize
+	giving
+	\footnotesize
+	\begin{align*}
+	\U{SS_T} & = \langle (\bbone_n - P)Y, (\bbone_n - P)Y\rangle = \langle Y, (\bbone_n - P)Y\rangle.
+	\end{align*}
+	\normalsize
+	\item \highlightg{Sum of squares error}: given orthogonal projection $H$,
+	\footnotesize
+	\begin{align*}
+	H := X(X^TX)^{-1}X^T \quad\Rightarrow\quad \U{SS_E} & = \langle Y-Xb, Y-Xb\rangle \\
+	& = \langle(\bbone_n - H)Y, (\bbone_n - H)Y\rangle \\
+	& = \langle Y, (\bbone_n - H)Y\rangle.
+	\end{align*}
+	\normalsize
+	\item \highlightg{Coefficient of multiple determination}:
+	\footnotesize
+	\begin{align*}
+	R^2 = \frac{\U{SS_R}}{\U{SS_T}}, \quad \U{SS_R} = \U{SS_T} - \U{SS_E} = \langle Y, (H-P)Y\rangle = \langle (H-P)Y,(H-P)Y\rangle.
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Distribution of $\U{SS_E}$}
+
+\justifying
+\structb{Distribution of sum of squares error.} The statistic given by the $\U{SS_E}$ and variance $\sigma^2$
+\begin{align*}
+\frac{\U{SS_E}}{\sigma^2} & = \left\langle \frac{E}{\sigma}, (\bbone_n - H)\frac{E}{\sigma}\right\rangle = \langle Z, (\bbone_n - H)Z\rangle \\
+& = \langle Z, U^TD_{n-p-1}UZ\rangle = \langle UZ, D_{n-p-1}UZ\rangle \\
+& = \sum_{i=1}^{n-p-1} (UZ)_i^2,
+\end{align*}
+follows a chi-squared distribution with $n-p-1$ degrees of freedom, where the matrix $U$ contains columns of eigenvectors of $(\bbone_n-H)$ such that
+\begin{align*}
+U(\bbone_n-H)U^T = D_{n-p-1}.
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{Distribution of $\U{SS_E}$}
+
+\begin{itemize}
+	\justifying
+	\item $\U{SS_E}/\sigma^2$ follows a chi-squared distribution with $n-p-1$ degrees of freedom.
+	\item If $\beta = (\beta_0, 0, \ldots, 0)$, then $\U{SS_R}/\sigma^2$ follows a chi-squared distri-bution with $p$ degrees of freedom.
+	\item $\U{SS_R}$ and $\U{SS_E}$ are independent random variables.
+	\item An unbiased estimator for $\sigma^2$ is given by
+	\begin{align*}
+	\widehat{\sigma}^2 = S^2 = \frac{\U{SS_E}}{n-p-1}.
+	\end{align*}
+	\item The regression sum of squares can be expressed as
+	\begin{align*}
+	\U{SS_R} = \langle Xb, Y\rangle - \frac{1}{n}\left(\sum_{i=1}^n Y_i \right)^2.
+	\end{align*}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{$F$-Test for Significance of Regression}
+
+\justifying
+\structb{$F$-test for significance of regression.} Let $x_1, \ldots, x_p$ be the predictor variables in a multilinear model for $Y$. Then we reject at significance level $\alpha$
+\begin{align*}
+H_0: \beta_1 = \beta_2 = \cdots = \beta_p = 0
+\end{align*}
+if the test statistic
+\begin{align*}
+F_{p,n-p-1} & = \frac{\U{SS_R}/p}{\U{SS_E}/(n-p-1)} = \frac{\U{SS_R}/p}{S^2} = \frac{n-p-1}{p}\frac{R^2}{1-R^2}
+\end{align*}
+satisfies $F_{p,n-p-1} > f_{\alpha,p,n-p-1}$.
+
+\end{frame}
+
+\subsection{Multiple Linear Regression in Practice}
 
