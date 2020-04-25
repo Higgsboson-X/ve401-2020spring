@@ -1,0 +1,45 @@
+---
+header-inclues:
+  - \usepackage{amsmath}
+  - \usepackage{amssymb}
+  - \usepackage{amsthm}  
+  - \usepackage{amsthm}  
+  - \usepackage{listings}
+output: 
+  pdf_document:
+  fig_width: 6
+  fig_height: 6
+---
+
+```{r}
+# load data
+rc.df = read.table("data.txt", header = TRUE)
+```
+
+```{r}
+# plot data
+plot(
+    rc.df$resp, 
+    rc.df$var2, 
+    type = "p", xlab = "x1", ylab = "y"
+)
+```
+
+```{r}
+# fit model and view model summary
+rc.lm = lm(resp~var2, data = rc.df)
+summary(rc.lm)
+```
+
+
+```{r}
+# residual plot
+plot(fitted.values(rc.lm),
+     residuals(rc.lm),
+     xlab = "Fitted Values", ylab = "Residuals",
+     main = "Residual Plot",
+     sub = "lm(y~x2)")
+
+abline(a = 0, b = 0, lty = 2, col = "red")
+```
+

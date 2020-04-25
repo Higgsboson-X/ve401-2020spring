@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350) (preloaded format=pdflatex 2020.4.18)  23 APR 2020 13:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350) (preloaded format=pdflatex 2020.4.18)  25 APR 2020 22:32
 entering extended mode
 **./s.tex
 (s.tex
@@ -907,13 +907,13 @@ Package pdftex.def Info: ./logo.png  used on input line 62.
 
 {/home/chxw/.miktex/texmfs/data/pdftex/config/pdftex.map} <./logo.png>] (s7.tex
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--8
+Underfull \hbox (badness 10000) in paragraph at lines 5--8
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--8
-
+Overfull \hbox (21.08572pt too wide) detected at line 33
+[]
  []
 
 
@@ -922,26 +922,65 @@ Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[1]) [2] (s.aux) ) 
+[1]
+<./images/s7fig1.png, id=22, 679.53876pt x 608.2725pt>
+File: ./images/s7fig1.png Graphic file (type png)
+<use ./images/s7fig1.png>
+Package pdftex.def Info: ./images/s7fig1.png  used on input line 48.
+(pdftex.def)             Requested size: 341.43306pt x 305.62054pt.
+<./images/s7fig4.png, id=23, 985.6825pt x 223.83624pt>
+File: ./images/s7fig4.png Graphic file (type png)
+<use ./images/s7fig4.png>
+Package pdftex.def Info: ./images/s7fig4.png  used on input line 58.
+(pdftex.def)             Requested size: 483.69687pt x 109.84123pt.
+<./images/s7fig5.png, id=24, 488.57532pt x 301.8778pt>
+File: ./images/s7fig5.png Graphic file (type png)
+<use ./images/s7fig5.png>
+Package pdftex.def Info: ./images/s7fig5.png  used on input line 62.
+(pdftex.def)             Requested size: 341.43306pt x 210.96294pt.
+<./images/s7fig6.png, id=25, 977.6525pt x 85.31876pt>
+File: ./images/s7fig6.png Graphic file (type png)
+<use ./images/s7fig6.png>
+Package pdftex.def Info: ./images/s7fig6.png  used on input line 66.
+(pdftex.def)             Requested size: 483.69687pt x 42.21272pt.
+ [2 <./images/s7fig1.png> <./images/s7fig4.png>]
+<./images/s7fig2.png, id=31, 592.2125pt x 355.3275pt>
+File: ./images/s7fig2.png Graphic file (type png)
+<use ./images/s7fig2.png>
+Package pdftex.def Info: ./images/s7fig2.png  used on input line 69.
+(pdftex.def)             Requested size: 341.43306pt x 204.86475pt.
+<./images/s7fig7.png, id=32, 975.645pt x 202.7575pt>
+File: ./images/s7fig7.png Graphic file (type png)
+<use ./images/s7fig7.png>
+Package pdftex.def Info: ./images/s7fig7.png  used on input line 73.
+(pdftex.def)             Requested size: 483.69687pt x 100.5215pt.
+<./images/s7fig3.png, id=33, 488.57532pt x 301.8778pt>
+File: ./images/s7fig3.png Graphic file (type png)
+<use ./images/s7fig3.png>
+Package pdftex.def Info: ./images/s7fig3.png  used on input line 77.
+(pdftex.def)             Requested size: 341.43306pt x 210.96294pt.
+) [3 <./images/s7fig5.png> <./images/s7fig6.png> <./images/s7fig2.png> <./image
+s/s7fig7.png>] [4 <./images/s7fig3.png (PNG copy)>] (s.aux) ) 
 Here is how much of TeX's memory you used:
- 18395 strings out of 482859
- 350083 string characters out of 2953059
- 726640 words of memory out of 3000000
- 33595 multiletter control sequences out of 15000+200000
- 543865 words of font info for 70 fonts, out of 3000000 for 9000
+ 18440 strings out of 482859
+ 350987 string characters out of 2953059
+ 728640 words of memory out of 3000000
+ 33632 multiletter control sequences out of 15000+200000
+ 544172 words of font info for 71 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 60i,13n,66p,3214b,307s stack positions out of 5000i,500n,10000p,200000b,50000s
-</home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfont
-s/cm/cmbx10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm
-/cmex10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/c
-mmi12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmm
-i8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.
-pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-</home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on s.pdf (3 pages, 133089 bytes).
+ 60i,12n,66p,3214b,307s stack positions out of 5000i,500n,10000p,200000b,50000s
+</home/chxw/.mikte
+x/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/chxw/.miktex/
+texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></home/chxw/.miktex/te
+xmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/chxw/.miktex/texm
+fs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></home/chxw/.miktex/texmfs
+/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/chxw/.miktex/texmfs/in
+stall/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/chxw/.miktex/texmfs/insta
+ll/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/chxw/.miktex/texmfs/install/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on s.pdf (5 pages, 297495 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
+ 69 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,45 +1,78 @@
-\section*{Assignment 6.3}
+\section*{Linear Regression in Practice}
 
-Two chemical companies can supply a raw material. The concentration of a particular element in this material is important. The mean concentration for both suppliers is the same, but we suspect that the variability in concentration may differ between the two companies. The standard deviation of concentration in a random sample of $n_1 = 10$ batches produced by company 1 is $s_1 = 4.7$ grams per liter, while for company 2, a random sample of $n_2 = 16$ batches yields $s_2 = 5.8$ grams per liter. \\
+\subsection*{Residual Analysis}
+
+\textbf{Q.} How to check that the linear model is an appropriate model for the data? How to check equal variances? \\
 ~\\
-Is there sufficient evidence to conclude that the two population standard deviations differ by at least 10\%? Use $\alpha = 5\%$. What is the power of the test? \\
-~\\
-\textbf{\underline{Solution}.} We set up the null hypotheses
+In simple linear regression, the model assumes that
 \begin{align*}
-H_0: \sigma_1^2 = \sigma_2^2, \qquad H_1: \max\left(\frac{\sigma_1^2}{\sigma_2^2}, \frac{\sigma_2^2}{\sigma_1^2} \right) \geq 1.1^2.
+Y|x_i = \beta_0 + \beta_1 x_i + E_i
 \end{align*}
-The test statistic is given by
+and residuals can be used to approximate $E_i$, which are also random variables, are given by
 \begin{align*}
-f_{9, 15} = \frac{s_1^2}{s_2^2} = 0.657.
+\widehat{E}_i = Y|x_i - \widehat{Y|x_i} = \beta_0 + \beta_1 x_i + E_i - (B_0 + B_1 x_i),
 \end{align*}
-Since the critical values
+which follows a normal distribution. We can calculate the mean
 \begin{align*}
-f_{0.025, 9, 15} = 3.123, \qquad f_{0.975, 9, 15} = 0.265
+\U{E}[\widehat{E}_i] & = \beta_0 + \beta_1 x_i + \U{E}\left[E_i - B_0 - B_1x_i \right] = 0,
 \end{align*}
-gives $f_{9, 15}\in (0.265, 3.123)$, we fail to reject $H_0$. Therefore, there is not enough evidence that the standard deviations differ by 10\%. Since we know that
+and variance
 \begin{align*}
-\frac{(n_1-1)S_1^2}{\sigma_1^2} \sim \U{Chi-squared}(n_1-1), \qquad \frac{(n_2-1)S_2^2}{\sigma_2^2} \sim \U{Chi-squared}(n_2-1),
-\end{align*}
-the statistic
-\begin{align*}
-F_{9, 15} = \frac{\sigma_2^2S_1^2}{\sigma_1^2S_2^2}
-\end{align*}
-follows an F-distribution with 9 and 15 degrees of freedom. Then
-\begin{align*}
-P[\U{accept\ } H_0] & = P\left[f_{0.975,9,15} \leq \frac{S_1^2}{S_2^2} \leq f_{0.025,9,15} \big| H_1 \right] \\
-& = P\left[\frac{\sigma_2^2}{\sigma_1^2} f_{0.975,9,15} \leq F_{9,15} \leq \frac{\sigma_2^2}{\sigma_1^2} f_{0.025,9,15} \big| H_1 \right] \\
-& \leq p_1\cdot P\left[\frac{\sigma_2^2}{\sigma_1^2} \geq 1.1^2 \right] + p_1\cdot P\left[\frac{\sigma_2^2}{\sigma_1^2} \leq \frac{1}{1.1^2} \right] \\
-& \leq \max\left(p_1, p_2 \right) = \beta,
+\U{Var}[\widehat{E}_i] & = \U{Var}\left[E_i - B_1 x_i - (\beta_0 + \beta_1 \overline{x} + \overline{E} - B_1 \overline{x}) \right] \\
+& = \U{Var}\left[E_i - \overline{E} + B_1(\overline{x} - x_i) \right] \\
+& = \U{Var}\left[E_i - \overline{E} + (\overline{x} - x_i)\cdot \left(\beta_1 + \frac{\sum(x_j-\overline{x})E_j}{S_{xx}} \right) \right] \\
+& = \U{Var}\left[E_i - \overline{E} +  \frac{(\overline{x} - x_i)\sum(x_j-\overline{x})E_j}{S_{xx}} \right] \\
+& = \sigma^2 + \frac{\sigma^2}{n} + \frac{(\overline{x}-x_i)^2\sigma^2}{S_{xx}} - 2\U{Cov}[E_i, \overline{E}] + 2\U{Cov}\left[E_i, \frac{(\overline{x} - x_i)\sum(x_j-\overline{x})E_j}{S_{xx}} \right] \\
+&\qquad\qquad\qquad - 2\U{Cov}\left[\overline{E}, \frac{(\overline{x} - x_i)\sum(x_j-\overline{x})E_j}{S_{xx}} \right],
 \end{align*}
 where
 \begin{align*}
-p_1 & = P\left[\frac{\sigma_2^2}{\sigma_1^2} f_{0.975,9,15} \leq F_{9,15} \leq \frac{\sigma_2^2}{\sigma_1^2} f_{0.025,9,15} \big| \frac{\sigma_2^2}{\sigma_1^2} = 1.1^2 \right] = 0.944 \\
-p_2 & = P\left[\frac{\sigma_2^2}{\sigma_1^2} f_{0.975,9,15} \leq F_{9,15} \leq \frac{\sigma_2^2}{\sigma_1^2} f_{0.025,9,15} \big| \frac{\sigma_2^2}{\sigma_1^2} = \frac{1}{1.1^2} \right] = 0.936.
+\U{Cov}[E_i, \overline{E}] & = \frac{1}{n}\sum_{j=1}^n \U{Cov}[E_i, E_j] = \frac{1}{n}\sigma^2, \\
+\U{Cov}\left[E_i, \frac{(\overline{x} - x_i)\sum(x_j-\overline{x})E_j}{S_{xx}} \right] & = (\overline{x} - x_i)\sum_{j=1}^n (x_j-\overline{x})\cdot \U{Cov}\left[E_i, \frac{E_j}{S_{xx}} \right] = -\frac{(\overline{x}-x_i)^2}{S_{xx}}\sigma^2, \\
+\U{Cov}\left[\overline{E}, \frac{(\overline{x} - x_i)\sum(x_j-\overline{x})E_j}{S_{xx}} \right] & = \frac{\overline{x}-x_i}{n}\sum_{j=1}^n (x_j-\overline{x})\U{Cov}\left[E_j, \frac{E_j}{S_{xx}} \right] = \frac{(\overline{x} - x_i)\sigma^2}{nS_{xx}} \sum_{j=1}^n (x_j - \overline{x}) = 0.
 \end{align*}
-Therefore, the power of this test is given by
+Therefore,
 \begin{align*}
-\U{power} = 1 - \beta \approx 0.056.
+\U{Var}[\widehat{E}_i] = \U{Var}\left[Y|x_i - \widehat{Y|x_i} \right] = \left(1 - \frac{1}{n} - \frac{(x_i-\overline{x})^2}{S_{xx}} \right)\sigma^2.
 \end{align*}
+Note that this is different from the distribution of \underline{prediction}
+\begin{align*}
+\U{Var}[\widehat{Y|x} - Y|x] = \left(1 + \frac{1}{n} + \frac{(x-\overline{x})^2}{S_{xx}} \right)\sigma^2,
+\end{align*}
+where in prediction, we are not choosing $x$ to be equal to any of the $x_1, \ldots, x_n$ that are used to estimate $\beta_1$ and $\beta_0$. When we assume that $x_i$ is among those we use for estimation, there are additional covariance terms.
+
+Therefore, if we plot the residuals, we can see when the point $x_i$ is far from mean $\overline{x}$, the variance is smaller. This can be used to check for equal variance and linearity of our model. For instance, the following shows a residual plot with problems.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{./images/s7fig1.png}
+\end{figure}
 
 
+\subsection*{Linear Regression using R}
 
+In addition to Mathematica we use in the lecture, R is widely used for studies of data analysis. Here is an example of using R to perform a simple linear regression.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{./images/s7fig4.png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{./images/s7fig5.png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{./images/s7fig6.png}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=12cm]{./images/s7fig2.png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{./images/s7fig7.png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{./images/s7fig3.png}
+\end{figure}

@@ -65,7 +65,7 @@ b_1 & = \frac{S_{xy}}{S_{xx}}, \qquad b_0 = \overline{y} - b_1\overline{x},\qqua
 
 \structb{LSE for variance.} An unbiased estimator for variance $\sigma^2$ is given by
 \begin{align*}
-S^2 = \frac{\U{SS_E}}{n-2} = \frac{1}{n-2}\sum_{i=1}^n (y_i-\widehat{\mu}_{Y|x_i})^2.
+S^2 = \frac{\U{SS_E}}{n-2} = \frac{1}{n-2}\sum_{i=1}^n (Y_i-\widehat{\mu}_{Y|x_i})^2.
 \end{align*}
 \structb{Distribution of estimator for variance.} The statistic
 \begin{align*}
@@ -80,33 +80,18 @@ follows a chi-squared distribution with $n-2$ degrees of freedom.
 \structb{Theorem.} The least squares estimator $B_1$ for $\beta_1$ follows a normal distribution with
 \footnotesize
 \begin{align*}
-\U{E}[B_1] = \beta_1, \qquad \U{Var}[B_1] = \frac{\sigma^2}{\sum (x_i-\overline{x})^2}.
+\U{E}[B_1] = \beta_1, \qquad \U{Var}[B_1] = \frac{\sigma^2}{\sum (x_i-\overline{x})^2} = \frac{\sigma^2}{S_{xx}}.
 \end{align*}\\
 \normalsize
-\only<1>{
-	\justifying
-	\structb{Proof.} Knowing $Y|x_i = \beta_0 + \beta_1 x_i + E$ and $\U{E}[E_i] = 0$, the expectation is given by
-	\footnotesize
-	\begin{align*}
-	\U{E}[B_1] & = \U{E}\left[\frac{1}{S_{xx}} \sum_{i=1}^n(x_i-\overline{x})(Y_i-\overline{Y}) \right] = \U{E}\left[\frac{1}{S_{xx}}\sum (x_i-\overline{x})Y_i \right] \\
-	& = \frac{1}{S_{xx}}\left(\sum (x_i-\overline{x})\U{E}[\beta_0 + \beta_1 x_i + E_i] \right) \\
-	& = \frac{1}{S_{xx}}\left(\beta_1\sum(x_i-\overline{x})x_i \right) \\
-	& = \beta_1.
-	\end{align*}
-	\normalsize
-}
-\only<2>{
-	\justifying
-	\structb{Proof.} Similarly, given $\U{Var}[E_i] = \sigma^2$, the variance is given by
-	\footnotesize
-	\begin{align*}
-	\U{Var}[B_1] & = \frac{1}{S_{xx}^2}\U{Var}\left[\sum (x_i-\overline{x})Y_i \right] \\ 
-	& = \frac{1}{S_{xx}^2} \sum (x_i-\overline{x})^2\U{Var}[\beta_0 + \beta_1 x_i + E_i] \\
-	& = \frac{\sigma^2}{\sum (x_i-\overline{x})^2} \\
-	& = \frac{\sigma^2}{S_{xx}}.
-	\end{align*}
-	\normalsize
-}
+\structb{Proof.}
+\footnotesize
+\begin{align*}
+B_1 & = \frac{1}{S_{xx}} \sum_{i=1}^n(x_i-\overline{x})(Y_i-\overline{Y}) = \frac{1}{S_{xx}}\sum (x_i-\overline{x})Y_i \\
+& = \frac{1}{S_{xx}} \sum (x_i-\overline{x})(\beta_0 + \beta_1 x_i + E_i) \\
+& = \frac{1}{S_{xx}}\cdot \beta_1 S_{xx} + \frac{1}{S_{xx}} \sum (x_i-\overline{x})E_i \\
+& = \beta_1 + \frac{\sum (x_i-\overline{x}) E_i}{S_{xx}}.
+\end{align*}
+\normalsize
 
 \end{frame}
 
@@ -149,31 +134,20 @@ satisfies $|T_{n-2}| > t_{\alpha/2,n-2}$.
 \U{E}[B_0] = \beta_0, \qquad \U{Var}[B_0] = \frac{\sigma^2\sum x_i^2}{n\sum (x_i-\overline{x})^2}.
 \end{align*}\\
 \normalsize
-\only<1>{
-	\justifying
-	\structb{Proof.} Using $\sum (x_i-\overline{x}) = 0$, the expectation is given by
-	\footnotesize
-	\begin{align*}
-	\U{E}[B_0] & = \U{E}\left[\overline{Y} - \frac{\overline{x}}{S_{xx}}\sum (x_i-\overline{x})Y_i \right] \\
-	& = \beta_0 + \beta_1 \overline{x} - \frac{\overline{x}}{S_{xx}}\sum (x_i-\overline{x})(\beta_0 + \beta_1 x_i) \\
-	& = \beta_0 + \beta_1 \overline{x} - \frac{\overline{x}}{S_{xx}} \sum (x_i-\overline{x})x_i\beta_1 \\
-	& = \beta_0.
-	\end{align*}
-	\normalsize
-}
-\only<2>{
-	\justifying
-	\structb{Proof.} Similarly, using $\U{Var}[\overline{E}] = \sigma^2/n$, the variance is given by
-	\footnotesize
-	\begin{align*}
-	\U{Var}[B_0] & = \U{Var}\left[\overline{Y} - \frac{\overline{x}}{S_{xx}}\sum (x_i-\overline{x})Y_i \right] \\
-	& = \U{Var}[\beta_0 + \beta_1 \overline{x} + \overline{E}] + \frac{\overline{x}^2}{S_{xx}^2} \sum(x_i-\overline{x})^2 \U{Var}[\beta_0 + \beta_1 x_i + E_i] \\
-	& = \frac{\sigma^2}{n} + \frac{\overline{x}^2}{S_{xx}}\sigma^2 \\
-	& = \frac{S_{xx} + \overline{x}^2}{nS_{xx}}\sigma^2 \\
-	& = \frac{\sum x_i^2}{nS_{xx}}\sigma^2.
-	\end{align*}
-	\normalsize
-}
+\structb{Proof.} Since
+\footnotesize
+\begin{align*}
+B_0 & = \overline{Y} - B_1\overline{x} = \beta_0 + \beta_1\overline{x} + \overline{E} - \left(\beta_1 + \frac{\sum (x_i-\overline{x})E_i}{S_{xx}} \right) \overline{x} \\
+& = \beta_0 + \overline{E} - \frac{\overline{x}\sum (x_i-\overline{x})E_i}{S_{xx}},
+\end{align*}
+\normalsize
+we can see that
+\footnotesize
+\begin{align*}
+\U{E}[B_0] = \beta_0, \qquad \U{Var}[B_0] & = \frac{\sigma^2}{n} + \overline{x}^2 \frac{\sigma^2}{S_{xx}} - 2\sum \U{Cov}\left[\frac{E_i}{n}, \frac{\overline{x} \sum (x_i-\overline{x})E_i}{S_{xx}} \right] \\
+& = \sigma^2\cdot \frac{S_{xx} + n\overline{x}^2}{nS_{xx}} = \frac{\sigma^2 \sum x_i^2}{nS_{xx}}.
+\end{align*}
+\normalsize
 
 \end{frame}
 
@@ -244,7 +218,7 @@ follows a $T$-distribution with $n-2$ degrees of freedom. A $100(1-\alpha)\%$ co
 	\end{align*}
 	\item \highlightg{Error sum of squared}:
 	\begin{align*}
-	\U{SS_E} = \sum_{i=1}^n \left(Y_i-(b_0+b_1x)\right)^2 = S_{yy} - B_1 S_{xy} = S_{yy} - \frac{S_{xy}}{S_{xx}}.
+	\U{SS_E} = \sum_{i=1}^n \left(Y_i-(b_0+b_1x)\right)^2 = S_{yy} - B_1 S_{xy} = S_{yy} - \frac{S_{xy}^2}{S_{xx}}.
 	\end{align*}
 	\item \highlightg{Coefficient of determination}: the proportion of the total variation in $Y$ that is explained by the linear model.
 	\begin{align*}
@@ -273,6 +247,7 @@ satisfies $|T_{n-2}| > t_{\alpha/2,n-2}$.
 
 \begin{frame}{Test for Correlation with $R^2$}
 
+\justifying
 \structb{Test for correlation.} Let $(X, Y)$ follow a bivariate normal distribution with correlation coefficient $\rho\in (-1, 1)$. Let $R$ be the estimator for $\rho$. Then we reject
 \begin{align*}
 H_0: \rho = 0
@@ -329,8 +304,30 @@ satisfies $F_{k-2,n-k} > f_{\alpha,k-2,n-k}$.
 
 
 
-\subsection{Simple Linear Regression in Practice}
+\subsection{Calculations for Simple Linear Regression}
 
+\begin{frame}{Calculations for Simple Linear Regression}
+
+
+\begin{enumerate}
+	\justifying
+	\item Find $\sum x_i, \sum y_i, \sum x_i^2, \sum y_i^2, \sum x_iy_i$ and calculate
+	\begin{align*}
+	S_{xx} & = \sum x_i^2 - \frac{1}{n}\left(\sum x_i \right)^2, \quad S_{yy} = \sum y_i^2 - \frac{1}{n}\left(\sum y_i \right)^2,\\
+	S_{xy} & = \sum x_iy_i - \frac{1}{n}\left(\sum x_i \right)\left(\sum y_i \right).
+	\end{align*}
+	\item Obtain $b_1$ and $b_0$ by
+	\begin{align*}
+	b_1 = \frac{S_{xy}}{S_{xx}}, \qquad b_0 = \overline{y} - b_1\overline{x}.
+	\end{align*}
+	\item Calculate other quantities as required, e.g.,
+	\begin{align*}
+	\U{SS_E} = S_{yy} - \frac{S_{xy}}{S_{xx}}, \qquad R^2 = \frac{S_{xy}^2}{S_{xx}S_{yy}}.
+	\end{align*}
+\end{enumerate}
+
+
+\end{frame}
 
 
 \section{Multiple Linear Regression}
@@ -339,9 +336,82 @@ satisfies $F_{k-2,n-k} > f_{\alpha,k-2,n-k}$.
 \subsection{Linear Algebra Basics}
 
 
-\begin{frame}{Orthogonal Projection}
+\begin{frame}{Gradient of Matrix}
+
+\justifying
+\structb{Gradient.} Suppose $a, x\in \R^n, A\in \U{Mat}(n\times n; \R)$, then we have the following properties.
+\begin{itemize}
+	\item $\nabla_x (x^Tx) = 2x$, since
+	\begin{align*}
+	x^Tx & = \sum_{i=1}^n x_i^2 \quad\Rightarrow\quad \nabla_x (x^Tx) = 
+	\begin{gmatrix}[p]
+	\frac{\partial x^Tx}{x_1} \\ \vdots \\ \frac{\partial x^Tx}{x_n}
+	\end{gmatrix} = 2x.
+	\end{align*}
+	\item $\nabla_x(a^Tx) = a$, since
+	\begin{align*}
+	a^Tx = \sum_{i=1}^n a_ix_i \quad\Rightarrow\quad \nabla_x (x^Tx) = 
+	\begin{gmatrix}[p]
+	\frac{\partial a^Tx}{x_1} \\ \vdots \\ \frac{\partial a^Tx}{x_n}
+	\end{gmatrix} = a.
+	\end{align*}
+\end{itemize}
 
 
+\end{frame}
+
+
+\begin{frame}{Idempotent Matrix}
+
+\justifying
+\structb{Idempotent matrix.} A $n\times n$ matrix $P$ satisfying the property that $P^2 = P$ is called idempotent. Then
+\begin{align*}
+(\bbone_n - P)^2 = \bbone_n - P - P + P^2 = \bbone_n - P
+\end{align*}
+is also idempotent. Furthermore, its eigenvalues may only be 0 or 1, since
+\begin{align*}
+\lambda v = Pv = P^2v = P(\lambda v) = \lambda^2v,
+\end{align*}
+where $v$ is an eigenvector. This gives $\lambda^2 = \lambda$.
+
+\end{frame}
+
+
+\begin{frame}{The Spectral Theorem of Linear Algebra}
+
+\justifying
+\structb{Spectral theorem.} Let $A \in \U{Mat}(n\times n; \R)$ be a self-adjoint matrix, which means $A = A^* = A^T$. Then there exists an orthonormal basis of $\R^n$ consisting of eigenvectors of $A$. \\
+~\\
+\structb{Corollary of spectral theorem.} Let $A \in \U{Mat}(n\times n; \R)$ be a self-adjoint matrix. Then if $(v_1, \ldots, v_n)$ is an orthonormal basis of eigenvectors of $A$ and $U = (v_1, \ldots, v_n)$, then $U^{-1} = U^T$, and
+\begin{align*}
+D = U^{-1}AU = U^{T} AU
+\end{align*}
+is a diagonal matrix containing eigenvectors of $A$. This can be seen from
+\begin{align*}
+De_k = U^{-1}AUe_k = U^{-1}Av_k = U^{-1}\lambda v_k = \lambda e_k.
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{Important Results from Linear Algebra for Regression}
+
+\structb{Results used multiple linear regression.}
+\begin{itemize}
+	\justifying
+	\item If $A\in \U{Mat}(n\times n; \R)$ is idempotent, then $\bbone_n-A$ is idempotent, and $P$ has eigenvalues only 0 or 1.
+	\item If $A\in \U{Mat}(n\times n; \R)$ is symmetric, then there exists a matrix $U = (v_1, \ldots, v_n)$ of eigenvectors of $A$ and $U^{-1} = U^T$ such that
+	\begin{align*}
+	D = U^{T}AU \quad\Rightarrow\quad A = UDU^T.
+	\end{align*}
+	\item In discussions of multiple linear regression, the two properties above hold for matrices
+	\begin{align*}
+	P = \frac{1}{n}\begin{gmatrix}[p]
+	1 & \cdots & 1 \\
+	\vdots & \ddots & \vdots \\
+	1 & \cdots & 1
+	\end{gmatrix} \quad \U{and}\quad H = X(X^TX)^{-1}X^T.
+	\end{align*}
+\end{itemize}
 
 \end{frame}
 
@@ -415,7 +485,7 @@ E_1 \\ \vdots \\ E_n
 
 \begin{frame}{Least Squares Estimation}
 
-\structb{Least squares estimation.} We have the error sum of squares
+\structb{Least squares estimation.} For both cases, we have the error sum of squares
 \begin{align*}
 \U{SS_E} = \langle Y-Xb, Y-Xb\rangle = (Y-Xb)^T(Y-Xb).
 \end{align*}
@@ -446,9 +516,9 @@ and if $a, x\in \R^n$, then $\nabla_x (a^Tx) = a$.
 	\footnotesize
 	\begin{align*}
 	P & := \frac{1}{n}\begin{gmatrix}[p]
-	1 & 1 & \cdots & 1 \\
-	\vdots & \vdots & \ddots & \vdots \\
-	1 & 1 & \cdots & 1
+	1 & \cdots & 1 \\
+	\vdots & \ddots & \vdots \\
+	1 & \cdots & 1
 	\end{gmatrix} \quad\Rightarrow\quad (\bbone_n - P)^2 = \bbone_n - P,
 	\end{align*}
 	\normalsize
@@ -463,7 +533,7 @@ and if $a, x\in \R^n$, then $\nabla_x (a^Tx) = a$.
 	\begin{align*}
 	H := X(X^TX)^{-1}X^T \quad\Rightarrow\quad \U{SS_E} & = \langle Y-Xb, Y-Xb\rangle \\
 	& = \langle(\bbone_n - H)Y, (\bbone_n - H)Y\rangle \\
-	& = \langle Y, (\bbone_n - H)Y\rangle.
+	& = \langle Y, (\bbone_n - H)Y\rangle = \langle E, (\bbone_n-H)E\rangle.
 	\end{align*}
 	\normalsize
 	\item \highlightg{Coefficient of multiple determination}:
@@ -497,15 +567,21 @@ U(\bbone_n-H)U^T = D_{n-p-1}.
 	\justifying
 	\item $\U{SS_E}/\sigma^2$ follows a chi-squared distribution with $n-p-1$ degrees of freedom.
 	\item If $\beta = (\beta_0, 0, \ldots, 0)$, then $\U{SS_R}/\sigma^2$ follows a chi-squared distri-bution with $p$ degrees of freedom.
-	\item $\U{SS_R}$ and $\U{SS_E}$ are independent random variables.
+	\item $\U{SS_R}$ and $\U{SS_E}$ are independent random variables. (Fisher-Cochran theorem.)
 	\item An unbiased estimator for $\sigma^2$ is given by
+	\footnotesize
 	\begin{align*}
 	\widehat{\sigma}^2 = S^2 = \frac{\U{SS_E}}{n-p-1}.
 	\end{align*}
+	\normalsize
 	\item The regression sum of squares can be expressed as
+	\footnotesize
 	\begin{align*}
-	\U{SS_R} = \langle Xb, Y\rangle - \frac{1}{n}\left(\sum_{i=1}^n Y_i \right)^2.
+	\U{SS_R} & = \langle Xb, Y\rangle - \frac{1}{n}\left(\sum_{i=1}^n Y_i \right)^2 \\
+	& = b_0\sum_{i=1}^n Y_i + \sum_{j=1}^p b_j \sum_{i=1}^{n} x_{ji}Y_i - \frac{1}{2}\left(\sum_{i=1}^n Y_i \right)^2,
 	\end{align*}
+	\normalsize
+	for multilinear model, and substitute $x_{ji}$ with $x_{i}^j$ for polynomial model.
 \end{itemize}
 
 \end{frame}
@@ -524,6 +600,3 @@ F_{p,n-p-1} & = \frac{\U{SS_R}/p}{\U{SS_E}/(n-p-1)} = \frac{\U{SS_R}/p}{S^2} = \
 satisfies $F_{p,n-p-1} > f_{\alpha,p,n-p-1}$.
 
 \end{frame}
-
-\subsection{Multiple Linear Regression in Practice}
-
