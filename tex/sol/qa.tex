@@ -1,0 +1,39 @@
+\section*{Q1.}
+
+Remember that in single sample, if we have a sample $X_1, \ldots, X_n$ from a normal population with mean $\mu$ and variance $\sigma^2$, than the statistic
+\begin{align*}
+\frac{(n-1)S^2}{\sigma^2} = \frac{1}{\sigma^2} \sum_{i=1}^n (X_i-\overline{X})^2
+\end{align*}
+follows a chi-squared distribution with $n-1$ d.o.f. Similarly for now, we have
+\begin{align*}
+\frac{\U{SS_{E,pe}}}{\sigma^2} = \sum_{i=1}^k\red{\frac{1}{\sigma^2}\sum_{j=1}^{n_i}(Y_{ij} - \overline{Y}_i)^2}.
+\end{align*}
+If we look at the red part, this is a sample of size $n_i$ from a normal population $Y|x_i$. Therefore, each this term follows a chi-squared distribution with $n_i-1$ d.o.f., and the sum of them follows a chi-squared distribution with
+\begin{align*}
+\sum_{i=1}^k n_i-1 = n - k
+\end{align*}
+degrees of freedom.
+
+\section*{Q2.}
+
+As we have discussed, there are a set of equivalences that we can use to calculate $S_{xx}, S_{yy}$ and $S_{xy}$ as follows.
+\begin{align*}
+S_{xx} & = \sum_{i=1}^n (x_i - \overline{x})^2 = \sum_{i=1}^n (x_i - \overline{x})x_i = \sum_{i=1}^n x_i^2 - \frac{1}{n}\left(\sum_{i=1}^n x_i\right)^2  = \sum_{i=1}^n x_i^2 - n\overline{x}^2, \\
+S_{yy} & = \sum_{i=1}^n (y_i - \overline{y})^2 = \sum_{i=1}^n (y_i - \overline{y})y_i = \sum_{i=1}^n y_i^2 - \frac{1}{n}\left(\sum_{i=1}^n y_i\right)^2 = \sum_{i=1}^n y_i^2 - n\overline{y}^2, \\
+S_{xy} & = \sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y}) = \sum_{i=1}^n (x_i - \overline{x})y_i = \sum_{i=1}^n (y_i - \overline{y})x_i = \sum_{i=1}^n x_iy_i - n\overline{x}\cdot\overline{y} \\
+& = \sum_{i=1}^n x_iy_i - \frac{1}{n}\left(\sum_{i=1}^n x_i \right)\left(\sum_{i=1}^n y_i \right).
+\end{align*}
+I think the best expressions we might use in practice for calculations are 
+\begin{align*}
+S_{xx} & = \sum_{i=1}^n x_i^2 - n\overline{x}^2, \quad S_{yy} = \sum_{i=1}^n y_i^2 - n\overline{y}^2, \quad S_{xy} = \sum_{i=1}^n x_iy_i - n\overline{x}\overline{y}.
+\end{align*}
+I think one of the first steps we do in a simple linear regression problem is to calculate
+\begin{align*}
+\sum_{i=1}^n x_i, \qquad \sum_{i=1}^n y_i, \qquad \sum_{i=1}^n x_i^2, \qquad \sum_{i=1}^n y_i^2, \qquad \sum_{i=1}^n x_iy_i,
+\end{align*}
+and with these values, $S_{xx}, S_{yy}, S_{xy}$ can be obtained as above. In addition, we may calculate other quantities
+\begin{align*}
+b_1 = \frac{S_{xy}}{S_{xx}}, \qquad b_0 = \overline{y} - b_1\overline{x}, \qquad \U{SS_E} = S_{yy} - \frac{S_{xy}^2}{S_{xx}}.
+\end{align*}
+These calculations can be done easily on Mathematica or using Casio calculator (in STAT mode). A manual for Casio fx-991ES Plus can be found in \\ \texttt{https://file.casio.com.cn/resource/front/pdf/CN/004/fx-570\_991ES\_PLUS\_CN.pdf}.
+

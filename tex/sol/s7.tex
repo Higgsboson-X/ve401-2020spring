@@ -41,7 +41,7 @@ Note that this is different from the distribution of \underline{prediction}
 \end{align*}
 where in prediction, we are not choosing $x$ to be equal to any of the $x_1, \ldots, x_n$ that are used to estimate $\beta_1$ and $\beta_0$. When we assume that $x_i$ is among those we use for estimation, there are additional covariance terms.
 
-Therefore, if we plot the residuals, we can see when the point $x_i$ is far from mean $\overline{x}$, the variance is smaller. This can be used to check for equal variance and linearity of our model. For instance, the following shows a residual plot with problems.
+Therefore, if we plot the residuals, we can see when the point $x_i$ is far from mean $\overline{x}$, the variance is smaller. In addition, the points should uniformly reside above the line $y = 0$ and below this line. This can be used to check for equal variance and linearity of our model. For instance, the following shows a residual plot with problems.
 
 \begin{figure}[H]
 	\centering
@@ -76,3 +76,4 @@ In addition to Mathematica we use in the lecture, R is widely used for studies o
 	\centering
 	\includegraphics[width=12cm]{./images/s7fig3.png}
 \end{figure}
+

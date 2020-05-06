@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350) (preloaded format=pdflatex 2020.4.18)  25 APR 2020 22:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350) (preloaded format=pdflatex 2020.4.18)  27 APR 2020 13:25
 entering extended mode
 **./s.tex
 (s.tex
@@ -959,8 +959,8 @@ File: ./images/s7fig3.png Graphic file (type png)
 <use ./images/s7fig3.png>
 Package pdftex.def Info: ./images/s7fig3.png  used on input line 77.
 (pdftex.def)             Requested size: 341.43306pt x 210.96294pt.
-) [3 <./images/s7fig5.png> <./images/s7fig6.png> <./images/s7fig2.png> <./image
-s/s7fig7.png>] [4 <./images/s7fig3.png (PNG copy)>] (s.aux) ) 
+ [3 <./images/s7fig5.png> <./images/s7fig6.png> <./images/s7fig2.png> <./images
+/s7fig7.png>]) [4 <./images/s7fig3.png (PNG copy)>] (s.aux) ) 
 Here is how much of TeX's memory you used:
  18440 strings out of 482859
  350987 string characters out of 2953059
@@ -978,7 +978,7 @@ fs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></home/chxw/.miktex/texmfs
 stall/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/chxw/.miktex/texmfs/insta
 ll/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/chxw/.miktex/texmfs/install/f
 onts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on s.pdf (5 pages, 297495 bytes).
+Output written on s.pdf (5 pages, 298122 bytes).
 PDF statistics:
  69 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
