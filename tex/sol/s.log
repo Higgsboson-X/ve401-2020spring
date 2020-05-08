@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350) (preloaded format=pdflatex 2020.4.18)  27 APR 2020 13:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400) (preloaded format=pdflatex 2020.4.18)  8 MAY 2020 19:44
 entering extended mode
 **./s.tex
 (s.tex
@@ -740,7 +740,13 @@ Xy-pic pdf driver: `line' extension support
 (/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xypdf-li.tex loaded)
 Xy-pic pdf driver: `rotate' extension support
 (/home/chxw/.miktex/texmfs/install/tex/generic/xypic/xypdf-ro.tex loaded)
-loaded))
+loaded)) (/home/chxw/.miktex/texmfs/install/tex/latex/bbm/bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+)
 \c@theorem=\count318
 \c@lemma=\count319
 
@@ -782,20 +788,20 @@ File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (s.aux)
 \openout1 = `s.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
 
 ABD: EveryShipout initializing macros
 (/home/chxw/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
@@ -813,38 +819,8 @@ ABD: EveryShipout initializing macros
 \everyMPtoPDFconversion=\toks52
 ) (/home/chxw/.miktex/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(/home/chxw/.miktex/texmfs/install/tex/generic/infwarerr/infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-(/home/chxw/.miktex/texmfs/install/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-
-(/home/chxw/.miktex/texmfs/install/tex/generic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-))
-(/home/chxw/.miktex/texmfs/install/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
-
-(/home/chxw/.miktex/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
-)
-(/home/chxw/.miktex/texmfs/install/tex/generic/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-))
-(/home/chxw/.miktex/texmfs/install/tex/latex/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 )
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -880,107 +856,67 @@ G,.JBIG2,.JB2,.eps]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 58.
 
 (/home/chxw/.miktex/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 58.
 
 
 (/home/chxw/.miktex/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 55
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 58
 .
 
 (/home/chxw/.miktex/texmfs/install/tex/latex/jknappen/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Package xypdf Info: Line width: 0.47998pt on input line 55.
+Package xypdf Info: Line width: 0.47998pt on input line 58.
 <./logo.png, id=4, 359.4228pt x 98.2872pt>
 File: ./logo.png Graphic file (type png)
 <use ./logo.png>
-Package pdftex.def Info: ./logo.png  used on input line 62.
+Package pdftex.def Info: ./logo.png  used on input line 65.
 (pdftex.def)             Requested size: 338.58632pt x 92.59242pt.
  [1
 
-{/home/chxw/.miktex/texmfs/data/pdftex/config/pdftex.map} <./logo.png>] (s7.tex
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--8
-
- []
+{/home/chxw/.miktex/texmfs/data/pdftex/config/pdftex.map} <./logo.png>] (s8.tex
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 19.
 
 
-Overfull \hbox (21.08572pt too wide) detected at line 33
-[]
- []
-
+(/home/chxw/.miktex/texmfs/install/tex/latex/bbm/ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
 Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[1]
-<./images/s7fig1.png, id=22, 679.53876pt x 608.2725pt>
-File: ./images/s7fig1.png Graphic file (type png)
-<use ./images/s7fig1.png>
-Package pdftex.def Info: ./images/s7fig1.png  used on input line 48.
-(pdftex.def)             Requested size: 341.43306pt x 305.62054pt.
-<./images/s7fig4.png, id=23, 985.6825pt x 223.83624pt>
-File: ./images/s7fig4.png Graphic file (type png)
-<use ./images/s7fig4.png>
-Package pdftex.def Info: ./images/s7fig4.png  used on input line 58.
-(pdftex.def)             Requested size: 483.69687pt x 109.84123pt.
-<./images/s7fig5.png, id=24, 488.57532pt x 301.8778pt>
-File: ./images/s7fig5.png Graphic file (type png)
-<use ./images/s7fig5.png>
-Package pdftex.def Info: ./images/s7fig5.png  used on input line 62.
-(pdftex.def)             Requested size: 341.43306pt x 210.96294pt.
-<./images/s7fig6.png, id=25, 977.6525pt x 85.31876pt>
-File: ./images/s7fig6.png Graphic file (type png)
-<use ./images/s7fig6.png>
-Package pdftex.def Info: ./images/s7fig6.png  used on input line 66.
-(pdftex.def)             Requested size: 483.69687pt x 42.21272pt.
- [2 <./images/s7fig1.png> <./images/s7fig4.png>]
-<./images/s7fig2.png, id=31, 592.2125pt x 355.3275pt>
-File: ./images/s7fig2.png Graphic file (type png)
-<use ./images/s7fig2.png>
-Package pdftex.def Info: ./images/s7fig2.png  used on input line 69.
-(pdftex.def)             Requested size: 341.43306pt x 204.86475pt.
-<./images/s7fig7.png, id=32, 975.645pt x 202.7575pt>
-File: ./images/s7fig7.png Graphic file (type png)
-<use ./images/s7fig7.png>
-Package pdftex.def Info: ./images/s7fig7.png  used on input line 73.
-(pdftex.def)             Requested size: 483.69687pt x 100.5215pt.
-<./images/s7fig3.png, id=33, 488.57532pt x 301.8778pt>
-File: ./images/s7fig3.png Graphic file (type png)
-<use ./images/s7fig3.png>
-Package pdftex.def Info: ./images/s7fig3.png  used on input line 77.
-(pdftex.def)             Requested size: 341.43306pt x 210.96294pt.
- [3 <./images/s7fig5.png> <./images/s7fig6.png> <./images/s7fig2.png> <./images
-/s7fig7.png>]) [4 <./images/s7fig3.png (PNG copy)>] (s.aux) ) 
+[1] [2]) [3] (s.aux) ) 
 Here is how much of TeX's memory you used:
- 18440 strings out of 482859
- 350987 string characters out of 2953059
- 728640 words of memory out of 3000000
- 33632 multiletter control sequences out of 15000+200000
- 544172 words of font info for 71 fonts, out of 3000000 for 9000
+ 18033 strings out of 482859
+ 343642 string characters out of 2953059
+ 718303 words of memory out of 3000000
+ 33251 multiletter control sequences out of 15000+200000
+ 544260 words of font info for 73 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 60i,12n,66p,3214b,307s stack positions out of 5000i,500n,10000p,200000b,50000s
-</home/chxw/.mikte
-x/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/chxw/.miktex/
-texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></home/chxw/.miktex/te
-xmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/chxw/.miktex/texm
-fs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></home/chxw/.miktex/texmfs
-/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/chxw/.miktex/texmfs/in
-stall/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/chxw/.miktex/texmfs/insta
-ll/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/chxw/.miktex/texmfs/install/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on s.pdf (5 pages, 298122 bytes).
+ 60i,17n,66p,3230b,377s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/chxw/.miktex/texmfs/data/fonts/pk/ljfour/public/b
+bm/dpi600/bbm12.pk></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfon
+ts/cm/cmbx10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/c
+m/cmex10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/
+cmmi12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cm
+mi8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12
+.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb
+></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></ho
+me/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on s.pdf (4 pages, 149606 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
+ 66 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

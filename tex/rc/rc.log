@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350) (preloaded format=pdflatex 2020.4.18)  26 APR 2020 17:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400) (preloaded format=pdflatex 2020.4.18)  8 MAY 2020 12:53
 entering extended mode
 **./rc.tex
 (rc.tex
@@ -1217,7 +1217,7 @@ Package xypdf Info: Line width: 0.39998pt on input line 66.
 {/home/chxw/.miktex/texmfs/data/pdftex/config/pdftex.map}] (rc.toc) [2
 
 ]
-(rc7.tex (rc.toc) [3
+(final.tex (rc.toc) [3
 
 ] [4
 
@@ -1266,10 +1266,10 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
 
 ] [12
 
-] [13
-
 ]
-[14
+[13
+
+] [14
 
 ] [15
 
@@ -1368,8 +1368,8 @@ Package rerunfilecheck Info: File `rc.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  22360 strings out of 482859
- 410694 string characters out of 2953059
- 798223 words of memory out of 3000000
+ 410698 string characters out of 2953059
+ 798283 words of memory out of 3000000
  37269 multiletter control sequences out of 15000+200000
  594871 words of font info for 102 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
@@ -1397,7 +1397,7 @@ lic/lm/lmsy10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmsy
 /chxw/.miktex/texmfs/install/fonts/type1/public/lm/lmsy9.pfb></home/chxw/.mikte
 x/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb></home/chxw/.mi
 ktex/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on rc.pdf (39 pages, 495053 bytes).
+Output written on rc.pdf (39 pages, 495904 bytes).
 PDF statistics:
  1221 PDF objects out of 1440 (max. 8388607)
  88 named destinations out of 1000 (max. 500000)

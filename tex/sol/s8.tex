@@ -1,0 +1,95 @@
+\section*{Assignment 8.4}
+
+Recall that 
+\begin{align*}
+P = \frac{1}{n}\begin{gmatrix}[p]
+1 & 1 & \cdots & 1 \\
+\vdots & \vdots & & \vdots \\
+1 & 1 & \cdots & 1
+\end{gmatrix}\!\!\!\!, \qquad H = X(X^TX)^{-1}X^T
+\end{align*}
+where $X$ is the model specification matrix for multiple linear regression.
+\begin{enumerate}
+	\item Show that $PH = HP = P$. Conclude that $H - P$ is an orthogonal projection and that
+	\begin{align*}
+	\U{SS_R} = \langle (H-P)Y, (H-P)Y\rangle.
+	\end{align*}
+	\item Show that $\U{tr}\ P = 1$ and conclude $\U{tr}(H-P) = p$.
+	\item Follow the steps in the lecture slides to show that if $\beta = (\beta_0, 0, \ldots, 0)$ (i.e., if $\beta_1 = \cdots = \beta_p = 0$), then $\U{SS_R}/\sigma^2$ follows a chi-squared distribution with $p$ degrees of freedom.
+	\item Show that $(\bbone - H)(P-H) = (P-H)(\bbone-H) = 0$. Deduce that
+	\begin{align*}
+	\U{ran}(P-H)\subset \U{ker}(\bbone - H) \qquad\U{and} \qquad \U{ran}(\bbone-H)\subset \U{ker}(P-H).
+	\end{align*}
+	Explain why this means that the eigenvectors of $H-P$ for the eigenvalue 1 are also eigenvectors of $\bbone-H$ for the eigenvalue 0 and vice-versa. Construct a matrix $U$ which diagonalizes both $P-H$ and $\bbone-H$. Use $U$ to show that $\U{SS_R}$ and $\U{SS_E}$ are the sums of squares of independent standard normal variables. Deduce that $\U{SS_R}$ and $\U{SS_E}$ are independent.
+\end{enumerate}
+\textbf{\underline{Solution}.} 
+\begin{enumerate}
+	\item Since $H$ is an orthogonal projection, $H^2 = H$, and
+	\begin{align*}
+	\U{det}\left(X(X^TX)^{-1}X^T \right) = \U{det}\left((X^TX)^{-1} X^TX \right) = \U{det}\ \bbone_{p+1} = 1,
+	\end{align*}
+	which means $H$ is invertible. Then
+	\begin{align*}
+	P = H^{-1} HP = H^{-1}H^2 P = HP, \qquad P = PH^{-1}H = PH^{-1}H^2 = PH.
+	\end{align*}
+	Therefore,
+	\begin{align*}
+	(H-P)^2 & = H^2 + P^2 - HP - PH = H - P, \\
+	(H-P)^T & = H^T - P^T = H - P,
+	\end{align*}
+	and $H-P$ is an orthogonal projection. Furthermore,
+	\begin{align*}
+	\U{SS_R} & = \U{SS_T} - \U{SS_E} \\
+	& = \langle Y, (\bbone - P)Y\rangle - \langle Y, (\bbone - H)Y\rangle \\
+	& = \langle Y, (H - P) Y\rangle \\
+	& = \langle Y, (H-P)^2 Y\rangle = \langle (H-P)Y, (H-P)Y \rangle.
+	\end{align*}
+	\item We know that
+	\begin{align*}
+	\U{tr}\ P = \frac{1}{n} \sum_{i=1}^n 1 = 1,
+	\end{align*}
+	and thus
+	\begin{align*}
+	\U{tr}(H-P) = \U{tr}\ H - \U{tr}\ P = \U{tr}(X(X^TX)^{-1}X^T) - 1 = p + 1 - 1 = p.
+	\end{align*}
+	\item Since $H - P$ is an orthogonal projection, the sum of its eigenvalues is equal to the number of eigenvalues that equal 1. Since $H - P$ is symmetric, there exists $U$ consisting of columns of eigenvectors of $H-P$ such that
+	\begin{align*}
+	U^{-1}(H-P)U = U^T(H - P)U = D_{p} = \begin{gmatrix}[p]
+	\bbone_p & 0 \\
+	0 & 0
+	\end{gmatrix}
+	\end{align*}
+	and thus $H - P = UD_pU^T$. Since given that $\beta = (\beta_0, 0, \ldots, 0)$,
+	\begin{align*}
+	(H-P)(X\beta + E) & = HX\beta - PX\beta + (H-P)E \\
+	& = (\bbone - P)X\beta + (H-P)E \\
+	& = (\bbone - P)\begin{gmatrix}[p]
+	\beta_0  \\
+	\vdots  \\
+	\beta_0 
+	\end{gmatrix}\!\!\!\! + (H-P)E = (H-P)E.
+	\end{align*}
+	we then have
+	\begin{align*}
+	\frac{\U{SS_R}}{\sigma^2} & = \frac{1}{\sigma^2}\langle (H-P)(X\beta + E), (H-P)(X\beta + E)\rangle \\
+	& =  \left\langle (H-P)\frac{E}{\sigma}, (H-P)\frac{E}{\sigma}\right\rangle \\
+	& = \langle Z, (H-P)Z\rangle \\
+	& = \langle Z, UD_pU^T Z\rangle  \\
+	& = \sum_{i=1}^{p} (U^TZ)_i^2,
+	\end{align*}
+	where $Z$ is standard normally distributed. Therefore, $\U{SS_R}/\sigma^2$ follows a chi-squared distribution with $p$ degrees of freedom.
+	\item Since $HP = PH = P$, we have
+	\begin{align*}
+	(\bbone - H)(P - H) & = P - H - HP + H^2 = P - H - P + H = 0, \\
+	(P - H)(\bbone - H) & = P - PH - H + H^2 = P - P - H + H = 0.
+	\end{align*}
+	Then for any $v\in \U{ran}(P - H)$, there exists a $u\in \R^n$ such that $v = (P-H)u$, and thus
+	\begin{align*}
+	(\bbone - H)(P - H)u = (\bbone - H)v = 0\quad\Rightarrow\quad v\in \U{ker}(\bbone - H).
+	\end{align*}
+	Similarly, for any $v\in \U{ran}(\bbone - H)$, there exists a $u\in \R^n$ such that $v = (\bbone - H)u$, and thus
+	\begin{align*}
+	(P - H)(\bbone - H)u = (P - H)v = 0\quad\Rightarrow\quad v\in \U{ker}(P - H).
+	\end{align*}
+	Therefore, $\U{ran}(P - H)\subset\U{ker}(\bbone - H)$ and $\U{ran}(\bbone - H)\subset \U{ker}(P - H)$.
+\end{enumerate}
