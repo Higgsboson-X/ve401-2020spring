@@ -3,8 +3,391 @@
 
 \subsection{Fisher's Null Hypothesis Test}
 
+\begin{frame}{Fisher's Null Hypothesis Test}
+
+\structb{Overview.}
+\begin{enumerate}
+	\justifying
+	\item Set up a \highlightg{null hypothesis} $H_0$ that compares a population para-meter $\theta$ to a given null value $\theta_0$.
+	\begin{itemize}
+		\item $H_0: \theta = \theta_0$,
+		\item $H_0: \theta \leq \theta_0$,
+		\item $H_0: \theta \geq \theta_0$.
+	\end{itemize}
+	\item Try to reject the null hypothesis by finding \highlightg{P-value} for the test.\\
+	\begin{itemize}
+		\justifying
+		\item \underline{One-tailed}: upper bound of probability of obtaining the data or more extreme data (based on the null hypothesis), given that the null hypothesis is true.
+		\begin{align*}
+		P[D|H_0]\leq P\U{-value}.
+		\end{align*}
+		\item \underline{Two-tailed}: twice of p-value for one-tailed test.
+	\end{itemize}
+	\item We either 
+	\begin{itemize}
+		\item fail to reject $H_0$ or
+		\item reject $H_0$ at the [p-value] level of significance.
+	\end{itemize}
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}{Understanding P-values}
+
+\justifying
+\structb{One-tailed tests.} For one-tailed test, the p-value is an upper bound of probability of obtaining the data or \underline{more extreme} data based on the null hypothesis, given that the null hypothesis is true.
+\begin{itemize}
+	\item $H_0: \mu \geq \mu_0$, extreme $\Leftrightarrow$ too small $\widehat{\mu}$.
+	\item $H_0: \mu \leq \mu_0$, extreme $\Leftrightarrow$ too large $\widehat{\mu}$.
+\end{itemize}
+\highlightr{Note:} Refer to an estimator of the parameter in the null hypothesis ($\mu$ in this case). \\
+\uncover<2>{
+	\justifying
+	\structb{Assignment 5.2.} $X_1, \ldots, X_n$ are i.i.d. exponential random variables with parameter $\beta$, then the sum $Y$
+	\begin{align*}
+	f_Y(y) = \frac{\beta^{n}}{\Gamma(n)} y^{n-1}e^{-\beta y}\quad\Rightarrow\quad 2n\beta \overline{X} \sim \chi_{2n}^2.
+	\end{align*}
+	The maximum-likelihood estimator for $\beta$ is $\widehat{\beta} = 1/\overline{X}$. Then we reject $H_0: \beta \leq \beta_0$ with test statistic $2n\beta_0\overline{X}$ if $P[2n\beta_0 \overline{X} < 2n\beta_0\overline{x}|\beta=\beta_0]$ is too small.
+}
+
+\end{frame}
+
+
+\begin{frame}{Understanding P-values}
+
+\justifying
+\structb{Two-tailed tests.} For two-tailed test, the p-value is twice of p-value for one-tailed test. Namely, suppose for one-tailed hypotheses $H_{0, u}: \mu \geq \mu_0$ and $H_{0, l}: \mu \leq \mu_0$, the corresponding p-values are $p_{u}$ and $p_{l}$, then for the two-tailed $H_0$,
+\begin{align*}
+\U{pvalue} = 2\min\left(p_{u}, p_l \right).
+\end{align*}
+The intention of doubling is to consider ``more extreme data'' in both directions, while taking the minimum corresponds to taking the one-tailed hypothesis such that the data seems more ``extreme''. \\
+~\\
+In some cases (where the distribution of test statistic is not symmetric), the p-value for a two-tailed test is not understood in terms of ``\underline{probability} of more extreme data'', but in terms of ``double of p-value for one-tailed test''.
+
+\end{frame}
+
+
+\begin{frame}{P-values for Representative Parametric Tests}
+
+\structb{T-test for mean.} With sample $X_1, \ldots, X_n$ from normal populations with mean $\mu$ and unknown variance $\sigma^2$, we have test statistic
+\begin{align*}
+T_{n-1} = \frac{\overline{X}-\mu_0}{S/\sqrt{n}}
+\end{align*}
+and p-values: ($F$ is the c.d.f. of $T_{n-1}$.)
+\begin{itemize}
+	\item \underline{$H_0: \mu \leq \mu_0$}. $$\U{pvalue} = 1 - F(t_{n-1});$$
+	\item \underline{$H_0: \mu \geq \mu_0$}. $$\U{pvalue} = F(t_{n-1});$$
+	\item \underline{$H_0: \mu = \mu_0$}. $$\U{pvalue} = 2\min \left(F(t_{n-1}), 1 - F_{T_{n-1}}(t_{n-1})\right).$$
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{P-values for Representative Parametric Tests}
+
+\structb{F-test for comparing variances.} Let $S_1^2$ and $S_2^2$ be sample variances from independent samples of sizes $n_1, n_2$ from normal populations with means $\mu_1, \mu_2$ and variances $\sigma_1^2, \sigma_2^2$, we have test statistic
+\begin{align*}
+F_{n_1-1, n_2-1} = \frac{S_1^2}{S_2^2}.
+\end{align*}
+and p-values: ($F$ is the c.d.f. of $F_{n_1-1,n_2-1}$.)
+\begin{itemize}
+	\item \underline{$H_0: \sigma_1 \leq \sigma_2$}. $$\U{pvalue} = 1 - F(f_{n_1-1,n_2-1});$$
+	\item \underline{$H_0: \sigma_1 \geq \sigma_2$}. $$\U{pvalue} = F(f_{n_1-1,n_2-1});$$
+	\item \underline{$H_0: \sigma_1 = \sigma_2$}. $$\U{pvalue} = 2\min \left(F(f_{n_1-1,n_2-1}), 1 - F(f_{n_1-1,n_2-1})\right).$$
+\end{itemize}
+
+
+\end{frame}
+
+
+\begin{frame}{P-values for Representative Non-parametric Tests}
+
+\justifying
+\structb{Signed test for median.} Let $X_1, \ldots, X_n$ be a random sample, we have test statistic
+\begin{align*}
+Q_- = \#\{X_k: X_k - M_0 < 0 \}.
+\end{align*}
+and p-values:
+\begin{itemize}
+	\item \underline{$H_0: M \leq M_0$}. $\U{pvalue} = F[q_-];$
+	\item \underline{$H_0: M \geq M_0$}. $\U{pvalue} = 1 - F[q_-];$
+	\item \underline{$H_0: M = M_0$}. $\U{pvalue} = 2\min \left(F(q_-), 1 - F(q_-)\right),$
+\end{itemize}
+where with a binomial random variable $Y$ and $n' = q_+ + q_-$,
+\begin{align*}
+F(k) = P[Y\leq k|M=M_0] = \sum_{y=0}^k\binom{n'}{y}\frac{1}{2^{n'}}.
+\end{align*}
+\highlightr{Note.} In lecture slides, we use $\min(q_-, q_+)$ for two-tailed test, which is equivalent since
+\begin{align*}
+\U{pvalue} = \min\left(F(q_-), F(q_+) \right) = F\left(\min(q_-, q_+) \right).
+\end{align*}
+
+
+\end{frame}
+
+
+\begin{frame}{P-values for Representative Non-parametric Tests}
+
+\justifying
+\structb{Wilcoxon signed rank test.} Let $X_1, \ldots, X_n$ be a random sample of size $n$ from a symmetric distribution. We have test statistic
+\footnotesize
+\begin{align*}
+|W_-| = \sum_{R_i < 0} |R_i|, \quad \U{E}[|W_-|] = \frac{n(n+1)}{4}, \quad \U{Var}|W_-| = \frac{n(n+1)(2n+1)}{24},
+\end{align*}
+\normalsize
+and for large sample size, we have p-values ($F$ is the c.d.f for normal distribution with mean and variance above.):
+\begin{itemize}
+	\item \underline{$H_0: M \leq M_0$}. $$\U{pvalue} = F(|w_-|);$$
+	\item \underline{$H_0: M \geq M_0$}. $$\U{pvalue} = 1 - F(|w_-|);$$
+	\item \underline{$H_0: M = M_0$}. $$\U{pvalue} = 2\min \left(F(|w_-|), 1 - F(|w_-|)\right).$$
+\end{itemize}
+
+
+
+\end{frame}
+
 
 \subsection{Neyman-Pearson Decision Theory}
 
+\begin{frame}{Neyman-Pearson Decision Theory}
+
+\structb{Overview.}
+\begin{enumerate}
+	\justifying
+	\item Set up a \highlightg{null hypothesis} $H_0$ and an \highlightg{alternative hypothesis} $H_1$.
+	\item Determine a desirable $\alpha$ and $\beta$, where
+	\begin{itemize}
+		\item $\alpha := P[\U{reject\ } H_0|H_0 \U{\ true}]$,
+		\item $\beta := P[\U{accept\ } H_0|H_1 \U{\ true}]$, and
+		\item $\U{power} := 1 - \beta = P[\U{reject\ } H_0|H_1 \U{\ true}]$.
+	\end{itemize}
+	\item Use $\alpha$ and $\beta$ to determine the appropriate sample size $n$. 
+	\item Use $\alpha$ and $n$ to determine the \highlightr{critical region}. 
+	\item Obtain sample statistics, and reject $H_0$ at significance level $\alpha$ and accept $H_1$ if the test statistic falls into critical region. Otherwise, accept $H_0$.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Type-I Error: $\alpha$}
+
+\justifying
+\structb{Type-I error.} It is
+\begin{itemize}
+	\justifying
+	\item \underline{only related to $H_0$}: $$P[\U{reject\ } H_0|H_0\U{\ true}];$$
+	\item \underline{used to determine the critical region}: this means that the critical region (whether $H_0$ is rejected or not, whether $H_1$ is accepted or not), is only determined by $H_0$.
+\end{itemize}
+~\\
+\highlightr{$\Delta$} \emph{If $H_0$ is true, the probability of rejecting $H_0$ is no more than $\alpha$.} \\
+
+
+\end{frame}
+
+
+\begin{frame}{Type-II Error: $\beta$}
+
+\justifying
+\structb{Type-II error.} It is 
+\begin{itemize}
+	\item \underline{related to both $H_0$ and $H_1$}: $$P[\U{fail\ to\ reject\ } H_0|H_1\U{\ true}];$$
+	\item \underline{used to analyze the power}: $$\U{power} = 1 - \beta;$$
+	\item \underline{either calculated analytically or read from OC curves}.
+\end{itemize}
+~\\
+\highlightr{$\Delta$} \emph{If $H_1$ is true, the probability of accepting $H_0$ is no more than $\beta$.} \\
+
+\end{frame}
+
+
+\begin{frame}{Type-II Error: $\beta$}
+
+\justifying
+\structb{F-test for comparing variances.} Let $S_1^2$ and $S_2^2$ be sample variances based on independent random samples of sizes $n_1$ and $n_2$ drawn from normal populations with means $\mu_1$ and $\mu_2$ and variances $\sigma_1^2$ and $\sigma_2^2$, respectively. The test statistic is given by
+\begin{align*}
+F_{n_1-1,n_2-1} = \frac{S_1^2}{S_2^2}.
+\end{align*}
+We reject at significance level $\alpha$
+\begin{itemize}
+	\justifying
+	\item $H_0: \sigma_1 \leq \sigma_2$ if $S_1^2/S_2^2 > f_{\alpha, n_1-1, n_2-1}$,
+	\item $H_0: \sigma_1 \geq \sigma_2$ if $S_2^2/S_1^2 > f_{\alpha, n_2-1, n_1-1}$,
+	\item $H_0: \sigma_1 = \sigma_2$ if $S_1^2/S_2^2 > f_{\alpha/2, n_1-1, n_2-1}$ or $S_2^2/S_1^2 > f_{\alpha/2, n_2-1, n_1-1}$.
+\end{itemize}
+\structb{OC curve.} The abscissa is defined by
+\begin{align*}
+\lambda = \frac{\sigma_1}{\sigma_2}.
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{Type-II Error: $\beta$}
+
+\justifying
+\structb{F-test for comparing variances.} Consider the following cases (suppose $\delta > 1$).
+\begin{itemize}
+	\item \underline{One-tailed test}. $$H_0: \sigma_1 \leq \sigma_2,\qquad H_1: \frac{\sigma_1}{\sigma_2} \geq \delta.$$
+	\item \underline{One-tailed test}. $$H_0: \sigma_1 \geq \sigma_2,\qquad H_1: \frac{\sigma_1}{\sigma_2} \leq \delta.$$
+	\item \underline{Two-tailed test}. $$H_0: \sigma_1 = \sigma_2,\qquad H_1: \max\left(\frac{\sigma_1}{\sigma_2}, \frac{\sigma_2}{\sigma_1}\right) \geq \delta.$$
+\end{itemize}
+Recall that $\sigma_2^2S_1^2/(\sigma_1^2S_2^2) \sim F_{n_1-1,n_2-1}$. We only discuss the last case here.
+
+\end{frame}
+
+
+\begin{frame}{Type-II Error: $\beta$}
+
+\justifying
+\structb{F-test for comparing variances.} Based on the distribution, we calculate
+\footnotesize
+\begin{align*}
+P[\U{accept\ } H_0|H_1 \U{\ true}] & = P\left[\frac{\sigma_2^2}{\sigma_1^2}f_1 \leq F_{n_1-1,n_2-1} \leq \frac{\sigma_2^2}{\sigma_1^2}f_2\Bigg|\max\left(\frac{\sigma_1}{\sigma_2}, \frac{\sigma_2}{\sigma_1}\right) \geq \delta \right] \\
+& = P\left[\frac{\sigma_1}{\sigma_2} \geq \delta \right]\times P_1 + P\left[\frac{\sigma_1}{\sigma_2} \leq \frac{1}{\delta} \right]\times P_2 \leq \max\left(P_1, P_2 \right),
+\end{align*}
+\normalsize
+where with $f_1 = f_{1-\alpha/2,n_1-1,n_2-1}, f_2 = f_{\alpha/2,n_1-1,n_2-1}$,
+\footnotesize
+\begin{align*}
+P_1 & \leq \left[\frac{\sigma_2^2}{\sigma_1^2}f_1 \leq F_{n_1-1,n_2-1} \leq \frac{\sigma_2^2}{\sigma_1^2}f_2\Bigg|\frac{\sigma_1}{\sigma_2} = \delta \right] = F\left(\frac{1}{\delta^2} f_2 \right) - F\left(\frac{1}{\delta^2} f_1 \right), \\
+P_2 & \leq \left[\frac{\sigma_2^2}{\sigma_1^2}f_1 \leq F_{n_1-1,n_2-1} \leq \frac{\sigma_2^2}{\sigma_1^2}f_2\Bigg|\frac{\sigma_1}{\sigma_2} = \frac{1}{\delta} \right] = F\left(\delta^2 f_2 \right) - F\left(\delta^2 f_1 \right),
+\end{align*}
+\normalsize
+where $F$ is the c.d.f. for $F_{n_1-1,n_2-1}$. Then we have the upper bound $\beta = \max(P_1, P_2)$.
+
+\end{frame}
+
+
+\begin{frame}{Determining Sample Size using $\beta$}
+
+
+\justifying
+\structb{Normal case.} Suppose the sample mean $\overline{X}$ follows a normal distri-bution with unknown mean $\mu$ and known variance $\sigma^2$, and we have hypothesis
+\begin{align*}
+H_0: \mu = \mu_0, \qquad H_1: |\mu - \mu_0| \geq \delta_0.
+\end{align*}\\
+\only<1>{
+	\structb{Relation between $\alpha$, $\beta$ $\delta$, $\sigma$ and $n$.} With true mean $\mu = \mu_0 + \delta$, the test statistic $Z = \dfrac{\overline{X} - \mu_0}{\sigma/\sqrt{n}}\sim\U{N}(\delta\sqrt{n}/\sigma, 1)$.
+	\begin{align*}
+	P[\U{fail\ to\ reject\ } H_0|\mu = \mu_0 + \delta] & = \frac{1}{\sqrt{2\pi}}\int_{-z_{\alpha/2}}^{z_{\alpha/2}} e^{-(t-\delta\sqrt{n}/\sigma)^2/2} \U{d}t \\
+	& = \frac{1}{\sqrt{2\pi}}\int_{-z_{\alpha/2}-\delta\sqrt{n}/\sigma}^{z_{\alpha/2}-\delta\sqrt{n}/\sigma} e^{-t^2/2}\U{d}t \\
+	& \approx \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{z_{\alpha/2}-\delta\sqrt{n}/\sigma} e^{-t^2/2}\U{d}t \overset{!}{=} \beta,
+	\end{align*}
+	where we set $-z_{\beta} = z_{\alpha/2}-\delta\sqrt{n}/\sigma$.
+}
+\uncover<2>{
+	\structb{Choosing the sample size $n$.}
+	\begin{align*}
+	n\approx \frac{(z_{\alpha/2} + z_{\beta})^2\sigma^2}{\delta^2},
+	\end{align*}
+	where $z_{\alpha/2}$ and $z_{\beta}$ satisfies that
+	\begin{align*}
+	\Phi(z_{\alpha/2}) = 1 - \alpha/2, \qquad \Phi(z_{\beta}) = 1 - \beta,
+	\end{align*}
+	given cumulative distribution function $\Phi$ of standard normal distribution.
+}
+
+\end{frame}
+
+
+\begin{frame}{Determining Sample Size using $\beta$}
+
+\justifying
+\structb{OC curves.} Still taking the F-test as an example, when $n_1 = n_2 = n$, the abscissa is given by
+\footnotesize
+\begin{align*}
+\lambda = \frac{\sigma_1}{\sigma_2}.
+\end{align*}
+\normalsize
+If we have the hypotheses
+\footnotesize
+\begin{align*}
+H_0: \sigma_1 = \sigma_2,\qquad H_1: \max\left(\frac{\sigma_1}{\sigma_2}, \frac{\sigma_2}{\sigma_1}\right) \geq \delta,
+\end{align*}
+\normalsize
+Shall we use $\lambda = \delta$ or $\lambda = 1/\delta$ or both? As we have calculated,
+\footnotesize
+\begin{align*}
+P[\U{accept\ } H_0|H_1 \U{\ true}] \leq \max\left\{F\left(\frac{1}{\delta^2} f_2 \right) - F\left(\frac{1}{\delta^2} f_1 \right), F\left(\delta^2 f_2 \right) - F\left(\delta^2 f_1 \right) \right\},
+\end{align*}
+\normalsize
+However, with \underline{equal sizes}, $f_2 = 1/f_1$, and thus
+\footnotesize
+\begin{align*}
+F\left(\delta^2 f_2 \right) - F\left(\delta^2 f_1 \right) & = F\left(\frac{\delta^2}{f_1}\right) - F\left(\frac{\delta^2}{f_2} \right) = 1 - F\left(\frac{1}{\delta^2}f_1 \right) - \left[1 - F\left(\frac{1}{\delta^2}f_2 \right) \right] \\
+& = F\left(\frac{1}{\delta^2} f_2 \right) - F\left(\frac{1}{\delta^2} f_1 \right).
+\end{align*}
+\normalsize
+The two cases $\sigma_1 / \sigma_2 = \delta$ or $\sigma_2 / \sigma_1 = \delta$ are equivalent.
+
+
+\end{frame}
+
+
 
 \subsection{Null Hypothesis Significance Testing}
+
+\begin{frame}{Null Hypothesis Significance Testing}
+
+\begin{itemize}
+	\justifying
+	\item $H_0$ and $H_1$ are set up, but $H_1$ is always the logical negation of $H_0$.
+	\item Either a hypothesis test is performed by finding a critical region, or the test statistic is evaluated and a p-value is found to reject or accept $H_1$.
+	\item In either case, there is no meaningful discussion of $\beta$, since $H_1$ is exactly the negation of $H_0$.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Setting up Hypotheses}
+
+
+\begin{itemize}
+	\justifying
+	\item \structb{Setting up $H_0$.} In most of the cases, when we want to find evidence \highlightr{for} an event, $H_0$ is set up to be the opposite of this event. \\
+	\emph{\underline{Assignment 6.2.(i)}.} Is there evidence that the success rate is greater for longer tears ($\mu_1$)?
+	\begin{align*}
+	H_0: \mu_1\leq \mu_2
+	\end{align*}
+	\item \structb{Alternative hypothesis $H_1$.} In addition to testing equality and inequality, we would like to test an additional \highlightr{amount} of such difference.\\
+	\emph{\underline{Assignment 6.3}.} Is there sufficient evidence to conclude that the two population standard deviations differ by at least 10\%?
+	\begin{align*}
+	H_0: \sigma_1 = \sigma_2, \qquad H_1: \max\left(\frac{\sigma_1}{\sigma_2}, \frac{\sigma_2}{\sigma_1} \right) \geq 1.1
+	\end{align*}
+\end{itemize}
+
+
+\end{frame}
+
+
+
+\begin{frame}{Critical Region vs. Confidence Interval}
+
+\justifying
+Suppose $X_1, \ldots, X_n$ is a sample of size $n$ from a normal population $X$ with mean $\mu$ and known variance $\sigma^2$. We have
+\footnotesize
+\begin{align*}
+H_0: \mu \leq \mu_0, \qquad H_1: \mu > \mu_0.
+\end{align*}
+\normalsize
+Then  what is the corresponding confidence interval? We know that we reject $H_0$ at significance level $\alpha$ if
+\footnotesize
+\begin{align*}
+Z = \frac{\overline{X} - \mu_0}{\sigma/\sqrt{n}} > z_{\alpha}\quad\Leftrightarrow \quad \mu_0 < \overline{X} - z_{\alpha}\frac{\sigma}{\sqrt{n}}.
+\end{align*}
+\normalsize
+In this case the null value $\mu_0$ falls \highlightr{outside} of the confidence interval. Therefore, the corresponding confidence interval is given by
+\footnotesize
+\begin{align*}
+\U{CI} = \left[\overline{X} - z_{\alpha}\frac{\sigma}{\sqrt{n}}, \infty \right).
+\end{align*}
+\normalsize
+Similarly, if the null hypothesis is $H_0: \mu\geq \mu_0$, the corresponding one-sided confidence interval is given by
+\footnotesize
+\begin{align*}
+\U{CI} = \left(-\infty, \overline{X} + z_{\alpha}\frac{\sigma}{\sqrt{n}} \right].
+\end{align*}
+\normalsize
+
+
+
+\end{frame}

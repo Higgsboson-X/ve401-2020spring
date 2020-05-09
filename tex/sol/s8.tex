@@ -91,5 +91,24 @@ where $X$ is the model specification matrix for multiple linear regression.
 	\begin{align*}
 	(P - H)(\bbone - H)u = (P - H)v = 0\quad\Rightarrow\quad v\in \U{ker}(P - H).
 	\end{align*}
-	Therefore, $\U{ran}(P - H)\subset\U{ker}(\bbone - H)$ and $\U{ran}(\bbone - H)\subset \U{ker}(P - H)$.
+	Therefore, $\U{ran}(P - H)\subset\U{ker}(\bbone - H)$ and $\U{ran}(\bbone - H)\subset \U{ker}(P - H)$. Then if $v$ is an eigenvector of $H-P$ for 1, then $(H-P)v = v$, which means $v\in \U{ran}(P-H)$ and thus $v\in \U{ker}(\bbone-H)$, indicating that $v$ is also an eigenvector of $\bbone-H$ for 0. It is similar with the eigenvectors of $\bbone-H$ for 1. We can construct a matrix $U$ 
+	\begin{align*}
+	U = (b_1, \ldots, b_p, b_{p+1}, \ldots, b_n),
+	\end{align*}
+	where $(b_1, \ldots, b_p)$ is an orthonormal basis of eigenvectors of $H-P$ for eigenvalue 1, and $(b_{p+1}, \ldots, b_n)$ is an orthonormal basis of eigenvectors of $H-P$ for eigenvalue 0, among which $(b_{p+2}, \ldots, b_{n})$ consists of eigenvectors of $\bbone-H$ for 1. Then it satisfies that
+	\begin{align*}
+	U^T(H-P)U = \begin{gmatrix}[p]
+	\bbone_p & 0 \\
+	0 & 0
+	\end{gmatrix}\!\!\!\! =: D_{p}, \qquad U^T(\bbone-H)U = \begin{gmatrix}[p]
+	0 & 0 \\
+	0 & \bbone_{n-p-1}
+	\end{gmatrix}\!\!\!\! =: D_{n-p},
+	\end{align*}
+	and $U$ diagonalizes both $P-H$ and $\bbone-H$. Since
+	\begin{align*}
+	\U{SS_E} & = \langle Y, (\bbone-H)Y\rangle = \langle Y, UD_{n-p-1}U^T\rangle = \sum_{i=p+2}^n (U^TY)_i^2, \\
+	\U{SS_R} & = \langle Y, (H-P)Y\rangle = \langle Y, UD_pU^TY\rangle = \sum_{i=1}^p (U^TY)_i^2,
+	\end{align*}
+	which are independent of each other.
 \end{enumerate}
