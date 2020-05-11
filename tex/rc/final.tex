@@ -41,7 +41,7 @@
 	\item $H_0: \mu \geq \mu_0$, extreme $\Leftrightarrow$ too small $\widehat{\mu}$.
 	\item $H_0: \mu \leq \mu_0$, extreme $\Leftrightarrow$ too large $\widehat{\mu}$.
 \end{itemize}
-\highlightr{Note:} Refer to an estimator of the parameter in the null hypothesis ($\mu$ in this case). \\
+\highlightr{Note:} Refer to an estimator of the parameter in the null hypothesis ($\widehat{\mu} = \overline{X}$ in this case). \\
 \uncover<2>{
 	\justifying
 	\structb{Assignment 5.2.} $X_1, \ldots, X_n$ are i.i.d. exponential random variables with parameter $\beta$, then the sum $Y$
@@ -110,8 +110,8 @@ Q_- = \#\{X_k: X_k - M_0 < 0 \}.
 \end{align*}
 and p-values:
 \begin{itemize}
-	\item \underline{$H_0: M \leq M_0$}. $\U{pvalue} = F[q_-];$
-	\item \underline{$H_0: M \geq M_0$}. $\U{pvalue} = 1 - F[q_-];$
+	\item \underline{$H_0: M \leq M_0$}. $\U{pvalue} = F(q_-);$
+	\item \underline{$H_0: M \geq M_0$}. $\U{pvalue} = 1 - F(q_-);$
 	\item \underline{$H_0: M = M_0$}. $\U{pvalue} = 2\min \left(F(q_-), 1 - F(q_-)\right),$
 \end{itemize}
 where with a binomial random variable $Y$ and $n' = q_+ + q_-$,
@@ -241,15 +241,15 @@ Recall that $\sigma_2^2S_1^2/(\sigma_1^2S_2^2) \sim F_{n_1-1,n_2-1}$. We only di
 \structb{F-test for comparing variances.} Based on the distribution, we calculate
 \footnotesize
 \begin{align*}
-P[\U{accept\ } H_0|H_1 \U{\ true}] & = P\left[\frac{\sigma_2^2}{\sigma_1^2}f_1 \leq F_{n_1-1,n_2-1} \leq \frac{\sigma_2^2}{\sigma_1^2}f_2\Bigg|\max\left(\frac{\sigma_1}{\sigma_2}, \frac{\sigma_2}{\sigma_1}\right) \geq \delta \right] \\
-& = P\left[\frac{\sigma_1}{\sigma_2} \geq \delta \right]\times P_1 + P\left[\frac{\sigma_1}{\sigma_2} \leq \frac{1}{\delta} \right]\times P_2 \leq \max\left(P_1, P_2 \right),
+P[\U{accept\ } H_0|H_1 \U{\ true}] & = P\left[\frac{\sigma_2^2}{\sigma_1^2}f_1 \leq F_{n_1-1,n_2-1} \leq \frac{\sigma_2^2}{\sigma_1^2}f_2\Bigg|\underbrace{\max\left(\frac{\sigma_1}{\sigma_2}, \frac{\sigma_2}{\sigma_1}\right) \geq \delta}_{H_1} \right] \\
+& = P_1\cdot \frac{P\left[\dfrac{\sigma_1}{\sigma_2} \geq \delta \right]}{P[H_1]} + P_2\cdot \frac{P\left[\dfrac{\sigma_1}{\sigma_2} \leq \dfrac{1}{\delta} \right]}{P[H_1]} \leq \max\left(P_1, P_2 \right),
 \end{align*}
 \normalsize
 where with $f_1 = f_{1-\alpha/2,n_1-1,n_2-1}, f_2 = f_{\alpha/2,n_1-1,n_2-1}$,
 \footnotesize
 \begin{align*}
-P_1 & \leq \left[\frac{\sigma_2^2}{\sigma_1^2}f_1 \leq F_{n_1-1,n_2-1} \leq \frac{\sigma_2^2}{\sigma_1^2}f_2\Bigg|\frac{\sigma_1}{\sigma_2} = \delta \right] = F\left(\frac{1}{\delta^2} f_2 \right) - F\left(\frac{1}{\delta^2} f_1 \right), \\
-P_2 & \leq \left[\frac{\sigma_2^2}{\sigma_1^2}f_1 \leq F_{n_1-1,n_2-1} \leq \frac{\sigma_2^2}{\sigma_1^2}f_2\Bigg|\frac{\sigma_1}{\sigma_2} = \frac{1}{\delta} \right] = F\left(\delta^2 f_2 \right) - F\left(\delta^2 f_1 \right),
+P_1 & \leq P\left[\frac{\sigma_2^2}{\sigma_1^2}f_1 \leq F_{n_1-1,n_2-1} \leq \frac{\sigma_2^2}{\sigma_1^2}f_2\Bigg|\frac{\sigma_1}{\sigma_2} = \delta \right] = F\left(\frac{1}{\delta^2} f_2 \right) - F\left(\frac{1}{\delta^2} f_1 \right), \\
+P_2 & \leq P\left[\frac{\sigma_2^2}{\sigma_1^2}f_1 \leq F_{n_1-1,n_2-1} \leq \frac{\sigma_2^2}{\sigma_1^2}f_2\Bigg|\frac{\sigma_1}{\sigma_2} = \frac{1}{\delta} \right] = F\left(\delta^2 f_2 \right) - F\left(\delta^2 f_1 \right),
 \end{align*}
 \normalsize
 where $F$ is the c.d.f. for $F_{n_1-1,n_2-1}$. Then we have the upper bound $\beta = \max(P_1, P_2)$.
@@ -304,16 +304,16 @@ If we have the hypotheses
 H_0: \sigma_1 = \sigma_2,\qquad H_1: \max\left(\frac{\sigma_1}{\sigma_2}, \frac{\sigma_2}{\sigma_1}\right) \geq \delta,
 \end{align*}
 \normalsize
-Shall we use $\lambda = \delta$ or $\lambda = 1/\delta$ or both? As we have calculated,
+Shall we use $\lambda = \delta$ or $\lambda = 1/\delta$ or both? \pause As we have calculated,
 \footnotesize
 \begin{align*}
 P[\U{accept\ } H_0|H_1 \U{\ true}] \leq \max\left\{F\left(\frac{1}{\delta^2} f_2 \right) - F\left(\frac{1}{\delta^2} f_1 \right), F\left(\delta^2 f_2 \right) - F\left(\delta^2 f_1 \right) \right\},
 \end{align*}
 \normalsize
-However, with \underline{equal sizes}, $f_2 = 1/f_1$, and thus
+However, with \underline{equal} sizes, \highlightr{$f_2 = 1/f_1$}, and thus
 \footnotesize
 \begin{align*}
-F\left(\delta^2 f_2 \right) - F\left(\delta^2 f_1 \right) & = F\left(\frac{\delta^2}{f_1}\right) - F\left(\frac{\delta^2}{f_2} \right) = 1 - F\left(\frac{1}{\delta^2}f_1 \right) - \left[1 - F\left(\frac{1}{\delta^2}f_2 \right) \right] \\
+F\left(\delta^2 f_2 \right) - F\left(\delta^2 f_1 \right) & = F\left(\frac{\delta^2}{f_1}\right) - F\left(\frac{\delta^2}{f_2} \right) \red{=}\ 1 - F\left(\frac{1}{\delta^2}f_1 \right) - \left[1 - F\left(\frac{1}{\delta^2}f_2 \right) \right] \\
 & = F\left(\frac{1}{\delta^2} f_2 \right) - F\left(\frac{1}{\delta^2} f_1 \right).
 \end{align*}
 \normalsize
@@ -324,7 +324,7 @@ The two cases $\sigma_1 / \sigma_2 = \delta$ or $\sigma_2 / \sigma_1 = \delta$ a
 
 
 
-\subsection{Null Hypothesis Significance Testing}
+\subsection{Null Hypothesis Significance Testing and More}
 
 \begin{frame}{Null Hypothesis Significance Testing}
 
@@ -343,7 +343,7 @@ The two cases $\sigma_1 / \sigma_2 = \delta$ or $\sigma_2 / \sigma_1 = \delta$ a
 
 \begin{itemize}
 	\justifying
-	\item \structb{Setting up $H_0$.} In most of the cases, when we want to find evidence \highlightr{for} an event, $H_0$ is set up to be the opposite of this event. \\
+	\item \structb{Setting up $H_0$.} In most of the cases, when we want to find evidence \highlightr{for} an event, $H_0$ is usually set up to be the opposite of this event. \\
 	\emph{\underline{Assignment 6.2.(i)}.} Is there evidence that the success rate is greater for longer tears ($\mu_1$)?
 	\begin{align*}
 	H_0: \mu_1\leq \mu_2
@@ -358,6 +358,20 @@ The two cases $\sigma_1 / \sigma_2 = \delta$ or $\sigma_2 / \sigma_1 = \delta$ a
 
 \end{frame}
 
+
+\begin{frame}{Confidence Interval vs. Critical Region}
+
+\justifying
+Suppose we would like to estimate the mean $\mu$ of a sample $X_1, \ldots, X_n$ of size $n$.
+\begin{itemize}
+	\justifying
+	\item \structb{Confidence interval.} Given a sample data with specific values, the CI gives an interval for the unknown mean $\mu$.
+	\item \structb{Critical region.} Given a null value $\mu_0$, the critical region gives an interval for sample mean $\overline{X}$ before obtaining specific values.
+	\item \structb{Relation.} The null hypothesis $H_0$ is rejected $\Leftrightarrow$ $\overline{X}$ lies in the critical region $\Leftrightarrow$ null value $\mu_0$ lies outside the confidence interval.
+\end{itemize}
+
+
+\end{frame}
 
 
 \begin{frame}{Critical Region vs. Confidence Interval}

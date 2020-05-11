@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400) (preloaded format=pdflatex 2020.4.18)  9 MAY 2020 13:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400) (preloaded format=pdflatex 2020.4.18)  10 MAY 2020 14:10
 entering extended mode
 **./s.tex
 (s.tex
@@ -881,42 +881,72 @@ Package pdftex.def Info: ./logo.png  used on input line 65.
 (pdftex.def)             Requested size: 338.58632pt x 92.59242pt.
  [1
 
-{/home/chxw/.miktex/texmfs/data/pdftex/config/pdftex.map} <./logo.png>] (s8.tex
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 19.
+{/home/chxw/.miktex/texmfs/data/pdftex/config/pdftex.map} <./logo.png>] (s6.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--8
+
+ []
 
 
-(/home/chxw/.miktex/texmfs/install/tex/latex/bbm/ubbm.fd
-File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)
+Underfull \hbox (badness 10000) in paragraph at lines 3--8
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
 Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[1] [2]) [3] (s.aux) ) 
+[1] [2] [3] [4]
+
+pdfTeX warning: pdflatex (file ./images/s6fig1.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<./images/s6fig1.pdf, id=36, 963.6pt x 542.025pt>
+File: ./images/s6fig1.pdf Graphic file (type pdf)
+<use ./images/s6fig1.pdf>
+Package pdftex.def Info: ./images/s6fig1.pdf  used on input line 179.
+(pdftex.def)             Requested size: 483.69687pt x 272.07874pt.
+[5]
+
+pdfTeX warning: pdflatex (file ./images/s6fig2.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<./images/s6fig2.pdf, id=40, 963.6pt x 542.025pt>
+File: ./images/s6fig2.pdf Graphic file (type pdf)
+<use ./images/s6fig2.pdf>
+Package pdftex.def Info: ./images/s6fig2.pdf  used on input line 197.
+(pdftex.def)             Requested size: 483.69687pt x 272.07874pt.
+[6 <./images/s6fig1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 225--228
+
+ []
+
+[7 <./images/s6fig2.pdf>]) [8] (s.aux) ) 
 Here is how much of TeX's memory you used:
- 18033 strings out of 482859
- 343642 string characters out of 2953059
+ 18009 strings out of 482859
+ 343276 string characters out of 2953059
  718303 words of memory out of 3000000
- 33251 multiletter control sequences out of 15000+200000
- 544260 words of font info for 73 fonts, out of 3000000 for 9000
+ 33229 multiletter control sequences out of 15000+200000
+ 544509 words of font info for 72 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 60i,17n,66p,3230b,377s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/chxw/.miktex/texmfs/data/fonts/pk/ljfour/public/b
-bm/dpi600/bbm12.pk></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts
-/cm/cmbx12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/c
-m/cmex10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/
-cmmi12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cm
-mi8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12
-.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb
-></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></ho
-me/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on s.pdf (4 pages, 151538 bytes).
+ 60i,13n,66p,3230b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/chxw/.miktex/texmfs/data/fonts/
+pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk></home/chxw/.miktex/texmfs/install/fon
+ts/type1/public/amsfonts/cm/cmbx10.pfb></home/chxw/.miktex/texmfs/install/fonts
+/type1/public/amsfonts/cm/cmbx12.pfb></home/chxw/.miktex/texmfs/install/fonts/t
+ype1/public/amsfonts/cm/cmex10.pfb></home/chxw/.miktex/texmfs/install/fonts/typ
+e1/public/amsfonts/cmextra/cmex8.pfb></home/chxw/.miktex/texmfs/install/fonts/t
+ype1/public/amsfonts/cm/cmmi12.pfb></home/chxw/.miktex/texmfs/install/fonts/typ
+e1/public/amsfonts/cm/cmmi6.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public
+/amsfonts/cm/cmr6.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/ams
+fonts/cm/cmr8.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb></home/chxw/.miktex/texmfs/install/fonts/type1/public/amsfonts/
+cm/cmsy8.pfb>
+Output written on s.pdf (9 pages, 317843 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
+ 99 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
