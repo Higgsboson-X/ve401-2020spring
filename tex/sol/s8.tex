@@ -24,25 +24,29 @@ where $X$ is the model specification matrix for multiple linear regression.
 \end{enumerate}
 \textbf{\underline{Solution}.} 
 \begin{enumerate}
-	\item Since $H$ is an orthogonal projection, $H^2 = H$, and
+	\item We know that
 	\begin{align*}
-	\U{det}\left(X(X^TX)^{-1}X^T \right) = \U{det}\left((X^TX)^{-1} X^TX \right) = \U{det}\ \bbone_{p+1} = 1,
+	HP = \begin{gmatrix}[p]
+	\overline{h}_{1\cdot} & \cdots & \overline{h}_{1\cdot} \\
+	\vdots & & \vdots \\
+	\overline{h}_{n\cdot} & \cdots & \overline{h}_{n\cdot}
+	\end{gmatrix}\!\!\!\!, \qquad PH = \begin{gmatrix}[p]
+	\overline{h}_{\cdot 1} & \cdots & \overline{h}_{\cdot n} \\
+	\vdots & & \vdots \\
+	\overline{h}_{\cdot 1} & \cdots & \overline{h}_{\cdot n}
+	\end{gmatrix}\!\!\!\!,
 	\end{align*}
-	which means $H$ is invertible. Then
+	and because $HX = X, H^T = H$,
 	\begin{align*}
-	P = H^{-1} HP = H^{-1}H^2 P = HP, \qquad P = PH^{-1}H = PH^{-1}H^2 = PH.
+	X_{ij} = \sum_{k=1}^n h_{ik}X_{kj},
+	\end{align*}
+	when $j = 1$, we have
+	\begin{align*}
+	1 = \sum_{k=1}^n h_{ik}X_{k1} = \sum_{k=1}^n h_{ik}\qquad\U{for\ all\ } i = 1, \ldots, n.
 	\end{align*}
 	Therefore,
 	\begin{align*}
-	(H-P)^2 & = H^2 + P^2 - HP - PH = H - P, \\
-	(H-P)^T & = H^T - P^T = H - P,
-	\end{align*}
-	and $H-P$ is an orthogonal projection. Furthermore,
-	\begin{align*}
-	\U{SS_R} & = \U{SS_T} - \U{SS_E} \\
-	& = \langle Y, (\bbone - P)Y\rangle - \langle Y, (\bbone - H)Y\rangle \\
-	& = \langle Y, (H - P) Y\rangle \\
-	& = \langle Y, (H-P)^2 Y\rangle = \langle (H-P)Y, (H-P)Y \rangle.
+	HP = PH = P.
 	\end{align*}
 	\item We know that
 	\begin{align*}
